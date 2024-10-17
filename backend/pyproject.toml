@@ -8,6 +8,7 @@ authors = ["jabbapen <jabbapen@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.12"
 fastapi = "^0.115.2"
+uvicorn = "^0.32.0"
 
 
 [build-system]
