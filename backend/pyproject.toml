@@ -1,0 +1,16 @@
+[tool.poetry]
+package-mode = false
+name = "confectionary_carnage_backend"
+version = "0.1.0"
+description = ""
+authors = ["jabbapen <jabbapen@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.2"
+uvicorn = "^0.32.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
