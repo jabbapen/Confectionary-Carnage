@@ -1,11 +1,25 @@
+variable "s3_state_bucket_path" {
+    type = string
+    sensitive = true
+    nullable = false
+}
+
 terraform {
   required_providers {
     aws = { source = "hashicorp/aws", version = "5.17.0" }
   }
+
+  backend "s3" {
+      bucket = "tfstate-confectionary-carnage"
+      key = "var.s3_state_bucket_path"
+      region = "us-west-1"
+  }
+
 }
 
 provider "aws" {
   region  = "us-west-1"
+  profile = "default"
 }
 
 resource "aws_ecr_repository" "api" {
