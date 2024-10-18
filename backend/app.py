@@ -21,7 +21,7 @@ async def test_postgres():
         dbname=os.getenv('PG_DATABASE')
     )
     cur = conn.cursor()
-    cur.execute("SELECT 'Hello, world'")
+    cur.execute("SELECT 'Hello, world!'")
     result = cur.fetchone()
     cur.close()
     conn.close()
