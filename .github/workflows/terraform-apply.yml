@@ -33,17 +33,17 @@ jobs:
         echo "aws_secret_access_key = $AWS_SECRET_ACCESS_KEY" >> ~/.aws/credentials
 
     - name: Terraform Init
-      run: 
+      run: |
         cd backend
         terraform init
 
     - name: Terraform Plan
-      run: 
+      run: |
         cd backend
         terraform plan -out=tfplan
 
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main'
-      run: 
+      run: |
         cd backend
         terraform apply -auto-approve tfplan
