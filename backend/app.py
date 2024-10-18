@@ -9,7 +9,7 @@ app = FastAPI()
 
 @app.get("/")
 async def hello_world():
-    return "Hey does my pipeline automatically update my change???"
+    return "Hey does my pipeline automatically update my change?"
 
 @app.get("/test-postgres")
 async def test_postgres():
