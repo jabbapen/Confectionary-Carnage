@@ -8,7 +8,7 @@ app = FastAPI()
 
 @app.get("/")
 async def hello_world():
-    return "Hello, World?"
+    return "Hey does my pipeline automatically update my change???"
 
 handler = Mangum(app, lifespan="off")
 
