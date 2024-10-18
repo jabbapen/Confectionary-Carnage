@@ -203,7 +203,7 @@ resource "aws_cloudwatch_log_group" "api" {
 resource "aws_lambda_function" "api" {
   function_name    = "api"
   role             = aws_iam_role.lambda.arn
-  image_uri        = "${aws_ecr_repository.api.repository_url}:latest"
+  image_uri        = "${aws_ecr_repository.api.repository_url}@${data.aws_ecr_image.latest.image_digest}"
   package_type     = "Image"
   timeout          = 10
 
