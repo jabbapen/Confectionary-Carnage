@@ -1,2 +1,7 @@
 .DS_Store
 .idea/
+.terraform.lock.hcl
+.terraform/
+__pycache__/
+terraform.tfstate
+terraform.tfstate.backup

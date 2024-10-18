@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    container_name: "confectionary-carnage-backend"
+    hostname: "confectionary-carnage-backend"
+    ports:
+      - "8000:8000"
+    restart: always
