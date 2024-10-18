@@ -221,6 +221,12 @@ resource "aws_lambda_function" "api" {
     subnet_ids         = [aws_subnet.private_az1.id, aws_subnet.private_az2.id]
     security_group_ids = [aws_security_group.lambda_rds_sg.id]
   }
+
+  depends_on = [
+    null_resource.image,
+    aws_iam_role_policy_attachment.lambda_logs,
+    aws_cloudwatch_log_group.api,
+  ]
 }
 
 resource "aws_lambda_function_url" "api" {
