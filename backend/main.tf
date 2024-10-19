@@ -210,10 +210,10 @@ resource "aws_lambda_function" "api" {
   environment {
     variables = {
       PG_HOST     = aws_db_instance.postgres.address
-      PG_PORT     = "5432"
-      PG_USER     = "connor"
-      PG_PASSWORD = "123456789"
-      PG_DATABASE = "mydb"
+      PG_PORT     = var.pg_port
+      PG_USER     = var.pg_user
+      PG_PASSWORD = var.pg_password
+      PG_DATABASE = var.pg_database
     }
   }
 
@@ -247,10 +247,10 @@ resource "aws_db_instance" "postgres" {
   engine                 = "postgres"
   instance_class         = "db.t3.micro"
   allocated_storage      = 20
-  db_name                = "mydb"
-  username               = "connor"
-  password               = "123456789"
-  port                   = 5432
+  db_name                = var.pg_database
+  username               = var.pg_user
+  password               = var.pg_password
+  port                   = var.pg_port
   vpc_security_group_ids = [aws_security_group.lambda_rds_sg.id]
   db_subnet_group_name   = aws_db_subnet_group.rds.name
   skip_final_snapshot    = true
