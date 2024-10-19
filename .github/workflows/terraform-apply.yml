@@ -37,20 +37,20 @@ jobs:
 
     - name: Terraform Plan
       env:
-        TF_VAR_PG_PORT: ${{ secrets.TF_VAR_PG_PORT }}
-        TF_VAR_PG_USER: ${{ secrets.TF_VAR_PG_USER }}
-        TF_VAR_PG_PASSWORD: ${{ secrets.TF_VAR_PG_PASSWORD }}
-        TF_VAR_PG_DATABASE: ${{ secrets.TF_VAR_PG_DATABASE }}
+        TF_VAR_pg_port: ${{ secrets.TF_VAR_PG_PORT }}
+        TF_VAR_pg_user: ${{ secrets.TF_VAR_PG_USER }}
+        TF_VAR_pg_password: ${{ secrets.TF_VAR_PG_PASSWORD }}
+        TF_VAR_pg_database: ${{ secrets.TF_VAR_PG_DATABASE }}
       run: |
         cd backend
         terraform plan -out=tfplan
 
     - name: Terraform Apply
       env:
-        TF_VAR_PG_PORT: ${{ secrets.TF_VAR_PG_PORT }}
-        TF_VAR_PG_USER: ${{ secrets.TF_VAR_PG_USER }}
-        TF_VAR_PG_PASSWORD: ${{ secrets.TF_VAR_PG_PASSWORD }}
-        TF_VAR_PG_DATABASE: ${{ secrets.TF_VAR_PG_DATABASE }}
+        TF_VAR_pg_port: ${{ secrets.TF_VAR_PG_PORT }}
+        TF_VAR_pg_user: ${{ secrets.TF_VAR_PG_USER }}
+        TF_VAR_pg_password: ${{ secrets.TF_VAR_PG_PASSWORD }}
+        TF_VAR_pg_database: ${{ secrets.TF_VAR_PG_DATABASE }}
       if: github.ref == 'refs/heads/main'
       run: |
         cd backend
