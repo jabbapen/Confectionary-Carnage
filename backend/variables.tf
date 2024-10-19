@@ -16,6 +16,3 @@ variable "pg_database" {
   description = "The PostgreSQL database name"
 }
 
-variable "pg_database" {
-  description = "The PostgreSQL database name"
-}
