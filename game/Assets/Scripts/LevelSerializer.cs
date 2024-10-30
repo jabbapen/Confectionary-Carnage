@@ -1,0 +1,165 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+using UnityEngine;
+
+public class LevelSerializer : MonoBehaviour
+{
+    [SerializeField] string resourcePath;
+    [SerializeField] GameObject debugSerialize;
+    [SerializeField] string debugDeserialize;
+    [SerializeField] GameObject debugTarget;
+
+    private Dictionary<int, int> itemIdToIndexMap = new Dictionary<int, int>();
+    ObjectIndex gameObjectList;
+
+    /// <summary>
+    /// Loads the GameObjectList from the Resources folder and creates a mapping
+    /// of the Item component's id to the GameObject's index in the list.
+    /// </summary>
+    void LoadGameObjectList()
+    {
+        // Load the GameObjectList from Resources
+        gameObjectList = Resources.Load<ObjectIndex>(resourcePath);
+
+        if (gameObjectList == null)
+        {
+            Debug.LogError("GameObjectList not found at the specified path: " + resourcePath);
+            return;
+        }
+
+        // Clear the dictionary in case this function is called more than once
+        itemIdToIndexMap.Clear();
+
+        // Iterate over the GameObjects in the list
+        for (int i = 0; i < gameObjectList.objects.Count; i++)
+        {
+            GameObject obj = gameObjectList.objects[i];
+
+            // Make sure the GameObject has an Item component
+            Item item = obj.GetComponent<Item>();
+            if (item != null)
+            {
+                // Add the mapping of the Item id to the index in the list
+                itemIdToIndexMap[item.id] = i;
+            }
+            else
+            {
+                Debug.LogWarning($"GameObject at index {i} does not have an Item component: {obj.name}");
+            }
+        }
+
+        Debug.Log("ObjectIndex loaded and mapping created.");
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        LoadGameObjectList();
+        if (debugSerialize) SaveField(debugSerialize);
+        if (debugTarget) LoadField(debugDeserialize, debugTarget);
+    }
+
+    int GetIndexFromItemId(int itemId)
+    {
+        if (itemIdToIndexMap.TryGetValue(itemId, out int index))
+        {
+            return index;
+        }
+
+        Debug.LogWarning("Item with id " + itemId + " not found.");
+        return -1;
+    }
+
+    public void SaveField(GameObject parent)
+    {
+        StringBuilder sb = new StringBuilder();
+        // Get all child objects with the Item class
+        foreach (Item obj in parent.GetComponentsInChildren<Item>())
+        {
+            // Serialize each object as id#x#y#z#rx#ry#rz#sx#sy#sz%
+            // All values are rounded to int
+            Transform tr = obj.transform;
+            sb.Append(obj.id);
+            sb.Append('#');
+            sb.Append(Mathf.RoundToInt(tr.localPosition.x));
+            sb.Append('#');
+            sb.Append(Mathf.RoundToInt(tr.localPosition.y));
+            sb.Append('#');
+            sb.Append(Mathf.RoundToInt(tr.localPosition.z));
+            sb.Append('#');
+            sb.Append(Mathf.RoundToInt(tr.localRotation.eulerAngles.x));
+            sb.Append('#');
+            sb.Append(Mathf.RoundToInt(tr.localRotation.eulerAngles.y));
+            sb.Append('#');
+            sb.Append(Mathf.RoundToInt(tr.localRotation.eulerAngles.z));
+            sb.Append('#');
+            sb.Append(Mathf.RoundToInt(tr.localScale.x));
+            sb.Append('#');
+            sb.Append(Mathf.RoundToInt(tr.localScale.y));
+            sb.Append('#');
+            sb.Append(Mathf.RoundToInt(tr.localScale.z));
+            sb.Append('%');
+        }
+
+        Debug.Log(sb.ToString());
+    }
+
+    public void LoadField(string data, GameObject parent)
+    {
+        // Split the input string into individual object data blocks (split by '%')
+        string[] objectDataBlocks = data.Split(new[] { '%' }, System.StringSplitOptions.RemoveEmptyEntries);
+
+        foreach (string objectData in objectDataBlocks)
+        {
+            // Split the object data into individual components (split by '#')
+            string[] fields = objectData.Split('#');
+
+            // Ensure we have exactly 10 fields (id, position (x, y, z), rotation (x, y, z), scale (x, y, z))
+            if (fields.Length == 10)
+            {
+                // Parse the id
+                int id = int.Parse(fields[0]);
+
+                // Look up the corresponding GameObject index from the id using the itemIdToIndexMap
+                if (itemIdToIndexMap.TryGetValue(id, out int index))
+                {
+                    // Instantiate the GameObject from the GameObjectList at the index
+                    GameObject prefab = gameObjectList.objects[index];
+                    GameObject newObj = Instantiate(prefab, parent.transform);
+
+                    // Retrieve its Transform component
+                    Transform tr = newObj.transform;
+
+                    // Set local position, rotation, and scale based on the parsed data
+                    tr.localPosition = new Vector3(
+                        int.Parse(fields[1]),  // Position X
+                        int.Parse(fields[2]),  // Position Y
+                        int.Parse(fields[3])   // Position Z
+                    );
+
+                    tr.localRotation = Quaternion.Euler(
+                        int.Parse(fields[4]),  // Rotation X
+                        int.Parse(fields[5]),  // Rotation Y
+                        int.Parse(fields[6])   // Rotation Z
+                    );
+
+                    tr.localScale = new Vector3(
+                        int.Parse(fields[7]),  // Scale X
+                        int.Parse(fields[8]),  // Scale Y
+                        int.Parse(fields[9])   // Scale Z
+                    );
+                }
+                else
+                {
+                    Debug.LogWarning($"Item with id {id} not found in the itemIdToIndexMap.");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Invalid data format for object: " + objectData);
+            }
+        }
+    }
+
+}
