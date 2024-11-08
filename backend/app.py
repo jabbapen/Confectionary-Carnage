@@ -1,5 +1,4 @@
 from http.client import HTTPException
-from typing import Optional
 from pydantic import BaseModel
 from fastapi import FastAPI
 from mangum import Mangum
@@ -27,19 +26,34 @@ def get_db_conn():
     except psycopg2.Error as e:
         raise HTTPException(500, "DB conn error")
 
+def init_leaderboard(conn): 
+    try:
+        with conn.cursor() as cur:
+            leaderboard_query = """
+            CREATE TABLE IF NOT EXISTS leaderboard (
+                id SERIAL PRIMARY KEY,
+                name varchar(100) NOT NULL,
+                score int NOT NULL
+            );
+            """
+            cur.execute(leaderboard_query)
+            conn.commit() 
+    except Exception: 
+        raise HTTPException(400, "Failed to create leaderboard table")
+
+@app.on_event("startup")
+def startup():
+    conn = get_db_conn()
+    init_leaderboard(conn)
+    conn.close()
+
 @app.get("/")
 async def hello_world():
     return "Hey does my pipeline automatically update my change?"
 
 @app.get("/test-postgres")
 async def test_postgres():
-    conn = psycopg2.connect(
-        host=os.getenv("PG_HOST"),
-        port=os.getenv("PG_PORT"),
-        user=os.getenv("PG_USER"),
-        password=os.getenv("PG_PASSWORD"),
-        dbname=os.getenv("PG_DATABASE"),
-    )
+    conn = get_db_conn()
     cur = conn.cursor()
     cur.execute("SELECT 'Hello, world!!'")
     result = cur.fetchone()
@@ -50,7 +64,7 @@ async def test_postgres():
 
 # return first limit entries in leaderboard 
 @app.get("/leaderboard")
-async def get_leaderboard(limit: Optional[int] = None):
+async def get_leaderboard(limit=None):
     conn = get_db_conn()
     try:
         with conn.cursor() as cur:
