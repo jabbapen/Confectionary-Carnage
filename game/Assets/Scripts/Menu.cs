@@ -36,11 +36,4 @@ public class Menu : MonoBehaviour
     public void UnpauseGame() {
         Time.timeScale = 1;
     }
-
-    // SFX
-    public void PlaySound(AudioSource sound) {
-        sound.Play();
-    }
-
-
 }
