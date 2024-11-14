@@ -9,31 +9,35 @@ public class Menu : MonoBehaviour
     public string game; 
 
     // play/transition scene + quit
-    public void LoadScene ()
+    public void LoadScene()
     {
         SceneManager.LoadScene(game);
     }
 
-    public void Quit ()
+    public void Quit() 
     {
         Application.Quit();
     }
 
     // open + close options menu
-    public void OpenOptions() {
+    public void OpenOptions() 
+    {
         panel.SetActive(true);
     }
 
-    public void CloseOptions() {
+    public void CloseOptions() 
+    {
         panel.SetActive(false);
     }
 
     // pause + unpause
-    public void PauseGame() {
+    public void PauseGame() 
+    {
         Time.timeScale = 0;
     }
 
-    public void UnpauseGame() {
+    public void UnpauseGame() 
+    {
         Time.timeScale = 1;
     }
 }
