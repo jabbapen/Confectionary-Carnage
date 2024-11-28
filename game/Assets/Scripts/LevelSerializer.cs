@@ -9,6 +9,7 @@ public class LevelSerializer : MonoBehaviour
     [SerializeField] GameObject debugSerialize;
     [SerializeField] string debugDeserialize;
     [SerializeField] GameObject debugTarget;
+    [SerializeField] int playerSpawnIndex = -1;
 
     private Dictionary<int, int> itemIdToIndexMap = new Dictionary<int, int>();
     ObjectIndex gameObjectList;
@@ -57,7 +58,11 @@ public class LevelSerializer : MonoBehaviour
     {
         LoadGameObjectList();
         if (debugSerialize) SaveField(debugSerialize);
-        if (debugTarget) LoadField(debugDeserialize, debugTarget);
+        // if (debugTarget) LoadField(debugDeserialize, debugTarget);
+        if (playerSpawnIndex == -1)
+        {
+            Debug.LogError("WARNING: playerSpawnIndex is set to -1, meaning no objects registered in our game object list is considered a spawnpoint - Player will not spawn!");
+        }
     }
 
     int GetIndexFromItemId(int itemId)
@@ -105,7 +110,7 @@ public class LevelSerializer : MonoBehaviour
         Debug.Log(sb.ToString());
     }
 
-    public void LoadField(string data, GameObject parent)
+    public void LoadField(string data, GameObject parent, Transform playerTransform)
     {
         // Split the input string into individual object data blocks (split by '%')
         string[] objectDataBlocks = data.Split(new[] { '%' }, System.StringSplitOptions.RemoveEmptyEntries);
@@ -124,12 +129,23 @@ public class LevelSerializer : MonoBehaviour
                 // Look up the corresponding GameObject index from the id using the itemIdToIndexMap
                 if (itemIdToIndexMap.TryGetValue(id, out int index))
                 {
-                    // Instantiate the GameObject from the GameObjectList at the index
-                    GameObject prefab = gameObjectList.objects[index];
-                    GameObject newObj = Instantiate(prefab, parent.transform);
+                    Transform tr;
 
-                    // Retrieve its Transform component
-                    Transform tr = newObj.transform;
+                    if (id == playerSpawnIndex)  // Don't spawn if we have a player spawnpoint, move the player instead
+                    {
+                        tr = playerTransform;
+                        tr.parent = parent.transform;
+                    } else
+                    {
+                        // Instantiate the GameObject from the GameObjectList at the index
+                        GameObject prefab = gameObjectList.objects[index];
+                        GameObject newObj = Instantiate(prefab, parent.transform);
+                        // Retrieve its Transform component
+
+                        tr = newObj.transform;
+                    }
+
+                    
 
                     // Set local position, rotation, and scale based on the parsed data
                     tr.localPosition = new Vector3(
@@ -149,6 +165,11 @@ public class LevelSerializer : MonoBehaviour
                         int.Parse(fields[8]),  // Scale Y
                         int.Parse(fields[9])   // Scale Z
                     );
+
+                    if (id == playerSpawnIndex)  // deparent player
+                    {
+                        tr.parent = null;
+                    }
                 }
                 else
                 {
