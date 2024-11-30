@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: TestObjectIndex
   m_EditorClassIdentifier: 
   objects:
-  - {fileID: 270816906530354195, guid: 0ba0bb01fe3cdb645b33cc7726e66bee, type: 3}
-  - {fileID: 7699980725854138615, guid: f65c577a008d81648bcd00f9d858980e, type: 3}
+  - {fileID: 8877255380285337129, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
+  - {fileID: 1965688490123937115, guid: 2746c01c86f375d4c9191fe29dd403df, type: 3}
+  - {fileID: 1965688490123937115, guid: 51b2102f1bcf58f4c8ade22bb0ac65f0, type: 3}
+  - {fileID: 1965688490123937115, guid: 4f03320fd70692b46bb5a6f0bdc3eb88, type: 3}
+  - {fileID: 1965688490123937115, guid: bdef655d8bd59eb409ebd977c43d74c7, type: 3}
+  - {fileID: 130514901361270336, guid: d2f03984e7e741d4b8d698cb2cef39d0, type: 3}
