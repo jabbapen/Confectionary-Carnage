@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    [SerializeField] public int MaxHealth;
-    private bool dying;
+    [SerializeField] public int MaxHealth = 3;
+    private bool dying = false;
     public bool Dying { get {return dying;} }
 
-    private int health;
+    [SerializeField] private int health;
     public int Health {
         get { return health; }
         set { 
+            health = value;
             dying = health <= 0;
-            health = Health;
         }
     }
 

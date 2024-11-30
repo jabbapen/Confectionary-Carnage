@@ -3,11 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
+
+[RequireComponent(typeof(HealthManager))]
+[RequireComponent(typeof(NavMeshAgent))]
 public class EnemyManager : MonoBehaviour
 {
     [SerializeField] private float repathCD = 0.2f;
-    [SerializeField] private float aggroRadius = 3f;
+    [SerializeField] private float aggroRadius = 10f;
 
     [SerializeField] private float attackCD = 1f;
 
@@ -21,11 +25,13 @@ public class EnemyManager : MonoBehaviour
     // Start is called before the first frame update
     private PlayerController player;
     private Rigidbody2D rb;
-    private UnityEngine.AI.NavMeshAgent agent;
+    private NavMeshAgent agent;
     void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+		agent.updateUpAxis = false;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -36,8 +42,12 @@ public class EnemyManager : MonoBehaviour
     
     void FixedUpdate()
     {
+        if (player == null)
+            return;
+
         // Handle movement
         // TODO: check for line of sight?
+
         if (Vector2.Distance(transform.position, player.transform.position) < aggroRadius && repathTime <= 0)
         {
             if (!agent.pathPending)
@@ -55,16 +65,14 @@ public class EnemyManager : MonoBehaviour
         if (Vector2.Distance(transform.position, player.transform.position) < attackRadius)
         {
             attackDelay += Time.deltaTime;
-            if (attackDelay > 0.25f)
+            if (attackDelay > 0.25f && attackTime <= 0)
+            {
                 attack(player.transform.position);
-            attackTime = attackCD;
+                attackTime = attackCD;
+                attackDelay = 0;
+            }
         }
-        else
-        {
-            attackDelay = 0;
-            attackTime -= Time.deltaTime;
-        }
-
+        attackTime = Math.Max(attackTime - Time.deltaTime, 0);
     }
     void attack(Vector2 direction)
     {

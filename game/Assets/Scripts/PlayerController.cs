@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(HealthManager))]
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;         // Maximum speed for player movement
