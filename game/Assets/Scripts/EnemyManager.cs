@@ -3,18 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
+
+[RequireComponent(typeof(HealthManager))]
+[RequireComponent(typeof(NavMeshAgent))]
 public class EnemyManager : MonoBehaviour
 {
-    [SerializeField] private UnityEngine.AI.NavMeshAgent agent;
-
     [SerializeField] private float repathCD = 0.2f;
-    [SerializeField] private float aggroRadius = 3f;
+    [SerializeField] private float aggroRadius = 10f;
 
     [SerializeField] private float attackCD = 1f;
 
     [SerializeField] private float attackRadius = 1f;
-    [SerializeField] private float agentSpeed = 1f;
+    [SerializeField] private int attackDamage = 1;
 
     private float attackDelay = 0f;
     private float repathTime = 0f;
@@ -22,9 +24,15 @@ public class EnemyManager : MonoBehaviour
 
     // Start is called before the first frame update
     private PlayerController player;
+    private Rigidbody2D rb;
+    private NavMeshAgent agent;
     void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+		agent.updateUpAxis = false;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -34,8 +42,12 @@ public class EnemyManager : MonoBehaviour
     
     void FixedUpdate()
     {
+        if (player == null)
+            return;
+
         // Handle movement
         // TODO: check for line of sight?
+
         if (Vector2.Distance(transform.position, player.transform.position) < aggroRadius && repathTime <= 0)
         {
             if (!agent.pathPending)
@@ -53,27 +65,26 @@ public class EnemyManager : MonoBehaviour
         if (Vector2.Distance(transform.position, player.transform.position) < attackRadius)
         {
             attackDelay += Time.deltaTime;
-            if (attackDelay > 0.25f)
+            if (attackDelay > 0.25f && attackTime <= 0)
+            {
                 attack(player.transform.position);
-            attackTime = attackCD;
+                attackTime = attackCD;
+                attackDelay = 0;
+            }
         }
-        else
-        {
-            attackDelay = 0;
-            attackTime -= Time.deltaTime;
-        }
-
+        attackTime = Math.Max(attackTime - Time.deltaTime, 0);
     }
     void attack(Vector2 direction)
     {
         List<RaycastHit2D> hits = new List<RaycastHit2D>();
         Physics2D.CircleCast(transform.position, attackRadius/2, direction, new ContactFilter2D(), hits, attackRadius/2);
-        HealthManager other;
+        HealthManager hitHealth;
         foreach (var hit in hits)
         {
-            if (hit.collider.gameObject.TryGetComponent(out other))
+            if (hit.collider.gameObject.TryGetComponent(out hitHealth) && !hitHealth.CompareTag(tag))
             {
                 Debug.Log("Hit another entity");
+                hitHealth.Health -= attackDamage;
             }
         }
     }
