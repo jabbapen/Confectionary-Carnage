@@ -8,6 +8,7 @@ import psycopg2
 
 app = FastAPI()
 
+
 # utility classes/methods
 class LeaderboardModel(BaseModel):
     name: str
@@ -20,7 +21,7 @@ class LevelModel(BaseModel):
 
 # added to minimize code bloat
 def get_db_conn():
-    try: 
+    try:
         return psycopg2.connect(
             host=os.getenv("PG_HOST"),
             port=os.getenv("PG_PORT"),
@@ -31,7 +32,8 @@ def get_db_conn():
     except psycopg2.Error as e:
         raise HTTPException(500, "DB conn error")
 
-def init_leaderboard(conn): 
+
+def init_leaderboard(conn):
     try:
         with conn.cursor() as cur:
             leaderboard_query = """
@@ -42,8 +44,8 @@ def init_leaderboard(conn):
             );
             """
             cur.execute(leaderboard_query)
-            conn.commit() 
-    except Exception: 
+            conn.commit()
+    except Exception:
         raise HTTPException(400, "Failed to create leaderboard table")
     
 def init_levels(conn): 
@@ -62,6 +64,7 @@ def init_levels(conn):
     except Exception: 
         raise HTTPException(400, "Failed to create level table")
 
+
 @app.on_event("startup")
 def startup():
     conn = get_db_conn()
@@ -69,9 +72,11 @@ def startup():
     init_levels(conn)
     conn.close()
 
+
 @app.get("/")
 async def hello_world():
     return "Hey does my pipeline automatically update my change?"
+
 
 @app.get("/test-postgres")
 async def test_postgres():
@@ -84,7 +89,8 @@ async def test_postgres():
 
     return {"statusCode": 200, "body": result[0]}
 
-# return first limit entries in leaderboard 
+
+# return first limit entries in leaderboard
 @app.get("/leaderboard")
 async def get_leaderboard(limit=None):
     conn = get_db_conn()
@@ -101,20 +107,25 @@ async def get_leaderboard(limit=None):
             else:
                 cur.execute(query)
             result = cur.fetchall()
-            leaderboard = [{"name": row[0], "score": row[1]} for row in result]  
-            return {"statusCode": 200, "message": "Fetched leaderboard successfully", "data": leaderboard}
+            leaderboard = [{"name": row[0], "score": row[1]} for row in result]
+            return {
+                "statusCode": 200,
+                "message": "Fetched leaderboard successfully",
+                "data": leaderboard,
+            }
     except psycopg2.Error:
         raise HTTPException(500, "DB Connection Error")
-    except Exception: 
+    except Exception:
         raise HTTPException(400, "Generic error")
     finally:
         if conn is not None:
             conn.close()
 
+
 # add item to leaderboard
 @app.post("/leaderboard")
 async def add_to_leaderboard(entry: LeaderboardModel):
-    conn = get_db_conn() 
+    conn = get_db_conn()
     try:
         with conn.cursor() as cur:
             query = """
@@ -124,11 +135,15 @@ async def add_to_leaderboard(entry: LeaderboardModel):
             cur.execute(query, (entry.name, entry.score))
             conn.commit()
 
-            return {"statusCode": 200, "message": "Entry added to leaderboard table successfully.", "data": entry}
+            return {
+                "statusCode": 200,
+                "message": "Entry added to leaderboard table successfully.",
+                "data": entry,
+            }
     except psycopg2.Error:
         conn.rollback()
         raise HTTPException(500, "DB Connection Error")
-    except Exception: 
+    except Exception:
         conn.rollback()
         raise HTTPException(400, "Generic error")
     finally:
@@ -186,7 +201,7 @@ async def add_levels(entry: LevelModel):
             conn.close()
 
 
-handler = Mangum(app, lifespan="off")
+handler = Mangum(app)
 
 if __name__ == "__main__":
     uvicorn_app = f"{os.path.basename(__file__).removesuffix('.py')}:app"
