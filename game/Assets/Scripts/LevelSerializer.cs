@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class LevelSerializer : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class LevelSerializer : MonoBehaviour
     [SerializeField] string debugDeserialize;
     [SerializeField] GameObject debugTarget;
     [SerializeField] int playerSpawnIndex = -1;
+
+    private string levelsAPI = "http://localhost:8000/levels"; // CHANGE THIS TO AWS DEPLOYMENT
 
     private Dictionary<int, int> itemIdToIndexMap = new Dictionary<int, int>();
     ObjectIndex gameObjectList;
@@ -108,6 +111,8 @@ public class LevelSerializer : MonoBehaviour
         }
 
         Debug.Log(sb.ToString());
+
+        // StartCoroutine(UploadLevel(sb.ToString())); // uncomment this when you want to test uploading a level
     }
 
     public void LoadField(string data, GameObject parent, Transform playerTransform)
@@ -183,4 +188,61 @@ public class LevelSerializer : MonoBehaviour
         }
     }
 
+    // API CALLS
+    IEnumerator UploadLevel(string serializedLevel)
+    {
+        LevelModel levelData = new LevelModel
+        {
+            level_name = "Test Level",
+            author = "UnityUser",
+            serialized_level = serializedLevel 
+        };
+        string json = JsonUtility.ToJson(levelData);
+
+        // Create the POST request
+        using (UnityWebRequest www = UnityWebRequest.PostWwwForm(levelsAPI, json))
+        {
+            www.SetRequestHeader("Content-Type", "application/json");
+            byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(json);
+            www.uploadHandler = new UploadHandlerRaw(bodyRaw);
+            www.downloadHandler = new DownloadHandlerBuffer();
+
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError("Error: " + www.error);
+            }
+            else
+            {
+                Debug.Log("Post data: " + www.downloadHandler.text);
+            }
+        }
+    }
+
+    IEnumerator GetLevelData()
+    {
+        using (UnityWebRequest www = UnityWebRequest.Get(levelsAPI))
+        {
+            yield return www.SendWebRequest();
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError("Error: " + www.error);
+            }
+            else
+            {
+                string fieldData = www.downloadHandler.text;
+                Debug.Log("Get Data: " + fieldData);
+            }
+        }
+    }
+}
+
+// feel free to move this to a different file
+[System.Serializable]
+public class LevelModel
+{
+    public string level_name;
+    public string author;
+    public string serialized_level;
 }
