@@ -6,15 +6,13 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    [SerializeField] private UnityEngine.AI.NavMeshAgent agent;
-
     [SerializeField] private float repathCD = 0.2f;
     [SerializeField] private float aggroRadius = 3f;
 
     [SerializeField] private float attackCD = 1f;
 
     [SerializeField] private float attackRadius = 1f;
-    [SerializeField] private float agentSpeed = 1f;
+    [SerializeField] private int attackDamage = 1;
 
     private float attackDelay = 0f;
     private float repathTime = 0f;
@@ -22,9 +20,13 @@ public class EnemyManager : MonoBehaviour
 
     // Start is called before the first frame update
     private PlayerController player;
+    private Rigidbody2D rb;
+    private UnityEngine.AI.NavMeshAgent agent;
     void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -68,12 +70,13 @@ public class EnemyManager : MonoBehaviour
     {
         List<RaycastHit2D> hits = new List<RaycastHit2D>();
         Physics2D.CircleCast(transform.position, attackRadius/2, direction, new ContactFilter2D(), hits, attackRadius/2);
-        HealthManager other;
+        HealthManager hitHealth;
         foreach (var hit in hits)
         {
-            if (hit.collider.gameObject.TryGetComponent(out other))
+            if (hit.collider.gameObject.TryGetComponent(out hitHealth) && !hitHealth.CompareTag(tag))
             {
                 Debug.Log("Hit another entity");
+                hitHealth.Health -= attackDamage;
             }
         }
     }
