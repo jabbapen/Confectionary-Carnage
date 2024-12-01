@@ -24,7 +24,14 @@ public class LevelEditor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            SetSerializedString();
+            if (GameManager.Instance == null)
+            {
+                SetSerializedString();
+            }
+            else
+            {
+                GameManager.Instance.LevelSerializer.SaveField(tileMap.gameObject);
+            }
         }
                 
         if (Input.GetKeyDown(KeyCode.Alpha1)) { RequestBrush(TILE_BRICK); }

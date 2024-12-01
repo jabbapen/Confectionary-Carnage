@@ -145,8 +145,17 @@ public class LevelSerializer : MonoBehaviour
                         // Instantiate the GameObject from the GameObjectList at the index
                         GameObject prefab = gameObjectList.objects[index];
                         GameObject newObj = Instantiate(prefab, parent.transform);
-                        // Retrieve its Transform component
 
+                        // If we spawned a spawnpoint, replace with the enemy
+                        EnemySpawnpoint spawnpoint = newObj.GetComponent<EnemySpawnpoint>();
+                        if (spawnpoint)
+                        {
+                            GameObject enemyObj = spawnpoint.GetEnemy();
+                            Destroy(spawnpoint.gameObject);
+                            newObj = Instantiate(enemyObj, parent.transform);
+                        }
+
+                        // Retrieve its Transform component
                         tr = newObj.transform;
                     }
 

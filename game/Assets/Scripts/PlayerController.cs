@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
         // Set the target velocity based on the input and max speed
         targetVelocity = movement.normalized * moveSpeed;
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             GameManager.Instance.SetupLevel();
         }

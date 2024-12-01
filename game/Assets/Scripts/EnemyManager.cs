@@ -21,18 +21,26 @@ public class EnemyManager : MonoBehaviour
     private float attackDelay = 0f;
     private float repathTime = 0f;
     private float attackTime = 0f;
+    private bool startPathfinding;
 
     // Start is called before the first frame update
     private PlayerController player;
     private Rigidbody2D rb;
     private NavMeshAgent agent;
-    void Start()
+    void Awake()
     {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
 		agent.updateUpAxis = false;
+        agent.enabled = false;
         rb = GetComponent<Rigidbody2D>();
+        startPathfinding = false;
+        GameManager.GameStart.AddListener(OnGameStart);
+        if (GameManager.Instance == null)  // Debug mode
+        {
+            OnGameStart();
+        }
     }
 
     // Update is called once per frame
@@ -42,7 +50,7 @@ public class EnemyManager : MonoBehaviour
     
     void FixedUpdate()
     {
-        if (player == null)
+        if (player == null || agent.enabled == false)
             return;
 
         // Handle movement
@@ -87,5 +95,15 @@ public class EnemyManager : MonoBehaviour
                 hitHealth.Health -= attackDamage;
             }
         }
+    }
+
+    void OnGameStart()
+    {
+        agent.enabled = true;
+    }
+
+    public void ResetPath()
+    {
+        agent.ResetPath(); 
     }
 }

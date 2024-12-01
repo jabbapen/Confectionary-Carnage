@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3757055564579899433, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
+      propertyPath: id
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7177966430225652614, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -49,28 +53,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8852131740094192638, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-    - target: {fileID: 8852131740094192638, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
       propertyPath: m_Color.a
-      value: 1
+      value: 0.68235296
       objectReference: {fileID: 0}
     - target: {fileID: 8852131740094192638, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
       propertyPath: m_Color.b
-      value: 0.41736156
+      value: 0.7735849
       objectReference: {fileID: 0}
     - target: {fileID: 8852131740094192638, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
       propertyPath: m_Color.g
-      value: 0.4009434
+      value: 0.43909448
       objectReference: {fileID: 0}
     - target: {fileID: 8852131740094192638, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.31746176
       objectReference: {fileID: 0}
     - target: {fileID: 8877255380285337129, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
       propertyPath: m_Name
-      value: EndTile
+      value: WaterTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
