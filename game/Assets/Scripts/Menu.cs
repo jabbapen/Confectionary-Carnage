@@ -6,10 +6,9 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     public GameObject panel; 
-    public string game; 
 
     // play/transition scene + quit
-    public void LoadScene()
+    public void LoadScene(string game)
     {
         SceneManager.LoadScene(game);
     }
