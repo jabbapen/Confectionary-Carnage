@@ -27,10 +27,8 @@ public class SceneAudio : MonoBehaviour
     {
         audioManager.SetGSFXVol(vol); 
     }
-
     public void PlaySound(AudioSource sound) 
     {
         sound.Play();
     }
-
 }

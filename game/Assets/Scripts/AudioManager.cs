@@ -24,6 +24,7 @@ public class AudioManager : MonoBehaviour {
         }
         LoadSettings();
     }
+
     public void SetGMusicVol(float vol)
     {
         musicVol = vol;
