@@ -8,11 +8,11 @@ public class LevelSerializer : MonoBehaviour
 {
     [SerializeField] string resourcePath;
     [SerializeField] GameObject debugSerialize;
-    [SerializeField] string debugDeserialize;
+    [SerializeField] string debugSerialUpload;
     [SerializeField] GameObject debugTarget;
     [SerializeField] int playerSpawnIndex = -1;
 
-    private string levelsAPI = "http://localhost:8000/levels"; // CHANGE THIS TO AWS DEPLOYMENT
+    private string levelsAPI = "https://lfrxfpetdl3dxlsfilviejg5kq0iruki.lambda-url.us-west-1.on.aws/levels"; // CHANGE THIS TO AWS DEPLOYMENT
 
     private Dictionary<int, int> itemIdToIndexMap = new Dictionary<int, int>();
     ObjectIndex gameObjectList;
@@ -61,11 +61,12 @@ public class LevelSerializer : MonoBehaviour
     {
         LoadGameObjectList();
         if (debugSerialize) SaveField(debugSerialize);
-        // if (debugTarget) LoadField(debugDeserialize, debugTarget);
         if (playerSpawnIndex == -1)
         {
             Debug.LogError("WARNING: playerSpawnIndex is set to -1, meaning no objects registered in our game object list is considered a spawnpoint - Player will not spawn!");
         }
+
+        if (debugSerialUpload.Length > 0) StartCoroutine(UploadLevel(debugSerialUpload));
     }
 
     int GetIndexFromItemId(int itemId)
@@ -110,9 +111,8 @@ public class LevelSerializer : MonoBehaviour
             sb.Append('%');
         }
 
-        Debug.Log(sb.ToString());
-
-        // StartCoroutine(UploadLevel(sb.ToString())); // uncomment this when you want to test uploading a level
+        // Debug.Log(sb.ToString());
+        StartCoroutine(UploadLevel(sb.ToString())); // uncomment this when you want to test uploading a level
     }
 
     public void LoadField(string data, GameObject parent, Transform playerTransform)
@@ -245,13 +245,4 @@ public class LevelSerializer : MonoBehaviour
             }
         }
     }
-}
-
-// feel free to move this to a different file
-[System.Serializable]
-public class LevelModel
-{
-    public string level_name;
-    public string author;
-    public string serialized_level;
 }
