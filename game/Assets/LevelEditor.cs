@@ -37,7 +37,7 @@ public class LevelEditor : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1)) { RequestBrush(TILE_BRICK); }
         if (Input.GetKeyDown(KeyCode.Alpha2)) { RequestBrush(TILE_WATER); }
         if (Input.GetKeyDown(KeyCode.Alpha3)) { RequestBrush(TILE_LAVA); }
-        //if (Input.GetKeyDown(KeyCode.Alpha4)) { RequestBrush(startPlaced); }
+        if (Input.GetKeyDown(KeyCode.Alpha4)) { RequestBrush(TILE_END); }
 
         if (Input.GetKeyDown(KeyCode.Alpha0)) { RequestBrush(TILE_START); }
     }

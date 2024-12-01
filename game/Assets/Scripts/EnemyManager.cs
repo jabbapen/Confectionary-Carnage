@@ -21,7 +21,6 @@ public class EnemyManager : MonoBehaviour
     private float attackDelay = 0f;
     private float repathTime = 0f;
     private float attackTime = 0f;
-    private bool startPathfinding;
 
     // Start is called before the first frame update
     private PlayerController player;
@@ -35,7 +34,6 @@ public class EnemyManager : MonoBehaviour
 		agent.updateUpAxis = false;
         agent.enabled = false;
         rb = GetComponent<Rigidbody2D>();
-        startPathfinding = false;
         GameManager.GameStart.AddListener(OnGameStart);
         if (GameManager.Instance == null)  // Debug mode
         {

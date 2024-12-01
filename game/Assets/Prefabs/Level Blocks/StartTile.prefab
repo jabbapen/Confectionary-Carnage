@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8360461143775577068, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.28866667
+      objectReference: {fileID: 0}
     - target: {fileID: 8852131740094192638, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -76,8 +80,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartTile
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8360461143775577068, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8877255380285337129, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1460606558835198652}
   m_SourcePrefab: {fileID: 100100000, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
+--- !u!1 &1965688490123937115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8877255380285337129, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
+  m_PrefabInstance: {fileID: 6950707858086062962}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1460606558835198652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965688490123937115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb3669d6a36f124ca4f979b1cfdb36e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
