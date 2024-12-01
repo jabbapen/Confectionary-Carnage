@@ -12,7 +12,6 @@ public class Projectile : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("ENTERED");
         HealthManager otherHealth;
         if (!other.gameObject.CompareTag(tag) && 
             other.gameObject.TryGetComponent(out otherHealth))
