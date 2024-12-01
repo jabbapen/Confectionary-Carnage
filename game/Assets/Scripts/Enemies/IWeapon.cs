@@ -4,8 +4,9 @@ using UnityEngine;
 
 public abstract class IWeapon : MonoBehaviour
 {
-    [SerializeField] private float Cooldown;
-    [SerializeField] private float Range;
+    [SerializeField] protected float attackCD;
+    [SerializeField] public float attackRange;
+    [SerializeField] protected int attackDamage = 1;
     abstract public bool Ready();
     abstract public bool Usable(GameObject target);
     abstract public IEnumerator Use(GameObject target);

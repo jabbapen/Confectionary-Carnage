@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,6 +10,7 @@ public class EnemyManager : MonoBehaviour
 {
     [SerializeField] private float repathCD = 0.2f;
     [SerializeField] private float aggroRadius = 10f;
+    [SerializeField] private float moveSlop = 0.8f;
 
     private float repathTime = 0f;
     private bool startPathfinding;
@@ -45,18 +43,22 @@ public class EnemyManager : MonoBehaviour
         if (player == null || agent.enabled == false)
             return;
 
-        // Handle movement
-        // TODO: check for line of sight?
-
-        // updatePathing();
-        // tryAttack();
-        if (Vector2.Distance(transform.position, player.transform.position) < aggroRadius && repathTime <= 0)
+        float playerDistance = Vector2.Distance(transform.position, player.transform.position);
+        if (playerDistance < aggroRadius && 
+            repathTime <= 0 &&
+            !agent.pathPending)
         {
-            if (!agent.pathPending)
+            // if too close or weapon not ready, move away
+            if (!weapon.Ready() || (playerDistance < weapon.attackRange*0.6))
+            {
+                Vector2 targetPosition = (player.transform.position - transform.position).normalized * -2f;
+                agent.SetDestination(targetPosition);
+            }
+            else if (Vector2.Distance(transform.position, player.transform.position) > weapon.attackRange)
             {
                 agent.SetDestination(player.transform.position);
-                repathTime = repathCD;
             }
+            repathTime = repathCD;
         }
         else 
         {
