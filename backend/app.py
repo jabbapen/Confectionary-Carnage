@@ -156,13 +156,14 @@ async def add_to_leaderboard(entry: LeaderboardModel):
 
 # return first limit entries in levels
 @app.get("/levels")
-async def get_levels(limit=None):
+async def get_random_levels(limit=None):
     conn = get_db_conn()
     try:
         with conn.cursor() as cur:
             query = """
                 SELECT level_name, author, serialized_level
                 FROM levels
+                ORDER BY RANDOM()
             """
             if limit is not None:
                 query += " LIMIT %s"
@@ -176,7 +177,7 @@ async def get_levels(limit=None):
             ]
             return {
                 "statusCode": 200,
-                "message": "Fetched levels successfully",
+                "message": "Fetched random levels successfully",
                 "data": levels,
             }
     except psycopg2.Error:
@@ -186,6 +187,7 @@ async def get_levels(limit=None):
     finally:
         if conn is not None:
             conn.close()
+
 
 
 # add item to levels
