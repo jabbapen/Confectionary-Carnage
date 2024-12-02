@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangedWeapon : IWeapon
+public class ExplodeWeapon : IWeapon
 {
     private float attackTimer = 0f;
     public GameObject projectilePrefab;
@@ -23,7 +23,7 @@ public class RangedWeapon : IWeapon
 
         // spawn a projectile
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-        projectile.transform.up = PlayerController.trfm.position - transform.position;
+        projectile.GetComponent<Projectile>().Direction = target.transform.position - transform.position;
         attackTimer = attackCD;
     }
 

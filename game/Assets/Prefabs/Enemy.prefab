@@ -141,6 +141,8 @@ MonoBehaviour:
   repathCD: 0.2
   aggroRadius: 10
   moveSlop: 0.8
+  isCottonCandy: 0
+  deathFX: {fileID: 7795080843096613936, guid: 2ad79ad30451bf94aa523d1214826b20, type: 3}
 --- !u!50 &1157048514028188258
 Rigidbody2D:
   serializedVersion: 4

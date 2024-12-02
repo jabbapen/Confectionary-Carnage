@@ -26,8 +26,7 @@ public class Bullet : MonoBehaviour
             if (col.gameObject.layer == 7)
             {
                 HealthManager otherHealth;
-                if (!col.gameObject.CompareTag(tag) &&
-                    col.gameObject.TryGetComponent(out otherHealth))
+                if (col.gameObject.TryGetComponent(out otherHealth))
                 {
                     otherHealth.Health -= damage;
                 }

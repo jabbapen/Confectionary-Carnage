@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7225934142715364084}
   - component: {fileID: 5758029258827211226}
   - component: {fileID: 6614578913753460950}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RangedEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -141,6 +141,8 @@ MonoBehaviour:
   repathCD: 0.2
   aggroRadius: 10
   moveSlop: 0.8
+  isCottonCandy: 0
+  deathFX: {fileID: 7795080843096613936, guid: 2ad79ad30451bf94aa523d1214826b20, type: 3}
 --- !u!50 &7225934142715364084
 Rigidbody2D:
   serializedVersion: 4

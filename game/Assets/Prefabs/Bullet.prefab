@@ -4930,7 +4930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1b4036d47545e4aa7d8e70bfd68703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 1
   speed: 0.2
   destroyFX: {fileID: 7795080843096613936, guid: 2ad79ad30451bf94aa523d1214826b20, type: 3}
 --- !u!58 &906181755035656159

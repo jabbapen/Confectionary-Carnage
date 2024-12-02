@@ -24,7 +24,7 @@ public class Projectile : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position += Time.deltaTime * velocity * direction;
+        transform.position += Time.deltaTime * velocity * transform.up;
         lifespan -= Time.deltaTime;
         if (lifespan <= 0) 
             Destroy(gameObject);

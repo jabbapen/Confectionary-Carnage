@@ -10,8 +10,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 130514901361270336, guid: d2f03984e7e741d4b8d698cb2cef39d0, type: 3}
       propertyPath: m_Name
-      value: EnemySpawnTile
+      value: EnemySpawnTile 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3230392599611622511, guid: d2f03984e7e741d4b8d698cb2cef39d0, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 9037036244746719915, guid: f93a27be08f513440a6259b7c2787b42, type: 3}
     - target: {fileID: 6903032079938236382, guid: d2f03984e7e741d4b8d698cb2cef39d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
