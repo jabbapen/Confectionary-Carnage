@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8360461143775577068, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8852131740094192638, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
       propertyPath: m_Color.a
       value: 0.68235296
@@ -72,8 +76,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterTile
       objectReference: {fileID: 0}
+    - target: {fileID: 8877255380285337129, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8877255380285337129, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3009551637481857403}
   m_SourcePrefab: {fileID: 100100000, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
+--- !u!1 &1965688490123937115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8877255380285337129, guid: 03c4a87184e26ac48a8d743bb413f139, type: 3}
+  m_PrefabInstance: {fileID: 6950707858086062962}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3009551637481857403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965688490123937115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0773b4d2fbb5bc4fbab443d04ceebcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

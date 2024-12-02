@@ -128,10 +128,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1.5
-  accelerationRate: 10
-  decelerationRate: 10
   bullet: {fileID: 5633839309160669848, guid: 6f15bd2b7c973f54aa41ad043912b8f4, type: 3}
   crosshair: {fileID: 0}
+  waterSpeed: 0.7
 --- !u!114 &5599972017468945451
 MonoBehaviour:
   m_ObjectHideFlags: 0

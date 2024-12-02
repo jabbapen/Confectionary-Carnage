@@ -285,6 +285,7 @@ MonoBehaviour:
   moveSpeed: 5
   bullet: {fileID: 0}
   crosshair: {fileID: 0}
+  waterSpeed: 0
 --- !u!212 &115884382
 SpriteRenderer:
   m_ObjectHideFlags: 0
