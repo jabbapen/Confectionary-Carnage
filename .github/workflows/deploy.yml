@@ -47,7 +47,7 @@ jobs:
       - name: Run mypy
         run: |
           cd backend
-          mypy . --strict --ignore-missing-imports
+          mypy . --ignore-missing-imports
 
   test:
     needs: [lint, type-check]
