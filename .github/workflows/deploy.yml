@@ -24,8 +24,9 @@ jobs:
 
       - name: Run Ruff
         run: |
-          ruff check ./backend
-          ruff format --check ./backend
+          cd backend
+          ruff check .
+          ruff format --check .
 
   test:
     needs: lint
