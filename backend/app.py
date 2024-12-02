@@ -84,7 +84,7 @@ async def hello_world() -> str:
 
 
 @app.get("/test-postgres")
-async def test_postgres() -> Dict[str, str]:
+async def test_postgres() -> Dict[str, Any]:
     conn = get_db_conn()
     try:
         with conn.cursor() as cur:
