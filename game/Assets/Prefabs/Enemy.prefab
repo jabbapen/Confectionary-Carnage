@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 4219532719453780374}
   - component: {fileID: 1157048514028188258}
   - component: {fileID: 1016717781622747571}
+  - component: {fileID: 1145063785944247526}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,9 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   repathCD: 0.2
   aggroRadius: 10
-  attackCD: 1
-  attackRadius: 1
-  attackDamage: 1
+  moveSlop: 0.8
 --- !u!50 &1157048514028188258
 Rigidbody2D:
   serializedVersion: 4
@@ -204,3 +203,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1145063785944247526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9037036244746719915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03116342769292f4d8aa9fab68265f14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCD: 1
+  attackRange: 2
+  attackDamage: 1
+  attackDelay: 0.5
