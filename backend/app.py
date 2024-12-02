@@ -29,7 +29,7 @@ def get_db_conn():
             password=os.getenv("PG_PASSWORD"),
             dbname=os.getenv("PG_DATABASE"),
         )
-    except psycopg2.Error as e:
+    except psycopg2.Error:
         raise HTTPException(500, "DB conn error")
 
 
