@@ -80,7 +80,7 @@ public class LevelSerializer : MonoBehaviour
         return -1;
     }
 
-    public void SaveField(GameObject parent)
+    public string SerializeLevel(GameObject parent)
     {
         StringBuilder sb = new StringBuilder();
         // Get all child objects with the Item class
@@ -111,8 +111,13 @@ public class LevelSerializer : MonoBehaviour
             sb.Append('%');
         }
 
+        return sb.ToString();
+    }
+
+    public void SaveField(GameObject parent)
+    {
         // Debug.Log(sb.ToString());
-        StartCoroutine(UploadLevel(sb.ToString())); // uncomment this when you want to test uploading a level
+        StartCoroutine(UploadLevel(SerializeLevel(parent))); // uncomment this when you want to test uploading a level
     }
 
     public void LoadField(string data, GameObject parent, Transform playerTransform)

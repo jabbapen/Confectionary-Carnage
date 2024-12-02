@@ -84,7 +84,7 @@ async def hello_world() -> str:
 
 
 @app.get("/test-postgres")
-async def test_postgres() -> Dict[str, str]:
+async def test_postgres() -> Dict[str, Any]:
     conn = get_db_conn()
     try:
         with conn.cursor() as cur:
@@ -92,7 +92,7 @@ async def test_postgres() -> Dict[str, str]:
             result = cur.fetchone()
             if result is None:
                 raise HTTPException(500, "No result from database")
-            return {"statusCode": "200", "body": result[0]}
+            return {"statusCode": 200, "body": result[0]}
     except psycopg2.Error:
         raise HTTPException(500, "DB Connection Error")
     except Exception as e:
