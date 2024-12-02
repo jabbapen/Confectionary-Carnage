@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using NavMeshPlus.Components;
 using UnityEngine.Events;
+using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
+
+[System.Serializable]
+public class ScoreModel
+{
+    public string name;
+    public int score;
+}
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +26,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] List<string> serializedLevels; 
 
     public LevelSerializer LevelSerializer { get { return levelSerializer; } }
+
+    string scoreAPI = "https://lfrxfpetdl3dxlsfilviejg5kq0iruki.lambda-url.us-west-1.on.aws/leaderboard";
+    int levelsBeat = 0;
 
     private void Awake()
     {
@@ -43,11 +55,26 @@ public class GameManager : MonoBehaviour
     {
         yield return levelRequester.QueryAllLevels();
         SetupLevel();
+        levelsBeat = 0;
+    }
+
+    public void EndGame()
+    {
+        StartCoroutine(TransitionOut());
+    }
+
+    IEnumerator TransitionOut()
+    {
+        Transition.Instance.HideScreen();
+        yield return UploadScore();
+        Transition.Instance.ShowScreen();
+        SceneManager.LoadScene("GameOver");
     }
 
     public void SetupLevel()
     {
         UnloadLevel();
+        levelsBeat++;
 
         // Fetch level 
         LevelModel level = levelRequester.GetLevel();
@@ -77,6 +104,35 @@ public class GameManager : MonoBehaviour
         {
             // Destroy each child GameObject
             Destroy(child.gameObject);
+        }
+    }
+    IEnumerator UploadScore()
+    {
+        ScoreModel scoreData = new ScoreModel
+        {
+            name = "Test",  // TODO: Change this to fetch the current player's name
+            score = levelsBeat
+        };
+        string json = JsonUtility.ToJson(scoreData);
+
+        // Create the POST request
+        using (UnityWebRequest www = UnityWebRequest.PostWwwForm(scoreAPI, json))
+        {
+            www.SetRequestHeader("Content-Type", "application/json");
+            byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(json);
+            www.uploadHandler = new UploadHandlerRaw(bodyRaw);
+            www.downloadHandler = new DownloadHandlerBuffer();
+
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError("Error: " + www.error);
+            }
+            else
+            {
+                Debug.Log("Post data: " + www.downloadHandler.text);
+            }
         }
     }
 
