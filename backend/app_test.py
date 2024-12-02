@@ -23,7 +23,7 @@ def cleanup_database():
         port="5433",
         user="test_user",
         password="test_password",
-        dbname="test_db"
+        dbname="test_db",
     )
 
     try:
@@ -36,6 +36,7 @@ def cleanup_database():
             conn.commit()
     finally:
         conn.close()
+
 
 @pytest.fixture
 def client():
@@ -88,10 +89,7 @@ def test_get_leaderboard_with_entry(client):
 
 
 def test_get_leaderboard_with_limit(client):
-    entries = [
-        {"name": f"user_{i}", "score": i * 100}
-        for i in range(5)
-    ]
+    entries = [{"name": f"user_{i}", "score": i * 100} for i in range(5)]
     for entry in entries:
         client.post("/leaderboard", json=entry)
 
@@ -113,7 +111,7 @@ def test_add_levels(client):
     payload = {
         "level_name": "test_level",
         "author": "test_author",
-        "serialized_level": "test_serialized_data"
+        "serialized_level": "test_serialized_data",
     }
     response = client.post("/levels", json=payload)
     assert response.status_code == 200
@@ -126,7 +124,7 @@ def test_get_levels_with_entry(client):
     payload = {
         "level_name": "test_level",
         "author": "test_author",
-        "serialized_level": "test_serialized_data"
+        "serialized_level": "test_serialized_data",
     }
     client.post("/levels", json=payload)
 
@@ -145,7 +143,7 @@ def test_get_levels_with_limit(client):
         {
             "level_name": f"level_{i}",
             "author": f"author_{i}",
-            "serialized_level": f"data_{i}"
+            "serialized_level": f"data_{i}",
         }
         for i in range(5)
     ]
