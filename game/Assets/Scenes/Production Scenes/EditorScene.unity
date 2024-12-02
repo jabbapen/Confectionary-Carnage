@@ -8491,6 +8491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileCursor: {fileID: 1715313452}
   tileMap: {fileID: 1270032981}
+  serializer: {fileID: 1442441296}
   origin: {x: 0, y: 0}
   tileSize: 1
   brushType: 0
@@ -9854,10 +9855,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6382374095301157360, guid: 15c16820d6d56a14989adbe4793559e9, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7170985131922122099, guid: 15c16820d6d56a14989adbe4793559e9, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -9895,6 +9892,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c16820d6d56a14989adbe4793559e9, type: 3}
+--- !u!114 &1442441296 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2043748174873521204, guid: 15c16820d6d56a14989adbe4793559e9, type: 3}
+  m_PrefabInstance: {fileID: 1442441295}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b153f6bd0408c14dac01b8324b40ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1474870456
 GameObject:
   m_ObjectHideFlags: 0
