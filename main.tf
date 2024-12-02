@@ -265,3 +265,63 @@ resource "aws_db_instance" "postgres" {
 output "api_url" {
   value = aws_lambda_function_url.api.function_url
 }
+
+resource "aws_s3_bucket" "webgl_build" {
+  bucket = "confectionary-carnage-webgl"
+  force_delete = true
+}
+
+
+resource "aws_s3_bucket_website_configuration" "webgl_build" {
+  bucket = aws_s3_bucket.webgl_build.id
+
+  index_document {
+    suffix = "index.html"
+  }
+}
+
+resource "aws_s3_bucket_public_access_block" "webgl_build" {
+  bucket = aws_s3_bucket.webgl_build.id
+
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
+}
+
+resource "aws_s3_bucket_policy" "webgl_build" {
+  bucket = aws_s3_bucket.webgl_build.id
+  depends_on = [aws_s3_bucket_public_access_block.webgl_build]
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Sid       = "PublicReadGetObject"
+        Effect    = "Allow"
+        Principal = "*"
+        Action    = "s3:GetObject"
+        Resource  = "${aws_s3_bucket.webgl_build.arn}/*"
+      },
+    ]
+  })
+}
+
+resource "null_resource" "upload_webgl_build" {
+  triggers = {
+    build_hash = md5(join("-", [for f in fileset("./build", "**/*") : filemd5("./build/${f}")]))
+  }
+
+  provisioner "local-exec" {
+    command = "aws s3 sync ./build s3://${aws_s3_bucket.webgl_build.bucket} --delete"
+  }
+
+  depends_on = [
+    aws_s3_bucket.webgl_build,
+    aws_s3_bucket_policy.webgl_build
+  ]
+}
+
+output "website_url" {
+  value = aws_s3_bucket_website_configuration.webgl_build.website_endpoint
+}
