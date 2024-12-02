@@ -127,11 +127,12 @@ locals {
 
 resource "null_resource" "image" {
   triggers = {
-    hash = md5(join("-", [for x in fileset("", "./{*.py,*.txt,Dockerfile, *.toml}") : filemd5(x)]))
+    hash = md5(join("-", [for x in fileset("", ".backend/{*.py,*.txt,Dockerfile, *.toml}") : filemd5(x)]))
   }
 
   provisioner "local-exec" {
     command = <<EOF
+      cd backend
       aws ecr get-login-password --region us-west-1 | docker login --username AWS --password-stdin ${local.repo_url}
       docker build --platform linux/amd64 -t ${local.repo_url}:latest .
       docker push ${local.repo_url}:latest

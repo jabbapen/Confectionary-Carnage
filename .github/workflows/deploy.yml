@@ -73,9 +73,7 @@ jobs:
         echo "aws_secret_access_key = $AWS_SECRET_ACCESS_KEY" >> ~/.aws/credentials
 
     - name: Terraform Init
-      run: |
-        cd backend
-        terraform init
+      run: terraform init
 
     - name: Terraform Plan
       env:
@@ -83,9 +81,7 @@ jobs:
         TF_VAR_pg_user: ${{ secrets.TF_VAR_PG_USER }}
         TF_VAR_pg_password: ${{ secrets.TF_VAR_PG_PASSWORD }}
         TF_VAR_pg_database: ${{ secrets.TF_VAR_PG_DATABASE }}
-      run: |
-        cd backend
-        terraform plan -out=tfplan
+      run: terraform plan -out=tfplan
 
     - name: Terraform Apply
       env:
@@ -94,6 +90,4 @@ jobs:
         TF_VAR_pg_password: ${{ secrets.TF_VAR_PG_PASSWORD }}
         TF_VAR_pg_database: ${{ secrets.TF_VAR_PG_DATABASE }}
       if: github.ref == 'refs/heads/main'
-      run: |
-        cd backend
-        terraform apply -auto-approve tfplan
+      run: terraform apply -auto-approve tfplan
