@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4003805004406053083}
   - component: {fileID: 3132344800612108539}
   m_Layer: 0
-  m_Name: BrickCursor
+  m_Name: EnemyCursor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: -59204917
   m_SortingLayer: 1
   m_SortingOrder: -450
-  m_Sprite: {fileID: 21300000, guid: 99110e303b860114a8b26de1ab538d60, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3fe757b9cd4ace444b369a6db5fbfbe1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.5254902}
   m_FlipX: 0
   m_FlipY: 0
