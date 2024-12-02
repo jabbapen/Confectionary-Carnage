@@ -1,3 +1,4 @@
+import psycopg2
 import pytest
 from fastapi.testclient import TestClient
 from app import app
@@ -13,6 +14,28 @@ def setup_test_env():
     os.environ["PG_PASSWORD"] = "test_password"
     os.environ["PG_DATABASE"] = "test_db"
 
+
+@pytest.fixture(scope="session", autouse=True)
+def cleanup_database():
+    # Connect to the database
+    conn = psycopg2.connect(
+        host="localhost",
+        port="5433",
+        user="test_user",
+        password="test_password",
+        dbname="test_db"
+    )
+
+    try:
+        with conn.cursor() as cur:
+            # Drop existing tables if they exist
+            cur.execute("""
+                DROP TABLE IF EXISTS leaderboard;
+                DROP TABLE IF EXISTS levels;
+            """)
+            conn.commit()
+    finally:
+        conn.close()
 
 @pytest.fixture
 def client():
