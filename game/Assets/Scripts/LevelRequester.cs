@@ -25,7 +25,7 @@ public class LevelRequester : MonoBehaviour
     [SerializeField] int preloadAmount = 3;
     List<LevelModel> serializedLevels = new List<LevelModel>();  // previously loadeed levels, used in case we can't load fast enough
 
-    private string levelsAPI = "https://lfrxfpetdl3dxlsfilviejg5kq0iruki.lambda-url.us-west-1.on.aws/levels"; // CHANGE THIS TO AWS DEPLOYMENT
+    private string levelsAPI = "https://jtxj7s3d3tz2ii2dv7ric3xqbi0ljjls.lambda-url.us-west-1.on.aws/levels"; // CHANGE THIS TO AWS DEPLOYMENT
     bool fetchingLevel = false;
 
     private void Start()
@@ -92,7 +92,7 @@ public class LevelRequester : MonoBehaviour
             return cur;
         } else
         {
-            return serializedLevels[Random.Range(0, serializedLevels.Count)];
+            return serializedLevels.Count > 0 ? serializedLevels[Random.Range(0, serializedLevels.Count)] : new LevelModel();
         }
         
     }

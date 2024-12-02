@@ -15,7 +15,7 @@ public class CursorObj : MonoBehaviour
         self = GetComponent<CursorObj>();
         trfm = transform;
     }
-
+    
     // Update is called once per frame
     void Update()
     {
