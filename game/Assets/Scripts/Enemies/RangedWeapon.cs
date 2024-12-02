@@ -23,7 +23,7 @@ public class RangedWeapon : IWeapon
 
         // spawn a projectile
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-        projectile.GetComponent<Projectile>().Direction = target.transform.position - transform.position;
+        projectile.transform.up = PlayerController.trfm.position - transform.position;
         attackTimer = attackCD;
     }
 

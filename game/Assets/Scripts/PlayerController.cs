@@ -6,13 +6,17 @@ using UnityEngine;
 [RequireComponent(typeof(HealthManager))]
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;         // Maximum speed for player movement
-    public float accelerationRate = 10f; // Rate of acceleration in units per second
-    public float decelerationRate = 10f; // Rate of deceleration in units per second
+    public float moveSpeed;         // player movement acceleration
     private Rigidbody2D rb;
     private Vector2 movement;
     private Vector2 targetVelocity;
 
+    public static Transform trfm;
+
+    private void Awake()
+    {
+        trfm = transform;
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -20,12 +24,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // Capture input from horizontal and vertical axes (WASD or Arrow Keys by default)
-        movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical");
-
-        // Set the target velocity based on the input and max speed
-        targetVelocity = movement.normalized * moveSpeed;
+        HandleShooting();
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -35,16 +34,60 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Determine if we're accelerating or decelerating
-        float rate = (movement.magnitude > 0) ? accelerationRate : decelerationRate;
+        Aim();
+        HandleCD();
 
-        // Smoothly move the current velocity towards the target velocity at a constant rate
-        rb.velocity = Vector2.MoveTowards(rb.velocity, targetVelocity, rate * Time.fixedDeltaTime);
+        // Capture input from horizontal and vertical axes (WASD or Arrow Keys by default)
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+
+        // Set the target velocity based on the input and max speed
+        rb.velocity += movement.normalized * moveSpeed;
     }
 
     void OnDisable()
     {
-        // Stop movement if the script is disabled to prevent unwanted momentum
-        rb.velocity = Vector2.zero;
+
     }
+
+    #region AIMING
+
+    [SerializeField] GameObject bullet;
+
+    [SerializeField] Transform crosshair;
+    int shootCD, bullets, bulletCD;
+
+    void HandleShooting()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            if (shootCD < 1)
+            {
+                Instantiate(bullet, transform.position, transform.rotation);
+                shootCD = 50;
+                bullets--;
+            }
+        }
+    }
+
+    void HandleCD()
+    {
+        if (shootCD > 0) { shootCD--; }    
+        if (bullets < 3)
+        {
+            bulletCD--;
+            if (bulletCD < 1)
+            {
+                bulletCD = 60;
+                bullets++;
+            }
+        }
+    }
+
+    void Aim()
+    {
+        transform.up = CursorObj.trfm.position - transform.position;
+    }
+
+#endregion
 }

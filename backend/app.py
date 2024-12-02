@@ -14,10 +14,12 @@ class LeaderboardModel(BaseModel):
     name: str
     score: int
 
+
 class LevelModel(BaseModel):
     level_name: str
     author: str
     serialized_level: str
+
 
 # added to minimize code bloat
 def get_db_conn():
@@ -29,7 +31,7 @@ def get_db_conn():
             password=os.getenv("PG_PASSWORD"),
             dbname=os.getenv("PG_DATABASE"),
         )
-    except psycopg2.Error as e:
+    except psycopg2.Error:
         raise HTTPException(500, "DB conn error")
 
 
@@ -47,8 +49,9 @@ def init_leaderboard(conn):
             conn.commit()
     except Exception:
         raise HTTPException(400, "Failed to create leaderboard table")
-    
-def init_levels(conn): 
+
+
+def init_levels(conn):
     try:
         with conn.cursor() as cur:
             level_query = """
@@ -60,8 +63,8 @@ def init_levels(conn):
             );
             """
             cur.execute(level_query)
-            conn.commit() 
-    except Exception: 
+            conn.commit()
+    except Exception:
         raise HTTPException(400, "Failed to create level table")
 
 
@@ -150,15 +153,17 @@ async def add_to_leaderboard(entry: LeaderboardModel):
         if conn is not None:
             conn.close()
 
+
 # return first limit entries in levels
 @app.get("/levels")
-async def get_levels(limit=None):
+async def get_random_levels(limit=None):
     conn = get_db_conn()
     try:
         with conn.cursor() as cur:
             query = """
                 SELECT level_name, author, serialized_level
                 FROM levels
+                ORDER BY RANDOM()
             """
             if limit is not None:
                 query += " LIMIT %s"
@@ -166,20 +171,28 @@ async def get_levels(limit=None):
             else:
                 cur.execute(query)
             result = cur.fetchall()
-            levels = [{"level_name": row[0], "author": row[1], "serialized_level": row[2]} for row in result]  
-            return {"statusCode": 200, "message": "Fetched levels successfully", "data": levels}
+            levels = [
+                {"level_name": row[0], "author": row[1], "serialized_level": row[2]}
+                for row in result
+            ]
+            return {
+                "statusCode": 200,
+                "message": "Fetched random levels successfully",
+                "data": levels,
+            }
     except psycopg2.Error:
         raise HTTPException(500, "DB Connection Error")
-    except Exception: 
+    except Exception:
         raise HTTPException(400, "Generic error")
     finally:
         if conn is not None:
             conn.close()
 
+
 # add item to levels
 @app.post("/levels")
 async def add_levels(entry: LevelModel):
-    conn = get_db_conn() 
+    conn = get_db_conn()
     try:
         with conn.cursor() as cur:
             query = """
@@ -189,11 +202,15 @@ async def add_levels(entry: LevelModel):
             cur.execute(query, (entry.level_name, entry.author, entry.serialized_level))
             conn.commit()
 
-            return {"statusCode": 200, "message": "Entry added to levels table successfully.", "data": entry}
+            return {
+                "statusCode": 200,
+                "message": "Entry added to levels table successfully.",
+                "data": entry,
+            }
     except psycopg2.Error:
         conn.rollback()
         raise HTTPException(500, "DB Connection Error")
-    except Exception: 
+    except Exception:
         conn.rollback()
         raise HTTPException(400, "Generic error")
     finally:

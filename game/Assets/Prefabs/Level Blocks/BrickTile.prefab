@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3757055564579899433}
   - component: {fileID: 4183689478517496286}
   - component: {fileID: 8360461143775577068}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BrickTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

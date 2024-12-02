@@ -12,6 +12,9 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private float aggroRadius = 10f;
     [SerializeField] private float moveSlop = 0.8f;
 
+    [SerializeField] bool isCottonCandy;
+    [SerializeField] GameObject deathFX;
+
     private float repathTime = 0f;
     private bool startPathfinding;
 
@@ -20,12 +23,14 @@ public class EnemyManager : MonoBehaviour
     private Rigidbody2D rb;
     private NavMeshAgent agent;
     private IWeapon weapon;
+    private HealthManager healthManager;
     void Awake()
     {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody2D>();
         weapon = GetComponent<IWeapon>();
+        healthManager = GetComponent<HealthManager>();
 
         agent.updateRotation = false;
 		agent.updateUpAxis = false;
@@ -68,8 +73,18 @@ public class EnemyManager : MonoBehaviour
         // if close, attack the player
         if (weapon.Ready() && weapon.Usable(player.gameObject))
         {
+            if (isCottonCandy)
+            {
+                healthManager.Health = 0;
+                return;
+            }
             StartCoroutine(weapon.Use(player.gameObject));
         }
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(deathFX, transform.position, Quaternion.identity);
     }
 
     void OnGameStart()

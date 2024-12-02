@@ -16,8 +16,10 @@ GameObject:
   - component: {fileID: 1157048514028188258}
   - component: {fileID: 1016717781622747571}
   - component: {fileID: 1145063785944247526}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MeleeEnemy
+  m_Layer: 7
+  m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,6 +143,8 @@ MonoBehaviour:
   repathCD: 0.2
   aggroRadius: 10
   moveSlop: 0.8
+  isCottonCandy: 0
+  deathFX: {fileID: 7795080843096613936, guid: 2ad79ad30451bf94aa523d1214826b20, type: 3}
 --- !u!50 &1157048514028188258
 Rigidbody2D:
   serializedVersion: 4

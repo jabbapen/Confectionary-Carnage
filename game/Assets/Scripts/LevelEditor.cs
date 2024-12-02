@@ -16,7 +16,11 @@ public class LevelEditor : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        self = GetComponent<LevelEditor>();
+        self = GetComponent<LevelEditor>();        
+    }
+
+    private void Start()
+    {
         RequestBrush(DEFAULT_BRUSH);
     }
 
@@ -55,25 +59,29 @@ public class LevelEditor : MonoBehaviour
 
     #region BRUSH_SELECTION
         
-    const int TILE_START = 0, TILE_END = 1, TILE_BRICK = 2, TILE_WATER = 3, TILE_LAVA = 4;
+    public const int TILE_START = 0, TILE_END = 1, TILE_BRICK = 2, TILE_WATER = 3, TILE_LAVA = 4, TILE_ENEMY = 5;
     public int brushType;
     const int DEFAULT_BRUSH = 2;
 
-    [SerializeField] GameObject cursorBrushObj;
+    [SerializeField] GameObject cursorObj;
+    [SerializeField] GameObject[] cursorObjs;
 
-    void RequestBrush(int id)
+    public void RequestBrush(int id)
     {
         if (id == TILE_START)
         {
             if (startPlaced)
             {
                 if (endPlaced) { return; }
-                else { brushType = TILE_END; }
+                else
+                {
+                    RequestBrush(TILE_END);
+                }
             }
             else
             {
                 if (endPlaced) { brushType = TILE_START; }
-                else if (brushType == TILE_START) { brushType = TILE_END; }                
+                else if (brushType == TILE_START) { RequestBrush(TILE_END); }
                 else { brushType = TILE_START; }
             }
         }
@@ -82,12 +90,9 @@ public class LevelEditor : MonoBehaviour
             brushType = id;
         }
 
-        if (cursorBrushObj)
-        {
-            Destroy(cursorBrushObj);
-            cursorBrushObj = Instantiate(tiles[brushType], tileCursor.position, Quaternion.identity);
-            cursorBrushObj.transform.parent = tileCursor;
-        }
+        if (cursorObj) { Destroy(cursorObj); }
+        cursorObj = Instantiate(cursorObjs[brushType], tileCursor.transform.position, Quaternion.identity);
+        cursorObj.transform.parent = tileCursor.transform;
     }
 
     #endregion
@@ -95,12 +100,13 @@ public class LevelEditor : MonoBehaviour
     #region DRAWING
 
     [SerializeField] GameObject[] tiles;
+    public static bool paletteHover;
     void HandleDrawing()
     {
         Vector2 tileCursorPos = new Vector2(Mathf.RoundToInt(CursorObj.trfm.position.x / tileSize) * tileSize, Mathf.RoundToInt(CursorObj.trfm.position.y / tileSize) * tileSize);
         tileCursor.position = tileCursorPos;
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !paletteHover)
         {
             PlaceTile(tileCursorPos);
         }
