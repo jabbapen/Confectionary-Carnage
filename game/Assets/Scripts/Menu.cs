@@ -47,7 +47,7 @@ public class Menu : MonoBehaviour
     public void PlayGame(string game) 
     {
         string input = usernameInput.text;
-        Debug.Log(input); 
+        // Debug.Log(input); 
         if (input == "" && PlayerPrefs.GetString("Username") == "") {
             errorText.SetActive(true); 
         }
