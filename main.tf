@@ -127,7 +127,7 @@ locals {
 
 resource "null_resource" "image" {
   triggers = {
-    hash = md5(join("-", [for x in fileset("", ".backend/{*.py,*.txt,Dockerfile, *.toml}") : filemd5(x)]))
+    hash = md5(join("-", [for x in fileset("", "./backend/{*.py,*.txt,Dockerfile, *.toml}") : filemd5(x)]))
   }
 
   provisioner "local-exec" {
