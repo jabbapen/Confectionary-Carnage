@@ -268,7 +268,6 @@ output "api_url" {
 
 resource "aws_s3_bucket" "webgl_build" {
   bucket = "confectionary-carnage-webgl"
-  force_delete = true
 }
 
 
