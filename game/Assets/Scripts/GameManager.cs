@@ -30,13 +30,19 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(levelRequester.QueryAllLevels());
+        StartCoroutine(SetupSystems());
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    IEnumerator SetupSystems()
+    {
+        yield return levelRequester.QueryAllLevels();
+        SetupLevel();
     }
 
     public void SetupLevel()
