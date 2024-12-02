@@ -90,7 +90,9 @@ def test_get_leaderboard_with_entry(client: TestClient) -> None:
 
 
 def test_get_leaderboard_with_limit(client: TestClient) -> None:
-    entries: list[dict[str, Any]] = [{"name": f"user_{i}", "score": i * 100} for i in range(5)]
+    entries: list[dict[str, Any]] = [
+        {"name": f"user_{i}", "score": i * 100} for i in range(5)
+    ]
     for entry in entries:
         client.post("/leaderboard", json=entry)
 
