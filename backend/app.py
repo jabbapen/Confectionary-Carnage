@@ -189,7 +189,6 @@ async def get_random_levels(limit=None):
             conn.close()
 
 
-
 # add item to levels
 @app.post("/levels")
 async def add_levels(entry: LevelModel):
