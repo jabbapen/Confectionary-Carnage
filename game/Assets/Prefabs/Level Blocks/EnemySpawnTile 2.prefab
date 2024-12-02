@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawnTile 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2963316564505145674, guid: d2f03984e7e741d4b8d698cb2cef39d0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3fe757b9cd4ace444b369a6db5fbfbe1, type: 3}
     - target: {fileID: 3230392599611622511, guid: d2f03984e7e741d4b8d698cb2cef39d0, type: 3}
       propertyPath: enemy
       value: 

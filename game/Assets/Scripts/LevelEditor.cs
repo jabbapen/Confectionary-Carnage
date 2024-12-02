@@ -28,7 +28,7 @@ public class LevelEditor : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) && startPlaced && endPlaced)
         {
             if (serializer == null)
             {
@@ -39,6 +39,12 @@ public class LevelEditor : MonoBehaviour
                 // TODO: Verification
                 StartCoroutine(TransitionOut());
             }
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            if (brushType == TILE_START) { RequestBrush(TILE_END); }            
+            else if (brushType == TILE_END) { RequestBrush(TILE_START); }
         }
                 
         if (Input.GetKeyDown(KeyCode.Alpha1)) { RequestBrush(TILE_BRICK); }
@@ -68,11 +74,23 @@ public class LevelEditor : MonoBehaviour
     #region CONSTRAINT_MANAGER
 
     bool startPlaced = false, endPlaced = false;
+    Vector2 start, end;
+
+    void RemoveStart()
+    {
+        if (!startPlaced) { startPlaced = true; return; }        
+        DeleteTile(start);
+    }
+    void RemoveEnd()
+    {
+        if (!endPlaced) { endPlaced = true; return; }        
+        DeleteTile(end);
+    }
 
     #endregion
 
     #region BRUSH_SELECTION
-        
+
     public const int TILE_START = 0, TILE_END = 1, TILE_BRICK = 2, TILE_WATER = 3, TILE_LAVA = 4, TILE_ENEMY = 5;
     public int brushType;
     const int DEFAULT_BRUSH = 2;
@@ -82,27 +100,7 @@ public class LevelEditor : MonoBehaviour
 
     public void RequestBrush(int id)
     {
-        if (id == TILE_START)
-        {
-            if (startPlaced)
-            {
-                if (endPlaced) { return; }
-                else
-                {
-                    RequestBrush(TILE_END);
-                }
-            }
-            else
-            {
-                if (endPlaced) { brushType = TILE_START; }
-                else if (brushType == TILE_START) { RequestBrush(TILE_END); }
-                else { brushType = TILE_START; }
-            }
-        }
-        else
-        {
-            brushType = id;
-        }
+        brushType = id;
 
         if (cursorObj) { Destroy(cursorObj); }
         cursorObj = Instantiate(cursorObjs[brushType], tileCursor.transform.position, Quaternion.identity);
@@ -121,8 +119,21 @@ public class LevelEditor : MonoBehaviour
         tileCursor.position = tileCursorPos;
 
         if (Input.GetMouseButton(0) && !paletteHover)
-        {
-            PlaceTile(tileCursorPos);
+        {            
+            if (brushType == TILE_START)
+            {
+                RemoveStart();
+                PlaceTile(tileCursorPos);
+                start = tileCursorPos;                
+            } else if (brushType == TILE_END)
+            {
+                RemoveEnd();
+                PlaceTile(tileCursorPos);
+                end = tileCursorPos;
+            } else
+            {
+                PlaceTile(tileCursorPos);
+            }
         }
         else if (Input.GetMouseButton(1))
         {
