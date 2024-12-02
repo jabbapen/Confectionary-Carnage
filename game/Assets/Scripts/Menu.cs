@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro; 
 
 public class Menu : MonoBehaviour
 {
+    public TMP_InputField usernameInput;
+    public GameObject errorText; 
     public GameObject panel; 
 
     // play/transition scene + quit
@@ -38,5 +42,19 @@ public class Menu : MonoBehaviour
     public void UnpauseGame() 
     {
         Time.timeScale = 1;
+    }
+
+    public void PlayGame(string game) 
+    {
+        string input = usernameInput.text;
+        // Debug.Log(input); 
+        if (input == "" && PlayerPrefs.GetString("Username") == "") {
+            errorText.SetActive(true); 
+        }
+        else {
+            PlayerPrefs.SetString("Username", input);  
+            PlayerPrefs.Save(); 
+            LoadScene(game);
+        }
     }
 }
