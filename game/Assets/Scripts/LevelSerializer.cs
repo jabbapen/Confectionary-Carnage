@@ -203,7 +203,7 @@ public class LevelSerializer : MonoBehaviour
         LevelModel levelData = new LevelModel
         {
             level_name = "Test Level",
-            author = "UnityUser",
+            author = PlayerPrefs.GetString("Username", "Unity User"),
             serialized_level = serializedLevel 
         };
         string json = JsonUtility.ToJson(levelData);

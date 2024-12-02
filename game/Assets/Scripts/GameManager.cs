@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
     {
         ScoreModel scoreData = new ScoreModel
         {
-            name = "Test",  // TODO: Change this to fetch the current player's name
+            name = PlayerPrefs.GetString("Username", "Unity User"), 
             score = levelsBeat
         };
         string json = JsonUtility.ToJson(scoreData);

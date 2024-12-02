@@ -3,11 +3,12 @@ import pytest
 from fastapi.testclient import TestClient
 from app import app
 import os
+from typing import Generator, Any
 
 
 # Set environment variables for test database
 @pytest.fixture(autouse=True)
-def setup_test_env():
+def setup_test_env() -> None:
     os.environ["PG_HOST"] = "localhost"
     os.environ["PG_PORT"] = "5433"
     os.environ["PG_USER"] = "test_user"
@@ -16,14 +17,14 @@ def setup_test_env():
 
 
 @pytest.fixture(scope="session", autouse=True)
-def cleanup_database():
+def cleanup_database() -> None:
     # Connect to the database
-    conn = psycopg2.connect(
+    conn: psycopg2.extensions.connection = psycopg2.connect(
         host="localhost",
         port="5433",
         user="test_user",
         password="test_password",
-        dbname="test_db"
+        dbname="test_db",
     )
 
     try:
@@ -37,26 +38,27 @@ def cleanup_database():
     finally:
         conn.close()
 
+
 @pytest.fixture
-def client():
+def client() -> Generator[TestClient, None, None]:
     """Fixture to initialize TestClient for FastAPI."""
     with TestClient(app) as test_client:
         yield test_client
 
 
-def test_hello_world(client):
+def test_hello_world(client: TestClient) -> None:
     response = client.get("/")
     assert response.status_code == 200
-    assert response.json() == "Hey does my pipeline automatically update my change?"
+    assert response.json() == "Confectionary Carnage Backend"
 
 
-def test_test_postgres(client):
+def test_test_postgres(client: TestClient) -> None:
     response = client.get("/test-postgres")
     assert response.status_code == 200
     assert response.json() == {"statusCode": 200, "body": "Hello, world!!"}
 
 
-def test_get_leaderboard_empty(client):
+def test_get_leaderboard_empty(client: TestClient) -> None:
     response = client.get("/leaderboard")
     assert response.status_code == 200
     assert "data" in response.json()
@@ -65,8 +67,8 @@ def test_get_leaderboard_empty(client):
     assert "message" in response.json()
 
 
-def test_add_to_leaderboard(client):
-    payload = {"name": "test_user", "score": 100}
+def test_add_to_leaderboard(client: TestClient) -> None:
+    payload: dict[str, Any] = {"name": "test_user", "score": 100}
     response = client.post("/leaderboard", json=payload)
     assert response.status_code == 200
     assert response.json()["statusCode"] == 200
@@ -74,8 +76,8 @@ def test_add_to_leaderboard(client):
     assert "message" in response.json()
 
 
-def test_get_leaderboard_with_entry(client):
-    payload = {"name": "test_user", "score": 100}
+def test_get_leaderboard_with_entry(client: TestClient) -> None:
+    payload: dict[str, Any] = {"name": "test_user", "score": 100}
     client.post("/leaderboard", json=payload)
 
     response = client.get("/leaderboard")
@@ -87,21 +89,20 @@ def test_get_leaderboard_with_entry(client):
     assert data[0]["score"] == payload["score"]
 
 
-def test_get_leaderboard_with_limit(client):
-    entries = [
-        {"name": f"user_{i}", "score": i * 100}
-        for i in range(5)
+def test_get_leaderboard_with_limit(client: TestClient) -> None:
+    entries: list[dict[str, Any]] = [
+        {"name": f"user_{i}", "score": i * 100} for i in range(5)
     ]
     for entry in entries:
         client.post("/leaderboard", json=entry)
 
-    limit = 3
+    limit: int = 3
     response = client.get(f"/leaderboard?limit={limit}")
     assert response.status_code == 200
     assert len(response.json()["data"]) <= limit
 
 
-def test_get_levels_empty(client):
+def test_get_levels_empty(client: TestClient) -> None:
     response = client.get("/levels")
     assert response.status_code == 200
     assert response.json()["statusCode"] == 200
@@ -109,11 +110,11 @@ def test_get_levels_empty(client):
     assert "message" in response.json()
 
 
-def test_add_levels(client):
-    payload = {
+def test_add_levels(client: TestClient) -> None:
+    payload: dict[str, Any] = {
         "level_name": "test_level",
         "author": "test_author",
-        "serialized_level": "test_serialized_data"
+        "serialized_level": "test_serialized_data",
     }
     response = client.post("/levels", json=payload)
     assert response.status_code == 200
@@ -122,11 +123,11 @@ def test_add_levels(client):
     assert "message" in response.json()
 
 
-def test_get_levels_with_entry(client):
-    payload = {
+def test_get_levels_with_entry(client: TestClient) -> None:
+    payload: dict[str, Any] = {
         "level_name": "test_level",
         "author": "test_author",
-        "serialized_level": "test_serialized_data"
+        "serialized_level": "test_serialized_data",
     }
     client.post("/levels", json=payload)
 
@@ -140,19 +141,19 @@ def test_get_levels_with_entry(client):
     assert data[0]["serialized_level"] == payload["serialized_level"]
 
 
-def test_get_levels_with_limit(client):
-    entries = [
+def test_get_levels_with_limit(client: TestClient) -> None:
+    entries: list[dict[str, Any]] = [
         {
             "level_name": f"level_{i}",
             "author": f"author_{i}",
-            "serialized_level": f"data_{i}"
+            "serialized_level": f"data_{i}",
         }
         for i in range(5)
     ]
     for entry in entries:
         client.post("/levels", json=entry)
 
-    limit = 3
+    limit: int = 3
     response = client.get(f"/levels?limit={limit}")
     assert response.status_code == 200
     assert len(response.json()["data"]) <= limit
