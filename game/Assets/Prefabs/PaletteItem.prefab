@@ -26,9 +26,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2674966098152013585}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6, y: -0.25, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 3}
+  m_LocalScale: {x: 0.875, y: 0.875, z: 1.75}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,6 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileID: 0
-  hoverDistance: 0.7
-  defaultSize: {x: 1.5, y: 1.5}
-  hoverSize: {x: 2.2, y: 2.2}
+  hoverDistance: 0.6
+  defaultSize: {x: 0.875, y: 0.875}
+  hoverSize: {x: 1.1, y: 1.1}
