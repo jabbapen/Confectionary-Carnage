@@ -161,6 +161,7 @@ async def add_to_leaderboard(entry: LeaderboardModel) -> Dict[str, Any]:
 @app.get("/levels")
 async def get_random_levels(limit: Optional[int] = None) -> Dict[str, Any]:
     conn = get_db_conn()
+    init_levels(conn)
     try:
         with conn.cursor() as cur:
             query = """
@@ -194,6 +195,7 @@ async def get_random_levels(limit: Optional[int] = None) -> Dict[str, Any]:
 @app.post("/levels")
 async def add_levels(entry: LevelModel) -> Dict[str, Any]:
     conn = get_db_conn()
+    init_levels(conn)
     try:
         with conn.cursor() as cur:
             query = """
