@@ -12,7 +12,7 @@ public class LevelSerializer : MonoBehaviour
     [SerializeField] GameObject debugTarget;
     [SerializeField] int playerSpawnIndex = -1;
 
-    private string levelsAPI = "https://lfrxfpetdl3dxlsfilviejg5kq0iruki.lambda-url.us-west-1.on.aws/levels"; // CHANGE THIS TO AWS DEPLOYMENT
+    private string levelsAPI = "https://jtxj7s3d3tz2ii2dv7ric3xqbi0ljjls.lambda-url.us-west-1.on.aws/levels"; // CHANGE THIS TO AWS DEPLOYMENT
 
     private Dictionary<int, int> itemIdToIndexMap = new Dictionary<int, int>();
     ObjectIndex gameObjectList;
