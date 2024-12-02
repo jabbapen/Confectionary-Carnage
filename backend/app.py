@@ -219,37 +219,6 @@ async def add_levels(entry: LevelModel) -> Dict[str, Any]:
     finally:
         conn.close()
 
-@app.delete("/drop-table/{table_name}")
-async def drop_table(table_name: str) -> Dict[str, Any]:
-    """
-    Endpoint to drop a table. Use with caution.
-    """
-    conn = get_db_conn()
-    try:
-        with conn.cursor() as cur:
-            # Validate table name to prevent SQL injection
-            allowed_tables = {"leaderboard", "levels"}  # List of safe tables to drop
-            if table_name not in allowed_tables:
-                raise HTTPException(400, f"Table {table_name} cannot be dropped.")
-
-            query = f"DROP TABLE IF EXISTS {table_name};"
-            cur.execute(query)
-            conn.commit()
-
-            return {
-                "statusCode": 200,
-                "message": f"Table {table_name} dropped successfully."
-            }
-    except psycopg2.Error:
-        conn.rollback()
-        raise HTTPException(500, "DB Connection Error")
-    except Exception as e:
-        conn.rollback()
-        raise HTTPException(400, f"Generic error: {e}")
-    finally:
-        conn.close()
-
-
 
 handler = Mangum(app)
 
