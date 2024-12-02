@@ -6,9 +6,13 @@ public class CursorObj : MonoBehaviour
 {
     public static Vector2 pos;
     public static Transform trfm;
+    public SpriteRenderer spriteRenderer;
+
+    public static CursorObj self;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        self = GetComponent<CursorObj>();
         trfm = transform;
     }
 
