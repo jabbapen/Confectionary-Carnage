@@ -1,17 +1,17 @@
 from http.client import HTTPException
-from typing import Optional, List, Dict, Any, Union
+from typing import Optional, Dict, Any
 from pydantic import BaseModel
 from fastapi import FastAPI
 from mangum import Mangum
 import uvicorn
 import os
 import psycopg2
-from psycopg2.extensions import connection, cursor
+from psycopg2.extensions import connection
 
 app = FastAPI()
 
 
-# utility classes/methods
+# Utility classes/models
 class LeaderboardModel(BaseModel):
     name: str
     score: int
@@ -23,7 +23,7 @@ class LevelModel(BaseModel):
     serialized_level: str
 
 
-# added to minimize code bloat
+# Utility functions
 def get_db_conn() -> connection:
     try:
         return psycopg2.connect(
@@ -33,8 +33,8 @@ def get_db_conn() -> connection:
             password=os.getenv("PG_PASSWORD"),
             dbname=os.getenv("PG_DATABASE"),
         )
-    except psycopg2.Error:
-        raise HTTPException(500, "DB conn error")
+    except psycopg2.Error as e:
+        raise HTTPException(500, f"DB connection error: {e}")
 
 
 def init_leaderboard(conn: connection) -> None:
@@ -49,8 +49,8 @@ def init_leaderboard(conn: connection) -> None:
             """
             cur.execute(leaderboard_query)
             conn.commit()
-    except Exception:
-        raise HTTPException(400, "Failed to create leaderboard table")
+    except Exception as e:
+        raise HTTPException(400, f"Failed to create leaderboard table: {e}")
 
 
 def init_levels(conn: connection) -> None:
@@ -66,8 +66,8 @@ def init_levels(conn: connection) -> None:
             """
             cur.execute(level_query)
             conn.commit()
-    except Exception:
-        raise HTTPException(400, "Failed to create level table")
+    except Exception as e:
+        raise HTTPException(400, f"Failed to create level table: {e}")
 
 
 @app.on_event("startup")
@@ -84,26 +84,23 @@ async def hello_world() -> str:
 
 
 @app.get("/test-postgres")
-async def test_postgres() -> Dict[str, Any]:
+async def test_postgres() -> Dict[str, str]:
     conn = get_db_conn()
     try:
-        cur = conn.cursor()
-        cur.execute("SELECT 'Hello, world!!'")
-        result = cur.fetchone()
-        if result is None:
-            raise HTTPException(500, "No result from database")
-        return {"statusCode": 200, "body": result[0]}
+        with conn.cursor() as cur:
+            cur.execute("SELECT 'Hello, world!!'")
+            result = cur.fetchone()
+            if result is None:
+                raise HTTPException(500, "No result from database")
+            return {"statusCode": "200", "body": result[0]}
     except psycopg2.Error:
         raise HTTPException(500, "DB Connection Error")
-    except Exception:
-        raise HTTPException(400, "Generic error")
+    except Exception as e:
+        raise HTTPException(400, f"Generic error: {e}")
     finally:
-        cur.close()
         conn.close()
 
 
-
-# return first limit entries in leaderboard
 @app.get("/leaderboard")
 async def get_leaderboard(limit: Optional[int] = None) -> Dict[str, Any]:
     conn = get_db_conn()
@@ -128,14 +125,12 @@ async def get_leaderboard(limit: Optional[int] = None) -> Dict[str, Any]:
             }
     except psycopg2.Error:
         raise HTTPException(500, "DB Connection Error")
-    except Exception:
-        raise HTTPException(400, "Generic error")
+    except Exception as e:
+        raise HTTPException(400, f"Generic error: {e}")
     finally:
-        if conn is not None:
-            conn.close()
+        conn.close()
 
 
-# add item to leaderboard
 @app.post("/leaderboard")
 async def add_to_leaderboard(entry: LeaderboardModel) -> Dict[str, Any]:
     conn = get_db_conn()
@@ -156,15 +151,13 @@ async def add_to_leaderboard(entry: LeaderboardModel) -> Dict[str, Any]:
     except psycopg2.Error:
         conn.rollback()
         raise HTTPException(500, "DB Connection Error")
-    except Exception:
+    except Exception as e:
         conn.rollback()
-        raise HTTPException(400, "Generic error")
+        raise HTTPException(400, f"Generic error: {e}")
     finally:
-        if conn is not None:
-            conn.close()
+        conn.close()
 
 
-# return first limit entries in levels
 @app.get("/levels")
 async def get_random_levels(limit: Optional[int] = None) -> Dict[str, Any]:
     conn = get_db_conn()
@@ -192,14 +185,12 @@ async def get_random_levels(limit: Optional[int] = None) -> Dict[str, Any]:
             }
     except psycopg2.Error:
         raise HTTPException(500, "DB Connection Error")
-    except Exception:
-        raise HTTPException(400, "Generic error")
+    except Exception as e:
+        raise HTTPException(400, f"Generic error: {e}")
     finally:
-        if conn is not None:
-            conn.close()
+        conn.close()
 
 
-# add item to levels
 @app.post("/levels")
 async def add_levels(entry: LevelModel) -> Dict[str, Any]:
     conn = get_db_conn()
@@ -220,12 +211,11 @@ async def add_levels(entry: LevelModel) -> Dict[str, Any]:
     except psycopg2.Error:
         conn.rollback()
         raise HTTPException(500, "DB Connection Error")
-    except Exception:
+    except Exception as e:
         conn.rollback()
-        raise HTTPException(400, "Generic error")
+        raise HTTPException(400, f"Generic error: {e}")
     finally:
-        if conn is not None:
-            conn.close()
+        conn.close()
 
 
 handler = Mangum(app)
