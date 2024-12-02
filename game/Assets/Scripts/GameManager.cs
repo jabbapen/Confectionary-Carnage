@@ -65,9 +65,9 @@ public class GameManager : MonoBehaviour
 
     IEnumerator TransitionOut()
     {
-        Transition.Instance.HideScreen();
-        yield return UploadScore();
         Transition.Instance.ShowScreen();
+        yield return UploadScore();
+        Transition.Instance.HideScreen();
         SceneManager.LoadScene("GameOver");
     }
 
