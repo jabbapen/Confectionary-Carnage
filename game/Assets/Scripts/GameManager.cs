@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     public LevelSerializer LevelSerializer { get { return levelSerializer; } }
 
-    string scoreAPI = "https://lfrxfpetdl3dxlsfilviejg5kq0iruki.lambda-url.us-west-1.on.aws/leaderboard";
+    string scoreAPI = "https://jtxj7s3d3tz2ii2dv7ric3xqbi0ljjls.lambda-url.us-west-1.on.aws/leaderboard";
     int levelsBeat = 0;
 
     private void Awake()

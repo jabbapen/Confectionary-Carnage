@@ -5003,6 +5003,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileCursor: {fileID: 250802051}
   tileMap: {fileID: 420471712}
+  serializer: {fileID: 909706755}
   origin: {x: 0, y: 0}
   tileSize: 1
   brushType: 0
@@ -5394,6 +5395,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &909706755 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2043748174873521204, guid: 15c16820d6d56a14989adbe4793559e9, type: 3}
+  m_PrefabInstance: {fileID: 1454319180}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b153f6bd0408c14dac01b8324b40ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &938335131
 GameObject:
   m_ObjectHideFlags: 0
@@ -10642,6 +10654,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6147316652629943362, guid: 15c16820d6d56a14989adbe4793559e9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382374095301157360, guid: 15c16820d6d56a14989adbe4793559e9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170985131922122099, guid: 15c16820d6d56a14989adbe4793559e9, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8172498991092356002, guid: 15c16820d6d56a14989adbe4793559e9, type: 3}
