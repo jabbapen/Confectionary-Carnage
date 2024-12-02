@@ -1,5 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2549151802901313620
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7,14 +8,14 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6209355222224052898}
-  - component: {fileID: 3738591392652668971}
-  - component: {fileID: 8719548378744833597}
-  - component: {fileID: 5080945579413057926}
-  - component: {fileID: 5265474242261472605}
-  - component: {fileID: 2919156348390401068}
-  - component: {fileID: 6425503813057545193}
-  - component: {fileID: 2873946241395547573}
+  - component: {fileID: 5124034364859456662}
+  - component: {fileID: 7374543525619173573}
+  - component: {fileID: 2295200949541780827}
+  - component: {fileID: 4484872842087905588}
+  - component: {fileID: 5291336079569297202}
+  - component: {fileID: 7225934142715364084}
+  - component: {fileID: 5758029258827211226}
+  - component: {fileID: 6614578913753460950}
   m_Layer: 7
   m_Name: RangedEnemy
   m_TagString: Enemy
@@ -22,6 +23,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &5124034364859456662
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
