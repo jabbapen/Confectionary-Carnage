@@ -92,7 +92,7 @@ public class LevelRequester : MonoBehaviour
             return cur;
         } else
         {
-            return serializedLevels[Random.Range(0, serializedLevels.Count)];
+            return serializedLevels.Count > 0 ? serializedLevels[Random.Range(0, serializedLevels.Count)] : new LevelModel();
         }
         
     }
