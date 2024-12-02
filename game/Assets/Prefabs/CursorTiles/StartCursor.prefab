@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4003805004406053083}
   - component: {fileID: 3132344800612108539}
   m_Layer: 0
-  m_Name: BrickTile
+  m_Name: StartCursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,11 +74,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.4056604, g: 0.28511038, b: 0.28511038, a: 0.5254902}
+  m_SortingLayerID: -59204917
+  m_SortingLayer: 1
+  m_SortingOrder: -450
+  m_Sprite: {fileID: 7482667652216324306, guid: d45735851ce06784aaf3b14b35bcb5f9, type: 3}
+  m_Color: {r: 0.4117647, g: 1, b: 0.38039216, a: 0.5254902}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -166,7 +166,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.28866667}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5

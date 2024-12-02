@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        HandleShooting();
+
         // Capture input from horizontal and vertical axes (WASD or Arrow Keys by default)
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
@@ -35,6 +37,9 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        Aim();
+        HandleCD();
+
         // Determine if we're accelerating or decelerating
         float rate = (movement.magnitude > 0) ? accelerationRate : decelerationRate;
 
@@ -47,4 +52,35 @@ public class PlayerController : MonoBehaviour
         // Stop movement if the script is disabled to prevent unwanted momentum
         rb.velocity = Vector2.zero;
     }
+
+    #region AIMING
+
+    [SerializeField] GameObject bullet;
+
+    [SerializeField] Transform crosshair;
+    int shootCD;
+
+    void HandleShooting()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            if (shootCD < 1)
+            {
+                Instantiate(bullet, transform.position, transform.rotation);
+                shootCD = 50;
+            }
+        }
+    }
+
+    void HandleCD()
+    {
+        if (shootCD > 0) { shootCD--; }        
+    }
+
+    void Aim()
+    {
+        transform.up = CursorObj.trfm.position - transform.position;
+    }
+
+#endregion
 }

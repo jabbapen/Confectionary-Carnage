@@ -63,7 +63,8 @@ public class LevelEditor : MonoBehaviour
     public int brushType;
     const int DEFAULT_BRUSH = 2;
 
-    [SerializeField] Sprite[] brushSprites;
+    [SerializeField] GameObject cursorObj;
+    [SerializeField] GameObject[] cursorObjs;
 
     public void RequestBrush(int id)
     {
@@ -72,12 +73,15 @@ public class LevelEditor : MonoBehaviour
             if (startPlaced)
             {
                 if (endPlaced) { return; }
-                else { brushType = TILE_END; }
+                else
+                {
+                    RequestBrush(TILE_END);
+                }
             }
             else
             {
                 if (endPlaced) { brushType = TILE_START; }
-                else if (brushType == TILE_START) { brushType = TILE_END; }                
+                else if (brushType == TILE_START) { RequestBrush(TILE_END); }
                 else { brushType = TILE_START; }
             }
         }
@@ -86,7 +90,9 @@ public class LevelEditor : MonoBehaviour
             brushType = id;
         }
 
-        CursorObj.self.spriteRenderer.sprite = brushSprites[brushType];
+        if (cursorObj) { Destroy(cursorObj); }
+        cursorObj = Instantiate(cursorObjs[brushType], tileCursor.transform.position, Quaternion.identity);
+        cursorObj.transform.parent = tileCursor.transform;
     }
 
     #endregion

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4219532719453780374}
   - component: {fileID: 1157048514028188258}
   - component: {fileID: 1016717781622747571}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,9 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   repathCD: 0.2
   aggroRadius: 10
-  attackCD: 1
-  attackRadius: 1
-  attackDamage: 1
+  moveSlop: 0.8
 --- !u!50 &1157048514028188258
 Rigidbody2D:
   serializedVersion: 4
