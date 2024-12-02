@@ -7,18 +7,22 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;         // player movement acceleration
+    float activeSpeed;
     private Rigidbody2D rb;
     private Vector2 movement;
     private Vector2 targetVelocity;
 
     public static Transform trfm;
+    public static PlayerController self;
 
     private void Awake()
     {
+        self = GetComponent<PlayerController>();
         trfm = transform;
     }
     void Start()
     {
+        activeSpeed = moveSpeed;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -42,12 +46,12 @@ public class PlayerController : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
 
         // Set the target velocity based on the input and max speed
-        rb.velocity += movement.normalized * moveSpeed;
+        rb.velocity += movement.normalized * activeSpeed;
     }
 
-    void OnDisable()
+    void OnDestroy()
     {
-
+        GameManager.Instance.EndGame();
     }
 
     #region AIMING
@@ -89,5 +93,30 @@ public class PlayerController : MonoBehaviour
         transform.up = CursorObj.trfm.position - transform.position;
     }
 
-#endregion
+    #endregion
+
+    #region ENVIRONMENT_TILES
+
+    [SerializeField] float waterSpeed;
+    int water;
+
+    public void EnterWater()
+    {
+        if (water < 1)
+        {
+            activeSpeed = waterSpeed;
+        }
+        water++;
+    }
+
+    public void ExitWater()
+    {
+        water--;
+        if (water < 1)
+        {
+            activeSpeed = moveSpeed;
+        }
+    }
+
+    #endregion
 }
