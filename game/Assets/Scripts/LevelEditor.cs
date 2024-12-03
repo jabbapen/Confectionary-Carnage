@@ -65,7 +65,7 @@ public class LevelEditor : MonoBehaviour
         Transition.Instance.ShowScreen();
         // GameManager.Instance.LevelSerializer.SaveField(tileMap.gameObject);
         serializer.SaveField(tileMap.gameObject);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.8f);
         Transition.Instance.HideScreen();
         SceneManager.LoadScene("ChooseMode");
 
