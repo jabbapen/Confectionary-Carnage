@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameManager.Instance.SetupLevel();
+            GameManager.Instance.SetupLevel(true);
         }
     }
 

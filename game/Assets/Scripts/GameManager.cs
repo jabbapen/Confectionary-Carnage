@@ -71,10 +71,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("GameOver");
     }
 
-    public void SetupLevel()
+    public void SetupLevel(bool skipped = false)
     {
         UnloadLevel();
-        levelsBeat++;
+        if (!skipped)
+            levelsBeat++;
 
         // Fetch level 
         LevelModel level = levelRequester.GetLevel();
