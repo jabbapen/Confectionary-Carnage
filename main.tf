@@ -127,7 +127,7 @@ locals {
 
 resource "null_resource" "image" {
   triggers = {
-    hash = md5(join("-", [for x in fileset("", ".backend/{*.py,*.txt,Dockerfile, *.toml}") : filemd5(x)]))
+    hash = md5(join("-", [for x in fileset("", "./backend/{*.py,*.txt,Dockerfile, *.toml}") : filemd5(x)]))
   }
 
   provisioner "local-exec" {
@@ -233,15 +233,6 @@ resource "aws_lambda_function" "api" {
 resource "aws_lambda_function_url" "api" {
   function_name      = aws_lambda_function.api.function_name
   authorization_type = "NONE"
-
-  cors {
-    allow_credentials = true
-    allow_origins     = ["*"]
-    allow_methods     = ["*"]
-    allow_headers     = ["date", "keep-alive"]
-    expose_headers    = ["keep-alive", "date"]
-    max_age           = 86400
-  }
 }
 
 resource "aws_db_instance" "postgres" {
@@ -320,6 +311,19 @@ resource "null_resource" "upload_webgl_build" {
     aws_s3_bucket_policy.webgl_build
   ]
 }
+
+resource "aws_s3_bucket_cors_configuration" "webgl_build" {
+  bucket = aws_s3_bucket.webgl_build.id
+
+  cors_rule {
+    allowed_methods = ["GET", "PUT", "POST", "DELETE", "HEAD"]
+    allowed_origins = ["*"]
+    allowed_headers = ["*"]
+    expose_headers  = ["Content-Length", "ETag", "x-amz-meta-custom-header"]
+    max_age_seconds = 3000
+  }
+}
+
 
 output "website_url" {
   value = aws_s3_bucket_website_configuration.webgl_build.website_endpoint

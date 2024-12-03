@@ -6,9 +6,22 @@ from mangum import Mangum
 import uvicorn
 import os
 import psycopg2
+from fastapi.middleware.cors import CORSMiddleware
 from psycopg2.extensions import connection
 
 app = FastAPI()
+
+origins = [
+    "http://confectionary-carnage-webgl.s3-website-us-west-1.amazonaws.com",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # Or ["*"] to allow all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Or specify ["GET", "POST", "OPTIONS"] etc.
+    allow_headers=["*"],
+)
 
 
 # Utility classes/models
