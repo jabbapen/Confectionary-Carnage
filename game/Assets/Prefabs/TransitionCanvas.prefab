@@ -191,4 +191,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroundPanel: {fileID: 3619444391166199462}
-  transitionDuration: 1
+  transitionDuration: 0.6
