@@ -16,7 +16,7 @@ def setup_test_env() -> None:
     os.environ["PG_DATABASE"] = "test_db"
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="function", autouse=True)
 def cleanup_database() -> None:
     # Connect to the database
     conn: psycopg2.extensions.connection = psycopg2.connect(
@@ -127,7 +127,7 @@ def test_get_levels_with_entry(client: TestClient) -> None:
     payload: dict[str, Any] = {
         "level_name": "test_level",
         "author": "test_author",
-        "serialized_level": "test_serialized_data",
+        "serialized_level": "test_get_levels_with_entry",
     }
     client.post("/levels", json=payload)
 

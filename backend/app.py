@@ -11,9 +11,7 @@ from psycopg2.extensions import connection
 
 app = FastAPI()
 
-origins = [
-    "http://confectionary-carnage-webgl.s3-website-us-west-1.amazonaws.com",
-]
+origins = ["http://confectionary-carnage-webgl.s3-website-us-west-1.amazonaws.com"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -72,9 +70,9 @@ def init_levels(conn: connection) -> None:
             level_query = """
             CREATE TABLE IF NOT EXISTS levels (
                 id SERIAL PRIMARY KEY,
-                level_name VARCHAR(255) NOT NULL,
+                level_name VARCHAR(255) NOT NULL, 
                 author VARCHAR(255),
-                serialized_level TEXT NOT NULL
+                serialized_level TEXT NOT NULL UNIQUE
             );
             """
             cur.execute(level_query)
@@ -117,6 +115,7 @@ async def test_postgres() -> Dict[str, Any]:
 @app.get("/leaderboard")
 async def get_leaderboard(limit: Optional[int] = None) -> Dict[str, Any]:
     conn = get_db_conn()
+    init_leaderboard(conn)
     try:
         with conn.cursor() as cur:
             query = """
@@ -147,6 +146,7 @@ async def get_leaderboard(limit: Optional[int] = None) -> Dict[str, Any]:
 @app.post("/leaderboard")
 async def add_to_leaderboard(entry: LeaderboardModel) -> Dict[str, Any]:
     conn = get_db_conn()
+    init_leaderboard(conn)
     try:
         with conn.cursor() as cur:
             query = """
@@ -223,6 +223,9 @@ async def add_levels(entry: LevelModel) -> Dict[str, Any]:
                 "message": "Entry added to levels table successfully.",
                 "data": entry.dict(),
             }
+    except psycopg2.errors.UniqueViolation:
+        conn.rollback()
+        raise HTTPException(400, "Level with this name already exists.")
     except psycopg2.Error:
         conn.rollback()
         raise HTTPException(500, "DB Connection Error")
