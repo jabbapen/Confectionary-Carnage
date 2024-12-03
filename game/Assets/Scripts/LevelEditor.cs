@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelEditor : MonoBehaviour
 {
     [SerializeField] Transform tileCursor;
     [SerializeField] Transform tileMap;
+    [SerializeField] LevelSerializer serializer;
 
     public Vector2 origin;
     public float tileSize;
@@ -28,13 +30,14 @@ public class LevelEditor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return) && startPlaced && endPlaced)
         {
-            if (GameManager.Instance == null)
+            if (serializer == null)
             {
                 SetSerializedString();
             }
             else
             {
-                GameManager.Instance.LevelSerializer.SaveField(tileMap.gameObject);
+                // TODO: Verification
+                StartCoroutine(TransitionOut());
             }
         }
 

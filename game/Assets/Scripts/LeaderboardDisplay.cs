@@ -17,7 +17,7 @@ public class LeaderboardDisplay : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI leaderboardText; // TextMeshPro text field to display the leaderboard.
 
-    string scoreAPI = "https://lfrxfpetdl3dxlsfilviejg5kq0iruki.lambda-url.us-west-1.on.aws/leaderboard";
+    string scoreAPI = "https://jtxj7s3d3tz2ii2dv7ric3xqbi0ljjls.lambda-url.us-west-1.on.aws/leaderboard";
 
     // Start is called before the first frame update
     void Start()
