@@ -233,15 +233,6 @@ resource "aws_lambda_function" "api" {
 resource "aws_lambda_function_url" "api" {
   function_name      = aws_lambda_function.api.function_name
   authorization_type = "NONE"
-
-  cors {
-    allow_credentials = true
-    allow_origins     = ["*"]
-    allow_methods     = ["*"]
-    allow_headers     = ["date", "keep-alive"]
-    expose_headers    = ["keep-alive", "date"]
-    max_age           = 86400
-  }
 }
 
 resource "aws_db_instance" "postgres" {
@@ -326,9 +317,9 @@ resource "aws_s3_bucket_cors_configuration" "webgl_build" {
 
   cors_rule {
     allowed_methods = ["GET", "PUT", "POST", "DELETE", "HEAD"]
-    allowed_origins = ["*"] # Replace with specific origin, if needed
+    allowed_origins = ["*"]
     allowed_headers = ["*"]
-    expose_headers  = ["*"]
+    expose_headers  = ["Content-Length", "ETag", "x-amz-meta-custom-header"]
     max_age_seconds = 3000
   }
 }
