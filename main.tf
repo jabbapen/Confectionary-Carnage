@@ -321,6 +321,19 @@ resource "null_resource" "upload_webgl_build" {
   ]
 }
 
+resource "aws_s3_bucket_cors_configuration" "webgl_build" {
+  bucket = aws_s3_bucket.webgl_build.id
+
+  cors_rule {
+    allowed_methods = ["GET", "PUT", "POST", "DELETE", "HEAD"]
+    allowed_origins = ["*"] # Replace with specific origin, if needed
+    allowed_headers = ["*"]
+    expose_headers  = ["*"]
+    max_age_seconds = 3000
+  }
+}
+
+
 output "website_url" {
   value = aws_s3_bucket_website_configuration.webgl_build.website_endpoint
 }
