@@ -19,7 +19,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,  # Or ["*"] to allow all origins
     allow_credentials=True,
-    allow_methods=["*"],    # Or specify ["GET", "POST", "OPTIONS"] etc.
+    allow_methods=["*"],  # Or specify ["GET", "POST", "OPTIONS"] etc.
     allow_headers=["*"],
 )
 
