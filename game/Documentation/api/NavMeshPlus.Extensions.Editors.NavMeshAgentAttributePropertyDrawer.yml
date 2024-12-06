@@ -1,0 +1,181 @@
+### YamlMime:ManagedReference
+items:
+- uid: NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer
+  commentId: T:NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer
+  id: NavMeshAgentAttributePropertyDrawer
+  parent: NavMeshPlus.Extensions.Editors
+  children:
+  - NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.GetPropertyHeight(SerializedProperty,GUIContent)
+  - NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.OnGUI(Rect,SerializedProperty,GUIContent)
+  langs:
+  - csharp
+  - vb
+  name: NavMeshAgentAttributePropertyDrawer
+  nameWithType: NavMeshAgentAttributePropertyDrawer
+  fullName: NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer
+  type: Class
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Editor/NavMeshAgentAttributePropertyDrawer.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: NavMeshAgentAttributePropertyDrawer
+    path: ../Assets/NavMeshComponents/Editor/NavMeshAgentAttributePropertyDrawer.cs
+    startLine: 10
+  namespace: NavMeshPlus.Extensions.Editors
+  syntax:
+    content: 'public class NavMeshAgentAttributePropertyDrawer : PropertyDrawer'
+    content.vb: Public Class NavMeshAgentAttributePropertyDrawer Inherits PropertyDrawer
+  inheritance:
+  - System.Object
+- uid: NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.OnGUI(Rect,SerializedProperty,GUIContent)
+  commentId: M:NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.OnGUI(Rect,SerializedProperty,GUIContent)
+  id: OnGUI(Rect,SerializedProperty,GUIContent)
+  parent: NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer
+  langs:
+  - csharp
+  - vb
+  name: OnGUI(Rect, SerializedProperty, GUIContent)
+  nameWithType: NavMeshAgentAttributePropertyDrawer.OnGUI(Rect, SerializedProperty, GUIContent)
+  fullName: NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.OnGUI(Rect, SerializedProperty, GUIContent)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Editor/NavMeshAgentAttributePropertyDrawer.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: OnGUI
+    path: ../Assets/NavMeshComponents/Editor/NavMeshAgentAttributePropertyDrawer.cs
+    startLine: 13
+  namespace: NavMeshPlus.Extensions.Editors
+  example: []
+  syntax:
+    content: public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+    parameters:
+    - id: position
+      type: Global.Rect
+    - id: property
+      type: Global.SerializedProperty
+    - id: label
+      type: Global.GUIContent
+    content.vb: Public Overrides Sub OnGUI(position As Rect, [property] As SerializedProperty, label As GUIContent)
+  overload: NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.OnGUI*
+- uid: NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.GetPropertyHeight(SerializedProperty,GUIContent)
+  commentId: M:NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.GetPropertyHeight(SerializedProperty,GUIContent)
+  id: GetPropertyHeight(SerializedProperty,GUIContent)
+  parent: NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer
+  langs:
+  - csharp
+  - vb
+  name: GetPropertyHeight(SerializedProperty, GUIContent)
+  nameWithType: NavMeshAgentAttributePropertyDrawer.GetPropertyHeight(SerializedProperty, GUIContent)
+  fullName: NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.GetPropertyHeight(SerializedProperty, GUIContent)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Editor/NavMeshAgentAttributePropertyDrawer.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: GetPropertyHeight
+    path: ../Assets/NavMeshComponents/Editor/NavMeshAgentAttributePropertyDrawer.cs
+    startLine: 18
+  namespace: NavMeshPlus.Extensions.Editors
+  example: []
+  syntax:
+    content: public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+    parameters:
+    - id: property
+      type: Global.SerializedProperty
+    - id: label
+      type: Global.GUIContent
+    return:
+      type: System.Single
+    content.vb: Public Overrides Function GetPropertyHeight([property] As SerializedProperty, label As GUIContent) As Single
+  overload: NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.GetPropertyHeight*
+references:
+- uid: NavMeshPlus.Extensions.Editors
+  commentId: N:NavMeshPlus.Extensions.Editors
+  href: NavMeshPlus.html
+  name: NavMeshPlus.Extensions.Editors
+  nameWithType: NavMeshPlus.Extensions.Editors
+  fullName: NavMeshPlus.Extensions.Editors
+  spec.csharp:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Extensions
+    name: Extensions
+    href: NavMeshPlus.Extensions.html
+  - name: .
+  - uid: NavMeshPlus.Extensions.Editors
+    name: Editors
+    href: NavMeshPlus.Extensions.Editors.html
+  spec.vb:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Extensions
+    name: Extensions
+    href: NavMeshPlus.Extensions.html
+  - name: .
+  - uid: NavMeshPlus.Extensions.Editors
+    name: Editors
+    href: NavMeshPlus.Extensions.Editors.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.OnGUI*
+  commentId: Overload:NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.OnGUI
+  href: NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.html#NavMeshPlus_Extensions_Editors_NavMeshAgentAttributePropertyDrawer_OnGUI_Rect_SerializedProperty_GUIContent_
+  name: OnGUI
+  nameWithType: NavMeshAgentAttributePropertyDrawer.OnGUI
+  fullName: NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.OnGUI
+- uid: Global.Rect
+  isExternal: true
+  name: Rect
+  nameWithType: Rect
+  fullName: Rect
+- uid: Global.SerializedProperty
+  isExternal: true
+  name: SerializedProperty
+  nameWithType: SerializedProperty
+  fullName: SerializedProperty
+- uid: Global.GUIContent
+  isExternal: true
+  name: GUIContent
+  nameWithType: GUIContent
+  fullName: GUIContent
+- uid: NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.GetPropertyHeight*
+  commentId: Overload:NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.GetPropertyHeight
+  href: NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.html#NavMeshPlus_Extensions_Editors_NavMeshAgentAttributePropertyDrawer_GetPropertyHeight_SerializedProperty_GUIContent_
+  name: GetPropertyHeight
+  nameWithType: NavMeshAgentAttributePropertyDrawer.GetPropertyHeight
+  fullName: NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.GetPropertyHeight
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single

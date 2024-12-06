@@ -1,0 +1,758 @@
+{
+  "source_base_path": "D:/Unity Projects/Confectionary-Carnage/game/Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.AudioManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.AudioManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.Bullet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.Bullet.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.CameraController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.CameraController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.CursorObj.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.CursorObj.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.Deparent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.Deparent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.EndzoneTrigger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.EndzoneTrigger.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.EnemyManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.EnemyManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.EnemySpawnpoint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.EnemySpawnpoint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.ExplodeWeapon.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ExplodeWeapon.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.GameManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.GameManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.HealthManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.HealthManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.HelpTile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.HelpTile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.IWeapon.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.IWeapon.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.Item.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.Item.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.LeaderboardDisplay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.LeaderboardDisplay.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.LevelEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.LevelEditor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.LevelModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.LevelModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.LevelRequester.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.LevelRequester.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.LevelResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.LevelResponse.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.LevelSerializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.LevelSerializer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.MeleeWeapon.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.MeleeWeapon.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.Menu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.Menu.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.ObjectIndex.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ObjectIndex.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.PaletteItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.PaletteItem.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.PlayerController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.PlayerController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.Projectile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.Projectile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.RangedWeapon.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.RangedWeapon.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.SceneAudio.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.SceneAudio.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.ScoreModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ScoreModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.ScoreResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.ScoreResponse.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.SerializationTest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.SerializationTest.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.Startzone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.Startzone.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.Tile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.Tile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.Transition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.Transition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.WaterTile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.WaterTile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Components.CollectObjects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Components.CollectObjects.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Components.Editors.NavMeshAssetManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Components.Editors.NavMeshAssetManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Components.Editors.NavMeshComponentsGUIUtility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Components.Editors.NavMeshComponentsGUIUtility.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Components.Editors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Components.Editors.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Components.NavMeshLink.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Components.NavMeshLink.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Components.NavMeshModifier.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Components.NavMeshModifier.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Components.NavMeshModifierTilemap.TileModifier.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Components.NavMeshModifierTilemap.TileModifier.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Components.NavMeshModifierTilemap.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Components.NavMeshModifierTilemap.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Components.NavMeshModifierVolume.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Components.NavMeshModifierVolume.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Components.NavMeshSurface.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Components.NavMeshSurface.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Components.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Components.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Extensions.AgentDefaultOverride.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Extensions.AgentDefaultOverride.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Extensions.AgentOverride2d.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Extensions.AgentOverride2d.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Extensions.AgentRotate2d.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Extensions.AgentRotate2d.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Extensions.CollectSources2d.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Extensions.CollectSources2d.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Extensions.CollectSourcesCache2d.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Extensions.CollectSourcesCache2d.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Extensions.CollectTilemapSourcesCache2d.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Extensions.CollectTilemapSourcesCache2d.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Extensions.Editors.NavMeshAreaAttributePropertyDrawer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Extensions.Editors.NavMeshAreaAttributePropertyDrawer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Extensions.Editors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Extensions.Editors.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Extensions.IAgentOverride.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Extensions.IAgentOverride.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Extensions.INavMeshExtensionsProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Extensions.INavMeshExtensionsProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Extensions.NavMeshAgentAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Extensions.NavMeshAgentAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Extensions.NavMeshAreaAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Extensions.NavMeshAreaAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Extensions.NavMeshBuilderState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Extensions.NavMeshBuilderState.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Extensions.NavMeshExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Extensions.NavMeshExtension.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Extensions.RootSources2d.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Extensions.RootSources2d.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Extensions.RotateAgentInstantly.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Extensions.RotateAgentInstantly.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Extensions.RotateAgentSmoothly.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Extensions.RotateAgentSmoothly.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NavMeshPlus.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NavMeshPlus.Extensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/overview.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "unity_concepts.md",
+      "output": {
+        ".html": {
+          "relative_path": "unity_concepts.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

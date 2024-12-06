@@ -1,0 +1,83 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.SerializationTest
+  commentId: T:Global.SerializationTest
+  id: SerializationTest
+  parent: Global
+  children:
+  - Global.SerializationTest.RunTest
+  langs:
+  - csharp
+  - vb
+  name: SerializationTest
+  nameWithType: SerializationTest
+  fullName: SerializationTest
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/SerializationTest.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: SerializationTest
+    path: ../Assets/Scripts/SerializationTest.cs
+    startLine: 7
+  namespace: Global
+  summary: Class implementing unit tests for level serialization/deserialization.
+  example: []
+  syntax:
+    content: 'public class SerializationTest : MonoBehaviour'
+    content.vb: Public Class SerializationTest Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: Global.SerializationTest.RunTest
+  commentId: M:Global.SerializationTest.RunTest
+  id: RunTest
+  parent: Global.SerializationTest
+  langs:
+  - csharp
+  - vb
+  name: RunTest()
+  nameWithType: SerializationTest.RunTest()
+  fullName: SerializationTest.RunTest()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/SerializationTest.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: RunTest
+    path: ../Assets/Scripts/SerializationTest.cs
+    startLine: 31
+  namespace: Global
+  summary: Tests serialization by verifying a level is deserialized, then serialized back into the same string.
+  example: []
+  syntax:
+    content: public void RunTest()
+    content.vb: Public Sub RunTest()
+  overload: Global.SerializationTest.RunTest*
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.SerializationTest.RunTest*
+  commentId: Overload:Global.SerializationTest.RunTest
+  href: Global.SerializationTest.html#SerializationTest_RunTest
+  name: RunTest
+  nameWithType: SerializationTest.RunTest
+  fullName: SerializationTest.RunTest

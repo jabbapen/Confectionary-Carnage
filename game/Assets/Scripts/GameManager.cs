@@ -13,6 +13,9 @@ public class ScoreModel
     public int score;
 }
 
+/// <summary>
+/// Singleton which oversees the game.
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
@@ -45,12 +48,6 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SetupSystems());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     IEnumerator SetupSystems()
     {
         yield return levelRequester.QueryAllLevels();
@@ -71,6 +68,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("GameOver");
     }
 
+    /// <summary>
+    /// Queries the backend using @Global.LevelRequester , then loads the level
+    /// based on the serialized level strings returned.
+    /// </summary>
+    /// <param name="skipped">If set to true, increments the player's score</param>
     public void SetupLevel(bool skipped = false)
     {
         UnloadLevel();
@@ -89,6 +91,10 @@ public class GameManager : MonoBehaviour
         LoadLevel(levelString); 
     }
 
+    /// <summary>
+    /// Loads a level based on the 
+    /// </summary>
+    /// <param name="levelString">The level to load, serialized as a string</param>
     public void LoadLevel(string levelString)
     {
         // Call deserializer, passing in level parent and player transform
@@ -99,6 +105,11 @@ public class GameManager : MonoBehaviour
         GameStart.Invoke();
     }
 
+    /// <summary>
+    /// Deletes all GameObjects associated with the level. 
+    /// > Remark: Switching levels doesn't actually involve changing scenes,
+    /// > only resetting certain states and loading/destroying GameObjects
+    /// </summary>
     public void UnloadLevel()
     {
         foreach (Transform child in levelParent)

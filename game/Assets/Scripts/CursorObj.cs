@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Keeps track of the cursor's position in world space, and aligns it to the game grid.
+/// </summary>
 public class CursorObj : MonoBehaviour
 {
     public static Vector2 pos;

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>NavMeshModifierVolume | Confectionary-Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="NavMeshModifierVolume | Confectionary-Docs ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.ai.navigation@1.1.5/Documentation~/NavMeshModifierVolume.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="Confectionary-Docs">
+            Confectionary-Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="navmeshmodifiervolume">NavMeshModifierVolume</h1>
+
+<p>NavMesh Modifier Volume marks a defined area as a certain type (for example, <strong>Lava</strong> or <strong>Door</strong>). Whereas <a href="NavMeshModifier.html">NavMesh Modifier</a> marks certain GameObjects with an area type. NavMesh Modifier Volume allows you to change an area type locally based on a specific volume.</p>
+<p>To use the NavMesh Modifier Volume component, navigate to <strong>GameObject</strong> &gt; <strong>AI</strong> &gt; <strong>NavMesh Modifier Volume</strong>.</p>
+<p>NavMesh Modifier Volume is useful for marking certain areas of walkable surfaces that might not be represented as separate geometry, for example danger areas. You can also use It to make certain areas non-walkable.</p>
+<p>The NavMesh Modifier Volume also affects the NavMesh generation process, meaning the NavMesh has to be updated to reflect any changes to NavMesh Modifier Volumes.</p>
+<p><img src="Images/NavMeshModifierVolume-Example.png" alt="NavMeshModifierVolume example" title="A NavMesh Modifier Volume component open in the Inspector"></p>
+<h2 id="parameters">Parameters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Property</strong></th>
+<th style="text-align: left;"><strong>Function</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Size</strong></td>
+<td style="text-align: left;">Dimensions of the NavMesh Modifier Volume, defined by XYZ measurements.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Center</strong></td>
+<td style="text-align: left;">The center of the NavMesh Modifier Volume relative to the GameObject center, defined by XYZ measurements.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Area Type</strong></td>
+<td style="text-align: left;">Describes the area type to which the NavMesh Modifier Volume applies.<br> - <strong>Walkable</strong> (this is the default option)<br> - <strong>Not Walkable</strong><br> - <strong>Jump</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Affected Agents</strong></td>
+<td style="text-align: left;">A selection of agent types that the NavMesh Modifier Volume affects. For example, you may choose to make the selected NavMesh Modifier Volume a danger zone for specific Agent types only.</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.ai.navigation@1.1.5/Documentation~/NavMeshModifierVolume.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Manages the editor scene, including selecting the tile to paint,
+/// serialization, and making sure levels are of a valid format (eg. tiles must
+/// not overlap). Implements Unity's `Start`, `Update`, and `FixedUpdate` to
+/// interact with the user per-frame
+/// </summary>
 public class LevelEditor : MonoBehaviour
 {
     [SerializeField] Transform tileCursor;
@@ -11,7 +17,14 @@ public class LevelEditor : MonoBehaviour
 
     public Vector2 origin;
     public float tileSize;
+
+    /// <summary>
+    /// Maps positions in the scene to Tile IDs for serialization
+    /// </summary>
     public Dictionary<Vector2, int> tileIDsMap = new Dictionary<Vector2, int>();
+    /// <summary>
+    /// Maps positions in the scene to GameObjects to control game state
+    /// </summary>
     public Dictionary<Vector2, Tile> tileObjMap = new Dictionary<Vector2, Tile>();
 
     public static LevelEditor self;

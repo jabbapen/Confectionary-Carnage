@@ -1,0 +1,149 @@
+### YamlMime:ManagedReference
+items:
+- uid: NavMeshPlus.Extensions.AgentOverride2d
+  commentId: T:NavMeshPlus.Extensions.AgentOverride2d
+  id: AgentOverride2d
+  parent: NavMeshPlus.Extensions
+  children:
+  - NavMeshPlus.Extensions.AgentOverride2d.Agent
+  - NavMeshPlus.Extensions.AgentOverride2d.agentOverride
+  langs:
+  - csharp
+  - vb
+  name: AgentOverride2d
+  nameWithType: AgentOverride2d
+  fullName: NavMeshPlus.Extensions.AgentOverride2d
+  type: Class
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/AgentOverride2d.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: AgentOverride2d
+    path: ../Assets/NavMeshComponents/Scripts/AgentOverride2d.cs
+    startLine: 16
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: 'public class AgentOverride2d : MonoBehaviour'
+    content.vb: Public Class AgentOverride2d Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: NavMeshPlus.Extensions.AgentOverride2d.Agent
+  commentId: P:NavMeshPlus.Extensions.AgentOverride2d.Agent
+  id: Agent
+  parent: NavMeshPlus.Extensions.AgentOverride2d
+  langs:
+  - csharp
+  - vb
+  name: Agent
+  nameWithType: AgentOverride2d.Agent
+  fullName: NavMeshPlus.Extensions.AgentOverride2d.Agent
+  type: Property
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/AgentOverride2d.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Agent
+    path: ../Assets/NavMeshComponents/Scripts/AgentOverride2d.cs
+    startLine: 18
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: public NavMeshAgent Agent { get; }
+    parameters: []
+    return:
+      type: Global.NavMeshAgent
+    content.vb: Public Property Agent As NavMeshAgent
+  overload: NavMeshPlus.Extensions.AgentOverride2d.Agent*
+- uid: NavMeshPlus.Extensions.AgentOverride2d.agentOverride
+  commentId: P:NavMeshPlus.Extensions.AgentOverride2d.agentOverride
+  id: agentOverride
+  parent: NavMeshPlus.Extensions.AgentOverride2d
+  langs:
+  - csharp
+  - vb
+  name: agentOverride
+  nameWithType: AgentOverride2d.agentOverride
+  fullName: NavMeshPlus.Extensions.AgentOverride2d.agentOverride
+  type: Property
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/AgentOverride2d.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: agentOverride
+    path: ../Assets/NavMeshComponents/Scripts/AgentOverride2d.cs
+    startLine: 19
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: public IAgentOverride agentOverride { get; set; }
+    parameters: []
+    return:
+      type: NavMeshPlus.Extensions.IAgentOverride
+    content.vb: Public Property agentOverride As IAgentOverride
+  overload: NavMeshPlus.Extensions.AgentOverride2d.agentOverride*
+references:
+- uid: NavMeshPlus.Extensions
+  commentId: N:NavMeshPlus.Extensions
+  href: NavMeshPlus.html
+  name: NavMeshPlus.Extensions
+  nameWithType: NavMeshPlus.Extensions
+  fullName: NavMeshPlus.Extensions
+  spec.csharp:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Extensions
+    name: Extensions
+    href: NavMeshPlus.Extensions.html
+  spec.vb:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Extensions
+    name: Extensions
+    href: NavMeshPlus.Extensions.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NavMeshPlus.Extensions.AgentOverride2d.Agent*
+  commentId: Overload:NavMeshPlus.Extensions.AgentOverride2d.Agent
+  href: NavMeshPlus.Extensions.AgentOverride2d.html#NavMeshPlus_Extensions_AgentOverride2d_Agent
+  name: Agent
+  nameWithType: AgentOverride2d.Agent
+  fullName: NavMeshPlus.Extensions.AgentOverride2d.Agent
+- uid: Global.NavMeshAgent
+  isExternal: true
+  name: NavMeshAgent
+  nameWithType: NavMeshAgent
+  fullName: NavMeshAgent
+- uid: NavMeshPlus.Extensions.AgentOverride2d.agentOverride*
+  commentId: Overload:NavMeshPlus.Extensions.AgentOverride2d.agentOverride
+  href: NavMeshPlus.Extensions.AgentOverride2d.html#NavMeshPlus_Extensions_AgentOverride2d_agentOverride
+  name: agentOverride
+  nameWithType: AgentOverride2d.agentOverride
+  fullName: NavMeshPlus.Extensions.AgentOverride2d.agentOverride
+- uid: NavMeshPlus.Extensions.IAgentOverride
+  commentId: T:NavMeshPlus.Extensions.IAgentOverride
+  parent: NavMeshPlus.Extensions
+  href: NavMeshPlus.Extensions.IAgentOverride.html
+  name: IAgentOverride
+  nameWithType: IAgentOverride
+  fullName: NavMeshPlus.Extensions.IAgentOverride

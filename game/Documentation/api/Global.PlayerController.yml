@@ -1,0 +1,217 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.PlayerController
+  commentId: T:Global.PlayerController
+  id: PlayerController
+  parent: Global
+  children:
+  - Global.PlayerController.EnterWater
+  - Global.PlayerController.ExitWater
+  - Global.PlayerController.moveSpeed
+  - Global.PlayerController.self
+  - Global.PlayerController.trfm
+  langs:
+  - csharp
+  - vb
+  name: PlayerController
+  nameWithType: PlayerController
+  fullName: PlayerController
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/PlayerController.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: PlayerController
+    path: ../Assets/Scripts/PlayerController.cs
+    startLine: 9
+  namespace: Global
+  summary: >-
+    Implements movement and shooting for the player, as well as player
+
+    interactions with water tiles. Uses Unity's `Update` and `FixedUpdate` to
+
+    respond to input per frame.
+  example: []
+  syntax:
+    content: 'public class PlayerController : MonoBehaviour'
+    content.vb: Public Class PlayerController Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: Global.PlayerController.moveSpeed
+  commentId: F:Global.PlayerController.moveSpeed
+  id: moveSpeed
+  parent: Global.PlayerController
+  langs:
+  - csharp
+  - vb
+  name: moveSpeed
+  nameWithType: PlayerController.moveSpeed
+  fullName: PlayerController.moveSpeed
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/PlayerController.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: moveSpeed
+    path: ../Assets/Scripts/PlayerController.cs
+    startLine: 13
+  namespace: Global
+  syntax:
+    content: public float moveSpeed
+    return:
+      type: System.Single
+    content.vb: Public moveSpeed As Single
+- uid: Global.PlayerController.trfm
+  commentId: F:Global.PlayerController.trfm
+  id: trfm
+  parent: Global.PlayerController
+  langs:
+  - csharp
+  - vb
+  name: trfm
+  nameWithType: PlayerController.trfm
+  fullName: PlayerController.trfm
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/PlayerController.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: trfm
+    path: ../Assets/Scripts/PlayerController.cs
+    startLine: 19
+  namespace: Global
+  syntax:
+    content: public static Transform trfm
+    return:
+      type: Global.Transform
+    content.vb: Public Shared trfm As Transform
+- uid: Global.PlayerController.self
+  commentId: F:Global.PlayerController.self
+  id: self
+  parent: Global.PlayerController
+  langs:
+  - csharp
+  - vb
+  name: self
+  nameWithType: PlayerController.self
+  fullName: PlayerController.self
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/PlayerController.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: self
+    path: ../Assets/Scripts/PlayerController.cs
+    startLine: 20
+  namespace: Global
+  syntax:
+    content: public static PlayerController self
+    return:
+      type: Global.PlayerController
+    content.vb: Public Shared self As PlayerController
+- uid: Global.PlayerController.EnterWater
+  commentId: M:Global.PlayerController.EnterWater
+  id: EnterWater
+  parent: Global.PlayerController
+  langs:
+  - csharp
+  - vb
+  name: EnterWater()
+  nameWithType: PlayerController.EnterWater()
+  fullName: PlayerController.EnterWater()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/PlayerController.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: EnterWater
+    path: ../Assets/Scripts/PlayerController.cs
+    startLine: 107
+  namespace: Global
+  syntax:
+    content: public void EnterWater()
+    content.vb: Public Sub EnterWater()
+  overload: Global.PlayerController.EnterWater*
+- uid: Global.PlayerController.ExitWater
+  commentId: M:Global.PlayerController.ExitWater
+  id: ExitWater
+  parent: Global.PlayerController
+  langs:
+  - csharp
+  - vb
+  name: ExitWater()
+  nameWithType: PlayerController.ExitWater()
+  fullName: PlayerController.ExitWater()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/PlayerController.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: ExitWater
+    path: ../Assets/Scripts/PlayerController.cs
+    startLine: 116
+  namespace: Global
+  syntax:
+    content: public void ExitWater()
+    content.vb: Public Sub ExitWater()
+  overload: Global.PlayerController.ExitWater*
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Global.Transform
+  isExternal: true
+  name: Transform
+  nameWithType: Transform
+  fullName: Transform
+- uid: Global.PlayerController
+  commentId: T:Global.PlayerController
+  href: PlayerController.html
+  name: PlayerController
+  nameWithType: PlayerController
+  fullName: PlayerController
+- uid: Global.PlayerController.EnterWater*
+  commentId: Overload:Global.PlayerController.EnterWater
+  href: Global.PlayerController.html#PlayerController_EnterWater
+  name: EnterWater
+  nameWithType: PlayerController.EnterWater
+  fullName: PlayerController.EnterWater
+- uid: Global.PlayerController.ExitWater*
+  commentId: Overload:Global.PlayerController.ExitWater
+  href: Global.PlayerController.html#PlayerController_ExitWater
+  name: ExitWater
+  nameWithType: PlayerController.ExitWater
+  fullName: PlayerController.ExitWater

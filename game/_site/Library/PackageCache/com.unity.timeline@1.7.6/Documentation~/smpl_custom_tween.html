@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Transform Tween track sample | Confectionary-Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Transform Tween track sample | Confectionary-Docs ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.timeline@1.7.6/Documentation~/smpl_custom_tween.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="Confectionary-Docs">
+            Confectionary-Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="transform-tween-track-sample">Transform Tween track sample</h1>
+
+<p><img src="images/smpl_tween.png" alt="Transform tween sample"></p>
+<p>This track can be used for simple transform movements between two points.</p>
+<h2 id="usage">Usage</h2>
+<p>This track can be used for simple transform movements. All translation happens in a straight line but the speed can be controlled with an animation curve. The Tween track binds to the scene <code>Transform</code> you wish to move.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Start Location</td>
+<td>This is a reference to a Transform in the scene that marks the position and/or rotation of the moving Transform when the playable starts. If it is left null the position/rotation of the moving Transform when the playable starts will be used.</td>
+</tr>
+<tr>
+<td>End Location</td>
+<td>This is a reference to a Transform in the scene that marks the position and/or rotation of the moving Transform when the playable finishes.</td>
+</tr>
+<tr>
+<td>Tween Position</td>
+<td>Whether or not the position of the Transform should change.</td>
+</tr>
+<tr>
+<td>Tween Rotation</td>
+<td>Whether or not the rotation of the Transform should change.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="custom-clip-workflow-example">Custom clip workflow example</h2>
+<p>This example will demonstrate how to:</p>
+<ul>
+<li>create a custom clip, track and mixer;</li>
+<li>use the PlayableGraph API to animate an object's transform;</li>
+<li>customize a clip with <code>ClipEditor</code>;</li>
+</ul>
+<h3 id="1-custom-clip">1. Custom clip</h3>
+<p>when a Timeline begins playing, nodes called <code>Playable</code>s are created. They are organized in a tree-like structure called the <code>PlayableGraph</code>. For each frame, Timeline samples this graph to read and mix multiple data sources (animation, audio and more).</p>
+<p>The first step to create a custom clip is to define a new <code>PlayableBehaviour</code> that will be added to a graph. It will need to store the data needed to implement the transform tween:</p>
+<pre><code class="lang-c#">public class TweenBehaviour : PlayableBehaviour
+{
+    public Transform startLocation;
+    public Transform endLocation;
+
+    public bool shouldTweenPosition;
+    public bool shouldTweenRotation;
+
+    public AnimationCurve curve;
+}
+</code></pre>
+<p>The <code>PlayableBehaviour</code>'s data is not serialized and will be lost once its parent graph is destroyed. To save this data, the next step is to define a new <code>PlayableAsset</code>:</p>
+<pre><code class="lang-c#">[Serializable]
+public class TweenClip : PlayableAsset
+{
+    public ExposedReference&lt;Transform&gt; startLocation;
+    public ExposedReference&lt;Transform&gt; endLocation;
+
+    public bool shouldTweenPosition = true;
+    public bool shouldTweenRotation = true;
+
+    public AnimationCurve curve;
+    //...
+}
+</code></pre>
+<p><em>Note:</em> The clip needs to store a start and an end location. Since an asset cannot directly reference a scene object, it cannot store a transform object directly. This is why an <code>ExposedReference&lt;Transform&gt;</code> is used.</p>
+<p>A <code>PlayableAsset</code>'s main purpose is to build a <code>PlayableBehaviour</code>. This is done with the <code>CreatePlayable</code> method:</p>
+<pre><code class="lang-c#">public class TweenClip : PlayableAsset
+{
+    //...
+
+    public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
+    {
+        // create a new TweenBehaviour
+        ScriptPlayable&lt;TweenBehaviour&gt; playable = ScriptPlayable&lt;TweenBehaviour&gt;.Create(graph);
+        TweenBehaviour tween = playable.GetBehaviour();
+
+        // set the behaviour's data
+        tween.startLocation = startLocation.Resolve(graph.GetResolver());
+        tween.endLocation = endLocation.Resolve(graph.GetResolver());
+        tween.curve = curve;
+        tween.shouldTweenPosition = shouldTweenPosition;
+        tween.shouldTweenRotation = shouldTweenRotation;
+
+        return playable;
+    }
+}
+</code></pre>
+<p><code>CreatePlayable</code> will initialize a new <code>TweenBehaviour</code> using <code>TweenClip</code>'s data.</p>
+<h3 id="2-custom-track">2. Custom track</h3>
+<p>A custom track is created by defining a <a href="xref:UnityEngine.Timeline.TrackAsset">TrackAsset</a> subclass. The following attributes can be added to a <code>TrackAsset</code>:</p>
+<ul>
+<li><a href="xref:UnityEngine.Timeline.TrackBindingTypeAttribute">TrackBindingType</a>: defines which type of object should be bound to a track;</li>
+<li><a href="xref:UnityEngine.Timeline.TrackClipTypeAttribute">TrackClipType</a>: defines which type of clip should be associated to a track.</li>
+</ul>
+<p>For this example, the track needs a <code>Transform</code> object binding and can only accepts clips of type <code>TweenClip</code>, which was previously defined in step 1:</p>
+<pre><code class="lang-c#">[TrackBindingType(typeof(Transform))]
+[TrackClipType(typeof(TweenClip))]
+public class TweenTrack : TrackAsset
+{
+    // ...
+}
+</code></pre>
+<p>The data setup is complete; <code>TweenTrack</code> and <code>TweenClip</code> can now be added to a timeline:</p>
+<p><img src="images/smpl_tween_empty.png" alt="Transform tween track and clip"></p>
+<p>However, no transform tween has been implemented yet. To do this, a track mixer is needed.</p>
+<h3 id="3-define-a-track-mixer">3. Define a track mixer</h3>
+<p>To properly handle blending, or crossfading, between two clips, a track mixer is needed. A track mixer is a <code>PlayableBehaviour</code> that will have access to all clips data and will blend those together.</p>
+<h4 id="track-mixer-setup">Track mixer setup</h4>
+<p>By default, when a track is added to a timeline, an empty playable is generated and is connected to each clip's playable.</p>
+<p>For example, this track:</p>
+<p><img src="images/smpl_tween_default_track.png" alt="Track with default track mixer"></p>
+<p>will generate the following playable graph:</p>
+<p><img src="images/smpl_tween_default_graph.png" alt="Graph with default track mixer"></p>
+<ul>
+<li><code>Timeline</code>: this playable is the <code>root</code> playable; all playables related to tracks are connected to this node.</li>
+<li><code>Playable</code>: this playable represents the track mixer. Since no track mixer is defined, an empty one is generated.</li>
+<li><code>TweenBehaviour</code>: this playable represents a clip. One per clip is generated. All clip playables are connected to the track mixer.</li>
+</ul>
+<p>In order to define a custom track mixer, a new <code>PlayableBehaviour</code> needs to be defined:</p>
+<pre><code class="lang-c#">public class TweenMixerBehaviour : PlayableBehaviour {}
+</code></pre>
+<p>then, in <code>TrackAsset</code>, the <a href="xref:UnityEngine.Timeline.TrackAsset#UnityEngine_Timeline_TrackAsset_CreateTrackMixer_UnityEngine_Playables_PlayableGraph_UnityEngine_GameObject_System_Int32_">CreateTrackMixer</a> method can be used to specify a custom track mixer:</p>
+<pre><code class="lang-c#">public class TweenTrack : TrackAsset
+{
+    public override Playable CreateTrackMixer(PlayableGraph graph, GameObject go, int inputCount)
+    {
+        return ScriptPlayable&lt;TweenMixerBehaviour&gt;.Create(graph, inputCount);
+    }
+}
+
+</code></pre>
+<p>Now the playable graph looks like this:</p>
+<p><img src="images/smpl_tween_custom_graph.png" alt="Graph with custom track mixer"></p>
+<p>The empty playable that used to connect clip playables together is now replaced by <code>TweenMixerBehaviour</code>.</p>
+<h4 id="transform-tween-implementation">Transform tween implementation</h4>
+<p>The implementation of the transform tween resides in the <code>ProcessFrame</code> method from <code>TweenMixerBehaviour</code>. Here are the main steps of that implementation:</p>
+<ul>
+<li><em>Initialization</em>: When the timeline is first played, the initial transform of the track binding is fetched. If the start or end transform is <code>null</code>, the initial transform will be used instead.</li>
+<li><em>Get clip behaviours &amp; weights</em>: to appropriately blend, the mixer needs to ask information for all of its inputs (clips):</li>
+</ul>
+<pre><code class="lang-c#">// Iterate on all the playable's (mixer) inputs (ie each clip on the track)
+int inputCount = playable.GetInputCount();
+for (int i = 0; i &lt; inputCount; i++)
+{
+    // get the input connected to the mixer
+    Playable input = playable.GetInput(i);
+
+    // get the weight of the connection
+    float inputWeight = playable.GetInputWeight(i);
+
+    // get the clip's behaviour
+    TweenBehaviour tweenInput = GetTweenBehaviour(input);
+}
+</code></pre>
+<ul>
+<li><em>Calculate and blend</em>: A linear interpolation is used to calculate a transform between two points.</li>
+<li><em>Apply result</em>: Once the calculation is done, the transform is written in the track binding object:</li>
+</ul>
+<pre><code class="lang-c#">// Apply the final position and rotation values in the track binding
+trackBinding.position = accumPosition + m_InitialPosition * (1.0f - totalPositionWeight);
+trackBinding.rotation = accumRotation.Blend(m_InitialRotation, 1.0f - totalRotationWeight);
+
+</code></pre>
+<h3 id="4-customize-a-clips-appearance">4. Customize a clip's appearance</h3>
+<p><code>ClipEditor</code> can be used to augment the capabilities of a clip in the editor. It works like a custom <a href="https://docs.unity3d.com/ScriptReference/CustomEditor.html">Inspector</a>; the <a href="xref:UnityEditor.Timeline.CustomTimelineEditorAttribute">CustomTimelineEditor attribute</a> is used to tell Timeline that a <a href="xref:UnityEditor.Timeline.ClipEditor">ClipEditor</a> class should be associated to a given clip.</p>
+<pre><code class="lang-c#">[CustomTimelineEditor(typeof(TweenClip))]
+public class TweenClipEditor : ClipEditor
+{
+   //...
+}
+</code></pre>
+<p>It is possible to customize the appearance of a clip with the <a href="xref:UnityEditor.Timeline.ClipEditor#UnityEditor_Timeline_ClipEditor_DrawBackground_UnityEngine_Timeline_TimelineClip_UnityEditor_Timeline_ClipBackgroundRegion_">DrawBackground</a> method:</p>
+<pre><code class="lang-c#">public override void DrawBackground(TimelineClip clip, ClipBackgroundRegion region)
+{
+    TweenClip asset = clip.asset as TweenClip;
+
+    if (asset == null)
+        return;
+
+    // Drawing code here...
+}
+</code></pre>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>Only the portion between (0,1) of the curve will be used.</li>
+<li>When a clip ends, the object bound to the track will return to its original position.</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.timeline@1.7.6/Documentation~/smpl_custom_tween.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,5 +1,10 @@
 using UnityEngine;
 
+/// <summary>
+/// Projectile launched by enemies, implements Unity's `FixedUpdate` to move
+/// across the screen per frame, and implements `OnTriggerEnter2D` to define
+/// collision logic.
+/// </summary>
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private int damage = 1;

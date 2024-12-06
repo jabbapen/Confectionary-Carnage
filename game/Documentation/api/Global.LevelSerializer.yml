@@ -1,0 +1,199 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.LevelSerializer
+  commentId: T:Global.LevelSerializer
+  id: LevelSerializer
+  parent: Global
+  children:
+  - Global.LevelSerializer.LoadField(System.String,GameObject,Transform)
+  - Global.LevelSerializer.SaveField(GameObject)
+  - Global.LevelSerializer.SerializeLevel(GameObject)
+  langs:
+  - csharp
+  - vb
+  name: LevelSerializer
+  nameWithType: LevelSerializer
+  fullName: LevelSerializer
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/LevelSerializer.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: LevelSerializer
+    path: ../Assets/Scripts/LevelSerializer.cs
+    startLine: 9
+  namespace: Global
+  summary: 'Serializes levels: Turns a grid of @Global.Tile s into a list of positions and their associated tile IDs.'
+  example: []
+  syntax:
+    content: 'public class LevelSerializer : MonoBehaviour'
+    content.vb: Public Class LevelSerializer Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: Global.LevelSerializer.SerializeLevel(GameObject)
+  commentId: M:Global.LevelSerializer.SerializeLevel(GameObject)
+  id: SerializeLevel(GameObject)
+  parent: Global.LevelSerializer
+  langs:
+  - csharp
+  - vb
+  name: SerializeLevel(GameObject)
+  nameWithType: LevelSerializer.SerializeLevel(GameObject)
+  fullName: LevelSerializer.SerializeLevel(GameObject)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/LevelSerializer.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: SerializeLevel
+    path: ../Assets/Scripts/LevelSerializer.cs
+    startLine: 90
+  namespace: Global
+  summary: Serializes a GameObject `parent` representing the level into a string which can be stored and later deserialized.
+  example: []
+  syntax:
+    content: public string SerializeLevel(GameObject parent)
+    parameters:
+    - id: parent
+      type: Global.GameObject
+      description: Unity `GameObject` representing the parent of all of the tiles in a level (like the html root element).
+    return:
+      type: System.String
+      description: String representing the serialized level
+    content.vb: Public Function SerializeLevel(parent As GameObject) As String
+  overload: Global.LevelSerializer.SerializeLevel*
+- uid: Global.LevelSerializer.SaveField(GameObject)
+  commentId: M:Global.LevelSerializer.SaveField(GameObject)
+  id: SaveField(GameObject)
+  parent: Global.LevelSerializer
+  langs:
+  - csharp
+  - vb
+  name: SaveField(GameObject)
+  nameWithType: LevelSerializer.SaveField(GameObject)
+  fullName: LevelSerializer.SaveField(GameObject)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/LevelSerializer.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: SaveField
+    path: ../Assets/Scripts/LevelSerializer.cs
+    startLine: 128
+  namespace: Global
+  summary: Serializes and uploads a `GameObject` `parent` to the backend.
+  example: []
+  syntax:
+    content: public void SaveField(GameObject parent)
+    parameters:
+    - id: parent
+      type: Global.GameObject
+      description: The `GameObject` to be serialized and saved
+    content.vb: Public Sub SaveField(parent As GameObject)
+  overload: Global.LevelSerializer.SaveField*
+- uid: Global.LevelSerializer.LoadField(System.String,GameObject,Transform)
+  commentId: M:Global.LevelSerializer.LoadField(System.String,GameObject,Transform)
+  id: LoadField(System.String,GameObject,Transform)
+  parent: Global.LevelSerializer
+  langs:
+  - csharp
+  - vb
+  name: LoadField(string, GameObject, Transform)
+  nameWithType: LevelSerializer.LoadField(string, GameObject, Transform)
+  fullName: LevelSerializer.LoadField(string, GameObject, Transform)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/LevelSerializer.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: LoadField
+    path: ../Assets/Scripts/LevelSerializer.cs
+    startLine: 142
+  namespace: Global
+  summary: >-
+    Loads a level by turning the serialized string into `GameObject`s under
+
+    the `parent` parameter, then moves the player to starting location
+
+    provided by `playerTransform`
+  example: []
+  syntax:
+    content: public void LoadField(string data, GameObject parent, Transform playerTransform)
+    parameters:
+    - id: data
+      type: System.String
+      description: Serialized level data
+    - id: parent
+      type: Global.GameObject
+      description: Parent under which to create the level's `GameObject`s
+    - id: playerTransform
+      type: Global.Transform
+      description: Where to move the player
+    content.vb: Public Sub LoadField(data As String, parent As GameObject, playerTransform As Transform)
+  overload: Global.LevelSerializer.LoadField*
+  nameWithType.vb: LevelSerializer.LoadField(String, GameObject, Transform)
+  fullName.vb: LevelSerializer.LoadField(String, GameObject, Transform)
+  name.vb: LoadField(String, GameObject, Transform)
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.LevelSerializer.SerializeLevel*
+  commentId: Overload:Global.LevelSerializer.SerializeLevel
+  href: Global.LevelSerializer.html#LevelSerializer_SerializeLevel_GameObject_
+  name: SerializeLevel
+  nameWithType: LevelSerializer.SerializeLevel
+  fullName: LevelSerializer.SerializeLevel
+- uid: Global.GameObject
+  isExternal: true
+  name: GameObject
+  nameWithType: GameObject
+  fullName: GameObject
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Global.LevelSerializer.SaveField*
+  commentId: Overload:Global.LevelSerializer.SaveField
+  href: Global.LevelSerializer.html#LevelSerializer_SaveField_GameObject_
+  name: SaveField
+  nameWithType: LevelSerializer.SaveField
+  fullName: LevelSerializer.SaveField
+- uid: Global.LevelSerializer.LoadField*
+  commentId: Overload:Global.LevelSerializer.LoadField
+  href: Global.LevelSerializer.html#LevelSerializer_LoadField_System_String_GameObject_Transform_
+  name: LoadField
+  nameWithType: LevelSerializer.LoadField
+  fullName: LevelSerializer.LoadField
+- uid: Global.Transform
+  isExternal: true
+  name: Transform
+  nameWithType: Transform
+  fullName: Transform

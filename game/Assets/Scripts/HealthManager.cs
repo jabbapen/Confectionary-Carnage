@@ -2,10 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Adds health to a GameObject, allowing it to be damaged, and destroying it
+/// when health is set to zero.
+/// </summary>
 public class HealthManager : MonoBehaviour
 {
+    /// <summary>
+    /// Health cap and the amount of health the GameObject starts with.
+    /// </summary>
     [SerializeField] public int MaxHealth = 3;
     private bool dying = false;
+
+    /// <summary>
+    /// Dying is set to true if the GameObject is in the process of being
+    /// destroyed, eg. when a death animation is playing.
+    /// </summary>
     public bool Dying { get {return dying;} }
 
     [SerializeField] private int health;

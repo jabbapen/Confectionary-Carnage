@@ -1,0 +1,283 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.AudioManager
+  commentId: T:Global.AudioManager
+  id: AudioManager
+  parent: Global
+  children:
+  - Global.AudioManager.LoadSettings
+  - Global.AudioManager.SetGMusicVol(System.Single)
+  - Global.AudioManager.SetGSFXVol(System.Single)
+  - Global.AudioManager.UpdateSliders(Slider,Slider)
+  - Global.AudioManager.manager
+  - Global.AudioManager.mixer
+  langs:
+  - csharp
+  - vb
+  name: AudioManager
+  nameWithType: AudioManager
+  fullName: AudioManager
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/AudioManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: AudioManager
+    path: ../Assets/Scripts/AudioManager.cs
+    startLine: 9
+  namespace: Global
+  summary: Manages audio settings for the game, including music and sound effects (SFX) volume.
+  example: []
+  syntax:
+    content: 'public class AudioManager : MonoBehaviour'
+    content.vb: Public Class AudioManager Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: Global.AudioManager.manager
+  commentId: F:Global.AudioManager.manager
+  id: manager
+  parent: Global.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: manager
+  nameWithType: AudioManager.manager
+  fullName: AudioManager.manager
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/AudioManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: manager
+    path: ../Assets/Scripts/AudioManager.cs
+    startLine: 11
+  namespace: Global
+  syntax:
+    content: public static AudioManager manager
+    return:
+      type: Global.AudioManager
+    content.vb: Public Shared manager As AudioManager
+- uid: Global.AudioManager.mixer
+  commentId: F:Global.AudioManager.mixer
+  id: mixer
+  parent: Global.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: mixer
+  nameWithType: AudioManager.mixer
+  fullName: AudioManager.mixer
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/AudioManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: mixer
+    path: ../Assets/Scripts/AudioManager.cs
+    startLine: 12
+  namespace: Global
+  syntax:
+    content: public AudioMixer mixer
+    return:
+      type: Global.AudioMixer
+    content.vb: Public mixer As AudioMixer
+- uid: Global.AudioManager.SetGMusicVol(System.Single)
+  commentId: M:Global.AudioManager.SetGMusicVol(System.Single)
+  id: SetGMusicVol(System.Single)
+  parent: Global.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: SetGMusicVol(float)
+  nameWithType: AudioManager.SetGMusicVol(float)
+  fullName: AudioManager.SetGMusicVol(float)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/AudioManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: SetGMusicVol
+    path: ../Assets/Scripts/AudioManager.cs
+    startLine: 35
+  namespace: Global
+  summary: Sets the global music volume and updates the corresponding AudioMixer parameter.
+  example: []
+  syntax:
+    content: public void SetGMusicVol(float vol)
+    parameters:
+    - id: vol
+      type: System.Single
+      description: The desired music volume level (range 0 to 1).
+    content.vb: Public Sub SetGMusicVol(vol As Single)
+  overload: Global.AudioManager.SetGMusicVol*
+  nameWithType.vb: AudioManager.SetGMusicVol(Single)
+  fullName.vb: AudioManager.SetGMusicVol(Single)
+  name.vb: SetGMusicVol(Single)
+- uid: Global.AudioManager.SetGSFXVol(System.Single)
+  commentId: M:Global.AudioManager.SetGSFXVol(System.Single)
+  id: SetGSFXVol(System.Single)
+  parent: Global.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: SetGSFXVol(float)
+  nameWithType: AudioManager.SetGSFXVol(float)
+  fullName: AudioManager.SetGSFXVol(float)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/AudioManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: SetGSFXVol
+    path: ../Assets/Scripts/AudioManager.cs
+    startLine: 46
+  namespace: Global
+  summary: Sets the global sound effects (SFX) volume and updates the corresponding AudioMixer parameter.
+  example: []
+  syntax:
+    content: public void SetGSFXVol(float vol)
+    parameters:
+    - id: vol
+      type: System.Single
+      description: The desired SFX volume level (range 0 to 1).
+    content.vb: Public Sub SetGSFXVol(vol As Single)
+  overload: Global.AudioManager.SetGSFXVol*
+  nameWithType.vb: AudioManager.SetGSFXVol(Single)
+  fullName.vb: AudioManager.SetGSFXVol(Single)
+  name.vb: SetGSFXVol(Single)
+- uid: Global.AudioManager.LoadSettings
+  commentId: M:Global.AudioManager.LoadSettings
+  id: LoadSettings
+  parent: Global.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: LoadSettings()
+  nameWithType: AudioManager.LoadSettings()
+  fullName: AudioManager.LoadSettings()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/AudioManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: LoadSettings
+    path: ../Assets/Scripts/AudioManager.cs
+    startLine: 56
+  namespace: Global
+  summary: Loads the saved music and SFX volume settings from PlayerPrefs and updates the AudioMixer.
+  example: []
+  syntax:
+    content: public void LoadSettings()
+    content.vb: Public Sub LoadSettings()
+  overload: Global.AudioManager.LoadSettings*
+- uid: Global.AudioManager.UpdateSliders(Slider,Slider)
+  commentId: M:Global.AudioManager.UpdateSliders(Slider,Slider)
+  id: UpdateSliders(Slider,Slider)
+  parent: Global.AudioManager
+  langs:
+  - csharp
+  - vb
+  name: UpdateSliders(Slider, Slider)
+  nameWithType: AudioManager.UpdateSliders(Slider, Slider)
+  fullName: AudioManager.UpdateSliders(Slider, Slider)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/AudioManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: UpdateSliders
+    path: ../Assets/Scripts/AudioManager.cs
+    startLine: 70
+  namespace: Global
+  summary: Updates the UI sliders to reflect the current music and SFX volume levels.
+  example: []
+  syntax:
+    content: public void UpdateSliders(Slider musicSlider, Slider sfxSlider)
+    parameters:
+    - id: musicSlider
+      type: Global.Slider
+      description: The UI slider for adjusting music volume.
+    - id: sfxSlider
+      type: Global.Slider
+      description: The UI slider for adjusting SFX volume.
+    content.vb: Public Sub UpdateSliders(musicSlider As Slider, sfxSlider As Slider)
+  overload: Global.AudioManager.UpdateSliders*
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.AudioManager
+  commentId: T:Global.AudioManager
+  href: AudioManager.html
+  name: AudioManager
+  nameWithType: AudioManager
+  fullName: AudioManager
+- uid: Global.AudioMixer
+  commentId: '!:Global.AudioMixer'
+  isExternal: true
+  name: AudioMixer
+  nameWithType: AudioMixer
+  fullName: AudioMixer
+- uid: Global.AudioManager.SetGMusicVol*
+  commentId: Overload:Global.AudioManager.SetGMusicVol
+  href: Global.AudioManager.html#AudioManager_SetGMusicVol_System_Single_
+  name: SetGMusicVol
+  nameWithType: AudioManager.SetGMusicVol
+  fullName: AudioManager.SetGMusicVol
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Global.AudioManager.SetGSFXVol*
+  commentId: Overload:Global.AudioManager.SetGSFXVol
+  href: Global.AudioManager.html#AudioManager_SetGSFXVol_System_Single_
+  name: SetGSFXVol
+  nameWithType: AudioManager.SetGSFXVol
+  fullName: AudioManager.SetGSFXVol
+- uid: Global.AudioManager.LoadSettings*
+  commentId: Overload:Global.AudioManager.LoadSettings
+  href: Global.AudioManager.html#AudioManager_LoadSettings
+  name: LoadSettings
+  nameWithType: AudioManager.LoadSettings
+  fullName: AudioManager.LoadSettings
+- uid: Global.AudioManager.UpdateSliders*
+  commentId: Overload:Global.AudioManager.UpdateSliders
+  href: Global.AudioManager.html#AudioManager_UpdateSliders_Slider_Slider_
+  name: UpdateSliders
+  nameWithType: AudioManager.UpdateSliders
+  fullName: AudioManager.UpdateSliders
+- uid: Global.Slider
+  isExternal: true
+  name: Slider
+  nameWithType: Slider
+  fullName: Slider

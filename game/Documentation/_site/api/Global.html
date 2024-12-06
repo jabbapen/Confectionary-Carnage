@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace  | Confectionary-Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace  | Confectionary-Docs ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Confectionary-Docs">
+            Confectionary-Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Global">
+
+  <h1 id="Global" data-uid="Global" class="text-break">Namespace </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.AudioManager.html">AudioManager</a></dt>
+      <dd><p>Manages audio settings for the game, including music and sound effects (SFX) volume.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.Bullet.html">Bullet</a></dt>
+      <dd><p>Player projectile class. Uses Monobehavior to interact with enemies and move
+across the screen. Interacts with enemy HealthManagers to deal damage.
+Implements <code>Start</code>, <code>FixedUpdate</code>, and <code>OnTriggerEnder2D</code> Unity functions.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.CameraController.html">CameraController</a></dt>
+      <dd><p>Moves the camera around to follow the player. Implements <code>FixedUpdate()</code> to
+update its position smoothly.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.CursorObj.html">CursorObj</a></dt>
+      <dd><p>Keeps track of the cursor's position in world space, and aligns it to the game grid.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.Deparent.html">Deparent</a></dt>
+      <dd><p>Utility class which moves the children of a GameObject out of the GameObject
+when it is initialized.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.EndzoneTrigger.html">EndzoneTrigger</a></dt>
+      <dd><p>Implements Unity's <code>OnTriggerEnter2D</code> to detect when a player reaches the
+endzone, then makes <a class="xref" href="Global.GameManager.html">GameManager</a> load the next level.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.EnemyManager.html">EnemyManager</a></dt>
+      <dd><p>Manages the behavior and interactions of an enemy character in the game.
+This includes pathfinding and attacking the player. Implements Unity's
+<code>FixedUpdate</code> to perform actions per frame, and also uses the <a class="xref" href="Global.IWeapon.html">IWeapon</a>
+strategy for flexibility.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.EnemySpawnpoint.html">EnemySpawnpoint</a></dt>
+      <dd><p>Container to hold an <a class="xref" href="Global.EnemyManager.html">EnemyManager</a> GameObject</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.ExplodeWeapon.html">ExplodeWeapon</a></dt>
+      <dd><p>An implementation of <a class="xref" href="Global.IWeapon.html">IWeapon</a> which choots out a burst of bullets when used.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.GameManager.html">GameManager</a></dt>
+      <dd><p>Singleton which oversees the game.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.HealthManager.html">HealthManager</a></dt>
+      <dd><p>Adds health to a GameObject, allowing it to be damaged, and destroying it
+when health is set to zero.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.HelpTile.html">HelpTile</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.IWeapon.html">IWeapon</a></dt>
+      <dd><p>Defines the Weapon Strategy, which is used by EnemyManager.
+Weapons keep track of their own cooldowns, and have some interfaces so the
+enemy can act depending on the weapon state (eg. run away if weapon is not ready).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.Item.html">Item</a></dt>
+      <dd><p>container class to hold an ID for serialization.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.LeaderboardDisplay.html">LeaderboardDisplay</a></dt>
+      <dd><p>Queries the backend to get and display the leaderboard data.
+Uses Unity's <code>Start</code> to do this on scene load.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.LevelEditor.html">LevelEditor</a></dt>
+      <dd><p>Manages the editor scene, including selecting the tile to paint,
+serialization, and making sure levels are of a valid format (eg. tiles must
+not overlap). Implements Unity's <code>Start</code>, <code>Update</code>, and <code>FixedUpdate</code> to
+interact with the user per-frame</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.LevelModel.html">LevelModel</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.LevelRequester.html">LevelRequester</a></dt>
+      <dd><p>Makes calls to the backend to load levels.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.LevelResponse.html">LevelResponse</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.LevelSerializer.html">LevelSerializer</a></dt>
+      <dd><p>Serializes levels: Turns a grid of <a class="xref" href="Global.Tile.html">Tile</a> s into a list of positions and their associated tile IDs.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.MeleeWeapon.html">MeleeWeapon</a></dt>
+      <dd><p>An implementation of <a class="xref" href="Global.IWeapon.html">IWeapon</a> which directly damages the player when
+used, but has a short range.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.Menu.html">Menu</a></dt>
+      <dd><p>Controls Scene loading and opening options within the main menu.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.ObjectIndex.html">ObjectIndex</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.PaletteItem.html">PaletteItem</a></dt>
+      <dd><p>Manages the tile painting feature when in the LevelEditor.
+Uses <code>Update</code> to &quot;paint&quot; the level scene per frame the mouse is down, and
+communicates with <a class="xref" href="Global.LevelEditor.html">LevelEditor</a> to update the level state accordingly.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.PlayerController.html">PlayerController</a></dt>
+      <dd><p>Implements movement and shooting for the player, as well as player
+interactions with water tiles. Uses Unity's <code>Update</code> and <code>FixedUpdate</code> to
+respond to input per frame.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.Projectile.html">Projectile</a></dt>
+      <dd><p>Projectile launched by enemies, implements Unity's <code>FixedUpdate</code> to move
+across the screen per frame, and implements <code>OnTriggerEnter2D</code> to define
+collision logic.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.RangedWeapon.html">RangedWeapon</a></dt>
+      <dd><p>An implementation of <a class="xref" href="Global.IWeapon.html">IWeapon</a> which shoots a <a class="xref" href="Global.Projectile.html">Projectile</a> at
+the player.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.SceneAudio.html">SceneAudio</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.ScoreModel.html">ScoreModel</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.ScoreResponse.html">ScoreResponse</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.SerializationTest.html">SerializationTest</a></dt>
+      <dd><p>Class implementing unit tests for level serialization/deserialization.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.Startzone.html">Startzone</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.Tile.html">Tile</a></dt>
+      <dd><p>A struct so objects interacting with Tile can easily get its <code>GameObject</code> and <code>Transform</code>, eg. when serializing.
+GameObjects can't hold onto values otherwise, so sometimes Data classes are necessary in Unity.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.Transition.html">Transition</a></dt>
+      <dd><p>Animates menus.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Global.WaterTile.html">WaterTile</a></dt>
+      <dd><p>Slows the player down when a Tile with this Monobehavior collides with
+the player.</p>
+</dd>
+    </dl>
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

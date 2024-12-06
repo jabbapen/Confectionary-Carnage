@@ -1,0 +1,150 @@
+### YamlMime:ManagedReference
+items:
+- uid: NavMeshPlus.Extensions
+  commentId: N:NavMeshPlus.Extensions
+  id: NavMeshPlus.Extensions
+  children:
+  - NavMeshPlus.Extensions.AgentDefaultOverride
+  - NavMeshPlus.Extensions.AgentOverride2d
+  - NavMeshPlus.Extensions.AgentRotate2d
+  - NavMeshPlus.Extensions.CollectSources2d
+  - NavMeshPlus.Extensions.CollectSourcesCache2d
+  - NavMeshPlus.Extensions.CollectTilemapSourcesCache2d
+  - NavMeshPlus.Extensions.IAgentOverride
+  - NavMeshPlus.Extensions.INavMeshExtensionsProvider
+  - NavMeshPlus.Extensions.NavMeshAgentAttribute
+  - NavMeshPlus.Extensions.NavMeshAreaAttribute
+  - NavMeshPlus.Extensions.NavMeshBuilderState
+  - NavMeshPlus.Extensions.NavMeshExtension
+  - NavMeshPlus.Extensions.RootSources2d
+  - NavMeshPlus.Extensions.RotateAgentInstantly
+  - NavMeshPlus.Extensions.RotateAgentSmoothly
+  langs:
+  - csharp
+  - vb
+  name: NavMeshPlus.Extensions
+  nameWithType: NavMeshPlus.Extensions
+  fullName: NavMeshPlus.Extensions
+  type: Namespace
+  assemblies:
+  - NavMeshPlus
+references:
+- uid: NavMeshPlus.Extensions.RootSources2d
+  commentId: T:NavMeshPlus.Extensions.RootSources2d
+  href: NavMeshPlus.Extensions.RootSources2d.html
+  name: RootSources2d
+  nameWithType: RootSources2d
+  fullName: NavMeshPlus.Extensions.RootSources2d
+- uid: NavMeshPlus.Extensions.AgentRotate2d
+  commentId: T:NavMeshPlus.Extensions.AgentRotate2d
+  href: NavMeshPlus.Extensions.AgentRotate2d.html
+  name: AgentRotate2d
+  nameWithType: AgentRotate2d
+  fullName: NavMeshPlus.Extensions.AgentRotate2d
+- uid: NavMeshPlus.Extensions.CollectTilemapSourcesCache2d
+  commentId: T:NavMeshPlus.Extensions.CollectTilemapSourcesCache2d
+  href: NavMeshPlus.Extensions.CollectTilemapSourcesCache2d.html
+  name: CollectTilemapSourcesCache2d
+  nameWithType: CollectTilemapSourcesCache2d
+  fullName: NavMeshPlus.Extensions.CollectTilemapSourcesCache2d
+- uid: NavMeshPlus.Extensions.RotateAgentInstantly
+  commentId: T:NavMeshPlus.Extensions.RotateAgentInstantly
+  href: NavMeshPlus.Extensions.RotateAgentInstantly.html
+  name: RotateAgentInstantly
+  nameWithType: RotateAgentInstantly
+  fullName: NavMeshPlus.Extensions.RotateAgentInstantly
+- uid: NavMeshPlus.Extensions.IAgentOverride
+  commentId: T:NavMeshPlus.Extensions.IAgentOverride
+  parent: NavMeshPlus.Extensions
+  href: NavMeshPlus.Extensions.IAgentOverride.html
+  name: IAgentOverride
+  nameWithType: IAgentOverride
+  fullName: NavMeshPlus.Extensions.IAgentOverride
+- uid: NavMeshPlus.Extensions.AgentDefaultOverride
+  commentId: T:NavMeshPlus.Extensions.AgentDefaultOverride
+  href: NavMeshPlus.Extensions.AgentDefaultOverride.html
+  name: AgentDefaultOverride
+  nameWithType: AgentDefaultOverride
+  fullName: NavMeshPlus.Extensions.AgentDefaultOverride
+- uid: NavMeshPlus.Extensions.AgentOverride2d
+  commentId: T:NavMeshPlus.Extensions.AgentOverride2d
+  parent: NavMeshPlus.Extensions
+  href: NavMeshPlus.Extensions.AgentOverride2d.html
+  name: AgentOverride2d
+  nameWithType: AgentOverride2d
+  fullName: NavMeshPlus.Extensions.AgentOverride2d
+- uid: NavMeshPlus.Extensions.NavMeshAreaAttribute
+  commentId: T:NavMeshPlus.Extensions.NavMeshAreaAttribute
+  parent: NavMeshPlus.Extensions
+  href: NavMeshPlus.Extensions.NavMeshAreaAttribute.html
+  name: NavMeshAreaAttribute
+  nameWithType: NavMeshAreaAttribute
+  fullName: NavMeshPlus.Extensions.NavMeshAreaAttribute
+- uid: NavMeshPlus.Extensions.CollectSourcesCache2d
+  commentId: T:NavMeshPlus.Extensions.CollectSourcesCache2d
+  href: NavMeshPlus.Extensions.CollectSourcesCache2d.html
+  name: CollectSourcesCache2d
+  nameWithType: CollectSourcesCache2d
+  fullName: NavMeshPlus.Extensions.CollectSourcesCache2d
+- uid: NavMeshPlus.Extensions.INavMeshExtensionsProvider
+  commentId: T:NavMeshPlus.Extensions.INavMeshExtensionsProvider
+  parent: NavMeshPlus.Extensions
+  href: NavMeshPlus.Extensions.INavMeshExtensionsProvider.html
+  name: INavMeshExtensionsProvider
+  nameWithType: INavMeshExtensionsProvider
+  fullName: NavMeshPlus.Extensions.INavMeshExtensionsProvider
+- uid: NavMeshPlus.Extensions.RotateAgentSmoothly
+  commentId: T:NavMeshPlus.Extensions.RotateAgentSmoothly
+  href: NavMeshPlus.Extensions.RotateAgentSmoothly.html
+  name: RotateAgentSmoothly
+  nameWithType: RotateAgentSmoothly
+  fullName: NavMeshPlus.Extensions.RotateAgentSmoothly
+- uid: NavMeshPlus.Extensions.NavMeshBuilderState
+  commentId: T:NavMeshPlus.Extensions.NavMeshBuilderState
+  parent: NavMeshPlus.Extensions
+  href: NavMeshPlus.Extensions.NavMeshBuilderState.html
+  name: NavMeshBuilderState
+  nameWithType: NavMeshBuilderState
+  fullName: NavMeshPlus.Extensions.NavMeshBuilderState
+- uid: NavMeshPlus.Extensions.NavMeshAgentAttribute
+  commentId: T:NavMeshPlus.Extensions.NavMeshAgentAttribute
+  parent: NavMeshPlus.Extensions
+  href: NavMeshPlus.Extensions.NavMeshAgentAttribute.html
+  name: NavMeshAgentAttribute
+  nameWithType: NavMeshAgentAttribute
+  fullName: NavMeshPlus.Extensions.NavMeshAgentAttribute
+- uid: NavMeshPlus.Extensions.CollectSources2d
+  commentId: T:NavMeshPlus.Extensions.CollectSources2d
+  href: NavMeshPlus.Extensions.CollectSources2d.html
+  name: CollectSources2d
+  nameWithType: CollectSources2d
+  fullName: NavMeshPlus.Extensions.CollectSources2d
+- uid: NavMeshPlus.Extensions.NavMeshExtension
+  commentId: T:NavMeshPlus.Extensions.NavMeshExtension
+  parent: NavMeshPlus.Extensions
+  href: NavMeshPlus.Extensions.NavMeshExtension.html
+  name: NavMeshExtension
+  nameWithType: NavMeshExtension
+  fullName: NavMeshPlus.Extensions.NavMeshExtension
+- uid: NavMeshPlus.Extensions
+  commentId: N:NavMeshPlus.Extensions
+  href: NavMeshPlus.html
+  name: NavMeshPlus.Extensions
+  nameWithType: NavMeshPlus.Extensions
+  fullName: NavMeshPlus.Extensions
+  spec.csharp:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Extensions
+    name: Extensions
+    href: NavMeshPlus.Extensions.html
+  spec.vb:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Extensions
+    name: Extensions
+    href: NavMeshPlus.Extensions.html

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Workflow: How to create a Play Mode test | Confectionary-Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Workflow: How to create a Play Mode test | Confectionary-Docs ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.test-framework@1.1.33/Documentation~/workflow-create-playmode-test.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="Confectionary-Docs">
+            Confectionary-Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="workflow-how-to-create-a-play-mode-test">Workflow: How to create a Play Mode test</h1>
+
+<p>To create a <strong>Play Mode</strong> test, you can follow a similar process as when you want to create an <strong>Edit Mode</strong> test.</p>
+<ol>
+<li>Start with switching to the <strong>PlayMode</strong> tab in the <strong>Test Runner</strong> window.</li>
+<li>Create a test assembly folder (see <a href="workflow-create-test-assembly.html">How to create a new test assembly)</a>. The folder name is <em>Tests</em> by default (or <em>Tests 1</em>, <em>Tests 2</em>, etc. if the preceding name is already in use).</li>
+</ol>
+<p><img src="./images/playmode-tab.png" alt="PlayMode tab"></p>
+<blockquote>
+<p><strong>Note</strong>: If you don’t see the <strong>Create Play Mode Test Assembly Folder</strong> button enabled, make sure that in the Project window you navigate out of a folder with another .asmdef (such as one for Edit Mode tests).</p>
+</blockquote>
+<ol start="3">
+<li>When you have your Play Mode test assembly folder ready, then <a href="workflow-create-test.html">create your Play Mode test</a>.</li>
+</ol>
+<blockquote>
+<p><strong>Note</strong>: <a href="https://docs.unity3d.com/Manual/ScriptCompileOrderFolders.html">Pre-defined Unity assemblies</a> (such as <em>Assembly-CSharp.dll</em>) do not reference your new assembly.</p>
+</blockquote>
+<h2 id="references-and-builds">References and builds</h2>
+<p>Unity Test Framework adds a reference to <code>TestAssemblies</code> in the Assembly Definition file but does not include any other references (e.g., to other scripting assemblies within the Unity project). To test other assemblies, you need to add them to the assembly definition yourself. For how to add assembly references, see <a href="https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html">Assembly Definition</a>.
+We recommend putting tests into separate assemblies and using assembly definitions files. This way you will have more control over which assemblies need to reference test related dlls.</p>
+<h4 id="playmode-build-with-testsassemblies">Playmode build with TestsAssemblies</h4>
+<blockquote>
+<p><strong>Note</strong>: <strong>Enabling Play Mode tests for all assemblies</strong> includes additional assemblies in your project build, which can increase the project’s size as well as the build time.</p>
+</blockquote>
+<p>The supported workflow is to exclude <code>TestAssemblies</code> from Player builds. You can choose to enable playmode tests for all assemblies to run your tests inside the Editor, but this should be disabled again before building the Player to prevent build failures.</p>
+<p>To enable play mode tests for all assemblies you need to set the flag <code>playModeTestRunnerEnabled</code> to 1 inside the <code>ProjectSettings/ProjectSetting.asset</code> file in your project.
+Before building the Player you must disable it again, either by setting the flag back to 0 or by clicking on <code>Disable playmode tests for all assemblies</code> in the dropdown menu, accessed by right-clicking on the Test Runner window tab.
+<img src="./images/playmode-disable-all.png" alt="Disable Play Mode tests for all assemblies"></p>
+<p>For more information, see <a href="edit-mode-vs-play-mode-tests.html">Edit Mode vs. Play Mode tests</a>.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.test-framework@1.1.33/Documentation~/workflow-create-playmode-test.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

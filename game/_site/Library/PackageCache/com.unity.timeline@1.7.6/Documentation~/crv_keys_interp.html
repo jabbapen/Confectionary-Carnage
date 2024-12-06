@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Changing interpolation and shape | Confectionary-Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Changing interpolation and shape | Confectionary-Docs ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.timeline@1.7.6/Documentation~/crv_keys_interp.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="Confectionary-Docs">
+            Confectionary-Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="changing-interpolation-and-shape">Changing interpolation and shape</h1>
+
+<p>Every key has one or two tangents that control the interpolation of the animation curve. The term <strong>interpolation</strong> refers to the estimation of values that determine the shape of the animation curve between two keys.</p>
+<p>Whether a key has one of two tangents depends on the location of the key on the animation curve. The first key only has a right tangent that controls the interpolation of the animation curve after the key. The last key only has a left tangent that controls the interpolation of the animation curve before the last key.</p>
+<p><img src="images/timeline_curves_first_last_tangent.png" alt="The first key (red) only has a right tangent, and the last key (blue) only has a left tangent"></p>
+<p><em>The first key (red) only has a right tangent, and the last key (blue) only has a left tangent</em></p>
+<p>All other keys have two tangents where the left tangent controls the interpolation before the key, and the right tangent controls the interpolation after the key. By default, tangents are joined. Dragging one tangent affects the position of both tangents, and the interpolation of the animation curve both before and after the key.</p>
+<p><img src="images/timeline_curves_tangent_joined.png" alt="Keys that are neither the first key nor last key have joined tangents by default. Dragging either tangent changes the interpolation of the animation curve both before and after the key."></p>
+<p><em>Keys that are neither the first key nor last key have joined tangents by default. Dragging either tangent changes the interpolation of the animation curve both before and after the key.</em></p>
+<p>Dragging a tangent may also change the interpolation mode of the animation curve. For example, most keys are set to the <strong>Clamped Auto</strong> interpolation mode which automatically smooths animation curve as it passes through the key. If you drag a tangent of a key set to <strong>Clamped Auto</strong>, the interpolation mode changes to <strong>Free Smooth</strong>.</p>
+<p>The term <strong>interpolation mode</strong> refers to the interpolation algorithm that determines which shape to use when drawing the animation curve.</p>
+<p>To view the interpolation mode for a key, select the key and right-click. The context menu shows the interpolation mode. To change the interpolation mode for a key, select the key, right-click and select another interpolation mode.</p>
+<p><img src="images/timeline_curves_interp_menu.png" alt="The context menu shows the interpolation mode for the selected key. Use the context menu to change the interpolation mode."></p>
+<p><em>The context menu shows the interpolation mode for the selected key. Use the context menu to change the interpolation mode.</em></p>
+<p>Some interpolation modes break the left and right tangents so that you can position them separately. When tangents are broken, you can set a separate interpolation mode for the animation curve before the key and the animation curve after the key. For more details on the different interpolation modes, see <a href="EditingCurves">Editing Curves</a>. In the <a href="AnimationEditorGuide">Animation window documentation</a>, the interpolation mode is referred to as <strong>tangent type</strong>.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.timeline@1.7.6/Documentation~/crv_keys_interp.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

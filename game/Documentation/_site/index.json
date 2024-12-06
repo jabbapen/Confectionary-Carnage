@@ -1,0 +1,352 @@
+{
+  "api/Global.AudioManager.html": {
+    "href": "api/Global.AudioManager.html",
+    "title": "Class AudioManager | Confectionary-Docs",
+    "keywords": "Class AudioManager Namespace Global Manages audio settings for the game, including music and sound effects (SFX) volume. public class AudioManager : MonoBehaviour Inheritance object AudioManager Fields manager public static AudioManager manager Field Value AudioManager mixer public AudioMixer mixer Field Value AudioMixer Methods LoadSettings() Loads the saved music and SFX volume settings from PlayerPrefs and updates the AudioMixer. public void LoadSettings() SetGMusicVol(float) Sets the global music volume and updates the corresponding AudioMixer parameter. public void SetGMusicVol(float vol) Parameters vol float The desired music volume level (range 0 to 1). SetGSFXVol(float) Sets the global sound effects (SFX) volume and updates the corresponding AudioMixer parameter. public void SetGSFXVol(float vol) Parameters vol float The desired SFX volume level (range 0 to 1). UpdateSliders(Slider, Slider) Updates the UI sliders to reflect the current music and SFX volume levels. public void UpdateSliders(Slider musicSlider, Slider sfxSlider) Parameters musicSlider Slider The UI slider for adjusting music volume. sfxSlider Slider The UI slider for adjusting SFX volume."
+  },
+  "api/Global.Bullet.html": {
+    "href": "api/Global.Bullet.html",
+    "title": "Class Bullet | Confectionary-Docs",
+    "keywords": "Class Bullet Namespace Global Player projectile class. Uses Monobehavior to interact with enemies and move across the screen. Interacts with enemy HealthManagers to deal damage. Implements Start, FixedUpdate, and OnTriggerEnder2D Unity functions. public class Bullet : MonoBehaviour Inheritance object Bullet"
+  },
+  "api/Global.CameraController.html": {
+    "href": "api/Global.CameraController.html",
+    "title": "Class CameraController | Confectionary-Docs",
+    "keywords": "Class CameraController Namespace Global Moves the camera around to follow the player. Implements FixedUpdate() to update its position smoothly. public class CameraController : MonoBehaviour Inheritance object CameraController"
+  },
+  "api/Global.CursorObj.html": {
+    "href": "api/Global.CursorObj.html",
+    "title": "Class CursorObj | Confectionary-Docs",
+    "keywords": "Class CursorObj Namespace Global Keeps track of the cursor's position in world space, and aligns it to the game grid. public class CursorObj : MonoBehaviour Inheritance object CursorObj Fields pos public static Vector2 pos Field Value Vector2 self public static CursorObj self Field Value CursorObj spriteRenderer public SpriteRenderer spriteRenderer Field Value SpriteRenderer trfm public static Transform trfm Field Value Transform"
+  },
+  "api/Global.Deparent.html": {
+    "href": "api/Global.Deparent.html",
+    "title": "Class Deparent | Confectionary-Docs",
+    "keywords": "Class Deparent Namespace Global Utility class which moves the children of a GameObject out of the GameObject when it is initialized. public class Deparent : MonoBehaviour Inheritance object Deparent"
+  },
+  "api/Global.EndzoneTrigger.html": {
+    "href": "api/Global.EndzoneTrigger.html",
+    "title": "Class EndzoneTrigger | Confectionary-Docs",
+    "keywords": "Class EndzoneTrigger Namespace Global Implements Unity's OnTriggerEnter2D to detect when a player reaches the endzone, then makes GameManager load the next level. public class EndzoneTrigger : MonoBehaviour Inheritance object EndzoneTrigger"
+  },
+  "api/Global.EnemyManager.html": {
+    "href": "api/Global.EnemyManager.html",
+    "title": "Class EnemyManager | Confectionary-Docs",
+    "keywords": "Class EnemyManager Namespace Global Manages the behavior and interactions of an enemy character in the game. This includes pathfinding and attacking the player. Implements Unity's FixedUpdate to perform actions per frame, and also uses the IWeapon strategy for flexibility. public class EnemyManager : MonoBehaviour Inheritance object EnemyManager Methods ResetPath() public void ResetPath()"
+  },
+  "api/Global.EnemySpawnpoint.html": {
+    "href": "api/Global.EnemySpawnpoint.html",
+    "title": "Class EnemySpawnpoint | Confectionary-Docs",
+    "keywords": "Class EnemySpawnpoint Namespace Global Container to hold an EnemyManager GameObject public class EnemySpawnpoint : MonoBehaviour Inheritance object EnemySpawnpoint Methods GetEnemy() public GameObject GetEnemy() Returns GameObject"
+  },
+  "api/Global.ExplodeWeapon.html": {
+    "href": "api/Global.ExplodeWeapon.html",
+    "title": "Class ExplodeWeapon | Confectionary-Docs",
+    "keywords": "Class ExplodeWeapon Namespace Global An implementation of IWeapon which choots out a burst of bullets when used. public class ExplodeWeapon : IWeapon Inheritance object IWeapon ExplodeWeapon Inherited Members IWeapon.attackCD IWeapon.attackRange IWeapon.attackDamage Fields projectilePrefab public GameObject projectilePrefab Field Value GameObject Methods Ready() Get whether the weapon is Ready or not, typically when the cooldown is zero. public override bool Ready() Returns bool Whether the weapon is ready or not Usable(GameObject) Get whether the weapon is Usable, typically when the cooldown is zero AND the player is close enough. public override bool Usable(GameObject target) Parameters target GameObject Returns bool Whether the weapon is usable Use(GameObject) What to do when the weapon is used, eg. spawn projectiles, damage the player directly, etc. public override IEnumerator Use(GameObject target) Parameters target GameObject Returns IEnumerator IEnumerator: This happens asynchronously as a Unity coroutine, so it must return an IEnumerator"
+  },
+  "api/Global.GameManager.html": {
+    "href": "api/Global.GameManager.html",
+    "title": "Class GameManager | Confectionary-Docs",
+    "keywords": "Class GameManager Namespace Global Singleton which oversees the game. public class GameManager : MonoBehaviour Inheritance object GameManager Fields GameStart public static UnityEvent GameStart Field Value UnityEvent Instance public static GameManager Instance Field Value GameManager Properties LevelSerializer public LevelSerializer LevelSerializer { get; } Property Value LevelSerializer Methods EndGame() public void EndGame() LoadLevel(string) Loads a level based on the public void LoadLevel(string levelString) Parameters levelString string The level to load, serialized as a string SetupLevel(bool) Queries the backend using LevelRequester , then loads the level based on the serialized level strings returned. public void SetupLevel(bool skipped = false) Parameters skipped bool If set to true, increments the player's score UnloadLevel() Deletes all GameObjects associated with the level. Remark: Switching levels doesn't actually involve changing scenes, only resetting certain states and loading/destroying GameObjects public void UnloadLevel()"
+  },
+  "api/Global.HealthManager.html": {
+    "href": "api/Global.HealthManager.html",
+    "title": "Class HealthManager | Confectionary-Docs",
+    "keywords": "Class HealthManager Namespace Global Adds health to a GameObject, allowing it to be damaged, and destroying it when health is set to zero. public class HealthManager : MonoBehaviour Inheritance object HealthManager Fields MaxHealth Health cap and the amount of health the GameObject starts with. public int MaxHealth Field Value int Properties Dying Dying is set to true if the GameObject is in the process of being destroyed, eg. when a death animation is playing. public bool Dying { get; } Property Value bool Health public int Health { get; set; } Property Value int"
+  },
+  "api/Global.HelpTile.html": {
+    "href": "api/Global.HelpTile.html",
+    "title": "Class HelpTile | Confectionary-Docs",
+    "keywords": "Class HelpTile Namespace Global public class HelpTile : MonoBehaviour Inheritance object HelpTile"
+  },
+  "api/Global.IWeapon.html": {
+    "href": "api/Global.IWeapon.html",
+    "title": "Class IWeapon | Confectionary-Docs",
+    "keywords": "Class IWeapon Namespace Global Defines the Weapon Strategy, which is used by EnemyManager. Weapons keep track of their own cooldowns, and have some interfaces so the enemy can act depending on the weapon state (eg. run away if weapon is not ready). public abstract class IWeapon : MonoBehaviour Inheritance object IWeapon Derived ExplodeWeapon MeleeWeapon RangedWeapon Fields attackCD All weapons have an attack cooldown protected float attackCD Field Value float attackDamage The amount of damage to do when the weapon hits. protected int attackDamage Field Value int attackRange Get the attack range of the weapon. Enemies need to know this to get in range of the player. public float attackRange Field Value float Methods Ready() Get whether the weapon is Ready or not, typically when the cooldown is zero. public abstract bool Ready() Returns bool Whether the weapon is ready or not Usable(GameObject) Get whether the weapon is Usable, typically when the cooldown is zero AND the player is close enough. public abstract bool Usable(GameObject target) Parameters target GameObject Returns bool Whether the weapon is usable Use(GameObject) What to do when the weapon is used, eg. spawn projectiles, damage the player directly, etc. public abstract IEnumerator Use(GameObject target) Parameters target GameObject Returns IEnumerator IEnumerator: This happens asynchronously as a Unity coroutine, so it must return an IEnumerator"
+  },
+  "api/Global.Item.html": {
+    "href": "api/Global.Item.html",
+    "title": "Class Item | Confectionary-Docs",
+    "keywords": "Class Item Namespace Global container class to hold an ID for serialization. public class Item : MonoBehaviour Inheritance object Item Fields id public int id Field Value int"
+  },
+  "api/Global.LeaderboardDisplay.html": {
+    "href": "api/Global.LeaderboardDisplay.html",
+    "title": "Class LeaderboardDisplay | Confectionary-Docs",
+    "keywords": "Class LeaderboardDisplay Namespace Global Queries the backend to get and display the leaderboard data. Uses Unity's Start to do this on scene load. public class LeaderboardDisplay : MonoBehaviour Inheritance object LeaderboardDisplay"
+  },
+  "api/Global.LevelEditor.html": {
+    "href": "api/Global.LevelEditor.html",
+    "title": "Class LevelEditor | Confectionary-Docs",
+    "keywords": "Class LevelEditor Namespace Global Manages the editor scene, including selecting the tile to paint, serialization, and making sure levels are of a valid format (eg. tiles must not overlap). Implements Unity's Start, Update, and FixedUpdate to interact with the user per-frame public class LevelEditor : MonoBehaviour Inheritance object LevelEditor Fields TILE_BRICK public const int TILE_BRICK = 2 Field Value int TILE_END public const int TILE_END = 1 Field Value int TILE_ENEMY public const int TILE_ENEMY = 5 Field Value int TILE_LAVA public const int TILE_LAVA = 4 Field Value int TILE_START public const int TILE_START = 0 Field Value int TILE_WATER public const int TILE_WATER = 3 Field Value int brushType public int brushType Field Value int mapSerialization public string mapSerialization Field Value string origin public Vector2 origin Field Value Vector2 paletteHover public static bool paletteHover Field Value bool self public static LevelEditor self Field Value LevelEditor tileIDsMap Maps positions in the scene to Tile IDs for serialization public Dictionary<Vector2, int> tileIDsMap Field Value Dictionary<Vector2, int> tileObjMap Maps positions in the scene to GameObjects to control game state public Dictionary<Vector2, Tile> tileObjMap Field Value Dictionary<Vector2, Tile> tileSize public float tileSize Field Value float Methods RequestBrush(int) public void RequestBrush(int id) Parameters id int"
+  },
+  "api/Global.LevelModel.html": {
+    "href": "api/Global.LevelModel.html",
+    "title": "Class LevelModel | Confectionary-Docs",
+    "keywords": "Class LevelModel Namespace Global [Serializable] public class LevelModel Inheritance object LevelModel Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Fields author public string author Field Value string level_name public string level_name Field Value string serialized_level public string serialized_level Field Value string"
+  },
+  "api/Global.LevelRequester.html": {
+    "href": "api/Global.LevelRequester.html",
+    "title": "Class LevelRequester | Confectionary-Docs",
+    "keywords": "Class LevelRequester Namespace Global Makes calls to the backend to load levels. public class LevelRequester : MonoBehaviour Inheritance object LevelRequester Methods GetLevel() Returns a random level from the levels which have been received by RequestLevels. public LevelModel GetLevel() Returns LevelModel LevelModel: a struct containing a Level's name, creator, and serialized string QueryAllLevels() Querys a certain number levels from the backend at once. public IEnumerator QueryAllLevels() Returns IEnumerator IEnumerator: this is required for Unity's coroutines feature, which lets us make backend calls asynchronously"
+  },
+  "api/Global.LevelResponse.html": {
+    "href": "api/Global.LevelResponse.html",
+    "title": "Class LevelResponse | Confectionary-Docs",
+    "keywords": "Class LevelResponse Namespace Global [Serializable] public class LevelResponse Inheritance object LevelResponse Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Fields data public List<LevelModel> data Field Value List<LevelModel> message public string message Field Value string statusCode public int statusCode Field Value int"
+  },
+  "api/Global.LevelSerializer.html": {
+    "href": "api/Global.LevelSerializer.html",
+    "title": "Class LevelSerializer | Confectionary-Docs",
+    "keywords": "Class LevelSerializer Namespace Global Serializes levels: Turns a grid of Tile s into a list of positions and their associated tile IDs. public class LevelSerializer : MonoBehaviour Inheritance object LevelSerializer Methods LoadField(string, GameObject, Transform) Loads a level by turning the serialized string into GameObjects under the parent parameter, then moves the player to starting location provided by playerTransform public void LoadField(string data, GameObject parent, Transform playerTransform) Parameters data string Serialized level data parent GameObject Parent under which to create the level's GameObjects playerTransform Transform Where to move the player SaveField(GameObject) Serializes and uploads a GameObject parent to the backend. public void SaveField(GameObject parent) Parameters parent GameObject The GameObject to be serialized and saved SerializeLevel(GameObject) Serializes a GameObject parent representing the level into a string which can be stored and later deserialized. public string SerializeLevel(GameObject parent) Parameters parent GameObject Unity GameObject representing the parent of all of the tiles in a level (like the html root element). Returns string String representing the serialized level"
+  },
+  "api/Global.MeleeWeapon.html": {
+    "href": "api/Global.MeleeWeapon.html",
+    "title": "Class MeleeWeapon | Confectionary-Docs",
+    "keywords": "Class MeleeWeapon Namespace Global An implementation of IWeapon which directly damages the player when used, but has a short range. public class MeleeWeapon : IWeapon Inheritance object IWeapon MeleeWeapon Inherited Members IWeapon.attackCD IWeapon.attackRange IWeapon.attackDamage Methods Ready() Get whether the weapon is Ready or not, typically when the cooldown is zero. public override bool Ready() Returns bool Whether the weapon is ready or not Usable(GameObject) Get whether the weapon is Usable, typically when the cooldown is zero AND the player is close enough. public override bool Usable(GameObject target) Parameters target GameObject Returns bool Whether the weapon is usable Use(GameObject) What to do when the weapon is used, eg. spawn projectiles, damage the player directly, etc. public override IEnumerator Use(GameObject target) Parameters target GameObject Returns IEnumerator IEnumerator: This happens asynchronously as a Unity coroutine, so it must return an IEnumerator"
+  },
+  "api/Global.Menu.html": {
+    "href": "api/Global.Menu.html",
+    "title": "Class Menu | Confectionary-Docs",
+    "keywords": "Class Menu Namespace Global Controls Scene loading and opening options within the main menu. public class Menu : MonoBehaviour Inheritance object Menu Fields errorText public GameObject errorText Field Value GameObject panel public GameObject panel Field Value GameObject usernameInput public TMP_InputField usernameInput Field Value TMP_InputField Methods CloseOptions() public void CloseOptions() LoadScene(string) public void LoadScene(string game) Parameters game string OpenOptions() public void OpenOptions() PauseGame() public void PauseGame() PlayGame(string) public void PlayGame(string game) Parameters game string Quit() public void Quit() UnpauseGame() public void UnpauseGame()"
+  },
+  "api/Global.ObjectIndex.html": {
+    "href": "api/Global.ObjectIndex.html",
+    "title": "Class ObjectIndex | Confectionary-Docs",
+    "keywords": "Class ObjectIndex Namespace Global public class ObjectIndex : ScriptableObject Inheritance object ObjectIndex Fields objects public List<GameObject> objects Field Value List<GameObject>"
+  },
+  "api/Global.PaletteItem.html": {
+    "href": "api/Global.PaletteItem.html",
+    "title": "Class PaletteItem | Confectionary-Docs",
+    "keywords": "Class PaletteItem Namespace Global Manages the tile painting feature when in the LevelEditor. Uses Update to \"paint\" the level scene per frame the mouse is down, and communicates with LevelEditor to update the level state accordingly. public class PaletteItem : MonoBehaviour Inheritance object PaletteItem"
+  },
+  "api/Global.PlayerController.html": {
+    "href": "api/Global.PlayerController.html",
+    "title": "Class PlayerController | Confectionary-Docs",
+    "keywords": "Class PlayerController Namespace Global Implements movement and shooting for the player, as well as player interactions with water tiles. Uses Unity's Update and FixedUpdate to respond to input per frame. public class PlayerController : MonoBehaviour Inheritance object PlayerController Fields moveSpeed public float moveSpeed Field Value float self public static PlayerController self Field Value PlayerController trfm public static Transform trfm Field Value Transform Methods EnterWater() public void EnterWater() ExitWater() public void ExitWater()"
+  },
+  "api/Global.Projectile.html": {
+    "href": "api/Global.Projectile.html",
+    "title": "Class Projectile | Confectionary-Docs",
+    "keywords": "Class Projectile Namespace Global Projectile launched by enemies, implements Unity's FixedUpdate to move across the screen per frame, and implements OnTriggerEnter2D to define collision logic. public class Projectile : MonoBehaviour Inheritance object Projectile Properties Direction public Vector3 Direction { get; set; } Property Value Vector3"
+  },
+  "api/Global.RangedWeapon.html": {
+    "href": "api/Global.RangedWeapon.html",
+    "title": "Class RangedWeapon | Confectionary-Docs",
+    "keywords": "Class RangedWeapon Namespace Global An implementation of IWeapon which shoots a Projectile at the player. public class RangedWeapon : IWeapon Inheritance object IWeapon RangedWeapon Inherited Members IWeapon.attackCD IWeapon.attackRange IWeapon.attackDamage Fields projectilePrefab public GameObject projectilePrefab Field Value GameObject Methods Ready() Get whether the weapon is Ready or not, typically when the cooldown is zero. public override bool Ready() Returns bool Whether the weapon is ready or not Usable(GameObject) Get whether the weapon is Usable, typically when the cooldown is zero AND the player is close enough. public override bool Usable(GameObject target) Parameters target GameObject Returns bool Whether the weapon is usable Use(GameObject) What to do when the weapon is used, eg. spawn projectiles, damage the player directly, etc. public override IEnumerator Use(GameObject target) Parameters target GameObject Returns IEnumerator IEnumerator: This happens asynchronously as a Unity coroutine, so it must return an IEnumerator"
+  },
+  "api/Global.SceneAudio.html": {
+    "href": "api/Global.SceneAudio.html",
+    "title": "Class SceneAudio | Confectionary-Docs",
+    "keywords": "Class SceneAudio Namespace Global public class SceneAudio : MonoBehaviour Inheritance object SceneAudio Fields musicSlider public Slider musicSlider Field Value Slider sfxSlider public Slider sfxSlider Field Value Slider Methods PlaySound(AudioSource) public void PlaySound(AudioSource sound) Parameters sound AudioSource SetMusicVol(float) public void SetMusicVol(float vol) Parameters vol float SetSFXVol(float) public void SetSFXVol(float vol) Parameters vol float"
+  },
+  "api/Global.ScoreModel.html": {
+    "href": "api/Global.ScoreModel.html",
+    "title": "Class ScoreModel | Confectionary-Docs",
+    "keywords": "Class ScoreModel Namespace Global [Serializable] public class ScoreModel Inheritance object ScoreModel Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Fields name public string name Field Value string score public int score Field Value int"
+  },
+  "api/Global.ScoreResponse.html": {
+    "href": "api/Global.ScoreResponse.html",
+    "title": "Class ScoreResponse | Confectionary-Docs",
+    "keywords": "Class ScoreResponse Namespace Global [Serializable] public class ScoreResponse Inheritance object ScoreResponse Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Fields data public List<ScoreModel> data Field Value List<ScoreModel> message public string message Field Value string statusCode public int statusCode Field Value int"
+  },
+  "api/Global.SerializationTest.html": {
+    "href": "api/Global.SerializationTest.html",
+    "title": "Class SerializationTest | Confectionary-Docs",
+    "keywords": "Class SerializationTest Namespace Global Class implementing unit tests for level serialization/deserialization. public class SerializationTest : MonoBehaviour Inheritance object SerializationTest Methods RunTest() Tests serialization by verifying a level is deserialized, then serialized back into the same string. public void RunTest()"
+  },
+  "api/Global.Startzone.html": {
+    "href": "api/Global.Startzone.html",
+    "title": "Class Startzone | Confectionary-Docs",
+    "keywords": "Class Startzone Namespace Global public class Startzone : MonoBehaviour Inheritance object Startzone Fields Instance protected static Startzone Instance Field Value Startzone"
+  },
+  "api/Global.Tile.html": {
+    "href": "api/Global.Tile.html",
+    "title": "Class Tile | Confectionary-Docs",
+    "keywords": "Class Tile Namespace Global A struct so objects interacting with Tile can easily get its GameObject and Transform, eg. when serializing. GameObjects can't hold onto values otherwise, so sometimes Data classes are necessary in Unity. public class Tile : MonoBehaviour Inheritance object Tile Fields obj public GameObject obj Field Value GameObject trfm public Transform trfm Field Value Transform"
+  },
+  "api/Global.Transition.html": {
+    "href": "api/Global.Transition.html",
+    "title": "Class Transition | Confectionary-Docs",
+    "keywords": "Class Transition Namespace Global Animates menus. public class Transition : MonoBehaviour Inheritance object Transition Fields Instance public static Transition Instance Field Value Transition Methods HideScreen() public void HideScreen() ShowScreen() public void ShowScreen()"
+  },
+  "api/Global.WaterTile.html": {
+    "href": "api/Global.WaterTile.html",
+    "title": "Class WaterTile | Confectionary-Docs",
+    "keywords": "Class WaterTile Namespace Global Slows the player down when a Tile with this Monobehavior collides with the player. public class WaterTile : MonoBehaviour Inheritance object WaterTile"
+  },
+  "api/Global.html": {
+    "href": "api/Global.html",
+    "title": "Namespace | Confectionary-Docs",
+    "keywords": "Namespace Classes AudioManager Manages audio settings for the game, including music and sound effects (SFX) volume. Bullet Player projectile class. Uses Monobehavior to interact with enemies and move across the screen. Interacts with enemy HealthManagers to deal damage. Implements Start, FixedUpdate, and OnTriggerEnder2D Unity functions. CameraController Moves the camera around to follow the player. Implements FixedUpdate() to update its position smoothly. CursorObj Keeps track of the cursor's position in world space, and aligns it to the game grid. Deparent Utility class which moves the children of a GameObject out of the GameObject when it is initialized. EndzoneTrigger Implements Unity's OnTriggerEnter2D to detect when a player reaches the endzone, then makes GameManager load the next level. EnemyManager Manages the behavior and interactions of an enemy character in the game. This includes pathfinding and attacking the player. Implements Unity's FixedUpdate to perform actions per frame, and also uses the IWeapon strategy for flexibility. EnemySpawnpoint Container to hold an EnemyManager GameObject ExplodeWeapon An implementation of IWeapon which choots out a burst of bullets when used. GameManager Singleton which oversees the game. HealthManager Adds health to a GameObject, allowing it to be damaged, and destroying it when health is set to zero. HelpTile IWeapon Defines the Weapon Strategy, which is used by EnemyManager. Weapons keep track of their own cooldowns, and have some interfaces so the enemy can act depending on the weapon state (eg. run away if weapon is not ready). Item container class to hold an ID for serialization. LeaderboardDisplay Queries the backend to get and display the leaderboard data. Uses Unity's Start to do this on scene load. LevelEditor Manages the editor scene, including selecting the tile to paint, serialization, and making sure levels are of a valid format (eg. tiles must not overlap). Implements Unity's Start, Update, and FixedUpdate to interact with the user per-frame LevelModel LevelRequester Makes calls to the backend to load levels. LevelResponse LevelSerializer Serializes levels: Turns a grid of Tile s into a list of positions and their associated tile IDs. MeleeWeapon An implementation of IWeapon which directly damages the player when used, but has a short range. Menu Controls Scene loading and opening options within the main menu. ObjectIndex PaletteItem Manages the tile painting feature when in the LevelEditor. Uses Update to \"paint\" the level scene per frame the mouse is down, and communicates with LevelEditor to update the level state accordingly. PlayerController Implements movement and shooting for the player, as well as player interactions with water tiles. Uses Unity's Update and FixedUpdate to respond to input per frame. Projectile Projectile launched by enemies, implements Unity's FixedUpdate to move across the screen per frame, and implements OnTriggerEnter2D to define collision logic. RangedWeapon An implementation of IWeapon which shoots a Projectile at the player. SceneAudio ScoreModel ScoreResponse SerializationTest Class implementing unit tests for level serialization/deserialization. Startzone Tile A struct so objects interacting with Tile can easily get its GameObject and Transform, eg. when serializing. GameObjects can't hold onto values otherwise, so sometimes Data classes are necessary in Unity. Transition Animates menus. WaterTile Slows the player down when a Tile with this Monobehavior collides with the player."
+  },
+  "api/NavMeshPlus.Components.CollectObjects.html": {
+    "href": "api/NavMeshPlus.Components.CollectObjects.html",
+    "title": "Enum CollectObjects | Confectionary-Docs",
+    "keywords": "Enum CollectObjects Namespace NavMeshPlus.Components public enum CollectObjects Fields All = 0 Children = 2 Volume = 1"
+  },
+  "api/NavMeshPlus.Components.Editors.NavMeshAssetManager.html": {
+    "href": "api/NavMeshPlus.Components.Editors.NavMeshAssetManager.html",
+    "title": "Class NavMeshAssetManager | Confectionary-Docs",
+    "keywords": "Class NavMeshAssetManager Namespace NavMeshPlus.Components.Editors public class NavMeshAssetManager : ScriptableSingleton<NavMeshAssetManager> Inheritance object NavMeshAssetManager Methods ClearSurfaces(Object[]) public void ClearSurfaces(UnityEngine.Object[] surfaces) Parameters surfaces Object[] IsSurfaceBaking(NavMeshSurface) public bool IsSurfaceBaking(NavMeshSurface surface) Parameters surface NavMeshSurface Returns bool StartBakingSurfaces(Object[]) public void StartBakingSurfaces(UnityEngine.Object[] surfaces) Parameters surfaces Object[]"
+  },
+  "api/NavMeshPlus.Components.Editors.NavMeshComponentsGUIUtility.html": {
+    "href": "api/NavMeshPlus.Components.Editors.NavMeshComponentsGUIUtility.html",
+    "title": "Class NavMeshComponentsGUIUtility | Confectionary-Docs",
+    "keywords": "Class NavMeshComponentsGUIUtility Namespace NavMeshPlus.Components.Editors public static class NavMeshComponentsGUIUtility Inheritance object NavMeshComponentsGUIUtility Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods AgentMaskPopup(string, SerializedProperty) public static void AgentMaskPopup(string labelName, SerializedProperty agentMask) Parameters labelName string agentMask SerializedProperty AgentTypePopup(Rect, string, SerializedProperty) public static void AgentTypePopup(Rect rect, string labelName, SerializedProperty agentTypeID) Parameters rect Rect labelName string agentTypeID SerializedProperty AreaPopup(Rect, string, SerializedProperty) public static void AreaPopup(Rect rect, string labelName, SerializedProperty areaProperty) Parameters rect Rect labelName string areaProperty SerializedProperty CreateAndSelectGameObject(string, GameObject) public static GameObject CreateAndSelectGameObject(string suggestedName, GameObject parent) Parameters suggestedName string parent GameObject Returns GameObject IsAgentSelectionValid(SerializedProperty) public static bool IsAgentSelectionValid(SerializedProperty agentTypeID) Parameters agentTypeID SerializedProperty Returns bool"
+  },
+  "api/NavMeshPlus.Components.Editors.html": {
+    "href": "api/NavMeshPlus.Components.Editors.html",
+    "title": "Namespace NavMeshPlus.Components.Editors | Confectionary-Docs",
+    "keywords": "Namespace NavMeshPlus.Components.Editors Classes NavMeshAssetManager NavMeshComponentsGUIUtility"
+  },
+  "api/NavMeshPlus.Components.NavMeshLink.html": {
+    "href": "api/NavMeshPlus.Components.NavMeshLink.html",
+    "title": "Class NavMeshLink | Confectionary-Docs",
+    "keywords": "Class NavMeshLink Namespace NavMeshPlus.Components public class NavMeshLink : MonoBehaviour Inheritance object NavMeshLink Properties agentTypeID public int agentTypeID { get; set; } Property Value int area public int area { get; set; } Property Value int autoUpdate public bool autoUpdate { get; set; } Property Value bool bidirectional public bool bidirectional { get; set; } Property Value bool costModifier public int costModifier { get; set; } Property Value int endPoint public Vector3 endPoint { get; set; } Property Value Vector3 startPoint public Vector3 startPoint { get; set; } Property Value Vector3 width public float width { get; set; } Property Value float Methods UpdateLink() public void UpdateLink()"
+  },
+  "api/NavMeshPlus.Components.NavMeshModifier.html": {
+    "href": "api/NavMeshPlus.Components.NavMeshModifier.html",
+    "title": "Class NavMeshModifier | Confectionary-Docs",
+    "keywords": "Class NavMeshModifier Namespace NavMeshPlus.Components public class NavMeshModifier : MonoBehaviour Inheritance object NavMeshModifier Properties activeModifiers public static List<NavMeshModifier> activeModifiers { get; } Property Value List<NavMeshModifier> area public int area { get; set; } Property Value int ignoreFromBuild public bool ignoreFromBuild { get; set; } Property Value bool overrideArea public bool overrideArea { get; set; } Property Value bool Methods AffectsAgentType(int) public bool AffectsAgentType(int agentTypeID) Parameters agentTypeID int Returns bool"
+  },
+  "api/NavMeshPlus.Components.NavMeshModifierTilemap.TileModifier.html": {
+    "href": "api/NavMeshPlus.Components.NavMeshModifierTilemap.TileModifier.html",
+    "title": "Struct NavMeshModifierTilemap.TileModifier | Confectionary-Docs",
+    "keywords": "Struct NavMeshModifierTilemap.TileModifier Namespace NavMeshPlus.Components [Serializable] public struct NavMeshModifierTilemap.TileModifier Inherited Members ValueType.Equals(object) ValueType.GetHashCode() ValueType.ToString() object.Equals(object, object) object.GetType() object.ReferenceEquals(object, object) Fields area public int area Field Value int overrideArea public bool overrideArea Field Value bool tile public TileBase tile Field Value TileBase"
+  },
+  "api/NavMeshPlus.Components.NavMeshModifierTilemap.html": {
+    "href": "api/NavMeshPlus.Components.NavMeshModifierTilemap.html",
+    "title": "Class NavMeshModifierTilemap | Confectionary-Docs",
+    "keywords": "Class NavMeshModifierTilemap Namespace NavMeshPlus.Components public class NavMeshModifierTilemap : MonoBehaviour Inheritance object NavMeshModifierTilemap Methods AffectsAgentType(int) public bool AffectsAgentType(int agentTypeID) Parameters agentTypeID int Returns bool CacheModifiers() public void CacheModifiers() GetModifierMap() public Dictionary<TileBase, NavMeshModifierTilemap.TileModifier> GetModifierMap() Returns Dictionary<TileBase, NavMeshModifierTilemap.TileModifier> TryGetTileModifier(Vector3Int, Tilemap, out TileModifier) public virtual bool TryGetTileModifier(Vector3Int coords, Tilemap tilemap, out NavMeshModifierTilemap.TileModifier modifier) Parameters coords Vector3Int tilemap Tilemap modifier NavMeshModifierTilemap.TileModifier Returns bool"
+  },
+  "api/NavMeshPlus.Components.NavMeshModifierVolume.html": {
+    "href": "api/NavMeshPlus.Components.NavMeshModifierVolume.html",
+    "title": "Class NavMeshModifierVolume | Confectionary-Docs",
+    "keywords": "Class NavMeshModifierVolume Namespace NavMeshPlus.Components public class NavMeshModifierVolume : MonoBehaviour Inheritance object NavMeshModifierVolume Properties activeModifiers public static List<NavMeshModifierVolume> activeModifiers { get; } Property Value List<NavMeshModifierVolume> area public int area { get; set; } Property Value int center public Vector3 center { get; set; } Property Value Vector3 size public Vector3 size { get; set; } Property Value Vector3 Methods AffectsAgentType(int) public bool AffectsAgentType(int agentTypeID) Parameters agentTypeID int Returns bool"
+  },
+  "api/NavMeshPlus.Components.NavMeshSurface.html": {
+    "href": "api/NavMeshPlus.Components.NavMeshSurface.html",
+    "title": "Class NavMeshSurface | Confectionary-Docs",
+    "keywords": "Class NavMeshSurface Namespace NavMeshPlus.Components public class NavMeshSurface : MonoBehaviour Inheritance object NavMeshSurface Properties NevMeshExtensions public INavMeshExtensionsProvider NevMeshExtensions { get; set; } Property Value INavMeshExtensionsProvider activeSurfaces public static List<NavMeshSurface> activeSurfaces { get; } Property Value List<NavMeshSurface> agentTypeID public int agentTypeID { get; set; } Property Value int buildHeightMesh public bool buildHeightMesh { get; set; } Property Value bool center public Vector3 center { get; set; } Property Value Vector3 collectObjects public CollectObjects collectObjects { get; set; } Property Value CollectObjects defaultArea public int defaultArea { get; set; } Property Value int hideEditorLogs public bool hideEditorLogs { get; set; } Property Value bool ignoreNavMeshAgent public bool ignoreNavMeshAgent { get; set; } Property Value bool ignoreNavMeshObstacle public bool ignoreNavMeshObstacle { get; set; } Property Value bool layerMask public LayerMask layerMask { get; set; } Property Value LayerMask navMeshData public NavMeshData navMeshData { get; set; } Property Value NavMeshData navMeshDataInstance public NavMeshDataInstance navMeshDataInstance { get; } Property Value NavMeshDataInstance overrideTileSize public bool overrideTileSize { get; set; } Property Value bool overrideVoxelSize public bool overrideVoxelSize { get; set; } Property Value bool size public Vector3 size { get; set; } Property Value Vector3 tileSize public int tileSize { get; set; } Property Value int useGeometry public NavMeshCollectGeometry useGeometry { get; set; } Property Value NavMeshCollectGeometry voxelSize public float voxelSize { get; set; } Property Value float Methods AddData() public void AddData() BuildNavMesh() public void BuildNavMesh() BuildNavMeshAsync() public AsyncOperation BuildNavMeshAsync() Returns AsyncOperation CalculateWorldBounds(List<NavMeshBuildSource>) public Bounds CalculateWorldBounds(List<NavMeshBuildSource> sources) Parameters sources List<NavMeshBuildSource> Returns Bounds GetBuildSettings() public NavMeshBuildSettings GetBuildSettings() Returns NavMeshBuildSettings GetWorldBounds(Matrix4x4, Bounds) public static Bounds GetWorldBounds(Matrix4x4 mat, Bounds bounds) Parameters mat Matrix4x4 bounds Bounds Returns Bounds RemoveData() public void RemoveData() UpdateNavMesh(NavMeshData) public AsyncOperation UpdateNavMesh(NavMeshData data) Parameters data NavMeshData Returns AsyncOperation"
+  },
+  "api/NavMeshPlus.Components.html": {
+    "href": "api/NavMeshPlus.Components.html",
+    "title": "Namespace NavMeshPlus.Components | Confectionary-Docs",
+    "keywords": "Namespace NavMeshPlus.Components Classes NavMeshLink NavMeshModifier NavMeshModifierTilemap NavMeshModifierVolume NavMeshSurface Structs NavMeshModifierTilemap.TileModifier Enums CollectObjects"
+  },
+  "api/NavMeshPlus.Extensions.AgentDefaultOverride.html": {
+    "href": "api/NavMeshPlus.Extensions.AgentDefaultOverride.html",
+    "title": "Class AgentDefaultOverride | Confectionary-Docs",
+    "keywords": "Class AgentDefaultOverride Namespace NavMeshPlus.Extensions public class AgentDefaultOverride : IAgentOverride Inheritance object AgentDefaultOverride Implements IAgentOverride Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Methods UpdateAgent() public void UpdateAgent()"
+  },
+  "api/NavMeshPlus.Extensions.AgentOverride2d.html": {
+    "href": "api/NavMeshPlus.Extensions.AgentOverride2d.html",
+    "title": "Class AgentOverride2d | Confectionary-Docs",
+    "keywords": "Class AgentOverride2d Namespace NavMeshPlus.Extensions public class AgentOverride2d : MonoBehaviour Inheritance object AgentOverride2d Properties Agent public NavMeshAgent Agent { get; } Property Value NavMeshAgent agentOverride public IAgentOverride agentOverride { get; set; } Property Value IAgentOverride"
+  },
+  "api/NavMeshPlus.Extensions.AgentRotate2d.html": {
+    "href": "api/NavMeshPlus.Extensions.AgentRotate2d.html",
+    "title": "Class AgentRotate2d | Confectionary-Docs",
+    "keywords": "Class AgentRotate2d Namespace NavMeshPlus.Extensions public class AgentRotate2d : MonoBehaviour Inheritance object AgentRotate2d"
+  },
+  "api/NavMeshPlus.Extensions.CollectSources2d.html": {
+    "href": "api/NavMeshPlus.Extensions.CollectSources2d.html",
+    "title": "Class CollectSources2d | Confectionary-Docs",
+    "keywords": "Class CollectSources2d Namespace NavMeshPlus.Extensions public class CollectSources2d : NavMeshExtension Inheritance object NavMeshExtension CollectSources2d Inherited Members NavMeshExtension.Order NavMeshExtension.PostCollectSources(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState) NavMeshExtension.NavMeshSurfaceOwner NavMeshExtension.Awake() NavMeshExtension.OnEnable() NavMeshExtension.OnDestroy() NavMeshExtension.ConnectToVcam(bool) Properties compressBounds public bool compressBounds { get; set; } Property Value bool overrideByGrid public bool overrideByGrid { get; set; } Property Value bool overrideVector public Vector3 overrideVector { get; set; } Property Value Vector3 useMeshPrefab public GameObject useMeshPrefab { get; set; } Property Value GameObject Methods CalculateWorldBounds(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState) public override void CalculateWorldBounds(NavMeshSurface surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState) Parameters surface NavMeshSurface sources List<NavMeshBuildSource> navNeshState NavMeshBuilderState CollectSources(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState) public override void CollectSources(NavMeshSurface surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState) Parameters surface NavMeshSurface sources List<NavMeshBuildSource> navNeshState NavMeshBuilderState"
+  },
+  "api/NavMeshPlus.Extensions.CollectSourcesCache2d.html": {
+    "href": "api/NavMeshPlus.Extensions.CollectSourcesCache2d.html",
+    "title": "Class CollectSourcesCache2d | Confectionary-Docs",
+    "keywords": "Class CollectSourcesCache2d Namespace NavMeshPlus.Extensions public class CollectSourcesCache2d : NavMeshExtension Inheritance object NavMeshExtension CollectSourcesCache2d Inherited Members NavMeshExtension.Order NavMeshExtension.CalculateWorldBounds(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState) NavMeshExtension.NavMeshSurfaceOwner NavMeshExtension.OnEnable() NavMeshExtension.ConnectToVcam(bool) Properties Cache public List<NavMeshBuildSource> Cache { get; } Property Value List<NavMeshBuildSource> CahcheCount public int CahcheCount { get; } Property Value int IsDirty public bool IsDirty { get; protected set; } Property Value bool SourcesCount public int SourcesCount { get; } Property Value int Methods AddSource(GameObject, NavMeshBuildSource) public bool AddSource(GameObject gameObject, NavMeshBuildSource source) Parameters gameObject GameObject source NavMeshBuildSource Returns bool Awake() protected override void Awake() CollectSources(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState) public override void CollectSources(NavMeshSurface surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navMeshState) Parameters surface NavMeshSurface sources List<NavMeshBuildSource> navMeshState NavMeshBuilderState OnDestroy() protected override void OnDestroy() PostCollectSources(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState) public override void PostCollectSources(NavMeshSurface surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState) Parameters surface NavMeshSurface sources List<NavMeshBuildSource> navNeshState NavMeshBuilderState RemoveSource(GameObject) public bool RemoveSource(GameObject gameObject) Parameters gameObject GameObject Returns bool UpdateNavMesh() public AsyncOperation UpdateNavMesh() Returns AsyncOperation UpdateNavMesh(NavMeshData) public AsyncOperation UpdateNavMesh(NavMeshData data) Parameters data NavMeshData Returns AsyncOperation UpdateSource(GameObject) public bool UpdateSource(GameObject gameObject) Parameters gameObject GameObject Returns bool"
+  },
+  "api/NavMeshPlus.Extensions.CollectTilemapSourcesCache2d.html": {
+    "href": "api/NavMeshPlus.Extensions.CollectTilemapSourcesCache2d.html",
+    "title": "Class CollectTilemapSourcesCache2d | Confectionary-Docs",
+    "keywords": "Class CollectTilemapSourcesCache2d Namespace NavMeshPlus.Extensions public class CollectTilemapSourcesCache2d : NavMeshExtension Inheritance object NavMeshExtension CollectTilemapSourcesCache2d Inherited Members NavMeshExtension.Order NavMeshExtension.CollectSources(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState) NavMeshExtension.CalculateWorldBounds(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState) NavMeshExtension.NavMeshSurfaceOwner NavMeshExtension.OnEnable() NavMeshExtension.ConnectToVcam(bool) Methods Awake() protected override void Awake() OnDestroy() protected override void OnDestroy() PostCollectSources(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState) public override void PostCollectSources(NavMeshSurface surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState) Parameters surface NavMeshSurface sources List<NavMeshBuildSource> navNeshState NavMeshBuilderState UpdateNavMesh() public AsyncOperation UpdateNavMesh() Returns AsyncOperation UpdateNavMesh(NavMeshData) public AsyncOperation UpdateNavMesh(NavMeshData data) Parameters data NavMeshData Returns AsyncOperation"
+  },
+  "api/NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.html": {
+    "href": "api/NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.html",
+    "title": "Class NavMeshAgentAttributePropertyDrawer | Confectionary-Docs",
+    "keywords": "Class NavMeshAgentAttributePropertyDrawer Namespace NavMeshPlus.Extensions.Editors public class NavMeshAgentAttributePropertyDrawer : PropertyDrawer Inheritance object NavMeshAgentAttributePropertyDrawer Methods GetPropertyHeight(SerializedProperty, GUIContent) public override float GetPropertyHeight(SerializedProperty property, GUIContent label) Parameters property SerializedProperty label GUIContent Returns float OnGUI(Rect, SerializedProperty, GUIContent) public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) Parameters position Rect property SerializedProperty label GUIContent"
+  },
+  "api/NavMeshPlus.Extensions.Editors.NavMeshAreaAttributePropertyDrawer.html": {
+    "href": "api/NavMeshPlus.Extensions.Editors.NavMeshAreaAttributePropertyDrawer.html",
+    "title": "Class NavMeshAreaAttributePropertyDrawer | Confectionary-Docs",
+    "keywords": "Class NavMeshAreaAttributePropertyDrawer Namespace NavMeshPlus.Extensions.Editors public class NavMeshAreaAttributePropertyDrawer : PropertyDrawer Inheritance object NavMeshAreaAttributePropertyDrawer Methods GetPropertyHeight(SerializedProperty, GUIContent) public override float GetPropertyHeight(SerializedProperty property, GUIContent label) Parameters property SerializedProperty label GUIContent Returns float OnGUI(Rect, SerializedProperty, GUIContent) public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) Parameters position Rect property SerializedProperty label GUIContent"
+  },
+  "api/NavMeshPlus.Extensions.Editors.html": {
+    "href": "api/NavMeshPlus.Extensions.Editors.html",
+    "title": "Namespace NavMeshPlus.Extensions.Editors | Confectionary-Docs",
+    "keywords": "Namespace NavMeshPlus.Extensions.Editors Classes NavMeshAgentAttributePropertyDrawer NavMeshAreaAttributePropertyDrawer"
+  },
+  "api/NavMeshPlus.Extensions.IAgentOverride.html": {
+    "href": "api/NavMeshPlus.Extensions.IAgentOverride.html",
+    "title": "Interface IAgentOverride | Confectionary-Docs",
+    "keywords": "Interface IAgentOverride Namespace NavMeshPlus.Extensions public interface IAgentOverride Methods UpdateAgent() void UpdateAgent()"
+  },
+  "api/NavMeshPlus.Extensions.INavMeshExtensionsProvider.html": {
+    "href": "api/NavMeshPlus.Extensions.INavMeshExtensionsProvider.html",
+    "title": "Interface INavMeshExtensionsProvider | Confectionary-Docs",
+    "keywords": "Interface INavMeshExtensionsProvider Namespace NavMeshPlus.Extensions public interface INavMeshExtensionsProvider Properties Count int Count { get; } Property Value int this[int] NavMeshExtension this[int index] { get; } Parameters index int Property Value NavMeshExtension Methods Add(NavMeshExtension, int) void Add(NavMeshExtension extension, int order) Parameters extension NavMeshExtension order int Remove(NavMeshExtension) void Remove(NavMeshExtension extension) Parameters extension NavMeshExtension"
+  },
+  "api/NavMeshPlus.Extensions.NavMeshAgentAttribute.html": {
+    "href": "api/NavMeshPlus.Extensions.NavMeshAgentAttribute.html",
+    "title": "Class NavMeshAgentAttribute | Confectionary-Docs",
+    "keywords": "Class NavMeshAgentAttribute Namespace NavMeshPlus.Extensions [Serializable] public class NavMeshAgentAttribute : PropertyAttribute Inheritance object NavMeshAgentAttribute"
+  },
+  "api/NavMeshPlus.Extensions.NavMeshAreaAttribute.html": {
+    "href": "api/NavMeshPlus.Extensions.NavMeshAreaAttribute.html",
+    "title": "Class NavMeshAreaAttribute | Confectionary-Docs",
+    "keywords": "Class NavMeshAreaAttribute Namespace NavMeshPlus.Extensions [Serializable] public class NavMeshAreaAttribute : PropertyAttribute Inheritance object NavMeshAreaAttribute"
+  },
+  "api/NavMeshPlus.Extensions.NavMeshBuilderState.html": {
+    "href": "api/NavMeshPlus.Extensions.NavMeshBuilderState.html",
+    "title": "Class NavMeshBuilderState | Confectionary-Docs",
+    "keywords": "Class NavMeshBuilderState Namespace NavMeshPlus.Extensions public class NavMeshBuilderState : IDisposable Inheritance object NavMeshBuilderState Implements IDisposable Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Fields roots public IEnumerable<GameObject> roots Field Value IEnumerable<GameObject> worldBounds public Bounds worldBounds Field Value Bounds worldToLocal public Matrix4x4 worldToLocal Field Value Matrix4x4 Methods Dispose() Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. public void Dispose() Dispose(bool) protected virtual void Dispose(bool disposing) Parameters disposing bool GetExtraState<T>(bool) public T GetExtraState<T>(bool dispose = true) where T : class, new() Parameters dispose bool Returns T Type Parameters T"
+  },
+  "api/NavMeshPlus.Extensions.NavMeshExtension.html": {
+    "href": "api/NavMeshPlus.Extensions.NavMeshExtension.html",
+    "title": "Class NavMeshExtension | Confectionary-Docs",
+    "keywords": "Class NavMeshExtension Namespace NavMeshPlus.Extensions public abstract class NavMeshExtension : MonoBehaviour Inheritance object NavMeshExtension Derived CollectSources2d CollectSourcesCache2d CollectTilemapSourcesCache2d RootSources2d Properties NavMeshSurfaceOwner public NavMeshSurface NavMeshSurfaceOwner { get; } Property Value NavMeshSurface Order public int Order { get; protected set; } Property Value int Methods Awake() protected virtual void Awake() CalculateWorldBounds(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState) public virtual void CalculateWorldBounds(NavMeshSurface surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState) Parameters surface NavMeshSurface sources List<NavMeshBuildSource> navNeshState NavMeshBuilderState CollectSources(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState) public virtual void CollectSources(NavMeshSurface surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState) Parameters surface NavMeshSurface sources List<NavMeshBuildSource> navNeshState NavMeshBuilderState ConnectToVcam(bool) protected virtual void ConnectToVcam(bool connect) Parameters connect bool OnDestroy() protected virtual void OnDestroy() OnEnable() protected virtual void OnEnable() PostCollectSources(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState) public virtual void PostCollectSources(NavMeshSurface surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState) Parameters surface NavMeshSurface sources List<NavMeshBuildSource> navNeshState NavMeshBuilderState"
+  },
+  "api/NavMeshPlus.Extensions.RootSources2d.html": {
+    "href": "api/NavMeshPlus.Extensions.RootSources2d.html",
+    "title": "Class RootSources2d | Confectionary-Docs",
+    "keywords": "Class RootSources2d Namespace NavMeshPlus.Extensions public class RootSources2d : NavMeshExtension Inheritance object NavMeshExtension RootSources2d Inherited Members NavMeshExtension.Order NavMeshExtension.CalculateWorldBounds(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState) NavMeshExtension.PostCollectSources(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState) NavMeshExtension.NavMeshSurfaceOwner NavMeshExtension.OnEnable() NavMeshExtension.OnDestroy() NavMeshExtension.ConnectToVcam(bool) Properties RootSources public List<GameObject> RootSources { get; set; } Property Value List<GameObject> Methods Awake() protected override void Awake() CollectSources(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState) public override void CollectSources(NavMeshSurface surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState) Parameters surface NavMeshSurface sources List<NavMeshBuildSource> navNeshState NavMeshBuilderState"
+  },
+  "api/NavMeshPlus.Extensions.RotateAgentInstantly.html": {
+    "href": "api/NavMeshPlus.Extensions.RotateAgentInstantly.html",
+    "title": "Class RotateAgentInstantly | Confectionary-Docs",
+    "keywords": "Class RotateAgentInstantly Namespace NavMeshPlus.Extensions public class RotateAgentInstantly : IAgentOverride Inheritance object RotateAgentInstantly Implements IAgentOverride Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors RotateAgentInstantly(NavMeshAgent, AgentOverride2d) public RotateAgentInstantly(NavMeshAgent agent, AgentOverride2d owner) Parameters agent NavMeshAgent owner AgentOverride2d Methods UpdateAgent() public void UpdateAgent()"
+  },
+  "api/NavMeshPlus.Extensions.RotateAgentSmoothly.html": {
+    "href": "api/NavMeshPlus.Extensions.RotateAgentSmoothly.html",
+    "title": "Class RotateAgentSmoothly | Confectionary-Docs",
+    "keywords": "Class RotateAgentSmoothly Namespace NavMeshPlus.Extensions public class RotateAgentSmoothly : IAgentOverride Inheritance object RotateAgentSmoothly Implements IAgentOverride Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Constructors RotateAgentSmoothly(NavMeshAgent, AgentOverride2d, float) public RotateAgentSmoothly(NavMeshAgent agent, AgentOverride2d owner, float rotateSpeed) Parameters agent NavMeshAgent owner AgentOverride2d rotateSpeed float Fields rotateSpeed public float rotateSpeed Field Value float Methods RotateToWaypoints(Transform) protected IEnumerator RotateToWaypoints(Transform transform) Parameters transform Transform Returns IEnumerator UpdateAgent() public void UpdateAgent() _RotateCoroutine() protected IEnumerator _RotateCoroutine() Returns IEnumerator"
+  },
+  "api/NavMeshPlus.Extensions.html": {
+    "href": "api/NavMeshPlus.Extensions.html",
+    "title": "Namespace NavMeshPlus.Extensions | Confectionary-Docs",
+    "keywords": "Namespace NavMeshPlus.Extensions Classes AgentDefaultOverride AgentOverride2d AgentRotate2d CollectSources2d CollectSourcesCache2d CollectTilemapSourcesCache2d NavMeshAgentAttribute NavMeshAreaAttribute NavMeshBuilderState NavMeshExtension RootSources2d RotateAgentInstantly RotateAgentSmoothly Interfaces IAgentOverride INavMeshExtensionsProvider"
+  },
+  "docs/getting-started.html": {
+    "href": "docs/getting-started.html",
+    "title": "Getting Started | Confectionary-Docs",
+    "keywords": "Getting Started Clone our github. Follow our instructions to build with WebGL here."
+  },
+  "docs/overview.html": {
+    "href": "docs/overview.html",
+    "title": "Overview | Confectionary-Docs",
+    "keywords": "Overview Unity uses Scenes, which are similar to pages within a website. Since they are implemented within the Unity editor, they're not covered by DocFX. Here's a brief summary of our scenes: Main Menu: A simple main menu to connect the game, level editor, and settings. Uses Unity's built-in UI components to render buttons, behavior is handled by our Menu script. Editor: Allows users to build levels, placing tiles and enemies. They can then upload these levels to our backend, where they can be played by other players. Game: The core gameplay loop, where players fight enemies and progress."
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "Confectionary Carnage Docs | Confectionary-Docs",
+    "keywords": "Confectionary Carnage Docs This website documents the C# internals of Confectionary Carnage's game frontend. If you're unfamiliar with Unity, we've briefly summarized important concepts we've used here. Unity's full documentation is located here. Important DocFX Unity Integration has open bugs, but we've done the best we can. Getting Started Unity Explainer Scene Overview"
+  },
+  "unity_concepts.html": {
+    "href": "unity_concepts.html",
+    "title": "Unity Fundamentals | Confectionary-Docs",
+    "keywords": "Unity Fundamentals Scenes A Scene in Unity holds all the elements of a specific part of the game, eg. menus/levels. Every object in a Scene is a GameObject (kind of like a DOM element), which have Monobehaviors \"attached\" which define their behavior. Scenes themselves are implemented with Unity's visual editor, where we can position, rotate, and scale objects. Remark: Simple scenes such as menus can be implented directly (with some code to control shading/animations/transitions), while more dynamic scenes such as level loading require extra scripting. GameObject GameObjects are the building blocks of Scenes. Their behavior is defined attaching scripts to the MonoBehavior. Some of these are provided by Unity, while others need to be implemented by us. Some examples behaviors we've implemented are: GameManager IWeapon LevelEditor Provided behaviors implement low-level behavior, such as rendering and physics: CircleCollider2D SpriteRenderer Monobehaviour Monobehaviours integrate Unity with C#, allowing us to use C# OOP alongside Unity's life cycle management and built-in classes. Unity implements an event system through Monobehaviour's interface which calls functions depending on various conditions. Lifecycle: Start: called when a GameObject is created (like OnLoad) Update: called every frame, useful for behavior like movement Destroy: destroys the GameObject"
+  }
+}

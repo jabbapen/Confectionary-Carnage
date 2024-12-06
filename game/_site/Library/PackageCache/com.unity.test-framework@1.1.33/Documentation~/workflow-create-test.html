@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Workflow: How to create a test | Confectionary-Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Workflow: How to create a test | Confectionary-Docs ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.test-framework@1.1.33/Documentation~/workflow-create-test.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="Confectionary-Docs">
+            Confectionary-Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="workflow-how-to-create-a-test">Workflow: How to create a test</h1>
+
+<p>To create a test, do the following:</p>
+<ol>
+<li>Create your <em>Test</em> <a href="workflow-create-test-assembly.html">assembly folder</a> and select it in the <strong>Project</strong> window.</li>
+<li>Click the button <strong>Create Test Script in current folder</strong> option in the <strong>Test Runner</strong> window.
+<img src="./images/editmode-create-test-script.png" alt="EditMode create test script"></li>
+<li>It creates a <em>NewTestScript.cs</em> file in the <em>Tests</em> folder. Change the name of the script, if necessary, and press Enter to accept it.</li>
+</ol>
+<p><img src="./images/new-test-script.png" alt="NewTestScript.cs"></p>
+<p>Now you’ll see two sample tests in the Test Runner window:</p>
+<p><img src="./images/test-templates.png" alt="Test templates"></p>
+<p>Now you can open the tests in your favorite script editor.</p>
+<p>You can also create test scripts by navigating to <strong>Assets</strong> &gt; <strong>Create &gt; Testing</strong> &gt; <strong>C# Test Script</strong>, unless adding a test script would result in a compilation error.</p>
+<blockquote>
+<p><strong>Note</strong>: Unity does not include <code>TestAssemblies</code> (<a href="http://www.nunit.org/">NUnit</a>, Unity Test Framework, and user script assemblies) when using the normal build pipeline, but does include them when using <strong>Run on &lt;Platform&gt;</strong> in the Test Runner window.</p>
+</blockquote>
+<h2 id="create-additional-tests">Create additional tests</h2>
+<p>To create another set of tests:</p>
+<ol>
+<li>In the <strong>Project</strong> window, select <strong>Assets</strong>.</li>
+<li>Create a new test assembly folder (menu: <strong>Assets &gt; Create&gt; Testing &gt; Tests Assembly Folder</strong>).</li>
+<li>In the <strong>Project</strong> window, select the new folder.</li>
+<li>Create a new test script in the folder (menu: <strong>Assets &gt; Create &gt; Testing &gt; C# Test Script</strong>).</li>
+</ol>
+<p>The assembly definition is assigned the same name as your new asset. To rename it, change the <strong>Name</strong> in the <strong>Insepctor</strong> window. Assembly definition names must be unique.</p>
+<blockquote>
+<p><strong>Note</strong>: Changing the file name of the assembly definition file does not affect the value of the <strong>Name</strong> property in the file. Use the <strong>Inspector</strong> window to make sure the name is properly changed.</p>
+</blockquote>
+<p>By default <strong>Any Platform</strong> is preselected as the target platform for the new assembly, which means the test script appears as a PlayMode test in the TestRunner window. To change it to an EditMode test, in the <strong>Inspector</strong> window select <strong>Editor</strong> only under <strong>Platforms</strong>.</p>
+<p>New assemblies created through the <strong>Assets</strong> menu should automatically include references to <code>UnityEngine.TestRunner</code> and <code>UnityEditor.TestRunner</code>. If these references are missing, add them in the <strong>Inspector</strong> window under <strong>Assembly Definition References</strong>:</p>
+<p><img src="./images/assembly-definition-references.png" alt="Assembly Definition References"></p>
+<h2 id="filters">Filters</h2>
+<p>If you have a lot of tests, and you only want to view/run a sub-set of them, you can filter them in three ways (see image above):</p>
+<ul>
+<li><p>Type in the search box in the top left</p>
+</li>
+<li><p>Click a test class or fixture (such as <strong>NewTestScript</strong> in the image above)</p>
+</li>
+<li><p>Click one of the test result icon buttons in the top right</p>
+</li>
+</ul>
+<p>For more information, see <a href="edit-mode-vs-play-mode-tests.html">Edit Mode vs. Play Mode tests</a>.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.test-framework@1.1.33/Documentation~/workflow-create-test.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

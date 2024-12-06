@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Using unmanaged memory | Confectionary-Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Using unmanaged memory | Confectionary-Docs ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.collections@1.2.4/Documentation~/allocation.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="Confectionary-Docs">
+            Confectionary-Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="collections-allocation">
+<h1 id="using-unmanaged-memory">Using unmanaged memory</h1>
+
+<p>The <code>Native-</code> and <code>Unsafe-</code> collections in this package are allocated from unmanaged memory, meaning their existence is unknown to the garbage collector.
+You are responsible for deallocating any unmanaged memory that you no longer need. Failing to deallocate large or numerous allocations can lead to wasting more and more memory, which may eventually slow down or even crash your program.</p>
+<h2 id="allocators">Allocators</h2>
+<p>An <em>allocator</em> governs some unmanaged memory from which you can make allocations. Different allocators organize and track their memory in different ways. The three standard provided allocators are:</p>
+<h3 id="allocatortemp"><code>Allocator.Temp</code></h3>
+<p><strong>The fastest allocator. For very short-lived allocations. Temp allocations <em>cannot</em> be passed into jobs.</strong></p>
+<p>Each frame, the main thread creates a Temp allocator which is deallocated in its entirety at the end of the frame. Each job also creates one Temp allocator per thread, and these are deallocated in their entireties at the end of the job. Because a Temp allocator gets discarded as a whole, you actually don't need to manually deallocate your Temp allocations (in fact, doing so is a no-op).</p>
+<p>Temp allocations are only safe to use within the thread where they were allocated. So while Temp allocations can be made <em>within</em> a job, <strong>main thread Temp allocations cannot be passed into a job</strong>. For example, a NativeArray that's Temp allocated in the main thread cannot be passed into a job.</p>
+<h3 id="allocatortempjob"><code>Allocator.TempJob</code></h3>
+<p><strong>The next fastest allocator. For short-lived allocations. TempJob allocations can be passed into jobs.</strong></p>
+<p>You are expected to deallocate your TempJob allocations within 4 frames of their creation. The number 4 was chosen because it's common to want allocations that last a couple frames: the limit of 4 accommodates this need with a comfortable extra margin.</p>
+<p>For the <code>Native-</code> collection types, the disposal safety checks will throw an exception if a TempJob allocation lives longer than 4 frames. For the <code>Unsafe-</code> collection types, you are still expected to deallocate them within 4 frames, but no safety checks are performed to ensure you do so.</p>
+<h3 id="allocatorpersistent"><code>Allocator.Persistent</code></h3>
+<p><strong>The slowest allocator. For indefinite lifetime allocations. Persistent allocations can be passed into jobs.</strong></p>
+<p>Because Persistent allocations are allowed to live indefinitely, no safety check can detect if a Persistent allocation has outlived its intended lifetime. Consequently, you should be extra careful to deallocate a Persistent allocation when you no longer need it.</p>
+<h2 id="disposal-deallocation">Disposal (deallocation)</h2>
+<p>Each collection retains a reference to the allocator from which its memory was allocated because deallocation requires specifying the allocator.</p>
+<ul>
+<li>An <code>Unsafe-</code> collection's <code>Dispose</code> method deallocates its memory.</li>
+<li>A <code>Native-</code> collection's <code>Dispose</code> method deallocates its memory and frees the handles needed for safety checks.</li>
+<li>An enumerator's <code>Dispose</code> method is a no-op. The method is included only to fulfill the <code>IEnumerator&lt;T&gt;</code> interface.</li>
+</ul>
+<p>We often want to dispose a collection after the jobs which need it have run. The <code>Dispose(JobHandle)</code> method creates and schedules a job which will dispose the collection, and this new job takes the input handle as its dependency. Effectively, the method differs disposal until after the dependency runs:</p>
+<pre><code class="lang-cs" name="allocation_dispose_job">NativeArray&lt;int&gt; nums = new NativeArray&lt;int&gt;(10, Allocator.TempJob);
+
+// Create and schedule a job that uses the array.
+ExampleJob job = new ExampleJob { Nums = nums };
+JobHandle handle = job.Schedule();
+
+// Create and schedule a job that will dispose the array after the ExampleJob has run.
+// Returns the handle of the new job.
+handle = nums.Dispose(handle);
+</code></pre><h3 id="the-iscreated-property">The <code>IsCreated</code> property</h3>
+<p>The <code>IsCreated</code> property of a collection is false only in two cases:</p>
+<ol>
+<li>Immediately after creating a collection with its default constructor.</li>
+<li>After <code>Dispose</code> has been called on the collection.</li>
+</ol>
+<p>Understand, however, that you're not intended to use a collections's default constructor. It's only made available because C# requires all structs to have a public default constructor.</p>
+<p>Also note that calling <code>Dispose</code> on a collection sets <code>IsCreated</code> to false <em>only in that struct</em>, not in any copies of the struct. Consequently, <code>IsCreated</code> may still be true even after the collection's underlying memory was deallocated if...</p>
+<ul>
+<li><code>Dispose</code> was called on a different copy of the struct.</li>
+<li>Or the underlying memory was deallocated <em>via</em> an <a href="#aliasing">alias</a>.</li>
+</ul>
+<h2 id="aliasing">Aliasing</h2>
+<p>An <em>alias</em> is a collection which does not have its own allocation but instead shares the allocation of another collection, in whole or in part. For example, an UnsafeList can be created that doesn't allocate its own memory but instead uses a NativeList's allocation. Writing to this shared memory <em>via</em> the UnsafeList affects the content of the NativeList, and <em>vice versa</em>.</p>
+<p>You do not need to dispose aliases, and in fact, calling <code>Dispose</code> on an alias does nothing. Once an original is disposed, the aliases of that original can no longer be used:</p>
+<pre><code class="lang-cs" name="allocation_aliasing">NativeList&lt;int&gt; nums = new NativeList&lt;int&gt;(10, Allocator.TempJob);
+nums.Length = 5;
+
+// Create an array of 5 ints that aliases the content of the list.
+NativeArray&lt;int&gt; aliasedNums = nums.AsArray();
+
+// Modify the first element of both the array and the list.
+aliasedNums[0] = 99;
+
+// Only the original need be disposed.
+nums.Dispose();
+
+// Throws an ObjectDisposedException because disposing
+// the original deallocates the aliased memory.
+aliasedNums[0] = 99;
+</code></pre>
+<p>Aliasing can be useful in a few scenarios:</p>
+<ul>
+<li>Getting a collection's data in the form of another collection type without copying the data. For example, you can create an UnsafeList that aliases a NativeArray.</li>
+<li>Getting a subrange of a collection's data without copying the data. For example, you can create an UnsafeList that aliases a subrange of another list or array.</li>
+<li><a href="#array-reinterpretation">Array reinterpretation</a>.</li>
+</ul>
+<p>Perhaps surprisingly, it's allowed for an <code>Unsafe-</code> collection to alias a <code>Native-</code> collection even though such cases undermine the safety checks. For example, if an UnsafeList aliases a NativeList, it's not safe to schedule a job that accesses one while also another job is scheduled that accesses the other, but the safety checks do not catch these cases. It is your responsibility to avoid such mistakes.</p>
+<h3 id="array-reinterpretation">Array reinterpretation</h3>
+<p>A <em>reinterpretation</em> of an array is an alias of the array that reads and writes the content as a different element type. For example, a <code>NativeArray&lt;int&gt;</code> which reinterprets a <code>NativeArray&lt;ushort&gt;</code> shares the same bytes, but it reads and writes the bytes as ints instead of ushorts; because each int is 4 bytes while each ushort is 2 bytes, each int corresponds to two ushorts, and the reinterpretation has half the length of the original.</p>
+<pre><code class="lang-cs" name="allocation_reinterpretation">NativeArray&lt;int&gt; ints = new NativeArray&lt;int&gt;(10, Allocator.Temp);
+
+// Length of the reinterpreted array is 20
+// (because it has two shorts per one int of the original).
+NativeArray&lt;short&gt; shorts = ints.Reinterpret&lt;int, short&gt;();
+
+// Modifies the first 4 bytes of the array.
+shorts[0] = 1;
+shorts[1] = 1;
+
+int val = ints[0];   // val is 65537 (2^16 + 2^0)
+
+// Like with other aliased collections, only the original
+// needs to be disposed.
+ints.Dispose();
+
+// Throws an ObjectDisposedException because disposing
+// the original deallocates the aliased memory.
+shorts[0] = 1;
+</code></pre>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.collections@1.2.4/Documentation~/allocation.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

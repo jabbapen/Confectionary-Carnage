@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Samples | Confectionary-Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Samples | Confectionary-Docs ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.timeline@1.7.6/Documentation~/smpl_about.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="Confectionary-Docs">
+            Confectionary-Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="samples">Samples</h1>
+
+<h2 id="gameplay-sequence-demo">Gameplay Sequence Demo</h2>
+<p><img src="images/smpl_gameplay.png" alt="Gameplay Sequence Demo"></p>
+<p>This sample demonstrates how Timeline can be used to create a small in-game moment, using built-in tracks.</p>
+<h3 id="overview">Overview</h3>
+<p>In this example, we have a <code>Player</code> character jogging and then colliding with another character. The <code>Player</code> character represents our gameplay character and is using a looping jog animation. The Timeline then takes control of the player character, collides with the other character, then returns to his original gameplay animation (jog) once the Timeline has finished. Note that the gameplay animation is driven by an Animator and will only play at runtime. The character will be in a T-Stance pose for the runtime portion when using the Timeline preview.</p>
+<h3 id="timeline-structure">Timeline Structure</h3>
+<p>This sample uses the following tracks: Activation, Animation, Audio, Control and Marker track. The <code>GameplaySequence</code> timeline has been organized in the following groups: <code>Building</code>, <code>Lights</code>, <code>Cameras</code>, <code>Characters</code>, <code>Audio</code> and <code>Props</code>.</p>
+<h4 id="building-group"><em>Building group</em></h4>
+<p>This group contains two Control tracks: <code>Building Spawn</code> which spawns the building prefab, and <code>Building Particles</code> that controls two particle systems in the scene (<code>ElectricalSparks</code> and <code>SandSwirlsEffect</code>).</p>
+<h4 id="lights-group"><em>Lights group</em></h4>
+<p>This group contains two Animation tracks; one for the Sun light, and the other for the flickering light. Both tracks where animated in Unity and the curves can be seen by enabling the curves icon or double clicking on the track to open the Animation window. <code>Sun light</code> is animated in Rotation (sunrise) and the <code>Point light</code> has a spiked <code>Intensity</code> curve.</p>
+<h4 id="cameras-group"><em>Cameras group</em></h4>
+<p>This group contains two cameras: <code>Main camera</code> using an Animation track, and <code>Follow camera</code> using an Activation track. <code>Main Camera</code> has an animation curve for the continuous movement (which can be seen by enabling the curves icon) and two override tracks, one for each character. The clips on the override tracks have static values for a fixed camera shot. <code>Follow camera</code> is simply parented child of the Player character's root and activated for the follow-cam shots.</p>
+<h4 id="characters-group"><em>Characters group</em></h4>
+<p>The first track is an Animation track for the <code>Player</code>character. Notice that clip pre and post extrapolations are set to <code>None</code>, meaning the character will not be influenced by the timeline during these gaps. At runtime, these gaps mean the <code>Player</code> character will be using his Animator state, jog. The second track is an Activation track for the second character, making his appear in the scene. The third and last track is an Animation track for the second character. On this track, the second character blends from one clip to another creating a cinematic sequence.</p>
+<h4 id="audio-group"><em>Audio group</em></h4>
+<p>This group contains four Audio tracks; <code>Player</code>, <code>crickets</code>, <code>neon-light</code> &amp; <code>character2</code>. The <code>Player</code> track has a jog/breathing and bump clip. The <code>crickets</code> track has pan and volume animation curves (can be seen by enabling the curves icon). The <code>neon-light</code> sound is for the flickering <code>Point</code> light. The <code>Character2</code> tracks contains all audio clips for this second character.</p>
+<h4 id="props-group"><em>Props group</em></h4>
+<p>This group animates <code>Table</code> and <code>Can</code>. The first Activation track makes <code>Table</code> appear in the scene. The second Activation track makes a static version of <code>Can</code> appear in the scene. The third track is an Animation track that animates the table bump animation. The last track is a Control track with a sub-timeline for the can animation. The static version of the can is disabled and replaced with the animated version when the Control clip starts. Double-clicking the Control track clip will enter the <code>Can</code> sub-timeline.</p>
+<h4 id="can-sub-timeline"><code>Can</code> Sub-Timeline</h4>
+<p>This sub-timeline contains an Animation track for the can rolling off the table and bouncing on the ground, an Audio track for the sounds effects and a Control track for the liquid particles splashing out of the can.</p>
+<h4 id="marker-track">Marker track</h4>
+<p>In the Timeline window, under the time ruler, there is a Marker track with one Signal at frame 1200. This is the Signal marker that triggers the jog audio clip on <code>Player</code> once the timeline finishes the gameplay jog.</p>
+<h2 id="customization-samples">Customization samples</h2>
+<p><img src="images/smpl_custom.png" alt="Customization samples"></p>
+<p>This sample includes tracks, clips, markers and actions that demonstrate how to extend and customize timeline in different ways.</p>
+<ul>
+<li><a href="smpl_custom_annotation.html">Annotation</a>: provides a marker that can be used as a bookmark.</li>
+<li><a href="smpl_custom_video.html">Video track</a>: provides a track capable of playing video clips.</li>
+<li><a href="smpl_custom_time.html">Time dilation track</a>: provides a track that can be used to adjust Unity's global <code>Time.timeScale</code>.</li>
+<li><a href="smpl_custom_tween.html">Tween track</a>: provides a track that can be used for simple transform movements.</li>
+<li><a href="smpl_custom_text.html">Text track</a>: provides a track that can be used to display different messages to the screen using a TextMeshPro Text component.</li>
+</ul>
+<h3 id="demo">Demo</h3>
+<p><img src="images/smpl_custom_demo.png" alt="Customization demo"></p>
+<p>Included is a demo timeline that showcases all the of the above samples.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.timeline@1.7.6/Documentation~/smpl_about.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.Deparent
+  commentId: T:Global.Deparent
+  id: Deparent
+  parent: Global
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Deparent
+  nameWithType: Deparent
+  fullName: Deparent
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/Deparent.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Deparent
+    path: ../Assets/Scripts/Deparent.cs
+    startLine: 8
+  namespace: Global
+  summary: >-
+    Utility class which moves the children of a GameObject out of the GameObject
+
+    when it is initialized.
+  example: []
+  syntax:
+    content: 'public class Deparent : MonoBehaviour'
+    content.vb: Public Class Deparent Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

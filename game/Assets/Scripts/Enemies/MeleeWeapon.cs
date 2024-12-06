@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// An implementation of @Global.IWeapon which directly damages the player when
+/// used, but has a short range.
+/// </summary>
 public class MeleeWeapon : IWeapon 
 {
     [SerializeField] private float attackDelay = 0.5f;

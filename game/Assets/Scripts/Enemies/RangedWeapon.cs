@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// An implementation of @Global.IWeapon which shoots a @Global.Projectile at
+/// the player.
+/// </summary>
 public class RangedWeapon : IWeapon
 {
     private float attackTimer = 0f;

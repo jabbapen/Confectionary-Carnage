@@ -1,0 +1,53 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.CameraController
+  commentId: T:Global.CameraController
+  id: CameraController
+  parent: Global
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: CameraController
+  nameWithType: CameraController
+  fullName: CameraController
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/CameraController.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: CameraController
+    path: ../Assets/Scripts/CameraController.cs
+    startLine: 8
+  namespace: Global
+  summary: >-
+    Moves the camera around to follow the player. Implements `FixedUpdate()` to
+
+    update its position smoothly.
+  example: []
+  syntax:
+    content: 'public class CameraController : MonoBehaviour'
+    content.vb: Public Class CameraController Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

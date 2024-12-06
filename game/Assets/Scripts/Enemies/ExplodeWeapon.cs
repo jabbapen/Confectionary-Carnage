@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// An implementation of @Global.IWeapon which choots out a burst of bullets when used.
+/// </summary>
 public class ExplodeWeapon : IWeapon
 {
     private float attackTimer = 0f;

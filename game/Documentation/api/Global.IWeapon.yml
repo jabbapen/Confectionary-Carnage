@@ -1,0 +1,341 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.IWeapon
+  commentId: T:Global.IWeapon
+  id: IWeapon
+  parent: Global
+  children:
+  - Global.IWeapon.Ready
+  - Global.IWeapon.Usable(GameObject)
+  - Global.IWeapon.Use(GameObject)
+  - Global.IWeapon.attackCD
+  - Global.IWeapon.attackDamage
+  - Global.IWeapon.attackRange
+  langs:
+  - csharp
+  - vb
+  name: IWeapon
+  nameWithType: IWeapon
+  fullName: IWeapon
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/Enemies/IWeapon.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: IWeapon
+    path: ../Assets/Scripts/Enemies/IWeapon.cs
+    startLine: 9
+  namespace: Global
+  summary: >-
+    Defines the Weapon Strategy, which is used by EnemyManager.
+
+    Weapons keep track of their own cooldowns, and have some interfaces so the
+
+    enemy can act depending on the weapon state (eg. run away if weapon is not ready).
+  example: []
+  syntax:
+    content: 'public abstract class IWeapon : MonoBehaviour'
+    content.vb: Public MustInherit Class IWeapon Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - Global.ExplodeWeapon
+  - Global.MeleeWeapon
+  - Global.RangedWeapon
+- uid: Global.IWeapon.attackCD
+  commentId: F:Global.IWeapon.attackCD
+  id: attackCD
+  parent: Global.IWeapon
+  langs:
+  - csharp
+  - vb
+  name: attackCD
+  nameWithType: IWeapon.attackCD
+  fullName: IWeapon.attackCD
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/Enemies/IWeapon.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: attackCD
+    path: ../Assets/Scripts/Enemies/IWeapon.cs
+    startLine: 14
+  namespace: Global
+  summary: All weapons have an attack cooldown
+  example: []
+  syntax:
+    content: protected float attackCD
+    return:
+      type: System.Single
+    content.vb: Protected attackCD As Single
+- uid: Global.IWeapon.attackRange
+  commentId: F:Global.IWeapon.attackRange
+  id: attackRange
+  parent: Global.IWeapon
+  langs:
+  - csharp
+  - vb
+  name: attackRange
+  nameWithType: IWeapon.attackRange
+  fullName: IWeapon.attackRange
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/Enemies/IWeapon.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: attackRange
+    path: ../Assets/Scripts/Enemies/IWeapon.cs
+    startLine: 19
+  namespace: Global
+  summary: >-
+    Get the attack range of the weapon. Enemies need to know this to get in
+
+    range of the player.
+  example: []
+  syntax:
+    content: public float attackRange
+    return:
+      type: System.Single
+    content.vb: Public attackRange As Single
+- uid: Global.IWeapon.attackDamage
+  commentId: F:Global.IWeapon.attackDamage
+  id: attackDamage
+  parent: Global.IWeapon
+  langs:
+  - csharp
+  - vb
+  name: attackDamage
+  nameWithType: IWeapon.attackDamage
+  fullName: IWeapon.attackDamage
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/Enemies/IWeapon.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: attackDamage
+    path: ../Assets/Scripts/Enemies/IWeapon.cs
+    startLine: 23
+  namespace: Global
+  summary: The amount of damage to do when the weapon hits.
+  example: []
+  syntax:
+    content: protected int attackDamage
+    return:
+      type: System.Int32
+    content.vb: Protected attackDamage As Integer
+- uid: Global.IWeapon.Ready
+  commentId: M:Global.IWeapon.Ready
+  id: Ready
+  parent: Global.IWeapon
+  langs:
+  - csharp
+  - vb
+  name: Ready()
+  nameWithType: IWeapon.Ready()
+  fullName: IWeapon.Ready()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/Enemies/IWeapon.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Ready
+    path: ../Assets/Scripts/Enemies/IWeapon.cs
+    startLine: 29
+  namespace: Global
+  summary: Get whether the weapon is Ready or not, typically when the cooldown is zero.
+  example: []
+  syntax:
+    content: public abstract bool Ready()
+    return:
+      type: System.Boolean
+      description: Whether the weapon is ready or not
+    content.vb: Public MustOverride Function Ready() As Boolean
+  overload: Global.IWeapon.Ready*
+- uid: Global.IWeapon.Usable(GameObject)
+  commentId: M:Global.IWeapon.Usable(GameObject)
+  id: Usable(GameObject)
+  parent: Global.IWeapon
+  langs:
+  - csharp
+  - vb
+  name: Usable(GameObject)
+  nameWithType: IWeapon.Usable(GameObject)
+  fullName: IWeapon.Usable(GameObject)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/Enemies/IWeapon.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Usable
+    path: ../Assets/Scripts/Enemies/IWeapon.cs
+    startLine: 35
+  namespace: Global
+  summary: >-
+    Get whether the weapon is Usable, typically when the cooldown is zero
+
+    AND the player is close enough.
+  example: []
+  syntax:
+    content: public abstract bool Usable(GameObject target)
+    parameters:
+    - id: target
+      type: Global.GameObject
+    return:
+      type: System.Boolean
+      description: Whether the weapon is usable
+    content.vb: Public MustOverride Function Usable(target As GameObject) As Boolean
+  overload: Global.IWeapon.Usable*
+- uid: Global.IWeapon.Use(GameObject)
+  commentId: M:Global.IWeapon.Use(GameObject)
+  id: Use(GameObject)
+  parent: Global.IWeapon
+  langs:
+  - csharp
+  - vb
+  name: Use(GameObject)
+  nameWithType: IWeapon.Use(GameObject)
+  fullName: IWeapon.Use(GameObject)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/Enemies/IWeapon.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Use
+    path: ../Assets/Scripts/Enemies/IWeapon.cs
+    startLine: 42
+  namespace: Global
+  summary: >-
+    What to do when the weapon is used, eg. spawn projectiles, damage the
+
+    player directly, etc.
+  example: []
+  syntax:
+    content: public abstract IEnumerator Use(GameObject target)
+    parameters:
+    - id: target
+      type: Global.GameObject
+    return:
+      type: System.Collections.IEnumerator
+      description: >-
+        IEnumerator: This happens asynchronously as a Unity coroutine,
+            so it must return an IEnumerator
+    content.vb: Public MustOverride Function Use(target As GameObject) As IEnumerator
+  overload: Global.IWeapon.Use*
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Global.IWeapon.Ready*
+  commentId: Overload:Global.IWeapon.Ready
+  href: Global.IWeapon.html#IWeapon_Ready
+  name: Ready
+  nameWithType: IWeapon.Ready
+  fullName: IWeapon.Ready
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Global.IWeapon.Usable*
+  commentId: Overload:Global.IWeapon.Usable
+  href: Global.IWeapon.html#IWeapon_Usable_GameObject_
+  name: Usable
+  nameWithType: IWeapon.Usable
+  fullName: IWeapon.Usable
+- uid: Global.GameObject
+  isExternal: true
+  name: GameObject
+  nameWithType: GameObject
+  fullName: GameObject
+- uid: Global.IWeapon.Use*
+  commentId: Overload:Global.IWeapon.Use
+  href: Global.IWeapon.html#IWeapon_Use_GameObject_
+  name: Use
+  nameWithType: IWeapon.Use
+  fullName: IWeapon.Use
+- uid: System.Collections.IEnumerator
+  commentId: T:System.Collections.IEnumerator
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
+  name: IEnumerator
+  nameWithType: IEnumerator
+  fullName: System.Collections.IEnumerator
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections

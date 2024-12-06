@@ -1,0 +1,410 @@
+### YamlMime:ManagedReference
+items:
+- uid: NavMeshPlus.Components.NavMeshLink
+  commentId: T:NavMeshPlus.Components.NavMeshLink
+  id: NavMeshLink
+  parent: NavMeshPlus.Components
+  children:
+  - NavMeshPlus.Components.NavMeshLink.UpdateLink
+  - NavMeshPlus.Components.NavMeshLink.agentTypeID
+  - NavMeshPlus.Components.NavMeshLink.area
+  - NavMeshPlus.Components.NavMeshLink.autoUpdate
+  - NavMeshPlus.Components.NavMeshLink.bidirectional
+  - NavMeshPlus.Components.NavMeshLink.costModifier
+  - NavMeshPlus.Components.NavMeshLink.endPoint
+  - NavMeshPlus.Components.NavMeshLink.startPoint
+  - NavMeshPlus.Components.NavMeshLink.width
+  langs:
+  - csharp
+  - vb
+  name: NavMeshLink
+  nameWithType: NavMeshLink
+  fullName: NavMeshPlus.Components.NavMeshLink
+  type: Class
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshLink.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: NavMeshLink
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshLink.cs
+    startLine: 7
+  namespace: NavMeshPlus.Components
+  syntax:
+    content: 'public class NavMeshLink : MonoBehaviour'
+    content.vb: Public Class NavMeshLink Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: NavMeshPlus.Components.NavMeshLink.agentTypeID
+  commentId: P:NavMeshPlus.Components.NavMeshLink.agentTypeID
+  id: agentTypeID
+  parent: NavMeshPlus.Components.NavMeshLink
+  langs:
+  - csharp
+  - vb
+  name: agentTypeID
+  nameWithType: NavMeshLink.agentTypeID
+  fullName: NavMeshPlus.Components.NavMeshLink.agentTypeID
+  type: Property
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshLink.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: agentTypeID
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshLink.cs
+    startLine: 15
+  namespace: NavMeshPlus.Components
+  syntax:
+    content: public int agentTypeID { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property agentTypeID As Integer
+  overload: NavMeshPlus.Components.NavMeshLink.agentTypeID*
+- uid: NavMeshPlus.Components.NavMeshLink.startPoint
+  commentId: P:NavMeshPlus.Components.NavMeshLink.startPoint
+  id: startPoint
+  parent: NavMeshPlus.Components.NavMeshLink
+  langs:
+  - csharp
+  - vb
+  name: startPoint
+  nameWithType: NavMeshLink.startPoint
+  fullName: NavMeshPlus.Components.NavMeshLink.startPoint
+  type: Property
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshLink.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: startPoint
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshLink.cs
+    startLine: 19
+  namespace: NavMeshPlus.Components
+  syntax:
+    content: public Vector3 startPoint { get; set; }
+    parameters: []
+    return:
+      type: Global.Vector3
+    content.vb: Public Property startPoint As Vector3
+  overload: NavMeshPlus.Components.NavMeshLink.startPoint*
+- uid: NavMeshPlus.Components.NavMeshLink.endPoint
+  commentId: P:NavMeshPlus.Components.NavMeshLink.endPoint
+  id: endPoint
+  parent: NavMeshPlus.Components.NavMeshLink
+  langs:
+  - csharp
+  - vb
+  name: endPoint
+  nameWithType: NavMeshLink.endPoint
+  fullName: NavMeshPlus.Components.NavMeshLink.endPoint
+  type: Property
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshLink.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: endPoint
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshLink.cs
+    startLine: 23
+  namespace: NavMeshPlus.Components
+  syntax:
+    content: public Vector3 endPoint { get; set; }
+    parameters: []
+    return:
+      type: Global.Vector3
+    content.vb: Public Property endPoint As Vector3
+  overload: NavMeshPlus.Components.NavMeshLink.endPoint*
+- uid: NavMeshPlus.Components.NavMeshLink.width
+  commentId: P:NavMeshPlus.Components.NavMeshLink.width
+  id: width
+  parent: NavMeshPlus.Components.NavMeshLink
+  langs:
+  - csharp
+  - vb
+  name: width
+  nameWithType: NavMeshLink.width
+  fullName: NavMeshPlus.Components.NavMeshLink.width
+  type: Property
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshLink.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: width
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshLink.cs
+    startLine: 27
+  namespace: NavMeshPlus.Components
+  syntax:
+    content: public float width { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property width As Single
+  overload: NavMeshPlus.Components.NavMeshLink.width*
+- uid: NavMeshPlus.Components.NavMeshLink.costModifier
+  commentId: P:NavMeshPlus.Components.NavMeshLink.costModifier
+  id: costModifier
+  parent: NavMeshPlus.Components.NavMeshLink
+  langs:
+  - csharp
+  - vb
+  name: costModifier
+  nameWithType: NavMeshLink.costModifier
+  fullName: NavMeshPlus.Components.NavMeshLink.costModifier
+  type: Property
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshLink.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: costModifier
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshLink.cs
+    startLine: 31
+  namespace: NavMeshPlus.Components
+  syntax:
+    content: public int costModifier { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property costModifier As Integer
+  overload: NavMeshPlus.Components.NavMeshLink.costModifier*
+- uid: NavMeshPlus.Components.NavMeshLink.bidirectional
+  commentId: P:NavMeshPlus.Components.NavMeshLink.bidirectional
+  id: bidirectional
+  parent: NavMeshPlus.Components.NavMeshLink
+  langs:
+  - csharp
+  - vb
+  name: bidirectional
+  nameWithType: NavMeshLink.bidirectional
+  fullName: NavMeshPlus.Components.NavMeshLink.bidirectional
+  type: Property
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshLink.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: bidirectional
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshLink.cs
+    startLine: 35
+  namespace: NavMeshPlus.Components
+  syntax:
+    content: public bool bidirectional { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property bidirectional As Boolean
+  overload: NavMeshPlus.Components.NavMeshLink.bidirectional*
+- uid: NavMeshPlus.Components.NavMeshLink.autoUpdate
+  commentId: P:NavMeshPlus.Components.NavMeshLink.autoUpdate
+  id: autoUpdate
+  parent: NavMeshPlus.Components.NavMeshLink
+  langs:
+  - csharp
+  - vb
+  name: autoUpdate
+  nameWithType: NavMeshLink.autoUpdate
+  fullName: NavMeshPlus.Components.NavMeshLink.autoUpdate
+  type: Property
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshLink.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: autoUpdate
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshLink.cs
+    startLine: 39
+  namespace: NavMeshPlus.Components
+  syntax:
+    content: public bool autoUpdate { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property autoUpdate As Boolean
+  overload: NavMeshPlus.Components.NavMeshLink.autoUpdate*
+- uid: NavMeshPlus.Components.NavMeshLink.area
+  commentId: P:NavMeshPlus.Components.NavMeshLink.area
+  id: area
+  parent: NavMeshPlus.Components.NavMeshLink
+  langs:
+  - csharp
+  - vb
+  name: area
+  nameWithType: NavMeshLink.area
+  fullName: NavMeshPlus.Components.NavMeshLink.area
+  type: Property
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshLink.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: area
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshLink.cs
+    startLine: 43
+  namespace: NavMeshPlus.Components
+  syntax:
+    content: public int area { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property area As Integer
+  overload: NavMeshPlus.Components.NavMeshLink.area*
+- uid: NavMeshPlus.Components.NavMeshLink.UpdateLink
+  commentId: M:NavMeshPlus.Components.NavMeshLink.UpdateLink
+  id: UpdateLink
+  parent: NavMeshPlus.Components.NavMeshLink
+  langs:
+  - csharp
+  - vb
+  name: UpdateLink()
+  nameWithType: NavMeshLink.UpdateLink()
+  fullName: NavMeshPlus.Components.NavMeshLink.UpdateLink()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshLink.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: UpdateLink
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshLink.cs
+    startLine: 65
+  namespace: NavMeshPlus.Components
+  syntax:
+    content: public void UpdateLink()
+    content.vb: Public Sub UpdateLink()
+  overload: NavMeshPlus.Components.NavMeshLink.UpdateLink*
+references:
+- uid: NavMeshPlus.Components
+  commentId: N:NavMeshPlus.Components
+  href: NavMeshPlus.html
+  name: NavMeshPlus.Components
+  nameWithType: NavMeshPlus.Components
+  fullName: NavMeshPlus.Components
+  spec.csharp:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Components
+    name: Components
+    href: NavMeshPlus.Components.html
+  spec.vb:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Components
+    name: Components
+    href: NavMeshPlus.Components.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NavMeshPlus.Components.NavMeshLink.agentTypeID*
+  commentId: Overload:NavMeshPlus.Components.NavMeshLink.agentTypeID
+  href: NavMeshPlus.Components.NavMeshLink.html#NavMeshPlus_Components_NavMeshLink_agentTypeID
+  name: agentTypeID
+  nameWithType: NavMeshLink.agentTypeID
+  fullName: NavMeshPlus.Components.NavMeshLink.agentTypeID
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: NavMeshPlus.Components.NavMeshLink.startPoint*
+  commentId: Overload:NavMeshPlus.Components.NavMeshLink.startPoint
+  href: NavMeshPlus.Components.NavMeshLink.html#NavMeshPlus_Components_NavMeshLink_startPoint
+  name: startPoint
+  nameWithType: NavMeshLink.startPoint
+  fullName: NavMeshPlus.Components.NavMeshLink.startPoint
+- uid: Global.Vector3
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: Vector3
+- uid: NavMeshPlus.Components.NavMeshLink.endPoint*
+  commentId: Overload:NavMeshPlus.Components.NavMeshLink.endPoint
+  href: NavMeshPlus.Components.NavMeshLink.html#NavMeshPlus_Components_NavMeshLink_endPoint
+  name: endPoint
+  nameWithType: NavMeshLink.endPoint
+  fullName: NavMeshPlus.Components.NavMeshLink.endPoint
+- uid: NavMeshPlus.Components.NavMeshLink.width*
+  commentId: Overload:NavMeshPlus.Components.NavMeshLink.width
+  href: NavMeshPlus.Components.NavMeshLink.html#NavMeshPlus_Components_NavMeshLink_width
+  name: width
+  nameWithType: NavMeshLink.width
+  fullName: NavMeshPlus.Components.NavMeshLink.width
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: NavMeshPlus.Components.NavMeshLink.costModifier*
+  commentId: Overload:NavMeshPlus.Components.NavMeshLink.costModifier
+  href: NavMeshPlus.Components.NavMeshLink.html#NavMeshPlus_Components_NavMeshLink_costModifier
+  name: costModifier
+  nameWithType: NavMeshLink.costModifier
+  fullName: NavMeshPlus.Components.NavMeshLink.costModifier
+- uid: NavMeshPlus.Components.NavMeshLink.bidirectional*
+  commentId: Overload:NavMeshPlus.Components.NavMeshLink.bidirectional
+  href: NavMeshPlus.Components.NavMeshLink.html#NavMeshPlus_Components_NavMeshLink_bidirectional
+  name: bidirectional
+  nameWithType: NavMeshLink.bidirectional
+  fullName: NavMeshPlus.Components.NavMeshLink.bidirectional
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: NavMeshPlus.Components.NavMeshLink.autoUpdate*
+  commentId: Overload:NavMeshPlus.Components.NavMeshLink.autoUpdate
+  href: NavMeshPlus.Components.NavMeshLink.html#NavMeshPlus_Components_NavMeshLink_autoUpdate
+  name: autoUpdate
+  nameWithType: NavMeshLink.autoUpdate
+  fullName: NavMeshPlus.Components.NavMeshLink.autoUpdate
+- uid: NavMeshPlus.Components.NavMeshLink.area*
+  commentId: Overload:NavMeshPlus.Components.NavMeshLink.area
+  href: NavMeshPlus.Components.NavMeshLink.html#NavMeshPlus_Components_NavMeshLink_area
+  name: area
+  nameWithType: NavMeshLink.area
+  fullName: NavMeshPlus.Components.NavMeshLink.area
+- uid: NavMeshPlus.Components.NavMeshLink.UpdateLink*
+  commentId: Overload:NavMeshPlus.Components.NavMeshLink.UpdateLink
+  href: NavMeshPlus.Components.NavMeshLink.html#NavMeshPlus_Components_NavMeshLink_UpdateLink
+  name: UpdateLink
+  nameWithType: NavMeshLink.UpdateLink
+  fullName: NavMeshPlus.Components.NavMeshLink.UpdateLink

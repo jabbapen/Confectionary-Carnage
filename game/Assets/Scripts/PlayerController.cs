@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Implements movement and shooting for the player, as well as player
+/// interactions with water tiles. Uses Unity's `Update` and `FixedUpdate` to
+/// respond to input per frame.
+/// </summary>
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(HealthManager))]
 public class PlayerController : MonoBehaviour

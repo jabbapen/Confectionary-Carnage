@@ -1,0 +1,176 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.CursorObj
+  commentId: T:Global.CursorObj
+  id: CursorObj
+  parent: Global
+  children:
+  - Global.CursorObj.pos
+  - Global.CursorObj.self
+  - Global.CursorObj.spriteRenderer
+  - Global.CursorObj.trfm
+  langs:
+  - csharp
+  - vb
+  name: CursorObj
+  nameWithType: CursorObj
+  fullName: CursorObj
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/CursorObj.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: CursorObj
+    path: ../Assets/Scripts/CursorObj.cs
+    startLine: 7
+  namespace: Global
+  summary: Keeps track of the cursor's position in world space, and aligns it to the game grid.
+  example: []
+  syntax:
+    content: 'public class CursorObj : MonoBehaviour'
+    content.vb: Public Class CursorObj Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: Global.CursorObj.pos
+  commentId: F:Global.CursorObj.pos
+  id: pos
+  parent: Global.CursorObj
+  langs:
+  - csharp
+  - vb
+  name: pos
+  nameWithType: CursorObj.pos
+  fullName: CursorObj.pos
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/CursorObj.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: pos
+    path: ../Assets/Scripts/CursorObj.cs
+    startLine: 9
+  namespace: Global
+  syntax:
+    content: public static Vector2 pos
+    return:
+      type: Global.Vector2
+    content.vb: Public Shared pos As Vector2
+- uid: Global.CursorObj.trfm
+  commentId: F:Global.CursorObj.trfm
+  id: trfm
+  parent: Global.CursorObj
+  langs:
+  - csharp
+  - vb
+  name: trfm
+  nameWithType: CursorObj.trfm
+  fullName: CursorObj.trfm
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/CursorObj.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: trfm
+    path: ../Assets/Scripts/CursorObj.cs
+    startLine: 10
+  namespace: Global
+  syntax:
+    content: public static Transform trfm
+    return:
+      type: Global.Transform
+    content.vb: Public Shared trfm As Transform
+- uid: Global.CursorObj.spriteRenderer
+  commentId: F:Global.CursorObj.spriteRenderer
+  id: spriteRenderer
+  parent: Global.CursorObj
+  langs:
+  - csharp
+  - vb
+  name: spriteRenderer
+  nameWithType: CursorObj.spriteRenderer
+  fullName: CursorObj.spriteRenderer
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/CursorObj.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: spriteRenderer
+    path: ../Assets/Scripts/CursorObj.cs
+    startLine: 11
+  namespace: Global
+  syntax:
+    content: public SpriteRenderer spriteRenderer
+    return:
+      type: Global.SpriteRenderer
+    content.vb: Public spriteRenderer As SpriteRenderer
+- uid: Global.CursorObj.self
+  commentId: F:Global.CursorObj.self
+  id: self
+  parent: Global.CursorObj
+  langs:
+  - csharp
+  - vb
+  name: self
+  nameWithType: CursorObj.self
+  fullName: CursorObj.self
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/CursorObj.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: self
+    path: ../Assets/Scripts/CursorObj.cs
+    startLine: 13
+  namespace: Global
+  syntax:
+    content: public static CursorObj self
+    return:
+      type: Global.CursorObj
+    content.vb: Public Shared self As CursorObj
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.Vector2
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Vector2
+- uid: Global.Transform
+  isExternal: true
+  name: Transform
+  nameWithType: Transform
+  fullName: Transform
+- uid: Global.SpriteRenderer
+  commentId: '!:Global.SpriteRenderer'
+  isExternal: true
+  name: SpriteRenderer
+  nameWithType: SpriteRenderer
+  fullName: SpriteRenderer
+- uid: Global.CursorObj
+  commentId: T:Global.CursorObj
+  href: CursorObj.html
+  name: CursorObj
+  nameWithType: CursorObj
+  fullName: CursorObj

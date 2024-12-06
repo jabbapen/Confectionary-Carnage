@@ -1,0 +1,88 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.EnemyManager
+  commentId: T:Global.EnemyManager
+  id: EnemyManager
+  parent: Global
+  children:
+  - Global.EnemyManager.ResetPath
+  langs:
+  - csharp
+  - vb
+  name: EnemyManager
+  nameWithType: EnemyManager
+  fullName: EnemyManager
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/Enemies/EnemyManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: EnemyManager
+    path: ../Assets/Scripts/Enemies/EnemyManager.cs
+    startLine: 10
+  namespace: Global
+  summary: >-
+    Manages the behavior and interactions of an enemy character in the game.
+
+    This includes pathfinding and attacking the player. Implements Unity's
+
+    `FixedUpdate` to perform actions per frame, and also uses the @Global.IWeapon
+
+    strategy for flexibility.
+  example: []
+  syntax:
+    content: 'public class EnemyManager : MonoBehaviour'
+    content.vb: Public Class EnemyManager Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: Global.EnemyManager.ResetPath
+  commentId: M:Global.EnemyManager.ResetPath
+  id: ResetPath
+  parent: Global.EnemyManager
+  langs:
+  - csharp
+  - vb
+  name: ResetPath()
+  nameWithType: EnemyManager.ResetPath()
+  fullName: EnemyManager.ResetPath()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/Enemies/EnemyManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: ResetPath
+    path: ../Assets/Scripts/Enemies/EnemyManager.cs
+    startLine: 100
+  namespace: Global
+  syntax:
+    content: public void ResetPath()
+    content.vb: Public Sub ResetPath()
+  overload: Global.EnemyManager.ResetPath*
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.EnemyManager.ResetPath*
+  commentId: Overload:Global.EnemyManager.ResetPath
+  href: Global.EnemyManager.html#EnemyManager_ResetPath
+  name: ResetPath
+  nameWithType: EnemyManager.ResetPath
+  fullName: EnemyManager.ResetPath

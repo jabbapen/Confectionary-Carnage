@@ -1,0 +1,28 @@
+### YamlMime:ManagedReference
+items:
+- uid: NavMeshPlus.Extensions.Editors
+  commentId: N:NavMeshPlus.Extensions.Editors
+  id: NavMeshPlus.Extensions.Editors
+  children:
+  - NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer
+  - NavMeshPlus.Extensions.Editors.NavMeshAreaAttributePropertyDrawer
+  langs:
+  - csharp
+  - vb
+  name: NavMeshPlus.Extensions.Editors
+  nameWithType: NavMeshPlus.Extensions.Editors
+  fullName: NavMeshPlus.Extensions.Editors
+  type: Namespace
+references:
+- uid: NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer
+  commentId: T:NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer
+  href: NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer.html
+  name: NavMeshAgentAttributePropertyDrawer
+  nameWithType: NavMeshAgentAttributePropertyDrawer
+  fullName: NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer
+- uid: NavMeshPlus.Extensions.Editors.NavMeshAreaAttributePropertyDrawer
+  commentId: T:NavMeshPlus.Extensions.Editors.NavMeshAreaAttributePropertyDrawer
+  href: NavMeshPlus.Extensions.Editors.NavMeshAreaAttributePropertyDrawer.html
+  name: NavMeshAreaAttributePropertyDrawer
+  nameWithType: NavMeshAreaAttributePropertyDrawer
+  fullName: NavMeshPlus.Extensions.Editors.NavMeshAreaAttributePropertyDrawer

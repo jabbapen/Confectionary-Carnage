@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Manages the tile painting feature when in the LevelEditor.
+/// Uses `Update` to "paint" the level scene per frame the mouse is down, and
+/// communicates with @Global.LevelEditor to update the level state accordingly.
+/// </summary>
 public class PaletteItem : MonoBehaviour
 {
     [SerializeField] int tileID;
     [SerializeField] float hoverDistance;
     [SerializeField] Vector2 defaultSize, hoverSize;
     bool hover;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     private void Update()
     {

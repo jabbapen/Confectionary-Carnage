@@ -19,12 +19,16 @@ public class LevelResponse
     public List<LevelModel> data;
 }
 
+/// <summary>
+/// Makes calls to the backend to load levels.
+/// </summary>
 public class LevelRequester : MonoBehaviour
 {
     Queue<LevelModel> levelQueue = new Queue<LevelModel>();
     [SerializeField] int preloadAmount = 3;
     List<LevelModel> serializedLevels = new List<LevelModel>();  // previously loadeed levels, used in case we can't load fast enough
 
+    // XXX: we need to implement a config system so we're not hard-coding API endpoints
     private string levelsAPI = "https://jtxj7s3d3tz2ii2dv7ric3xqbi0ljjls.lambda-url.us-west-1.on.aws/levels"; // CHANGE THIS TO AWS DEPLOYMENT
     bool fetchingLevel = false;
 
@@ -33,6 +37,10 @@ public class LevelRequester : MonoBehaviour
         // StartCoroutine(GetLevelData(2));
     }
 
+    /// <summary>
+    /// Querys a certain number levels from the backend at once.
+    /// </summary>
+    /// <returns>IEnumerator: this is required for Unity's coroutines feature, which lets us make backend calls asynchronously</returns>
     public IEnumerator QueryAllLevels()
     {
         // populate queue
@@ -83,6 +91,10 @@ public class LevelRequester : MonoBehaviour
         fetchingLevel = false;
     }
 
+    /// <summary>
+    /// Returns a random level from the levels which have been received by `RequestLevels`.
+    /// </summary>
+    /// <returns>LevelModel: a struct containing a Level's name, creator, and serialized string</returns>
     public LevelModel GetLevel()
     {
         if (levelQueue.Count > 0)

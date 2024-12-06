@@ -1,0 +1,379 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.Menu
+  commentId: T:Global.Menu
+  id: Menu
+  parent: Global
+  children:
+  - Global.Menu.CloseOptions
+  - Global.Menu.LoadScene(System.String)
+  - Global.Menu.OpenOptions
+  - Global.Menu.PauseGame
+  - Global.Menu.PlayGame(System.String)
+  - Global.Menu.Quit
+  - Global.Menu.UnpauseGame
+  - Global.Menu.errorText
+  - Global.Menu.panel
+  - Global.Menu.usernameInput
+  langs:
+  - csharp
+  - vb
+  name: Menu
+  nameWithType: Menu
+  fullName: Menu
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/Menu.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Menu
+    path: ../Assets/Scripts/Menu.cs
+    startLine: 10
+  namespace: Global
+  summary: Controls Scene loading and opening options within the main menu.
+  example: []
+  syntax:
+    content: 'public class Menu : MonoBehaviour'
+    content.vb: Public Class Menu Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: Global.Menu.usernameInput
+  commentId: F:Global.Menu.usernameInput
+  id: usernameInput
+  parent: Global.Menu
+  langs:
+  - csharp
+  - vb
+  name: usernameInput
+  nameWithType: Menu.usernameInput
+  fullName: Menu.usernameInput
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/Menu.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: usernameInput
+    path: ../Assets/Scripts/Menu.cs
+    startLine: 12
+  namespace: Global
+  syntax:
+    content: public TMP_InputField usernameInput
+    return:
+      type: Global.TMP_InputField
+    content.vb: Public usernameInput As TMP_InputField
+- uid: Global.Menu.errorText
+  commentId: F:Global.Menu.errorText
+  id: errorText
+  parent: Global.Menu
+  langs:
+  - csharp
+  - vb
+  name: errorText
+  nameWithType: Menu.errorText
+  fullName: Menu.errorText
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/Menu.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: errorText
+    path: ../Assets/Scripts/Menu.cs
+    startLine: 13
+  namespace: Global
+  syntax:
+    content: public GameObject errorText
+    return:
+      type: Global.GameObject
+    content.vb: Public errorText As GameObject
+- uid: Global.Menu.panel
+  commentId: F:Global.Menu.panel
+  id: panel
+  parent: Global.Menu
+  langs:
+  - csharp
+  - vb
+  name: panel
+  nameWithType: Menu.panel
+  fullName: Menu.panel
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/Menu.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: panel
+    path: ../Assets/Scripts/Menu.cs
+    startLine: 14
+  namespace: Global
+  syntax:
+    content: public GameObject panel
+    return:
+      type: Global.GameObject
+    content.vb: Public panel As GameObject
+- uid: Global.Menu.LoadScene(System.String)
+  commentId: M:Global.Menu.LoadScene(System.String)
+  id: LoadScene(System.String)
+  parent: Global.Menu
+  langs:
+  - csharp
+  - vb
+  name: LoadScene(string)
+  nameWithType: Menu.LoadScene(string)
+  fullName: Menu.LoadScene(string)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/Menu.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: LoadScene
+    path: ../Assets/Scripts/Menu.cs
+    startLine: 17
+  namespace: Global
+  syntax:
+    content: public void LoadScene(string game)
+    parameters:
+    - id: game
+      type: System.String
+    content.vb: Public Sub LoadScene(game As String)
+  overload: Global.Menu.LoadScene*
+  nameWithType.vb: Menu.LoadScene(String)
+  fullName.vb: Menu.LoadScene(String)
+  name.vb: LoadScene(String)
+- uid: Global.Menu.Quit
+  commentId: M:Global.Menu.Quit
+  id: Quit
+  parent: Global.Menu
+  langs:
+  - csharp
+  - vb
+  name: Quit()
+  nameWithType: Menu.Quit()
+  fullName: Menu.Quit()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/Menu.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Quit
+    path: ../Assets/Scripts/Menu.cs
+    startLine: 22
+  namespace: Global
+  syntax:
+    content: public void Quit()
+    content.vb: Public Sub Quit()
+  overload: Global.Menu.Quit*
+- uid: Global.Menu.OpenOptions
+  commentId: M:Global.Menu.OpenOptions
+  id: OpenOptions
+  parent: Global.Menu
+  langs:
+  - csharp
+  - vb
+  name: OpenOptions()
+  nameWithType: Menu.OpenOptions()
+  fullName: Menu.OpenOptions()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/Menu.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: OpenOptions
+    path: ../Assets/Scripts/Menu.cs
+    startLine: 28
+  namespace: Global
+  syntax:
+    content: public void OpenOptions()
+    content.vb: Public Sub OpenOptions()
+  overload: Global.Menu.OpenOptions*
+- uid: Global.Menu.CloseOptions
+  commentId: M:Global.Menu.CloseOptions
+  id: CloseOptions
+  parent: Global.Menu
+  langs:
+  - csharp
+  - vb
+  name: CloseOptions()
+  nameWithType: Menu.CloseOptions()
+  fullName: Menu.CloseOptions()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/Menu.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: CloseOptions
+    path: ../Assets/Scripts/Menu.cs
+    startLine: 33
+  namespace: Global
+  syntax:
+    content: public void CloseOptions()
+    content.vb: Public Sub CloseOptions()
+  overload: Global.Menu.CloseOptions*
+- uid: Global.Menu.PauseGame
+  commentId: M:Global.Menu.PauseGame
+  id: PauseGame
+  parent: Global.Menu
+  langs:
+  - csharp
+  - vb
+  name: PauseGame()
+  nameWithType: Menu.PauseGame()
+  fullName: Menu.PauseGame()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/Menu.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: PauseGame
+    path: ../Assets/Scripts/Menu.cs
+    startLine: 39
+  namespace: Global
+  syntax:
+    content: public void PauseGame()
+    content.vb: Public Sub PauseGame()
+  overload: Global.Menu.PauseGame*
+- uid: Global.Menu.UnpauseGame
+  commentId: M:Global.Menu.UnpauseGame
+  id: UnpauseGame
+  parent: Global.Menu
+  langs:
+  - csharp
+  - vb
+  name: UnpauseGame()
+  nameWithType: Menu.UnpauseGame()
+  fullName: Menu.UnpauseGame()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/Menu.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: UnpauseGame
+    path: ../Assets/Scripts/Menu.cs
+    startLine: 44
+  namespace: Global
+  syntax:
+    content: public void UnpauseGame()
+    content.vb: Public Sub UnpauseGame()
+  overload: Global.Menu.UnpauseGame*
+- uid: Global.Menu.PlayGame(System.String)
+  commentId: M:Global.Menu.PlayGame(System.String)
+  id: PlayGame(System.String)
+  parent: Global.Menu
+  langs:
+  - csharp
+  - vb
+  name: PlayGame(string)
+  nameWithType: Menu.PlayGame(string)
+  fullName: Menu.PlayGame(string)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/Menu.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: PlayGame
+    path: ../Assets/Scripts/Menu.cs
+    startLine: 49
+  namespace: Global
+  syntax:
+    content: public void PlayGame(string game)
+    parameters:
+    - id: game
+      type: System.String
+    content.vb: Public Sub PlayGame(game As String)
+  overload: Global.Menu.PlayGame*
+  nameWithType.vb: Menu.PlayGame(String)
+  fullName.vb: Menu.PlayGame(String)
+  name.vb: PlayGame(String)
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.TMP_InputField
+  commentId: '!:Global.TMP_InputField'
+  isExternal: true
+  name: TMP_InputField
+  nameWithType: TMP_InputField
+  fullName: TMP_InputField
+- uid: Global.GameObject
+  isExternal: true
+  name: GameObject
+  nameWithType: GameObject
+  fullName: GameObject
+- uid: Global.Menu.LoadScene*
+  commentId: Overload:Global.Menu.LoadScene
+  href: Global.Menu.html#Menu_LoadScene_System_String_
+  name: LoadScene
+  nameWithType: Menu.LoadScene
+  fullName: Menu.LoadScene
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Global.Menu.Quit*
+  commentId: Overload:Global.Menu.Quit
+  href: Global.Menu.html#Menu_Quit
+  name: Quit
+  nameWithType: Menu.Quit
+  fullName: Menu.Quit
+- uid: Global.Menu.OpenOptions*
+  commentId: Overload:Global.Menu.OpenOptions
+  href: Global.Menu.html#Menu_OpenOptions
+  name: OpenOptions
+  nameWithType: Menu.OpenOptions
+  fullName: Menu.OpenOptions
+- uid: Global.Menu.CloseOptions*
+  commentId: Overload:Global.Menu.CloseOptions
+  href: Global.Menu.html#Menu_CloseOptions
+  name: CloseOptions
+  nameWithType: Menu.CloseOptions
+  fullName: Menu.CloseOptions
+- uid: Global.Menu.PauseGame*
+  commentId: Overload:Global.Menu.PauseGame
+  href: Global.Menu.html#Menu_PauseGame
+  name: PauseGame
+  nameWithType: Menu.PauseGame
+  fullName: Menu.PauseGame
+- uid: Global.Menu.UnpauseGame*
+  commentId: Overload:Global.Menu.UnpauseGame
+  href: Global.Menu.html#Menu_UnpauseGame
+  name: UnpauseGame
+  nameWithType: Menu.UnpauseGame
+  fullName: Menu.UnpauseGame
+- uid: Global.Menu.PlayGame*
+  commentId: Overload:Global.Menu.PlayGame
+  href: Global.Menu.html#Menu_PlayGame_System_String_
+  name: PlayGame
+  nameWithType: Menu.PlayGame
+  fullName: Menu.PlayGame

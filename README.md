@@ -1,5 +1,9 @@
-# Repository Template
+## Unity Build:
+[Build using WebGL](https://github.com/jabbapen/Confectionary-Carnage/wiki/Unity-Build-(WebGL))
+## Unity Documentation:
+[Docs using DocFX](https://github.com/jabbapen/Confectionary-Carnage/wiki/DocFX-Unity-Documentation)
 
+=== 
 [![Build Status](https://app.travis-ci.com/melaasar/cs130-template.svg?branch=master)](https://app.travis-ci.com/github/melaasar/cs130-template)
 [![Release](https://img.shields.io/github/v/release/melaasar/cs130-template?label=release)](https://github.com/melaasar/cs130-template/releases/latest)
 

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Creating a NavMesh Agent | Confectionary-Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Creating a NavMesh Agent | Confectionary-Docs ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.ai.navigation@1.1.5/Documentation~/CreateNavMeshAgent.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="Confectionary-Docs">
+            Confectionary-Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="creating-a-navmesh-agent">Creating a NavMesh Agent</h1>
+
+<p>Once you have a <a href="./BuildingNavMesh.md" title="A mesh that Unity generates to approximate the walkable areas and obstacles in your environment for path finding and AI-controlled navigation."><strong>NavMesh</strong></a> baked for your level it is time to create a character which can navigate the <a href="https://docs.unity3d.com/Manual/CreatingScenes.html" title="A Scene contains the environments and menus of your game. Think of each unique Scene file as a unique level. In each Scene, you place your environments, obstacles, and decorations, essentially designing and building your game in pieces."><strong>scene</strong></a>. We’re going to build our prototype agent from a cylinder and set it in motion. This is done using a NavMesh Agent component and a simple script.</p>
+<p><img src="./Images/NavMeshAgentSetup.svg" alt=""></p>
+<p>First let’s create the character:</p>
+<ol>
+<li>Create a <strong>cylinder</strong>: <strong>GameObject &gt; 3D Object &gt; Cylinder</strong>.</li>
+<li>The default cylinder dimensions (height 2 and radius 0.5) are good for a humanoid shaped agent, so we will leave them as they are.</li>
+<li>Add a <strong>NavMesh Agent</strong> component: <strong>Component &gt; Navigation &gt; NavMesh Agent</strong>.</li>
+</ol>
+<p>Now you have simple NavMesh Agent set up ready to receive commands!</p>
+<p>When you start to experiment with a NavMesh Agent, you most likely are going to adjust its dimensions for your character size and speed.</p>
+<p>The <strong>NavMesh Agent</strong> component handles both the pathfinding and the movement control of a character. In your <a href="https://docs.unity3d.com/Manual/CreatingAndUsingScripts.html" title="A piece of code that allows you to create your own Components, trigger game events, modify Component properties over time and respond to user input in any way you like."><strong>scripts</strong></a>, navigation can be as simple as setting the desired destination point - the NavMesh Agent can handle everything from there on.</p>
+<pre><code>    // MoveTo.cs
+    using UnityEngine;
+    using UnityEngine.AI;
+    
+    public class MoveTo : MonoBehaviour {
+       
+       public Transform goal;
+       
+       void Start () {
+          NavMeshAgent agent = GetComponent&lt;NavMeshAgent&gt;();
+          agent.destination = goal.position; 
+       }
+    }
+</code></pre>
+<p>Next we need to build a simple script which allows you to send your character to the destination specified by another Game Object, and a Sphere which will be the destination to move to:</p>
+<ol>
+<li>Create a new <strong>C# script</strong> (<code>MoveTo.cs</code>) and replace its contents with the above script.</li>
+<li>Assign the MoveTo script to the character you’ve just created.</li>
+<li>Create a <strong>sphere</strong>, this will be the destination the agent will move to.</li>
+<li>Move the sphere away from the character to a location that is close to the NavMesh surface.</li>
+<li>Select the character, locate the MoveTo script, and assign the Sphere to the <strong>Goal</strong> property.</li>
+<li><strong>Press Play</strong>; you should see the agent navigating to the location of the sphere.</li>
+</ol>
+<p>To sum it up, in your script, you will need to get a reference to the NavMesh Agent component and then to set the agent in motion, you just need to assign a position to its <a href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent-destination.html">destination</a> property. The <a href="NavHowTos.html">Navigation How Tos</a> will give you further examples on how to solve common gameplay scenarios with the NavMesh Agent.</p>
+<h3 id="additional-resources">Additional resources</h3>
+<ul>
+<li><a href="NavHowTos.html">Navigation HowTos</a> - common use cases for NavMesh Agent, with source code.</li>
+<li><a href="NavInnerWorkings.html">Inner Workings of the Navigation System</a> - learn more about path following.</li>
+<li><a href="https://docs.unity3d.com/Manual/class-NavMeshAgent.html">NavMesh Agent component reference</a> – full description of all the NavMeshAgent properties.</li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">NavMesh Agent scripting reference</a> - full description of the NavMeshAgent scripting API.</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.ai.navigation@1.1.5/Documentation~/CreateNavMeshAgent.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

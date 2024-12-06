@@ -1,0 +1,55 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.Bullet
+  commentId: T:Global.Bullet
+  id: Bullet
+  parent: Global
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Bullet
+  nameWithType: Bullet
+  fullName: Bullet
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/Bullet.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Bullet
+    path: ../Assets/Scripts/Bullet.cs
+    startLine: 10
+  namespace: Global
+  summary: >-
+    Player projectile class. Uses Monobehavior to interact with enemies and move
+
+    across the screen. Interacts with enemy HealthManagers to deal damage.
+
+    Implements `Start`, `FixedUpdate`, and `OnTriggerEnder2D` Unity functions.
+  example: []
+  syntax:
+    content: 'public class Bullet : MonoBehaviour'
+    content.vb: Public Class Bullet Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

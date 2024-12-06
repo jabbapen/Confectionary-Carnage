@@ -2,7 +2,12 @@ using System;
 using UnityEngine;
 using UnityEngine.AI;
 
-
+/// <summary>
+/// Manages the behavior and interactions of an enemy character in the game.
+/// This includes pathfinding and attacking the player. Implements Unity's
+/// `FixedUpdate` to perform actions per frame, and also uses the @Global.IWeapon
+/// strategy for flexibility.
+/// </summary>
 [RequireComponent(typeof(HealthManager))]
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(IWeapon))]
@@ -73,6 +78,7 @@ public class EnemyManager : MonoBehaviour
         // if close, attack the player
         if (weapon.Ready() && weapon.Usable(player.gameObject))
         {
+            // XXX: Thsi should be part of CottonCandy's IWeapon implementation
             if (isCottonCandy)
             {
                 healthManager.Health = 0;

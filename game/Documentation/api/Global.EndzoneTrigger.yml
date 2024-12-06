@@ -1,0 +1,53 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.EndzoneTrigger
+  commentId: T:Global.EndzoneTrigger
+  id: EndzoneTrigger
+  parent: Global
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: EndzoneTrigger
+  nameWithType: EndzoneTrigger
+  fullName: EndzoneTrigger
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/EndzoneTrigger.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: EndzoneTrigger
+    path: ../Assets/Scripts/EndzoneTrigger.cs
+    startLine: 8
+  namespace: Global
+  summary: >-
+    Implements Unity's `OnTriggerEnter2D` to detect when a player reaches the
+
+    endzone, then makes @Global.GameManager load the next level.
+  example: []
+  syntax:
+    content: 'public class EndzoneTrigger : MonoBehaviour'
+    content.vb: Public Class EndzoneTrigger Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

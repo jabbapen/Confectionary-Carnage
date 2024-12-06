@@ -1,0 +1,107 @@
+### YamlMime:ManagedReference
+items:
+- uid: NavMeshPlus.Components
+  commentId: N:NavMeshPlus.Components
+  id: NavMeshPlus.Components
+  children:
+  - NavMeshPlus.Components.CollectObjects
+  - NavMeshPlus.Components.NavMeshLink
+  - NavMeshPlus.Components.NavMeshModifier
+  - NavMeshPlus.Components.NavMeshModifierTilemap
+  - NavMeshPlus.Components.NavMeshModifierTilemap.TileModifier
+  - NavMeshPlus.Components.NavMeshModifierVolume
+  - NavMeshPlus.Components.NavMeshSurface
+  langs:
+  - csharp
+  - vb
+  name: NavMeshPlus.Components
+  nameWithType: NavMeshPlus.Components
+  fullName: NavMeshPlus.Components
+  type: Namespace
+  assemblies:
+  - NavMeshPlus
+references:
+- uid: NavMeshPlus.Components.NavMeshModifier
+  commentId: T:NavMeshPlus.Components.NavMeshModifier
+  parent: NavMeshPlus.Components
+  href: NavMeshPlus.Components.NavMeshModifier.html
+  name: NavMeshModifier
+  nameWithType: NavMeshModifier
+  fullName: NavMeshPlus.Components.NavMeshModifier
+- uid: NavMeshPlus.Components.NavMeshModifierTilemap
+  commentId: T:NavMeshPlus.Components.NavMeshModifierTilemap
+  href: NavMeshPlus.Components.NavMeshModifierTilemap.html
+  name: NavMeshModifierTilemap
+  nameWithType: NavMeshModifierTilemap
+  fullName: NavMeshPlus.Components.NavMeshModifierTilemap
+- uid: NavMeshPlus.Components.NavMeshModifierTilemap.TileModifier
+  commentId: T:NavMeshPlus.Components.NavMeshModifierTilemap.TileModifier
+  parent: NavMeshPlus.Components
+  href: NavMeshPlus.Components.NavMeshModifierTilemap.html
+  name: NavMeshModifierTilemap.TileModifier
+  nameWithType: NavMeshModifierTilemap.TileModifier
+  fullName: NavMeshPlus.Components.NavMeshModifierTilemap.TileModifier
+  spec.csharp:
+  - uid: NavMeshPlus.Components.NavMeshModifierTilemap
+    name: NavMeshModifierTilemap
+    href: NavMeshPlus.Components.NavMeshModifierTilemap.html
+  - name: .
+  - uid: NavMeshPlus.Components.NavMeshModifierTilemap.TileModifier
+    name: TileModifier
+    href: NavMeshPlus.Components.NavMeshModifierTilemap.TileModifier.html
+  spec.vb:
+  - uid: NavMeshPlus.Components.NavMeshModifierTilemap
+    name: NavMeshModifierTilemap
+    href: NavMeshPlus.Components.NavMeshModifierTilemap.html
+  - name: .
+  - uid: NavMeshPlus.Components.NavMeshModifierTilemap.TileModifier
+    name: TileModifier
+    href: NavMeshPlus.Components.NavMeshModifierTilemap.TileModifier.html
+- uid: NavMeshPlus.Components.CollectObjects
+  commentId: T:NavMeshPlus.Components.CollectObjects
+  parent: NavMeshPlus.Components
+  href: NavMeshPlus.Components.CollectObjects.html
+  name: CollectObjects
+  nameWithType: CollectObjects
+  fullName: NavMeshPlus.Components.CollectObjects
+- uid: NavMeshPlus.Components.NavMeshSurface
+  commentId: T:NavMeshPlus.Components.NavMeshSurface
+  parent: NavMeshPlus.Components
+  href: NavMeshPlus.Components.NavMeshSurface.html
+  name: NavMeshSurface
+  nameWithType: NavMeshSurface
+  fullName: NavMeshPlus.Components.NavMeshSurface
+- uid: NavMeshPlus.Components.NavMeshLink
+  commentId: T:NavMeshPlus.Components.NavMeshLink
+  href: NavMeshPlus.Components.NavMeshLink.html
+  name: NavMeshLink
+  nameWithType: NavMeshLink
+  fullName: NavMeshPlus.Components.NavMeshLink
+- uid: NavMeshPlus.Components.NavMeshModifierVolume
+  commentId: T:NavMeshPlus.Components.NavMeshModifierVolume
+  href: NavMeshPlus.Components.NavMeshModifierVolume.html
+  name: NavMeshModifierVolume
+  nameWithType: NavMeshModifierVolume
+  fullName: NavMeshPlus.Components.NavMeshModifierVolume
+- uid: NavMeshPlus.Components
+  commentId: N:NavMeshPlus.Components
+  href: NavMeshPlus.html
+  name: NavMeshPlus.Components
+  nameWithType: NavMeshPlus.Components
+  fullName: NavMeshPlus.Components
+  spec.csharp:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Components
+    name: Components
+    href: NavMeshPlus.Components.html
+  spec.vb:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Components
+    name: Components
+    href: NavMeshPlus.Components.html

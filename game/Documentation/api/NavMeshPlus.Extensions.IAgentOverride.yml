@@ -1,0 +1,80 @@
+### YamlMime:ManagedReference
+items:
+- uid: NavMeshPlus.Extensions.IAgentOverride
+  commentId: T:NavMeshPlus.Extensions.IAgentOverride
+  id: IAgentOverride
+  parent: NavMeshPlus.Extensions
+  children:
+  - NavMeshPlus.Extensions.IAgentOverride.UpdateAgent
+  langs:
+  - csharp
+  - vb
+  name: IAgentOverride
+  nameWithType: IAgentOverride
+  fullName: NavMeshPlus.Extensions.IAgentOverride
+  type: Interface
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/AgentOverride2d.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: IAgentOverride
+    path: ../Assets/NavMeshComponents/Scripts/AgentOverride2d.cs
+    startLine: 5
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: public interface IAgentOverride
+    content.vb: Public Interface IAgentOverride
+- uid: NavMeshPlus.Extensions.IAgentOverride.UpdateAgent
+  commentId: M:NavMeshPlus.Extensions.IAgentOverride.UpdateAgent
+  id: UpdateAgent
+  parent: NavMeshPlus.Extensions.IAgentOverride
+  langs:
+  - csharp
+  - vb
+  name: UpdateAgent()
+  nameWithType: IAgentOverride.UpdateAgent()
+  fullName: NavMeshPlus.Extensions.IAgentOverride.UpdateAgent()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/AgentOverride2d.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: UpdateAgent
+    path: ../Assets/NavMeshComponents/Scripts/AgentOverride2d.cs
+    startLine: 7
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: void UpdateAgent()
+    content.vb: Sub UpdateAgent()
+  overload: NavMeshPlus.Extensions.IAgentOverride.UpdateAgent*
+references:
+- uid: NavMeshPlus.Extensions
+  commentId: N:NavMeshPlus.Extensions
+  href: NavMeshPlus.html
+  name: NavMeshPlus.Extensions
+  nameWithType: NavMeshPlus.Extensions
+  fullName: NavMeshPlus.Extensions
+  spec.csharp:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Extensions
+    name: Extensions
+    href: NavMeshPlus.Extensions.html
+  spec.vb:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Extensions
+    name: Extensions
+    href: NavMeshPlus.Extensions.html
+- uid: NavMeshPlus.Extensions.IAgentOverride.UpdateAgent*
+  commentId: Overload:NavMeshPlus.Extensions.IAgentOverride.UpdateAgent
+  href: NavMeshPlus.Extensions.IAgentOverride.html#NavMeshPlus_Extensions_IAgentOverride_UpdateAgent
+  name: UpdateAgent
+  nameWithType: IAgentOverride.UpdateAgent
+  fullName: NavMeshPlus.Extensions.IAgentOverride.UpdateAgent

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>NavMeshLink | Confectionary-Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="NavMeshLink | Confectionary-Docs ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.ai.navigation@1.1.5/Documentation~/NavMeshLink.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="Confectionary-Docs">
+            Confectionary-Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="navmeshlink">NavMeshLink</h1>
+
+<p>NavMesh Link creates a navigable link between two locations that use NavMeshes.</p>
+<p>This link can be from point to point or it can span a gap, in which case the Agent uses the nearest location along the entry edge to cross the link.</p>
+<p>You must use a NavMesh Link to connect different NavMesh Surfaces.</p>
+<p>To use the NavMesh Link component, navigate to <strong>GameObject &gt; AI &gt; NavMesh Link</strong>.</p>
+<p><img src="Images/NavMeshLink-Example.png" alt="NavMeshLink example" title="A NavMesh Link component open in the Inspector window"></p>
+<h2 id="parameters">Parameters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Property</strong></th>
+<th style="text-align: left;"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Agent Type</strong></td>
+<td style="text-align: left;">Specify the Agent type that can use the link.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Start Point</strong></td>
+<td style="text-align: left;">Specify the start point of the link, relative to the GameObject. Defined by XYZ coordinates.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>End Point</strong></td>
+<td style="text-align: left;">Specify the end point of the link, relative to the GameObject. Defined by XYZ coordinates.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Align Transform To Points</strong></td>
+<td style="text-align: left;">Clicking this button moves the GameObject at the link’s center point and aligns the transform’s forward axis with the end point.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cost Modifier</strong></td>
+<td style="text-align: left;">When the cost modifier value is non-negative the cost of moving over the NavMeshLink is equivalent to the cost modifier value times the Euclidean distance between NavMeshLink end points.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Bidirectional</strong></td>
+<td style="text-align: left;">With this checkbox selected, NavMesh Agents traverse the NavMesh Link both ways (from the start point to the end point, and from the end point back to the start point).<br>When this checkbox is cleared, the NavMesh Link only functions one-way (from the start point to the end point only).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Area Type</strong></td>
+<td style="text-align: left;">The area type of the NavMesh Link (this affects pathfinding costs). <br> - <strong>Walkable</strong> (this is the default option)<br> - <strong>Not Walkable</strong> <br> - <strong>Jump</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="connecting-multiple-navmesh-surfaces-together">Connecting multiple NavMesh Surfaces together</h2>
+<p><img src="Images/ConnectingSurfaces-Example.png" alt="Connecting surfaces example" title="In this image, the blue and red NavMeshes are defined in two different NavMesh Surfaces and connected by a NavMesh Link"></p>
+<p>If you want an Agent to move between multiple NavMesh Surfaces in a Scene, they must be connected using a NavMesh Link.</p>
+<p>In the example Scene above, the blue and red NavMeshes are defined in different NavMesh Surfaces, with a NavMesh link connecting them.</p>
+<p>Note that when connecting NavMesh Surfaces:</p>
+<ul>
+<li><p>You can connect NavMesh Surfaces using multiple NavMesh Links.</p>
+</li>
+<li><p>Both the NavMesh Surfaces and the NavMesh Link must have same Agent type.</p>
+</li>
+<li><p>The NavMesh Link’s start and end point must only be on one NavMesh Surface - be careful if you have multiple NavMeshes at the same location.</p>
+</li>
+<li><p>If you are loading a second NavMesh Surface and you have unconnected NavMesh Links in the first Scene, check that they do not connect to any unwanted NavMesh Surfaces.</p>
+</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.ai.navigation@1.1.5/Documentation~/NavMeshLink.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

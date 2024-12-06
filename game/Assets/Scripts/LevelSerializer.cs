@@ -4,6 +4,9 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
 
+/// <summary>
+/// Serializes levels: Turns a grid of @Global.Tile s into a list of positions and their associated tile IDs.
+/// </summary>
 public class LevelSerializer : MonoBehaviour
 {
     [SerializeField] string resourcePath;
@@ -80,6 +83,11 @@ public class LevelSerializer : MonoBehaviour
         return -1;
     }
 
+    /// <summary>
+    /// Serializes a GameObject `parent` representing the level into a string which can be stored and later deserialized.
+    /// </summary>
+    /// <param name="parent">Unity `GameObject` representing the parent of all of the tiles in a level (like the html root element).</param>
+    /// <returns>String representing the serialized level</returns>
     public string SerializeLevel(GameObject parent)
     {
         StringBuilder sb = new StringBuilder();
@@ -114,12 +122,24 @@ public class LevelSerializer : MonoBehaviour
         return sb.ToString();
     }
 
+    /// <summary>
+    /// Serializes and uploads a `GameObject` `parent` to the backend.
+    /// </summary>
+    /// <param name="parent">The `GameObject` to be serialized and saved</param>
     public void SaveField(GameObject parent)
     {
         // Debug.Log(sb.ToString());
         StartCoroutine(UploadLevel(SerializeLevel(parent))); // uncomment this when you want to test uploading a level
     }
 
+    /// <summary>
+    /// Loads a level by turning the serialized string into `GameObject`s under
+    /// the `parent` parameter, then moves the player to starting location
+    /// provided by `playerTransform`
+    /// </summary>
+    /// <param name="data">Serialized level data</param>
+    /// <param name="parent">Parent under which to create the level's `GameObject`s</param>
+    /// <param name="playerTransform">Where to move the player</param>
     public void LoadField(string data, GameObject parent, Transform playerTransform)
     {
         // Split the input string into individual object data blocks (split by '%')

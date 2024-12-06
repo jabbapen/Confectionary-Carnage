@@ -1,0 +1,223 @@
+### YamlMime:ManagedReference
+items:
+- uid: NavMeshPlus.Extensions.INavMeshExtensionsProvider
+  commentId: T:NavMeshPlus.Extensions.INavMeshExtensionsProvider
+  id: INavMeshExtensionsProvider
+  parent: NavMeshPlus.Extensions
+  children:
+  - NavMeshPlus.Extensions.INavMeshExtensionsProvider.Add(NavMeshPlus.Extensions.NavMeshExtension,System.Int32)
+  - NavMeshPlus.Extensions.INavMeshExtensionsProvider.Count
+  - NavMeshPlus.Extensions.INavMeshExtensionsProvider.Item(System.Int32)
+  - NavMeshPlus.Extensions.INavMeshExtensionsProvider.Remove(NavMeshPlus.Extensions.NavMeshExtension)
+  langs:
+  - csharp
+  - vb
+  name: INavMeshExtensionsProvider
+  nameWithType: INavMeshExtensionsProvider
+  fullName: NavMeshPlus.Extensions.INavMeshExtensionsProvider
+  type: Interface
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshExtensionsProvider.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: INavMeshExtensionsProvider
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshExtensionsProvider.cs
+    startLine: 9
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: public interface INavMeshExtensionsProvider
+    content.vb: Public Interface INavMeshExtensionsProvider
+- uid: NavMeshPlus.Extensions.INavMeshExtensionsProvider.Count
+  commentId: P:NavMeshPlus.Extensions.INavMeshExtensionsProvider.Count
+  id: Count
+  parent: NavMeshPlus.Extensions.INavMeshExtensionsProvider
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: INavMeshExtensionsProvider.Count
+  fullName: NavMeshPlus.Extensions.INavMeshExtensionsProvider.Count
+  type: Property
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshExtensionsProvider.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Count
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshExtensionsProvider.cs
+    startLine: 11
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: int Count { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property Count As Integer
+  overload: NavMeshPlus.Extensions.INavMeshExtensionsProvider.Count*
+- uid: NavMeshPlus.Extensions.INavMeshExtensionsProvider.Item(System.Int32)
+  commentId: P:NavMeshPlus.Extensions.INavMeshExtensionsProvider.Item(System.Int32)
+  id: Item(System.Int32)
+  parent: NavMeshPlus.Extensions.INavMeshExtensionsProvider
+  langs:
+  - csharp
+  - vb
+  name: this[int]
+  nameWithType: INavMeshExtensionsProvider.this[int]
+  fullName: NavMeshPlus.Extensions.INavMeshExtensionsProvider.this[int]
+  type: Property
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshExtensionsProvider.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: this[]
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshExtensionsProvider.cs
+    startLine: 12
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: NavMeshExtension this[int index] { get; }
+    parameters:
+    - id: index
+      type: System.Int32
+    return:
+      type: NavMeshPlus.Extensions.NavMeshExtension
+    content.vb: ReadOnly Default Property this[](index As Integer) As NavMeshExtension
+  overload: NavMeshPlus.Extensions.INavMeshExtensionsProvider.Item*
+  nameWithType.vb: INavMeshExtensionsProvider.this[](Integer)
+  fullName.vb: NavMeshPlus.Extensions.INavMeshExtensionsProvider.this[](Integer)
+  name.vb: this[](Integer)
+- uid: NavMeshPlus.Extensions.INavMeshExtensionsProvider.Add(NavMeshPlus.Extensions.NavMeshExtension,System.Int32)
+  commentId: M:NavMeshPlus.Extensions.INavMeshExtensionsProvider.Add(NavMeshPlus.Extensions.NavMeshExtension,System.Int32)
+  id: Add(NavMeshPlus.Extensions.NavMeshExtension,System.Int32)
+  parent: NavMeshPlus.Extensions.INavMeshExtensionsProvider
+  langs:
+  - csharp
+  - vb
+  name: Add(NavMeshExtension, int)
+  nameWithType: INavMeshExtensionsProvider.Add(NavMeshExtension, int)
+  fullName: NavMeshPlus.Extensions.INavMeshExtensionsProvider.Add(NavMeshPlus.Extensions.NavMeshExtension, int)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshExtensionsProvider.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Add
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshExtensionsProvider.cs
+    startLine: 13
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: void Add(NavMeshExtension extension, int order)
+    parameters:
+    - id: extension
+      type: NavMeshPlus.Extensions.NavMeshExtension
+    - id: order
+      type: System.Int32
+    content.vb: Sub Add(extension As NavMeshExtension, order As Integer)
+  overload: NavMeshPlus.Extensions.INavMeshExtensionsProvider.Add*
+  nameWithType.vb: INavMeshExtensionsProvider.Add(NavMeshExtension, Integer)
+  fullName.vb: NavMeshPlus.Extensions.INavMeshExtensionsProvider.Add(NavMeshPlus.Extensions.NavMeshExtension, Integer)
+  name.vb: Add(NavMeshExtension, Integer)
+- uid: NavMeshPlus.Extensions.INavMeshExtensionsProvider.Remove(NavMeshPlus.Extensions.NavMeshExtension)
+  commentId: M:NavMeshPlus.Extensions.INavMeshExtensionsProvider.Remove(NavMeshPlus.Extensions.NavMeshExtension)
+  id: Remove(NavMeshPlus.Extensions.NavMeshExtension)
+  parent: NavMeshPlus.Extensions.INavMeshExtensionsProvider
+  langs:
+  - csharp
+  - vb
+  name: Remove(NavMeshExtension)
+  nameWithType: INavMeshExtensionsProvider.Remove(NavMeshExtension)
+  fullName: NavMeshPlus.Extensions.INavMeshExtensionsProvider.Remove(NavMeshPlus.Extensions.NavMeshExtension)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshExtensionsProvider.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Remove
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshExtensionsProvider.cs
+    startLine: 14
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: void Remove(NavMeshExtension extension)
+    parameters:
+    - id: extension
+      type: NavMeshPlus.Extensions.NavMeshExtension
+    content.vb: Sub Remove(extension As NavMeshExtension)
+  overload: NavMeshPlus.Extensions.INavMeshExtensionsProvider.Remove*
+references:
+- uid: NavMeshPlus.Extensions
+  commentId: N:NavMeshPlus.Extensions
+  href: NavMeshPlus.html
+  name: NavMeshPlus.Extensions
+  nameWithType: NavMeshPlus.Extensions
+  fullName: NavMeshPlus.Extensions
+  spec.csharp:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Extensions
+    name: Extensions
+    href: NavMeshPlus.Extensions.html
+  spec.vb:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Extensions
+    name: Extensions
+    href: NavMeshPlus.Extensions.html
+- uid: NavMeshPlus.Extensions.INavMeshExtensionsProvider.Count*
+  commentId: Overload:NavMeshPlus.Extensions.INavMeshExtensionsProvider.Count
+  href: NavMeshPlus.Extensions.INavMeshExtensionsProvider.html#NavMeshPlus_Extensions_INavMeshExtensionsProvider_Count
+  name: Count
+  nameWithType: INavMeshExtensionsProvider.Count
+  fullName: NavMeshPlus.Extensions.INavMeshExtensionsProvider.Count
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NavMeshPlus.Extensions.INavMeshExtensionsProvider.Item*
+  commentId: Overload:NavMeshPlus.Extensions.INavMeshExtensionsProvider.Item
+  href: NavMeshPlus.Extensions.INavMeshExtensionsProvider.html#NavMeshPlus_Extensions_INavMeshExtensionsProvider_Item_System_Int32_
+  name: this
+  nameWithType: INavMeshExtensionsProvider.this
+  fullName: NavMeshPlus.Extensions.INavMeshExtensionsProvider.this
+  nameWithType.vb: INavMeshExtensionsProvider.this[]
+  fullName.vb: NavMeshPlus.Extensions.INavMeshExtensionsProvider.this[]
+  name.vb: this[]
+- uid: NavMeshPlus.Extensions.NavMeshExtension
+  commentId: T:NavMeshPlus.Extensions.NavMeshExtension
+  parent: NavMeshPlus.Extensions
+  href: NavMeshPlus.Extensions.NavMeshExtension.html
+  name: NavMeshExtension
+  nameWithType: NavMeshExtension
+  fullName: NavMeshPlus.Extensions.NavMeshExtension
+- uid: NavMeshPlus.Extensions.INavMeshExtensionsProvider.Add*
+  commentId: Overload:NavMeshPlus.Extensions.INavMeshExtensionsProvider.Add
+  href: NavMeshPlus.Extensions.INavMeshExtensionsProvider.html#NavMeshPlus_Extensions_INavMeshExtensionsProvider_Add_NavMeshPlus_Extensions_NavMeshExtension_System_Int32_
+  name: Add
+  nameWithType: INavMeshExtensionsProvider.Add
+  fullName: NavMeshPlus.Extensions.INavMeshExtensionsProvider.Add
+- uid: NavMeshPlus.Extensions.INavMeshExtensionsProvider.Remove*
+  commentId: Overload:NavMeshPlus.Extensions.INavMeshExtensionsProvider.Remove
+  href: NavMeshPlus.Extensions.INavMeshExtensionsProvider.html#NavMeshPlus_Extensions_INavMeshExtensionsProvider_Remove_NavMeshPlus_Extensions_NavMeshExtension_
+  name: Remove
+  nameWithType: INavMeshExtensionsProvider.Remove
+  fullName: NavMeshPlus.Extensions.INavMeshExtensionsProvider.Remove

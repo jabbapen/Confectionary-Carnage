@@ -1,0 +1,28 @@
+### YamlMime:ManagedReference
+items:
+- uid: NavMeshPlus.Components.Editors
+  commentId: N:NavMeshPlus.Components.Editors
+  id: NavMeshPlus.Components.Editors
+  children:
+  - NavMeshPlus.Components.Editors.NavMeshAssetManager
+  - NavMeshPlus.Components.Editors.NavMeshComponentsGUIUtility
+  langs:
+  - csharp
+  - vb
+  name: NavMeshPlus.Components.Editors
+  nameWithType: NavMeshPlus.Components.Editors
+  fullName: NavMeshPlus.Components.Editors
+  type: Namespace
+references:
+- uid: NavMeshPlus.Components.Editors.NavMeshAssetManager
+  commentId: T:NavMeshPlus.Components.Editors.NavMeshAssetManager
+  href: NavMeshPlus.Components.Editors.NavMeshAssetManager.html
+  name: NavMeshAssetManager
+  nameWithType: NavMeshAssetManager
+  fullName: NavMeshPlus.Components.Editors.NavMeshAssetManager
+- uid: NavMeshPlus.Components.Editors.NavMeshComponentsGUIUtility
+  commentId: T:NavMeshPlus.Components.Editors.NavMeshComponentsGUIUtility
+  href: NavMeshPlus.Components.Editors.NavMeshComponentsGUIUtility.html
+  name: NavMeshComponentsGUIUtility
+  nameWithType: NavMeshComponentsGUIUtility
+  fullName: NavMeshPlus.Components.Editors.NavMeshComponentsGUIUtility

@@ -1,0 +1,79 @@
+### YamlMime:ManagedReference
+items:
+- uid: NavMeshPlus.Extensions.NavMeshAgentAttribute
+  commentId: T:NavMeshPlus.Extensions.NavMeshAgentAttribute
+  id: NavMeshAgentAttribute
+  parent: NavMeshPlus.Extensions
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: NavMeshAgentAttribute
+  nameWithType: NavMeshAgentAttribute
+  fullName: NavMeshPlus.Extensions.NavMeshAgentAttribute
+  type: Class
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshAgentAttribute.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: NavMeshAgentAttribute
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshAgentAttribute.cs
+    startLine: 7
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: >-
+      [Serializable]
+
+      public class NavMeshAgentAttribute : PropertyAttribute
+    content.vb: >-
+      <Serializable>
+
+      Public Class NavMeshAgentAttribute Inherits PropertyAttribute
+  inheritance:
+  - System.Object
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+references:
+- uid: NavMeshPlus.Extensions
+  commentId: N:NavMeshPlus.Extensions
+  href: NavMeshPlus.html
+  name: NavMeshPlus.Extensions
+  nameWithType: NavMeshPlus.Extensions
+  fullName: NavMeshPlus.Extensions
+  spec.csharp:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Extensions
+    name: Extensions
+    href: NavMeshPlus.Extensions.html
+  spec.vb:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Extensions
+    name: Extensions
+    href: NavMeshPlus.Extensions.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

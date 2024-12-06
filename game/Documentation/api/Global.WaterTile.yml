@@ -1,0 +1,53 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.WaterTile
+  commentId: T:Global.WaterTile
+  id: WaterTile
+  parent: Global
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: WaterTile
+  nameWithType: WaterTile
+  fullName: WaterTile
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/WaterTile.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: WaterTile
+    path: ../Assets/Scripts/WaterTile.cs
+    startLine: 8
+  namespace: Global
+  summary: >-
+    Slows the player down when a Tile with this Monobehavior collides with
+
+    the player.
+  example: []
+  syntax:
+    content: 'public class WaterTile : MonoBehaviour'
+    content.vb: Public Class WaterTile Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

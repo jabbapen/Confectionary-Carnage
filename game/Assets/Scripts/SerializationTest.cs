@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class implementing unit tests for level serialization/deserialization.
+/// </summary>
 public class SerializationTest : MonoBehaviour
 {
     LevelSerializer serializer;
@@ -23,6 +26,9 @@ public class SerializationTest : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Tests serialization by verifying a level is deserialized, then serialized back into the same string.
+    /// </summary>
     public void RunTest()
     {
         // Save a string for testing 

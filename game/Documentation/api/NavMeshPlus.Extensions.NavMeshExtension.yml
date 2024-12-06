@@ -1,0 +1,551 @@
+### YamlMime:ManagedReference
+items:
+- uid: NavMeshPlus.Extensions.NavMeshExtension
+  commentId: T:NavMeshPlus.Extensions.NavMeshExtension
+  id: NavMeshExtension
+  parent: NavMeshPlus.Extensions
+  children:
+  - NavMeshPlus.Extensions.NavMeshExtension.Awake
+  - NavMeshPlus.Extensions.NavMeshExtension.CalculateWorldBounds(NavMeshPlus.Components.NavMeshSurface,System.Collections.Generic.List{NavMeshBuildSource},NavMeshPlus.Extensions.NavMeshBuilderState)
+  - NavMeshPlus.Extensions.NavMeshExtension.CollectSources(NavMeshPlus.Components.NavMeshSurface,System.Collections.Generic.List{NavMeshBuildSource},NavMeshPlus.Extensions.NavMeshBuilderState)
+  - NavMeshPlus.Extensions.NavMeshExtension.ConnectToVcam(System.Boolean)
+  - NavMeshPlus.Extensions.NavMeshExtension.NavMeshSurfaceOwner
+  - NavMeshPlus.Extensions.NavMeshExtension.OnDestroy
+  - NavMeshPlus.Extensions.NavMeshExtension.OnEnable
+  - NavMeshPlus.Extensions.NavMeshExtension.Order
+  - NavMeshPlus.Extensions.NavMeshExtension.PostCollectSources(NavMeshPlus.Components.NavMeshSurface,System.Collections.Generic.List{NavMeshBuildSource},NavMeshPlus.Extensions.NavMeshBuilderState)
+  langs:
+  - csharp
+  - vb
+  name: NavMeshExtension
+  nameWithType: NavMeshExtension
+  fullName: NavMeshPlus.Extensions.NavMeshExtension
+  type: Class
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshExtension.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: NavMeshExtension
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshExtension.cs
+    startLine: 8
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: 'public abstract class NavMeshExtension : MonoBehaviour'
+    content.vb: Public MustInherit Class NavMeshExtension Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - NavMeshPlus.Extensions.CollectSources2d
+  - NavMeshPlus.Extensions.CollectSourcesCache2d
+  - NavMeshPlus.Extensions.CollectTilemapSourcesCache2d
+  - NavMeshPlus.Extensions.RootSources2d
+- uid: NavMeshPlus.Extensions.NavMeshExtension.Order
+  commentId: P:NavMeshPlus.Extensions.NavMeshExtension.Order
+  id: Order
+  parent: NavMeshPlus.Extensions.NavMeshExtension
+  langs:
+  - csharp
+  - vb
+  name: Order
+  nameWithType: NavMeshExtension.Order
+  fullName: NavMeshPlus.Extensions.NavMeshExtension.Order
+  type: Property
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshExtension.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Order
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshExtension.cs
+    startLine: 10
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: public int Order { get; protected set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Order As Integer
+  overload: NavMeshPlus.Extensions.NavMeshExtension.Order*
+- uid: NavMeshPlus.Extensions.NavMeshExtension.CollectSources(NavMeshPlus.Components.NavMeshSurface,System.Collections.Generic.List{NavMeshBuildSource},NavMeshPlus.Extensions.NavMeshBuilderState)
+  commentId: M:NavMeshPlus.Extensions.NavMeshExtension.CollectSources(NavMeshPlus.Components.NavMeshSurface,System.Collections.Generic.List{NavMeshBuildSource},NavMeshPlus.Extensions.NavMeshBuilderState)
+  id: CollectSources(NavMeshPlus.Components.NavMeshSurface,System.Collections.Generic.List{NavMeshBuildSource},NavMeshPlus.Extensions.NavMeshBuilderState)
+  parent: NavMeshPlus.Extensions.NavMeshExtension
+  langs:
+  - csharp
+  - vb
+  name: CollectSources(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState)
+  nameWithType: NavMeshExtension.CollectSources(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState)
+  fullName: NavMeshPlus.Extensions.NavMeshExtension.CollectSources(NavMeshPlus.Components.NavMeshSurface, System.Collections.Generic.List<NavMeshBuildSource>, NavMeshPlus.Extensions.NavMeshBuilderState)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshExtension.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: CollectSources
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshExtension.cs
+    startLine: 11
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: public virtual void CollectSources(NavMeshSurface surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState)
+    parameters:
+    - id: surface
+      type: NavMeshPlus.Components.NavMeshSurface
+    - id: sources
+      type: System.Collections.Generic.List{NavMeshBuildSource}
+    - id: navNeshState
+      type: NavMeshPlus.Extensions.NavMeshBuilderState
+    content.vb: Public Overridable Sub CollectSources(surface As NavMeshSurface, sources As List(Of NavMeshBuildSource), navNeshState As NavMeshBuilderState)
+  overload: NavMeshPlus.Extensions.NavMeshExtension.CollectSources*
+  nameWithType.vb: NavMeshExtension.CollectSources(NavMeshSurface, List(Of NavMeshBuildSource), NavMeshBuilderState)
+  fullName.vb: NavMeshPlus.Extensions.NavMeshExtension.CollectSources(NavMeshPlus.Components.NavMeshSurface, System.Collections.Generic.List(Of NavMeshBuildSource), NavMeshPlus.Extensions.NavMeshBuilderState)
+  name.vb: CollectSources(NavMeshSurface, List(Of NavMeshBuildSource), NavMeshBuilderState)
+- uid: NavMeshPlus.Extensions.NavMeshExtension.CalculateWorldBounds(NavMeshPlus.Components.NavMeshSurface,System.Collections.Generic.List{NavMeshBuildSource},NavMeshPlus.Extensions.NavMeshBuilderState)
+  commentId: M:NavMeshPlus.Extensions.NavMeshExtension.CalculateWorldBounds(NavMeshPlus.Components.NavMeshSurface,System.Collections.Generic.List{NavMeshBuildSource},NavMeshPlus.Extensions.NavMeshBuilderState)
+  id: CalculateWorldBounds(NavMeshPlus.Components.NavMeshSurface,System.Collections.Generic.List{NavMeshBuildSource},NavMeshPlus.Extensions.NavMeshBuilderState)
+  parent: NavMeshPlus.Extensions.NavMeshExtension
+  langs:
+  - csharp
+  - vb
+  name: CalculateWorldBounds(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState)
+  nameWithType: NavMeshExtension.CalculateWorldBounds(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState)
+  fullName: NavMeshPlus.Extensions.NavMeshExtension.CalculateWorldBounds(NavMeshPlus.Components.NavMeshSurface, System.Collections.Generic.List<NavMeshBuildSource>, NavMeshPlus.Extensions.NavMeshBuilderState)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshExtension.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: CalculateWorldBounds
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshExtension.cs
+    startLine: 12
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: public virtual void CalculateWorldBounds(NavMeshSurface surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState)
+    parameters:
+    - id: surface
+      type: NavMeshPlus.Components.NavMeshSurface
+    - id: sources
+      type: System.Collections.Generic.List{NavMeshBuildSource}
+    - id: navNeshState
+      type: NavMeshPlus.Extensions.NavMeshBuilderState
+    content.vb: Public Overridable Sub CalculateWorldBounds(surface As NavMeshSurface, sources As List(Of NavMeshBuildSource), navNeshState As NavMeshBuilderState)
+  overload: NavMeshPlus.Extensions.NavMeshExtension.CalculateWorldBounds*
+  nameWithType.vb: NavMeshExtension.CalculateWorldBounds(NavMeshSurface, List(Of NavMeshBuildSource), NavMeshBuilderState)
+  fullName.vb: NavMeshPlus.Extensions.NavMeshExtension.CalculateWorldBounds(NavMeshPlus.Components.NavMeshSurface, System.Collections.Generic.List(Of NavMeshBuildSource), NavMeshPlus.Extensions.NavMeshBuilderState)
+  name.vb: CalculateWorldBounds(NavMeshSurface, List(Of NavMeshBuildSource), NavMeshBuilderState)
+- uid: NavMeshPlus.Extensions.NavMeshExtension.PostCollectSources(NavMeshPlus.Components.NavMeshSurface,System.Collections.Generic.List{NavMeshBuildSource},NavMeshPlus.Extensions.NavMeshBuilderState)
+  commentId: M:NavMeshPlus.Extensions.NavMeshExtension.PostCollectSources(NavMeshPlus.Components.NavMeshSurface,System.Collections.Generic.List{NavMeshBuildSource},NavMeshPlus.Extensions.NavMeshBuilderState)
+  id: PostCollectSources(NavMeshPlus.Components.NavMeshSurface,System.Collections.Generic.List{NavMeshBuildSource},NavMeshPlus.Extensions.NavMeshBuilderState)
+  parent: NavMeshPlus.Extensions.NavMeshExtension
+  langs:
+  - csharp
+  - vb
+  name: PostCollectSources(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState)
+  nameWithType: NavMeshExtension.PostCollectSources(NavMeshSurface, List<NavMeshBuildSource>, NavMeshBuilderState)
+  fullName: NavMeshPlus.Extensions.NavMeshExtension.PostCollectSources(NavMeshPlus.Components.NavMeshSurface, System.Collections.Generic.List<NavMeshBuildSource>, NavMeshPlus.Extensions.NavMeshBuilderState)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshExtension.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: PostCollectSources
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshExtension.cs
+    startLine: 13
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: public virtual void PostCollectSources(NavMeshSurface surface, List<NavMeshBuildSource> sources, NavMeshBuilderState navNeshState)
+    parameters:
+    - id: surface
+      type: NavMeshPlus.Components.NavMeshSurface
+    - id: sources
+      type: System.Collections.Generic.List{NavMeshBuildSource}
+    - id: navNeshState
+      type: NavMeshPlus.Extensions.NavMeshBuilderState
+    content.vb: Public Overridable Sub PostCollectSources(surface As NavMeshSurface, sources As List(Of NavMeshBuildSource), navNeshState As NavMeshBuilderState)
+  overload: NavMeshPlus.Extensions.NavMeshExtension.PostCollectSources*
+  nameWithType.vb: NavMeshExtension.PostCollectSources(NavMeshSurface, List(Of NavMeshBuildSource), NavMeshBuilderState)
+  fullName.vb: NavMeshPlus.Extensions.NavMeshExtension.PostCollectSources(NavMeshPlus.Components.NavMeshSurface, System.Collections.Generic.List(Of NavMeshBuildSource), NavMeshPlus.Extensions.NavMeshBuilderState)
+  name.vb: PostCollectSources(NavMeshSurface, List(Of NavMeshBuildSource), NavMeshBuilderState)
+- uid: NavMeshPlus.Extensions.NavMeshExtension.NavMeshSurfaceOwner
+  commentId: P:NavMeshPlus.Extensions.NavMeshExtension.NavMeshSurfaceOwner
+  id: NavMeshSurfaceOwner
+  parent: NavMeshPlus.Extensions.NavMeshExtension
+  langs:
+  - csharp
+  - vb
+  name: NavMeshSurfaceOwner
+  nameWithType: NavMeshExtension.NavMeshSurfaceOwner
+  fullName: NavMeshPlus.Extensions.NavMeshExtension.NavMeshSurfaceOwner
+  type: Property
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshExtension.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: NavMeshSurfaceOwner
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshExtension.cs
+    startLine: 14
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: public NavMeshSurface NavMeshSurfaceOwner { get; }
+    parameters: []
+    return:
+      type: NavMeshPlus.Components.NavMeshSurface
+    content.vb: Public ReadOnly Property NavMeshSurfaceOwner As NavMeshSurface
+  overload: NavMeshPlus.Extensions.NavMeshExtension.NavMeshSurfaceOwner*
+- uid: NavMeshPlus.Extensions.NavMeshExtension.Awake
+  commentId: M:NavMeshPlus.Extensions.NavMeshExtension.Awake
+  id: Awake
+  parent: NavMeshPlus.Extensions.NavMeshExtension
+  langs:
+  - csharp
+  - vb
+  name: Awake()
+  nameWithType: NavMeshExtension.Awake()
+  fullName: NavMeshPlus.Extensions.NavMeshExtension.Awake()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshExtension.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Awake
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshExtension.cs
+    startLine: 25
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: protected virtual void Awake()
+    content.vb: Protected Overridable Sub Awake()
+  overload: NavMeshPlus.Extensions.NavMeshExtension.Awake*
+- uid: NavMeshPlus.Extensions.NavMeshExtension.OnEnable
+  commentId: M:NavMeshPlus.Extensions.NavMeshExtension.OnEnable
+  id: OnEnable
+  parent: NavMeshPlus.Extensions.NavMeshExtension
+  langs:
+  - csharp
+  - vb
+  name: OnEnable()
+  nameWithType: NavMeshExtension.OnEnable()
+  fullName: NavMeshPlus.Extensions.NavMeshExtension.OnEnable()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshExtension.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: OnEnable
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshExtension.cs
+    startLine: 39
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: protected virtual void OnEnable()
+    content.vb: Protected Overridable Sub OnEnable()
+  overload: NavMeshPlus.Extensions.NavMeshExtension.OnEnable*
+- uid: NavMeshPlus.Extensions.NavMeshExtension.OnDestroy
+  commentId: M:NavMeshPlus.Extensions.NavMeshExtension.OnDestroy
+  id: OnDestroy
+  parent: NavMeshPlus.Extensions.NavMeshExtension
+  langs:
+  - csharp
+  - vb
+  name: OnDestroy()
+  nameWithType: NavMeshExtension.OnDestroy()
+  fullName: NavMeshPlus.Extensions.NavMeshExtension.OnDestroy()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshExtension.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: OnDestroy
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshExtension.cs
+    startLine: 40
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: protected virtual void OnDestroy()
+    content.vb: Protected Overridable Sub OnDestroy()
+  overload: NavMeshPlus.Extensions.NavMeshExtension.OnDestroy*
+- uid: NavMeshPlus.Extensions.NavMeshExtension.ConnectToVcam(System.Boolean)
+  commentId: M:NavMeshPlus.Extensions.NavMeshExtension.ConnectToVcam(System.Boolean)
+  id: ConnectToVcam(System.Boolean)
+  parent: NavMeshPlus.Extensions.NavMeshExtension
+  langs:
+  - csharp
+  - vb
+  name: ConnectToVcam(bool)
+  nameWithType: NavMeshExtension.ConnectToVcam(bool)
+  fullName: NavMeshPlus.Extensions.NavMeshExtension.ConnectToVcam(bool)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshExtension.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: ConnectToVcam
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshExtension.cs
+    startLine: 44
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: protected virtual void ConnectToVcam(bool connect)
+    parameters:
+    - id: connect
+      type: System.Boolean
+    content.vb: Protected Overridable Sub ConnectToVcam(connect As Boolean)
+  overload: NavMeshPlus.Extensions.NavMeshExtension.ConnectToVcam*
+  nameWithType.vb: NavMeshExtension.ConnectToVcam(Boolean)
+  fullName.vb: NavMeshPlus.Extensions.NavMeshExtension.ConnectToVcam(Boolean)
+  name.vb: ConnectToVcam(Boolean)
+references:
+- uid: NavMeshPlus.Extensions
+  commentId: N:NavMeshPlus.Extensions
+  href: NavMeshPlus.html
+  name: NavMeshPlus.Extensions
+  nameWithType: NavMeshPlus.Extensions
+  fullName: NavMeshPlus.Extensions
+  spec.csharp:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Extensions
+    name: Extensions
+    href: NavMeshPlus.Extensions.html
+  spec.vb:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Extensions
+    name: Extensions
+    href: NavMeshPlus.Extensions.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NavMeshPlus.Extensions.NavMeshExtension.Order*
+  commentId: Overload:NavMeshPlus.Extensions.NavMeshExtension.Order
+  href: NavMeshPlus.Extensions.NavMeshExtension.html#NavMeshPlus_Extensions_NavMeshExtension_Order
+  name: Order
+  nameWithType: NavMeshExtension.Order
+  fullName: NavMeshPlus.Extensions.NavMeshExtension.Order
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: NavMeshPlus.Extensions.NavMeshExtension.CollectSources*
+  commentId: Overload:NavMeshPlus.Extensions.NavMeshExtension.CollectSources
+  href: NavMeshPlus.Extensions.NavMeshExtension.html#NavMeshPlus_Extensions_NavMeshExtension_CollectSources_NavMeshPlus_Components_NavMeshSurface_System_Collections_Generic_List_NavMeshBuildSource__NavMeshPlus_Extensions_NavMeshBuilderState_
+  name: CollectSources
+  nameWithType: NavMeshExtension.CollectSources
+  fullName: NavMeshPlus.Extensions.NavMeshExtension.CollectSources
+- uid: NavMeshPlus.Components.NavMeshSurface
+  commentId: T:NavMeshPlus.Components.NavMeshSurface
+  parent: NavMeshPlus.Components
+  href: NavMeshPlus.Components.NavMeshSurface.html
+  name: NavMeshSurface
+  nameWithType: NavMeshSurface
+  fullName: NavMeshPlus.Components.NavMeshSurface
+- uid: System.Collections.Generic.List{NavMeshBuildSource}
+  commentId: T:System.Collections.Generic.List{NavMeshBuildSource}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<NavMeshBuildSource>
+  nameWithType: List<NavMeshBuildSource>
+  fullName: System.Collections.Generic.List<NavMeshBuildSource>
+  nameWithType.vb: List(Of NavMeshBuildSource)
+  fullName.vb: System.Collections.Generic.List(Of NavMeshBuildSource)
+  name.vb: List(Of NavMeshBuildSource)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Global.NavMeshBuildSource
+    name: NavMeshBuildSource
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Global.NavMeshBuildSource
+    name: NavMeshBuildSource
+    isExternal: true
+  - name: )
+- uid: NavMeshPlus.Extensions.NavMeshBuilderState
+  commentId: T:NavMeshPlus.Extensions.NavMeshBuilderState
+  parent: NavMeshPlus.Extensions
+  href: NavMeshPlus.Extensions.NavMeshBuilderState.html
+  name: NavMeshBuilderState
+  nameWithType: NavMeshBuilderState
+  fullName: NavMeshPlus.Extensions.NavMeshBuilderState
+- uid: NavMeshPlus.Components
+  commentId: N:NavMeshPlus.Components
+  href: NavMeshPlus.html
+  name: NavMeshPlus.Components
+  nameWithType: NavMeshPlus.Components
+  fullName: NavMeshPlus.Components
+  spec.csharp:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Components
+    name: Components
+    href: NavMeshPlus.Components.html
+  spec.vb:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Components
+    name: Components
+    href: NavMeshPlus.Components.html
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NavMeshPlus.Extensions.NavMeshExtension.CalculateWorldBounds*
+  commentId: Overload:NavMeshPlus.Extensions.NavMeshExtension.CalculateWorldBounds
+  href: NavMeshPlus.Extensions.NavMeshExtension.html#NavMeshPlus_Extensions_NavMeshExtension_CalculateWorldBounds_NavMeshPlus_Components_NavMeshSurface_System_Collections_Generic_List_NavMeshBuildSource__NavMeshPlus_Extensions_NavMeshBuilderState_
+  name: CalculateWorldBounds
+  nameWithType: NavMeshExtension.CalculateWorldBounds
+  fullName: NavMeshPlus.Extensions.NavMeshExtension.CalculateWorldBounds
+- uid: NavMeshPlus.Extensions.NavMeshExtension.PostCollectSources*
+  commentId: Overload:NavMeshPlus.Extensions.NavMeshExtension.PostCollectSources
+  href: NavMeshPlus.Extensions.NavMeshExtension.html#NavMeshPlus_Extensions_NavMeshExtension_PostCollectSources_NavMeshPlus_Components_NavMeshSurface_System_Collections_Generic_List_NavMeshBuildSource__NavMeshPlus_Extensions_NavMeshBuilderState_
+  name: PostCollectSources
+  nameWithType: NavMeshExtension.PostCollectSources
+  fullName: NavMeshPlus.Extensions.NavMeshExtension.PostCollectSources
+- uid: NavMeshPlus.Extensions.NavMeshExtension.NavMeshSurfaceOwner*
+  commentId: Overload:NavMeshPlus.Extensions.NavMeshExtension.NavMeshSurfaceOwner
+  href: NavMeshPlus.Extensions.NavMeshExtension.html#NavMeshPlus_Extensions_NavMeshExtension_NavMeshSurfaceOwner
+  name: NavMeshSurfaceOwner
+  nameWithType: NavMeshExtension.NavMeshSurfaceOwner
+  fullName: NavMeshPlus.Extensions.NavMeshExtension.NavMeshSurfaceOwner
+- uid: NavMeshPlus.Extensions.NavMeshExtension.Awake*
+  commentId: Overload:NavMeshPlus.Extensions.NavMeshExtension.Awake
+  href: NavMeshPlus.Extensions.NavMeshExtension.html#NavMeshPlus_Extensions_NavMeshExtension_Awake
+  name: Awake
+  nameWithType: NavMeshExtension.Awake
+  fullName: NavMeshPlus.Extensions.NavMeshExtension.Awake
+- uid: NavMeshPlus.Extensions.NavMeshExtension.OnEnable*
+  commentId: Overload:NavMeshPlus.Extensions.NavMeshExtension.OnEnable
+  href: NavMeshPlus.Extensions.NavMeshExtension.html#NavMeshPlus_Extensions_NavMeshExtension_OnEnable
+  name: OnEnable
+  nameWithType: NavMeshExtension.OnEnable
+  fullName: NavMeshPlus.Extensions.NavMeshExtension.OnEnable
+- uid: NavMeshPlus.Extensions.NavMeshExtension.OnDestroy*
+  commentId: Overload:NavMeshPlus.Extensions.NavMeshExtension.OnDestroy
+  href: NavMeshPlus.Extensions.NavMeshExtension.html#NavMeshPlus_Extensions_NavMeshExtension_OnDestroy
+  name: OnDestroy
+  nameWithType: NavMeshExtension.OnDestroy
+  fullName: NavMeshPlus.Extensions.NavMeshExtension.OnDestroy
+- uid: NavMeshPlus.Extensions.NavMeshExtension.ConnectToVcam*
+  commentId: Overload:NavMeshPlus.Extensions.NavMeshExtension.ConnectToVcam
+  href: NavMeshPlus.Extensions.NavMeshExtension.html#NavMeshPlus_Extensions_NavMeshExtension_ConnectToVcam_System_Boolean_
+  name: ConnectToVcam
+  nameWithType: NavMeshExtension.ConnectToVcam
+  fullName: NavMeshPlus.Extensions.NavMeshExtension.ConnectToVcam
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

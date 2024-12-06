@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>OffMesh Link | Confectionary-Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="OffMesh Link | Confectionary-Docs ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.ai.navigation@1.1.5/Documentation~/OffMeshLink.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="Confectionary-Docs">
+            Confectionary-Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="offmesh-link">OffMesh Link</h1>
+
+<p>OffMeshLink component allows you to incorporate navigation shortcuts which cannot be represented using a walkable surface. For example, jumping over a ditch or a fence, or opening a door before walking through it, can all be described as OffMesh links.</p>
+<h2 id="properties">Properties</h2>
+<p><img src="./Images/OffMeshLink.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Start</strong></td>
+<td style="text-align: left;">Object describing the start location of the OffMesh Link.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>End</strong></td>
+<td style="text-align: left;">Object describing the end location of the OffMesh Link.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cost Override</strong></td>
+<td style="text-align: left;">If value is positive, use it when calculating path cost on processing a path request. Otherwise, the default cost is used (the cost of the area to which this game object belongs). If the Cost Override is set to the value 3.0, moving over the OffMesh link will be three times more expensive than moving the same distance on a default <a href="./BuildingNavMesh.md" title="A mesh that Unity generates to approximate the walkable areas and obstacles in your environment for path finding and AI-controlled navigation."><strong>NavMesh</strong></a> area. The cost override becomes useful when you want to make the agents generally favor walking, but use the OffMesh link when the walk distance is clearly longer.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Bi-Directional</strong></td>
+<td style="text-align: left;">If enabled, the link can be traversed in either direction. Otherwise, it can only be traversed from <em>Start</em> to <em>End</em>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Activated</strong></td>
+<td style="text-align: left;">Specifies if this link will used by the pathfinder (it will just be ignored if this is set to false).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Auto Update Positions</strong></td>
+<td style="text-align: left;">When enabled, the OffMesh link will be reconnected to the NavMesh when the end points move. If disabled the link will stay at its start location even if the end points are moved.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Navigation Area</strong></td>
+<td style="text-align: left;">Describes the <a href="AreasAndCosts.html">navigation area type</a> of the link. The area type allows you to apply a common traversal cost to similar area types and prevent certain characters from accessing the OffMesh Link based on the agent’s Area Mask.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="additional-resources">Additional resources</h3>
+<ul>
+<li><a href="CreateOffMeshLink.html">Creating an OffMesh Link</a> – workflow for setting up an OffMesh link.</li>
+<li><a href="https://docs.unity3d.com/ScriptReference/AI.OffMeshLink.html">OffMesh Link scripting reference</a> - full description of the OffMesh Link scripting API.</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.ai.navigation@1.1.5/Documentation~/OffMeshLink.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

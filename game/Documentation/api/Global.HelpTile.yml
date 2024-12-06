@@ -1,0 +1,48 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.HelpTile
+  commentId: T:Global.HelpTile
+  id: HelpTile
+  parent: Global
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: HelpTile
+  nameWithType: HelpTile
+  fullName: HelpTile
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/HelpTile.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: HelpTile
+    path: ../Assets/Scripts/HelpTile.cs
+    startLine: 4
+  namespace: Global
+  syntax:
+    content: 'public class HelpTile : MonoBehaviour'
+    content.vb: Public Class HelpTile Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

@@ -1,0 +1,230 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.SceneAudio
+  commentId: T:Global.SceneAudio
+  id: SceneAudio
+  parent: Global
+  children:
+  - Global.SceneAudio.PlaySound(AudioSource)
+  - Global.SceneAudio.SetMusicVol(System.Single)
+  - Global.SceneAudio.SetSFXVol(System.Single)
+  - Global.SceneAudio.musicSlider
+  - Global.SceneAudio.sfxSlider
+  langs:
+  - csharp
+  - vb
+  name: SceneAudio
+  nameWithType: SceneAudio
+  fullName: SceneAudio
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/SceneAudio.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: SceneAudio
+    path: ../Assets/Scripts/SceneAudio.cs
+    startLine: 5
+  namespace: Global
+  syntax:
+    content: 'public class SceneAudio : MonoBehaviour'
+    content.vb: Public Class SceneAudio Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: Global.SceneAudio.musicSlider
+  commentId: F:Global.SceneAudio.musicSlider
+  id: musicSlider
+  parent: Global.SceneAudio
+  langs:
+  - csharp
+  - vb
+  name: musicSlider
+  nameWithType: SceneAudio.musicSlider
+  fullName: SceneAudio.musicSlider
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/SceneAudio.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: musicSlider
+    path: ../Assets/Scripts/SceneAudio.cs
+    startLine: 8
+  namespace: Global
+  syntax:
+    content: public Slider musicSlider
+    return:
+      type: Global.Slider
+    content.vb: Public musicSlider As Slider
+- uid: Global.SceneAudio.sfxSlider
+  commentId: F:Global.SceneAudio.sfxSlider
+  id: sfxSlider
+  parent: Global.SceneAudio
+  langs:
+  - csharp
+  - vb
+  name: sfxSlider
+  nameWithType: SceneAudio.sfxSlider
+  fullName: SceneAudio.sfxSlider
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/SceneAudio.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: sfxSlider
+    path: ../Assets/Scripts/SceneAudio.cs
+    startLine: 9
+  namespace: Global
+  syntax:
+    content: public Slider sfxSlider
+    return:
+      type: Global.Slider
+    content.vb: Public sfxSlider As Slider
+- uid: Global.SceneAudio.SetMusicVol(System.Single)
+  commentId: M:Global.SceneAudio.SetMusicVol(System.Single)
+  id: SetMusicVol(System.Single)
+  parent: Global.SceneAudio
+  langs:
+  - csharp
+  - vb
+  name: SetMusicVol(float)
+  nameWithType: SceneAudio.SetMusicVol(float)
+  fullName: SceneAudio.SetMusicVol(float)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/SceneAudio.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: SetMusicVol
+    path: ../Assets/Scripts/SceneAudio.cs
+    startLine: 20
+  namespace: Global
+  syntax:
+    content: public void SetMusicVol(float vol)
+    parameters:
+    - id: vol
+      type: System.Single
+    content.vb: Public Sub SetMusicVol(vol As Single)
+  overload: Global.SceneAudio.SetMusicVol*
+  nameWithType.vb: SceneAudio.SetMusicVol(Single)
+  fullName.vb: SceneAudio.SetMusicVol(Single)
+  name.vb: SetMusicVol(Single)
+- uid: Global.SceneAudio.SetSFXVol(System.Single)
+  commentId: M:Global.SceneAudio.SetSFXVol(System.Single)
+  id: SetSFXVol(System.Single)
+  parent: Global.SceneAudio
+  langs:
+  - csharp
+  - vb
+  name: SetSFXVol(float)
+  nameWithType: SceneAudio.SetSFXVol(float)
+  fullName: SceneAudio.SetSFXVol(float)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/SceneAudio.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: SetSFXVol
+    path: ../Assets/Scripts/SceneAudio.cs
+    startLine: 25
+  namespace: Global
+  syntax:
+    content: public void SetSFXVol(float vol)
+    parameters:
+    - id: vol
+      type: System.Single
+    content.vb: Public Sub SetSFXVol(vol As Single)
+  overload: Global.SceneAudio.SetSFXVol*
+  nameWithType.vb: SceneAudio.SetSFXVol(Single)
+  fullName.vb: SceneAudio.SetSFXVol(Single)
+  name.vb: SetSFXVol(Single)
+- uid: Global.SceneAudio.PlaySound(AudioSource)
+  commentId: M:Global.SceneAudio.PlaySound(AudioSource)
+  id: PlaySound(AudioSource)
+  parent: Global.SceneAudio
+  langs:
+  - csharp
+  - vb
+  name: PlaySound(AudioSource)
+  nameWithType: SceneAudio.PlaySound(AudioSource)
+  fullName: SceneAudio.PlaySound(AudioSource)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/SceneAudio.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: PlaySound
+    path: ../Assets/Scripts/SceneAudio.cs
+    startLine: 29
+  namespace: Global
+  syntax:
+    content: public void PlaySound(AudioSource sound)
+    parameters:
+    - id: sound
+      type: Global.AudioSource
+    content.vb: Public Sub PlaySound(sound As AudioSource)
+  overload: Global.SceneAudio.PlaySound*
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.Slider
+  isExternal: true
+  name: Slider
+  nameWithType: Slider
+  fullName: Slider
+- uid: Global.SceneAudio.SetMusicVol*
+  commentId: Overload:Global.SceneAudio.SetMusicVol
+  href: Global.SceneAudio.html#SceneAudio_SetMusicVol_System_Single_
+  name: SetMusicVol
+  nameWithType: SceneAudio.SetMusicVol
+  fullName: SceneAudio.SetMusicVol
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Global.SceneAudio.SetSFXVol*
+  commentId: Overload:Global.SceneAudio.SetSFXVol
+  href: Global.SceneAudio.html#SceneAudio_SetSFXVol_System_Single_
+  name: SetSFXVol
+  nameWithType: SceneAudio.SetSFXVol
+  fullName: SceneAudio.SetSFXVol
+- uid: Global.SceneAudio.PlaySound*
+  commentId: Overload:Global.SceneAudio.PlaySound
+  href: Global.SceneAudio.html#SceneAudio_PlaySound_AudioSource_
+  name: PlaySound
+  nameWithType: SceneAudio.PlaySound
+  fullName: SceneAudio.PlaySound
+- uid: Global.AudioSource
+  commentId: '!:Global.AudioSource'
+  isExternal: true
+  name: AudioSource
+  nameWithType: AudioSource
+  fullName: AudioSource

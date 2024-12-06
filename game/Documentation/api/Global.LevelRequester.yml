@@ -1,0 +1,163 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.LevelRequester
+  commentId: T:Global.LevelRequester
+  id: LevelRequester
+  parent: Global
+  children:
+  - Global.LevelRequester.GetLevel
+  - Global.LevelRequester.QueryAllLevels
+  langs:
+  - csharp
+  - vb
+  name: LevelRequester
+  nameWithType: LevelRequester
+  fullName: LevelRequester
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/LevelRequester.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: LevelRequester
+    path: ../Assets/Scripts/LevelRequester.cs
+    startLine: 24
+  namespace: Global
+  summary: Makes calls to the backend to load levels.
+  example: []
+  syntax:
+    content: 'public class LevelRequester : MonoBehaviour'
+    content.vb: Public Class LevelRequester Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: Global.LevelRequester.QueryAllLevels
+  commentId: M:Global.LevelRequester.QueryAllLevels
+  id: QueryAllLevels
+  parent: Global.LevelRequester
+  langs:
+  - csharp
+  - vb
+  name: QueryAllLevels()
+  nameWithType: LevelRequester.QueryAllLevels()
+  fullName: LevelRequester.QueryAllLevels()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/LevelRequester.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: QueryAllLevels
+    path: ../Assets/Scripts/LevelRequester.cs
+    startLine: 43
+  namespace: Global
+  summary: Querys a certain number levels from the backend at once.
+  example: []
+  syntax:
+    content: public IEnumerator QueryAllLevels()
+    return:
+      type: System.Collections.IEnumerator
+      description: "IEnumerator: this is required for Unity's coroutines feature, which lets us make backend calls asynchronously"
+    content.vb: Public Function QueryAllLevels() As IEnumerator
+  overload: Global.LevelRequester.QueryAllLevels*
+- uid: Global.LevelRequester.GetLevel
+  commentId: M:Global.LevelRequester.GetLevel
+  id: GetLevel
+  parent: Global.LevelRequester
+  langs:
+  - csharp
+  - vb
+  name: GetLevel()
+  nameWithType: LevelRequester.GetLevel()
+  fullName: LevelRequester.GetLevel()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/LevelRequester.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: GetLevel
+    path: ../Assets/Scripts/LevelRequester.cs
+    startLine: 97
+  namespace: Global
+  summary: Returns a random level from the levels which have been received by `RequestLevels`.
+  example: []
+  syntax:
+    content: public LevelModel GetLevel()
+    return:
+      type: Global.LevelModel
+      description: "LevelModel: a struct containing a Level's name, creator, and serialized string"
+    content.vb: Public Function GetLevel() As LevelModel
+  overload: Global.LevelRequester.GetLevel*
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.LevelRequester.QueryAllLevels*
+  commentId: Overload:Global.LevelRequester.QueryAllLevels
+  href: Global.LevelRequester.html#LevelRequester_QueryAllLevels
+  name: QueryAllLevels
+  nameWithType: LevelRequester.QueryAllLevels
+  fullName: LevelRequester.QueryAllLevels
+- uid: System.Collections.IEnumerator
+  commentId: T:System.Collections.IEnumerator
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
+  name: IEnumerator
+  nameWithType: IEnumerator
+  fullName: System.Collections.IEnumerator
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+- uid: Global.LevelRequester.GetLevel*
+  commentId: Overload:Global.LevelRequester.GetLevel
+  href: Global.LevelRequester.html#LevelRequester_GetLevel
+  name: GetLevel
+  nameWithType: LevelRequester.GetLevel
+  fullName: LevelRequester.GetLevel
+- uid: Global.LevelModel
+  commentId: T:Global.LevelModel
+  href: LevelModel.html
+  name: LevelModel
+  nameWithType: LevelModel
+  fullName: LevelModel

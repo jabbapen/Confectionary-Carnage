@@ -1,0 +1,97 @@
+### YamlMime:TableOfContent
+items:
+- uid: NavMeshPlus.Components
+  name: NavMeshPlus.Components
+  type: Namespace
+  items:
+  - uid: NavMeshPlus.Components.CollectObjects
+    name: CollectObjects
+    type: Enum
+  - uid: NavMeshPlus.Components.NavMeshLink
+    name: NavMeshLink
+    type: Class
+  - uid: NavMeshPlus.Components.NavMeshModifier
+    name: NavMeshModifier
+    type: Class
+  - uid: NavMeshPlus.Components.NavMeshModifierTilemap
+    name: NavMeshModifierTilemap
+    type: Class
+  - uid: NavMeshPlus.Components.NavMeshModifierTilemap.TileModifier
+    name: NavMeshModifierTilemap.TileModifier
+    type: Struct
+  - uid: NavMeshPlus.Components.NavMeshModifierVolume
+    name: NavMeshModifierVolume
+    type: Class
+  - uid: NavMeshPlus.Components.NavMeshSurface
+    name: NavMeshSurface
+    type: Class
+- uid: NavMeshPlus.Components.Editors
+  name: NavMeshPlus.Components.Editors
+  type: Namespace
+  items:
+  - uid: NavMeshPlus.Components.Editors.NavMeshAssetManager
+    name: NavMeshAssetManager
+    type: Class
+  - uid: NavMeshPlus.Components.Editors.NavMeshComponentsGUIUtility
+    name: NavMeshComponentsGUIUtility
+    type: Class
+- uid: NavMeshPlus.Extensions
+  name: NavMeshPlus.Extensions
+  type: Namespace
+  items:
+  - uid: NavMeshPlus.Extensions.AgentDefaultOverride
+    name: AgentDefaultOverride
+    type: Class
+  - uid: NavMeshPlus.Extensions.AgentOverride2d
+    name: AgentOverride2d
+    type: Class
+  - uid: NavMeshPlus.Extensions.AgentRotate2d
+    name: AgentRotate2d
+    type: Class
+  - uid: NavMeshPlus.Extensions.CollectSources2d
+    name: CollectSources2d
+    type: Class
+  - uid: NavMeshPlus.Extensions.CollectSourcesCache2d
+    name: CollectSourcesCache2d
+    type: Class
+  - uid: NavMeshPlus.Extensions.CollectTilemapSourcesCache2d
+    name: CollectTilemapSourcesCache2d
+    type: Class
+  - uid: NavMeshPlus.Extensions.IAgentOverride
+    name: IAgentOverride
+    type: Interface
+  - uid: NavMeshPlus.Extensions.INavMeshExtensionsProvider
+    name: INavMeshExtensionsProvider
+    type: Interface
+  - uid: NavMeshPlus.Extensions.NavMeshAgentAttribute
+    name: NavMeshAgentAttribute
+    type: Class
+  - uid: NavMeshPlus.Extensions.NavMeshAreaAttribute
+    name: NavMeshAreaAttribute
+    type: Class
+  - uid: NavMeshPlus.Extensions.NavMeshBuilderState
+    name: NavMeshBuilderState
+    type: Class
+  - uid: NavMeshPlus.Extensions.NavMeshExtension
+    name: NavMeshExtension
+    type: Class
+  - uid: NavMeshPlus.Extensions.RootSources2d
+    name: RootSources2d
+    type: Class
+  - uid: NavMeshPlus.Extensions.RotateAgentInstantly
+    name: RotateAgentInstantly
+    type: Class
+  - uid: NavMeshPlus.Extensions.RotateAgentSmoothly
+    name: RotateAgentSmoothly
+    type: Class
+- uid: NavMeshPlus.Extensions.Editors
+  name: NavMeshPlus.Extensions.Editors
+  type: Namespace
+  items:
+  - uid: NavMeshPlus.Extensions.Editors.NavMeshAgentAttributePropertyDrawer
+    name: NavMeshAgentAttributePropertyDrawer
+    type: Class
+  - uid: NavMeshPlus.Extensions.Editors.NavMeshAreaAttributePropertyDrawer
+    name: NavMeshAreaAttributePropertyDrawer
+    type: Class
+memberLayout: SamePage

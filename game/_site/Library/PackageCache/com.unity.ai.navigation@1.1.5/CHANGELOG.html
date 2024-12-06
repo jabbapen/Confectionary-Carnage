@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Changelog | Confectionary-Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Changelog | Confectionary-Docs ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.ai.navigation@1.1.5/CHANGELOG.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="Confectionary-Docs">
+            Confectionary-Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="changelog">Changelog</h1>
+
+<p>All notable changes to this package will be documented in this file.</p>
+<p>The format is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>
+and this project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<h2 id="115---2023-09-28">[1.1.5] - 2023-09-28</h2>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Long warning popping up when user starts playmode while editing a prefab that contains NavMesh components (<a href="https://issuetracker.unity3d.com/product/unity/issues/guid/NAVB-47">NAVB-47</a>)</li>
+</ul>
+<h2 id="114---2023-06-14">[1.1.4] - 2023-06-14</h2>
+<h3 id="fixed-1">Fixed</h3>
+<ul>
+<li>Published the missing API reference documentation for the new properties that were made available in 1.1.0</li>
+</ul>
+<h2 id="113---2023-04-13">[1.1.3] - 2023-04-13</h2>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Remove some unnecessary files from the package</li>
+</ul>
+<h2 id="112---2023-04-03">[1.1.2] - 2023-04-03</h2>
+<h3 id="changed-1">Changed</h3>
+<ul>
+<li>The <em>AI Navigation</em> overlay in the scene view remembers which sections have been collapsed</li>
+<li>Updated a large part of the documentation to reflect the current functionality</li>
+</ul>
+<h2 id="111---2022-10-21">[1.1.1] - 2022-10-21</h2>
+<h3 id="changed-2">Changed</h3>
+<ul>
+<li>Clarified the information text displayed by the NavMesh Updater</li>
+</ul>
+<h2 id="110-pre2---2022-08-09">[1.1.0-pre.2] - 2022-08-09</h2>
+<h3 id="changed-3">Changed</h3>
+<ul>
+<li>The Dungeon scene included in the package samples now uses tile prefabs that contain a <code>NavMeshSurface</code> component instead of the <code>NavMeshPrefabInstance</code> script.</li>
+<li>The Drop Plank scene included in the package samples now has a <code>NavMeshSurface</code> component and the <code>NavMeshSurfaceUpdater</code> script on the geometry, as well as the <code>DynamicNavMeshObject</code> script on the Plank prefab for dynamically updating the <code>NavMesh</code> when new Planks are instantiated.</li>
+<li>The offset when instantiating Planks in the Drop Plank scene has been reduced.</li>
+<li>The Sliding Window Infinite and the Sliding Window Terrain scenes included in the package samples now use the <code>NavMeshSurfaceVolumeUpdater</code> script instead of the <code>LocalNavMeshBuilder</code> and <code>NavMeshSourceTag</code> scripts for dynamically updating the <code>NavMesh</code>.</li>
+<li>The Modify Mesh scene included in the package samples now uses a <code>NavMeshSurface</code> component on the Mesh Tool for dynamically updating the <code>NavMesh</code> instead of the <code>LocalNavMeshBuilder</code> and <code>NavMeshSourceTag</code> scripts. The <code>MeshTool</code> script now uses the <code>Update()</code> method of <code>NavMeshSurface</code> for updating the <code>NavMesh</code> whenever the mesh is modified.</li>
+</ul>
+<h3 id="fixed-2">Fixed</h3>
+<ul>
+<li>The Drop Plank scene included in the package samples now destroys instantiated Planks that have fallen off the edge.</li>
+<li>Missing agent type references in the samples.</li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li>The <code>NavMeshPrefabInstance</code> and <code>NavMeshPrefabInstanceEditor</code> scripts from the package samples were removed.</li>
+<li>The prefab editing scene <code>7b_dungeon_tile_prefabs</code> from the package samples was removed. The tiles can now be edited directly as prefabs.</li>
+<li>The <code>LocalNavMeshBuilder</code> and <code>NavMeshSourceTag</code> scripts from the package samples were removed.</li>
+</ul>
+<h2 id="110-pre1---2022-04-27">[1.1.0-pre.1] - 2022-04-27</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>NavMeshSurface supports links generation.</li>
+<li>NavMeshSurface supports HeightMesh baking.</li>
+<li>New package Navigation window adapting the obsolete Unity Navigation window functionalities to the package workflow.</li>
+</ul>
+<h3 id="changed-4">Changed</h3>
+<ul>
+<li>NavMeshSurface is using the <em>Background Tasks</em> window to report the baking progress</li>
+<li>Minimum supported version is increased to Unity 2022.2</li>
+</ul>
+<h2 id="100-exp4---2021-07-19">[1.0.0-exp.4] - 2021-07-19</h2>
+<h3 id="changed-5">Changed</h3>
+<ul>
+<li>Documentation updated with changes from Unity manual</li>
+<li>Test scripts moved into namespaces Unity.AI.Navigation.Tests and Unity.AI.Navigation.Editor.Tests</li>
+</ul>
+<h2 id="100-exp3---2021-06-16">[1.0.0-exp.3] - 2021-06-16</h2>
+<h3 id="fixed-3">Fixed</h3>
+<ul>
+<li>An assembly definition in the package sample was referencing an invalid AsmDef</li>
+</ul>
+<h2 id="100-exp2---2021-05-19">[1.0.0-exp.2] - 2021-05-19</h2>
+<h3 id="fixed-4">Fixed</h3>
+<ul>
+<li>Baking a NavMeshSurface with a bounding volume was not detecting the geometry nearby the bounds (1027006)</li>
+</ul>
+<h3 id="changed-6">Changed</h3>
+<ul>
+<li>New note in the documentation about the bounding volume of a NavMeshSurface</li>
+</ul>
+<h2 id="100-exp1---2021-04-06">[1.0.0-exp.1] - 2021-04-06</h2>
+<p>This is the first release of the <em>AI Navigation</em> package. It contains the scripts that were previously known as <em>NavMeshComponents</em> and it adds a few improvements.</p>
+<h3 id="fixed-5">Fixed</h3>
+<ul>
+<li>Disabling a NavMeshLink component in the Editor does not remove the link</li>
+</ul>
+<h3 id="added-1">Added</h3>
+<ul>
+<li>New <code>minRegionArea</code> property in <code>NavMeshSurface</code> that prevents small isolated patches from being built in the NavMesh</li>
+<li>Documentation for the new <code>minRegionArea</code> property</li>
+</ul>
+<h3 id="changed-7">Changed</h3>
+<ul>
+<li>Documentation updated</li>
+<li>Script namespaces changed to Unity.AI.Navigation.*</li>
+<li>The <a href="LICENSE.html">license</a> has changed.</li>
+<li>The folder structure has changed in accordance to the requirements of the Unity standards for packages.</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.ai.navigation@1.1.5/CHANGELOG.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

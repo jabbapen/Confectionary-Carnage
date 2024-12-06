@@ -1,0 +1,328 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.GameManager
+  commentId: T:Global.GameManager
+  id: GameManager
+  parent: Global
+  children:
+  - Global.GameManager.EndGame
+  - Global.GameManager.GameStart
+  - Global.GameManager.Instance
+  - Global.GameManager.LevelSerializer
+  - Global.GameManager.LoadLevel(System.String)
+  - Global.GameManager.SetupLevel(System.Boolean)
+  - Global.GameManager.UnloadLevel
+  langs:
+  - csharp
+  - vb
+  name: GameManager
+  nameWithType: GameManager
+  fullName: GameManager
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/GameManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: GameManager
+    path: ../Assets/Scripts/GameManager.cs
+    startLine: 18
+  namespace: Global
+  summary: Singleton which oversees the game.
+  example: []
+  syntax:
+    content: 'public class GameManager : MonoBehaviour'
+    content.vb: Public Class GameManager Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: Global.GameManager.Instance
+  commentId: F:Global.GameManager.Instance
+  id: Instance
+  parent: Global.GameManager
+  langs:
+  - csharp
+  - vb
+  name: Instance
+  nameWithType: GameManager.Instance
+  fullName: GameManager.Instance
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/GameManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Instance
+    path: ../Assets/Scripts/GameManager.cs
+    startLine: 20
+  namespace: Global
+  syntax:
+    content: public static GameManager Instance
+    return:
+      type: Global.GameManager
+    content.vb: Public Shared Instance As GameManager
+- uid: Global.GameManager.GameStart
+  commentId: F:Global.GameManager.GameStart
+  id: GameStart
+  parent: Global.GameManager
+  langs:
+  - csharp
+  - vb
+  name: GameStart
+  nameWithType: GameManager.GameStart
+  fullName: GameManager.GameStart
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/GameManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: GameStart
+    path: ../Assets/Scripts/GameManager.cs
+    startLine: 21
+  namespace: Global
+  syntax:
+    content: public static UnityEvent GameStart
+    return:
+      type: Global.UnityEvent
+    content.vb: Public Shared GameStart As UnityEvent
+- uid: Global.GameManager.LevelSerializer
+  commentId: P:Global.GameManager.LevelSerializer
+  id: LevelSerializer
+  parent: Global.GameManager
+  langs:
+  - csharp
+  - vb
+  name: LevelSerializer
+  nameWithType: GameManager.LevelSerializer
+  fullName: GameManager.LevelSerializer
+  type: Property
+  source:
+    remote:
+      path: game/Assets/Scripts/GameManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: LevelSerializer
+    path: ../Assets/Scripts/GameManager.cs
+    startLine: 30
+  namespace: Global
+  syntax:
+    content: public LevelSerializer LevelSerializer { get; }
+    parameters: []
+    return:
+      type: Global.LevelSerializer
+    content.vb: Public ReadOnly Property LevelSerializer As LevelSerializer
+  overload: Global.GameManager.LevelSerializer*
+- uid: Global.GameManager.EndGame
+  commentId: M:Global.GameManager.EndGame
+  id: EndGame
+  parent: Global.GameManager
+  langs:
+  - csharp
+  - vb
+  name: EndGame()
+  nameWithType: GameManager.EndGame()
+  fullName: GameManager.EndGame()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/GameManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: EndGame
+    path: ../Assets/Scripts/GameManager.cs
+    startLine: 57
+  namespace: Global
+  syntax:
+    content: public void EndGame()
+    content.vb: Public Sub EndGame()
+  overload: Global.GameManager.EndGame*
+- uid: Global.GameManager.SetupLevel(System.Boolean)
+  commentId: M:Global.GameManager.SetupLevel(System.Boolean)
+  id: SetupLevel(System.Boolean)
+  parent: Global.GameManager
+  langs:
+  - csharp
+  - vb
+  name: SetupLevel(bool)
+  nameWithType: GameManager.SetupLevel(bool)
+  fullName: GameManager.SetupLevel(bool)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/GameManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: SetupLevel
+    path: ../Assets/Scripts/GameManager.cs
+    startLine: 75
+  namespace: Global
+  summary: >-
+    Queries the backend using @Global.LevelRequester , then loads the level
+
+    based on the serialized level strings returned.
+  example: []
+  syntax:
+    content: public void SetupLevel(bool skipped = false)
+    parameters:
+    - id: skipped
+      type: System.Boolean
+      description: If set to true, increments the player's score
+    content.vb: Public Sub SetupLevel(skipped As Boolean = False)
+  overload: Global.GameManager.SetupLevel*
+  nameWithType.vb: GameManager.SetupLevel(Boolean)
+  fullName.vb: GameManager.SetupLevel(Boolean)
+  name.vb: SetupLevel(Boolean)
+- uid: Global.GameManager.LoadLevel(System.String)
+  commentId: M:Global.GameManager.LoadLevel(System.String)
+  id: LoadLevel(System.String)
+  parent: Global.GameManager
+  langs:
+  - csharp
+  - vb
+  name: LoadLevel(string)
+  nameWithType: GameManager.LoadLevel(string)
+  fullName: GameManager.LoadLevel(string)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/GameManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: LoadLevel
+    path: ../Assets/Scripts/GameManager.cs
+    startLine: 97
+  namespace: Global
+  summary: Loads a level based on the
+  example: []
+  syntax:
+    content: public void LoadLevel(string levelString)
+    parameters:
+    - id: levelString
+      type: System.String
+      description: The level to load, serialized as a string
+    content.vb: Public Sub LoadLevel(levelString As String)
+  overload: Global.GameManager.LoadLevel*
+  nameWithType.vb: GameManager.LoadLevel(String)
+  fullName.vb: GameManager.LoadLevel(String)
+  name.vb: LoadLevel(String)
+- uid: Global.GameManager.UnloadLevel
+  commentId: M:Global.GameManager.UnloadLevel
+  id: UnloadLevel
+  parent: Global.GameManager
+  langs:
+  - csharp
+  - vb
+  name: UnloadLevel()
+  nameWithType: GameManager.UnloadLevel()
+  fullName: GameManager.UnloadLevel()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/GameManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: UnloadLevel
+    path: ../Assets/Scripts/GameManager.cs
+    startLine: 112
+  namespace: Global
+  summary: >-
+    Deletes all GameObjects associated with the level. 
+
+    > Remark: Switching levels doesn't actually involve changing scenes,
+
+    > only resetting certain states and loading/destroying GameObjects
+  example: []
+  syntax:
+    content: public void UnloadLevel()
+    content.vb: Public Sub UnloadLevel()
+  overload: Global.GameManager.UnloadLevel*
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.GameManager
+  commentId: T:Global.GameManager
+  href: GameManager.html
+  name: GameManager
+  nameWithType: GameManager
+  fullName: GameManager
+- uid: Global.UnityEvent
+  commentId: '!:Global.UnityEvent'
+  isExternal: true
+  name: UnityEvent
+  nameWithType: UnityEvent
+  fullName: UnityEvent
+- uid: Global.GameManager.LevelSerializer*
+  commentId: Overload:Global.GameManager.LevelSerializer
+  href: Global.GameManager.html#GameManager_LevelSerializer
+  name: LevelSerializer
+  nameWithType: GameManager.LevelSerializer
+  fullName: GameManager.LevelSerializer
+- uid: Global.LevelSerializer
+  commentId: T:Global.LevelSerializer
+  href: LevelSerializer.html
+  name: LevelSerializer
+  nameWithType: LevelSerializer
+  fullName: LevelSerializer
+- uid: Global.GameManager.EndGame*
+  commentId: Overload:Global.GameManager.EndGame
+  href: Global.GameManager.html#GameManager_EndGame
+  name: EndGame
+  nameWithType: GameManager.EndGame
+  fullName: GameManager.EndGame
+- uid: Global.GameManager.SetupLevel*
+  commentId: Overload:Global.GameManager.SetupLevel
+  href: Global.GameManager.html#GameManager_SetupLevel_System_Boolean_
+  name: SetupLevel
+  nameWithType: GameManager.SetupLevel
+  fullName: GameManager.SetupLevel
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Global.GameManager.LoadLevel*
+  commentId: Overload:Global.GameManager.LoadLevel
+  href: Global.GameManager.html#GameManager_LoadLevel_System_String_
+  name: LoadLevel
+  nameWithType: GameManager.LoadLevel
+  fullName: GameManager.LoadLevel
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Global.GameManager.UnloadLevel*
+  commentId: Overload:Global.GameManager.UnloadLevel
+  href: Global.GameManager.html#GameManager_UnloadLevel
+  name: UnloadLevel
+  nameWithType: GameManager.UnloadLevel
+  fullName: GameManager.UnloadLevel

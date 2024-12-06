@@ -1,0 +1,53 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.LeaderboardDisplay
+  commentId: T:Global.LeaderboardDisplay
+  id: LeaderboardDisplay
+  parent: Global
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: LeaderboardDisplay
+  nameWithType: LeaderboardDisplay
+  fullName: LeaderboardDisplay
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/LeaderboardDisplay.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: LeaderboardDisplay
+    path: ../Assets/Scripts/LeaderboardDisplay.cs
+    startLine: 18
+  namespace: Global
+  summary: >-
+    Queries the backend to get and display the leaderboard data.
+
+    Uses Unity's `Start` to do this on scene load.
+  example: []
+  syntax:
+    content: 'public class LeaderboardDisplay : MonoBehaviour'
+    content.vb: Public Class LeaderboardDisplay Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

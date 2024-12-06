@@ -1,0 +1,176 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.HealthManager
+  commentId: T:Global.HealthManager
+  id: HealthManager
+  parent: Global
+  children:
+  - Global.HealthManager.Dying
+  - Global.HealthManager.Health
+  - Global.HealthManager.MaxHealth
+  langs:
+  - csharp
+  - vb
+  name: HealthManager
+  nameWithType: HealthManager
+  fullName: HealthManager
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/HealthManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: HealthManager
+    path: ../Assets/Scripts/HealthManager.cs
+    startLine: 8
+  namespace: Global
+  summary: >-
+    Adds health to a GameObject, allowing it to be damaged, and destroying it
+
+    when health is set to zero.
+  example: []
+  syntax:
+    content: 'public class HealthManager : MonoBehaviour'
+    content.vb: Public Class HealthManager Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: Global.HealthManager.MaxHealth
+  commentId: F:Global.HealthManager.MaxHealth
+  id: MaxHealth
+  parent: Global.HealthManager
+  langs:
+  - csharp
+  - vb
+  name: MaxHealth
+  nameWithType: HealthManager.MaxHealth
+  fullName: HealthManager.MaxHealth
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/HealthManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: MaxHealth
+    path: ../Assets/Scripts/HealthManager.cs
+    startLine: 13
+  namespace: Global
+  summary: Health cap and the amount of health the GameObject starts with.
+  example: []
+  syntax:
+    content: public int MaxHealth
+    return:
+      type: System.Int32
+    content.vb: Public MaxHealth As Integer
+- uid: Global.HealthManager.Dying
+  commentId: P:Global.HealthManager.Dying
+  id: Dying
+  parent: Global.HealthManager
+  langs:
+  - csharp
+  - vb
+  name: Dying
+  nameWithType: HealthManager.Dying
+  fullName: HealthManager.Dying
+  type: Property
+  source:
+    remote:
+      path: game/Assets/Scripts/HealthManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Dying
+    path: ../Assets/Scripts/HealthManager.cs
+    startLine: 20
+  namespace: Global
+  summary: >-
+    Dying is set to true if the GameObject is in the process of being
+
+    destroyed, eg. when a death animation is playing.
+  example: []
+  syntax:
+    content: public bool Dying { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property Dying As Boolean
+  overload: Global.HealthManager.Dying*
+- uid: Global.HealthManager.Health
+  commentId: P:Global.HealthManager.Health
+  id: Health
+  parent: Global.HealthManager
+  langs:
+  - csharp
+  - vb
+  name: Health
+  nameWithType: HealthManager.Health
+  fullName: HealthManager.Health
+  type: Property
+  source:
+    remote:
+      path: game/Assets/Scripts/HealthManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Health
+    path: ../Assets/Scripts/HealthManager.cs
+    startLine: 23
+  namespace: Global
+  syntax:
+    content: public int Health { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Health As Integer
+  overload: Global.HealthManager.Health*
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Global.HealthManager.Dying*
+  commentId: Overload:Global.HealthManager.Dying
+  href: Global.HealthManager.html#HealthManager_Dying
+  name: Dying
+  nameWithType: HealthManager.Dying
+  fullName: HealthManager.Dying
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Global.HealthManager.Health*
+  commentId: Overload:Global.HealthManager.Health
+  href: Global.HealthManager.html#HealthManager_Health
+  name: Health
+  nameWithType: HealthManager.Health
+  fullName: HealthManager.Health

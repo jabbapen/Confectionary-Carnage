@@ -1,0 +1,247 @@
+### YamlMime:ManagedReference
+items:
+- uid: NavMeshPlus.Components.Editors.NavMeshAssetManager
+  commentId: T:NavMeshPlus.Components.Editors.NavMeshAssetManager
+  id: NavMeshAssetManager
+  parent: NavMeshPlus.Components.Editors
+  children:
+  - NavMeshPlus.Components.Editors.NavMeshAssetManager.ClearSurfaces(UnityEngine.Object[])
+  - NavMeshPlus.Components.Editors.NavMeshAssetManager.IsSurfaceBaking(NavMeshPlus.Components.NavMeshSurface)
+  - NavMeshPlus.Components.Editors.NavMeshAssetManager.StartBakingSurfaces(UnityEngine.Object[])
+  langs:
+  - csharp
+  - vb
+  name: NavMeshAssetManager
+  nameWithType: NavMeshAssetManager
+  fullName: NavMeshPlus.Components.Editors.NavMeshAssetManager
+  type: Class
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Editor/NavMeshAssetManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: NavMeshAssetManager
+    path: ../Assets/NavMeshComponents/Editor/NavMeshAssetManager.cs
+    startLine: 9
+  namespace: NavMeshPlus.Components.Editors
+  syntax:
+    content: 'public class NavMeshAssetManager : ScriptableSingleton<NavMeshAssetManager>'
+    content.vb: Public Class NavMeshAssetManager Inherits ScriptableSingleton(Of NavMeshAssetManager)
+  inheritance:
+  - System.Object
+- uid: NavMeshPlus.Components.Editors.NavMeshAssetManager.StartBakingSurfaces(UnityEngine.Object[])
+  commentId: M:NavMeshPlus.Components.Editors.NavMeshAssetManager.StartBakingSurfaces(UnityEngine.Object[])
+  id: StartBakingSurfaces(UnityEngine.Object[])
+  parent: NavMeshPlus.Components.Editors.NavMeshAssetManager
+  langs:
+  - csharp
+  - vb
+  name: StartBakingSurfaces(Object[])
+  nameWithType: NavMeshAssetManager.StartBakingSurfaces(UnityEngine.Object[])
+  fullName: NavMeshPlus.Components.Editors.NavMeshAssetManager.StartBakingSurfaces(UnityEngine.Object[])
+  type: Method
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Editor/NavMeshAssetManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: StartBakingSurfaces
+    path: ../Assets/NavMeshComponents/Editor/NavMeshAssetManager.cs
+    startLine: 110
+  namespace: NavMeshPlus.Components.Editors
+  syntax:
+    content: public void StartBakingSurfaces(UnityEngine.Object[] surfaces)
+    parameters:
+    - id: surfaces
+      type: Global.UnityEngine.Object[]
+    content.vb: Public Sub StartBakingSurfaces(surfaces As UnityEngine.Object())
+  overload: NavMeshPlus.Components.Editors.NavMeshAssetManager.StartBakingSurfaces*
+  nameWithType.vb: NavMeshAssetManager.StartBakingSurfaces(UnityEngine.Object())
+  fullName.vb: NavMeshPlus.Components.Editors.NavMeshAssetManager.StartBakingSurfaces(UnityEngine.Object())
+  name.vb: StartBakingSurfaces(Object())
+- uid: NavMeshPlus.Components.Editors.NavMeshAssetManager.IsSurfaceBaking(NavMeshPlus.Components.NavMeshSurface)
+  commentId: M:NavMeshPlus.Components.Editors.NavMeshAssetManager.IsSurfaceBaking(NavMeshPlus.Components.NavMeshSurface)
+  id: IsSurfaceBaking(NavMeshPlus.Components.NavMeshSurface)
+  parent: NavMeshPlus.Components.Editors.NavMeshAssetManager
+  langs:
+  - csharp
+  - vb
+  name: IsSurfaceBaking(NavMeshSurface)
+  nameWithType: NavMeshAssetManager.IsSurfaceBaking(NavMeshSurface)
+  fullName: NavMeshPlus.Components.Editors.NavMeshAssetManager.IsSurfaceBaking(NavMeshPlus.Components.NavMeshSurface)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Editor/NavMeshAssetManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: IsSurfaceBaking
+    path: ../Assets/NavMeshComponents/Editor/NavMeshAssetManager.cs
+    startLine: 166
+  namespace: NavMeshPlus.Components.Editors
+  syntax:
+    content: public bool IsSurfaceBaking(NavMeshSurface surface)
+    parameters:
+    - id: surface
+      type: NavMeshPlus.Components.NavMeshSurface
+    return:
+      type: System.Boolean
+    content.vb: Public Function IsSurfaceBaking(surface As NavMeshSurface) As Boolean
+  overload: NavMeshPlus.Components.Editors.NavMeshAssetManager.IsSurfaceBaking*
+- uid: NavMeshPlus.Components.Editors.NavMeshAssetManager.ClearSurfaces(UnityEngine.Object[])
+  commentId: M:NavMeshPlus.Components.Editors.NavMeshAssetManager.ClearSurfaces(UnityEngine.Object[])
+  id: ClearSurfaces(UnityEngine.Object[])
+  parent: NavMeshPlus.Components.Editors.NavMeshAssetManager
+  langs:
+  - csharp
+  - vb
+  name: ClearSurfaces(Object[])
+  nameWithType: NavMeshAssetManager.ClearSurfaces(UnityEngine.Object[])
+  fullName: NavMeshPlus.Components.Editors.NavMeshAssetManager.ClearSurfaces(UnityEngine.Object[])
+  type: Method
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Editor/NavMeshAssetManager.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: ClearSurfaces
+    path: ../Assets/NavMeshComponents/Editor/NavMeshAssetManager.cs
+    startLine: 183
+  namespace: NavMeshPlus.Components.Editors
+  syntax:
+    content: public void ClearSurfaces(UnityEngine.Object[] surfaces)
+    parameters:
+    - id: surfaces
+      type: Global.UnityEngine.Object[]
+    content.vb: Public Sub ClearSurfaces(surfaces As UnityEngine.Object())
+  overload: NavMeshPlus.Components.Editors.NavMeshAssetManager.ClearSurfaces*
+  nameWithType.vb: NavMeshAssetManager.ClearSurfaces(UnityEngine.Object())
+  fullName.vb: NavMeshPlus.Components.Editors.NavMeshAssetManager.ClearSurfaces(UnityEngine.Object())
+  name.vb: ClearSurfaces(Object())
+references:
+- uid: NavMeshPlus.Components.Editors
+  commentId: N:NavMeshPlus.Components.Editors
+  href: NavMeshPlus.html
+  name: NavMeshPlus.Components.Editors
+  nameWithType: NavMeshPlus.Components.Editors
+  fullName: NavMeshPlus.Components.Editors
+  spec.csharp:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Components
+    name: Components
+    href: NavMeshPlus.Components.html
+  - name: .
+  - uid: NavMeshPlus.Components.Editors
+    name: Editors
+    href: NavMeshPlus.Components.Editors.html
+  spec.vb:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Components
+    name: Components
+    href: NavMeshPlus.Components.html
+  - name: .
+  - uid: NavMeshPlus.Components.Editors
+    name: Editors
+    href: NavMeshPlus.Components.Editors.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NavMeshPlus.Components.Editors.NavMeshAssetManager.StartBakingSurfaces*
+  commentId: Overload:NavMeshPlus.Components.Editors.NavMeshAssetManager.StartBakingSurfaces
+  href: NavMeshPlus.Components.Editors.NavMeshAssetManager.html#NavMeshPlus_Components_Editors_NavMeshAssetManager_StartBakingSurfaces_UnityEngine_Object___
+  name: StartBakingSurfaces
+  nameWithType: NavMeshAssetManager.StartBakingSurfaces
+  fullName: NavMeshPlus.Components.Editors.NavMeshAssetManager.StartBakingSurfaces
+- uid: Global.UnityEngine.Object[]
+  isExternal: true
+  name: Object[]
+  nameWithType: UnityEngine.Object[]
+  fullName: UnityEngine.Object[]
+  nameWithType.vb: UnityEngine.Object()
+  fullName.vb: UnityEngine.Object()
+  name.vb: Object()
+  spec.csharp:
+  - uid: Global.UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Global.UnityEngine.Object
+    name: Object
+    isExternal: true
+  - name: (
+  - name: )
+- uid: NavMeshPlus.Components.Editors.NavMeshAssetManager.IsSurfaceBaking*
+  commentId: Overload:NavMeshPlus.Components.Editors.NavMeshAssetManager.IsSurfaceBaking
+  href: NavMeshPlus.Components.Editors.NavMeshAssetManager.html#NavMeshPlus_Components_Editors_NavMeshAssetManager_IsSurfaceBaking_NavMeshPlus_Components_NavMeshSurface_
+  name: IsSurfaceBaking
+  nameWithType: NavMeshAssetManager.IsSurfaceBaking
+  fullName: NavMeshPlus.Components.Editors.NavMeshAssetManager.IsSurfaceBaking
+- uid: NavMeshPlus.Components.NavMeshSurface
+  commentId: T:NavMeshPlus.Components.NavMeshSurface
+  parent: NavMeshPlus.Components
+  href: NavMeshPlus.Components.NavMeshSurface.html
+  name: NavMeshSurface
+  nameWithType: NavMeshSurface
+  fullName: NavMeshPlus.Components.NavMeshSurface
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: NavMeshPlus.Components
+  commentId: N:NavMeshPlus.Components
+  href: NavMeshPlus.html
+  name: NavMeshPlus.Components
+  nameWithType: NavMeshPlus.Components
+  fullName: NavMeshPlus.Components
+  spec.csharp:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Components
+    name: Components
+    href: NavMeshPlus.Components.html
+  spec.vb:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Components
+    name: Components
+    href: NavMeshPlus.Components.html
+- uid: NavMeshPlus.Components.Editors.NavMeshAssetManager.ClearSurfaces*
+  commentId: Overload:NavMeshPlus.Components.Editors.NavMeshAssetManager.ClearSurfaces
+  href: NavMeshPlus.Components.Editors.NavMeshAssetManager.html#NavMeshPlus_Components_Editors_NavMeshAssetManager_ClearSurfaces_UnityEngine_Object___
+  name: ClearSurfaces
+  nameWithType: NavMeshAssetManager.ClearSurfaces
+  fullName: NavMeshPlus.Components.Editors.NavMeshAssetManager.ClearSurfaces

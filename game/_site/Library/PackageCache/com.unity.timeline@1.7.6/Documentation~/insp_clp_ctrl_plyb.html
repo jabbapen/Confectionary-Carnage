@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Control clip Playable Asset properties | Confectionary-Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Control clip Playable Asset properties | Confectionary-Docs ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.timeline@1.7.6/Documentation~/insp_clp_ctrl_plyb.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="Confectionary-Docs">
+            Confectionary-Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="control-clip-playable-asset-properties">Control clip Playable Asset properties</h1>
+
+<p>Use the Inspector window to change the playable asset properties of a Control clip. To view the playable asset properties for a Control clip, select a Control clip in the Timeline window and expand <strong>Control Playable Asset</strong> in the Inspector window.</p>
+<p><img src="images/timeline_inspector_control_clip_playable.png" alt="Inspector window showing the Control Playable Asset properties for the selected Control clip"></p>
+<p><em>Inspector window showing the <strong>Control Playable Asset</strong> properties for the selected Control clip</em></p>
+<h2 id="source-game-object">Source Game Object</h2>
+<p>Use <strong>Source Game Object</strong> to select the GameObject with the Particle System, nested Timeline instance, or ITimeControl Script for the selected Control clip. Changing the <strong>Source Game Object</strong> changes what the Control clip controls.</p>
+<h2 id="prefab">Prefab</h2>
+<p>Use <strong>Prefab</strong> to select a Prefab to instantiate when the Timeline instance plays in Play Mode. When a Prefab is selected, the label of the <strong>Source Game Object</strong> property changes to <strong>Parent Object</strong>.</p>
+<p>When in Play Mode, the Prefab is instantiated as a child of the <strong>Parent Object</strong>. Although the Prefab is instantiated at the start of the Timeline instance, the Prefab is only activated during the Control clip. When the Control clip ends, the Prefab instance is deactivated.</p>
+<h2 id="control-activation">Control Activation</h2>
+<p>Enable <strong>Control Activation</strong> to activate the <strong>Source Game Object</strong> while the Control clip plays. Disable this property to activate the <strong>Source Game Object</strong> during the entire Timeline instance.</p>
+<p>The <strong>Control Activation</strong> property only affects Control clips that control a nested Timeline instance or a Particle System.</p>
+<h2 id="post-playback">Post Playback</h2>
+<p>When <strong>Control Activation</strong> is enabled, use the <strong>Post Playback</strong> property to set the activation state for the nested Timeline instance when the main Timeline stops playing. The <strong>Post Playback</strong> property only affects nested Timeline instances.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Post-Playback State</strong></th>
+<th style="text-align: left;"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Active</strong></td>
+<td style="text-align: left;">Activates the Source Game Object after the nested Timeline instance finishes playing.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Inactive</strong></td>
+<td style="text-align: left;">Deactivates the Source Game Object after the nested Timeline instance finishes playing.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Revert</strong></td>
+<td style="text-align: left;">Reverts the Source Game Object to its activation state before the nested Timeline instance began playing.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="advanced-properties">Advanced properties</h2>
+<p>Use the Advanced properties to select additional functionality based on whether the Control clip controls a Playable Director, Particle System, or ITimeControl Script. The Advanced properties do not apply to all Control clips.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Property</strong></th>
+<th style="text-align: left;"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Control Playable Directors</strong></td>
+<td style="text-align: left;">Enable this property if the Source Game Object is attached to a Playable Director and you want the Control clip to control the nested Timeline instance associated with this Playable Director.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Control Particle Systems</strong></td>
+<td style="text-align: left;">Enable this property when the Control clip includes a Particle System. Set the value of the Random Seed property to create a unique, repeatable effect.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Control ITimeControl</strong></td>
+<td style="text-align: left;">Enable this property to control ITimeControl scripts on the Source GameObject. To use this feature, the Source Game Object must have a script that implements the ITimeControl interface.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Control Children</strong></td>
+<td style="text-align: left;">Enable this property if the Source Game Object has a child GameObject with either a Playable Director, Particle System, or ITimeControl Script, and you want the Control clip to control this child component.<br><br>For example, if the Source Game Object is a GameObject that parents another GameObject with a Particle System, enable this property to make the Control clip control the Particle system on the child GameObject.</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.timeline@1.7.6/Documentation~/insp_clp_ctrl_plyb.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

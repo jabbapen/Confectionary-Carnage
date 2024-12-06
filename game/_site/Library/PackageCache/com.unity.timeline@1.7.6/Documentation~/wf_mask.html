@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Using an Animation Override track and an Avatar Mask | Confectionary-Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Using an Animation Override track and an Avatar Mask | Confectionary-Docs ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.timeline@1.7.6/Documentation~/wf_mask.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="Confectionary-Docs">
+            Confectionary-Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="using-an-animation-override-track-and-an-avatar-mask">Using an Animation Override track and an Avatar Mask</h1>
+
+<p>This task demonstrates how to use an Animation Override track and an Avatar Mask to replace the upper-body animation of an Animation track. Use this technique to animate a humanoid to, for example, run and carry an object. For information on creating an Avatar mask, see <a href="https://docs.unity3d.com/Manual/class-AvatarMask.html">Avatar Mask window</a>.</p>
+<p>This task assumes that you have already <a href="wf_instance.html">created a Timeline instance</a> with a simple Animation clip on an Animation track bound to a humanoid:</p>
+<p><img src="images/timeline_masking_start.png" alt="This example uses a humanoid bound to a simple run cycle animation (RunForward) that loops once"></p>
+<p><em>This example uses a humanoid bound to a simple run cycle animation (RunForward) that loops once</em></p>
+<p>Right-click the Animation track and select <strong>Add Override Track</strong> from the context menu. An Animation Override track, named Override 0, is linked to the selected Animation track. Notice that the Animation Override track is not bound to a GameObject. Because the Override track is linked to the Animation track above, the Override track is bound to the same GameObject, in this case, the DefaultMale humanoid.</p>
+<p><img src="images/timeline_masking_override.png" alt="To add an Override track, right-click the Animation track and select Add Override Track from the context menu"></p>
+<p><em>To add an Override track, right-click the Animation track and select Add Override Track from the context menu]</em></p>
+<p>From your Project, drag an Animation Clip with upper-body animation into the Override track. For example, drag an animation of a humanoid standing still and waving their arms. Position and resize the clip to match the Animation clip that you want to override.</p>
+<p><img src="images/timeline_masking_waving.png" alt="The Animation Override track contains an Animation clip of a humanoid standing still, waving their arms (WavingArms). This clip was resized to match the Animation clip (RunForward) of the parent Animation track."></p>
+<p><em>The Animation Override track contains an Animation clip of a humanoid standing still, waving their arms (WavingArms). This clip was resized to match the Animation clip (RunForward) of the parent Animation track.</em></p>
+<p>Play the Timeline instance. In this example, the WavingArms clip completely overrides the RunForward clip. To combine the lower-body animation from one Animation clip with upper-body animation from another Animation clip, specify an Avatar Mask for the Animation Override track.</p>
+<p><img src="images/timeline_masking_override_selected.png" alt="To specify an Avatar Mask, select the Override track to view its properties in the Inspector window"></p>
+<p><em>To specify an Avatar Mask, select the Override track to view its properties in the Inspector window</em></p>
+<p>From the Project, drag an Avatar Mask, that masks the lower body animation, into the Avatar Mask property in the Inspector window. Enable the <strong>Apply Avatar Mask</strong> checkbox. An Avatar Mask icon appears beside the track name.</p>
+<p><img src="images/timeline_masking_avatar_inspector.png" alt="An Avatar Mask, that masks the lower body animation, is specified for the Animation Overview clip in the Inspector window. This allows the upper body animation to pass through."></p>
+<p><em>An Avatar Mask, that masks the lower body animation, is specified for the Animation Overview clip in the Inspector window. This allows the upper body animation to pass through.</em></p>
+<p><img src="images/timeline_masking_avatar_on.png" alt="The Avatar Mask icon (red) indicates that the Animation Override track uses an Avatar Mask."></p>
+<p><em>The Avatar Mask icon (red) indicates that the Animation Override track uses an Avatar Mask.</em></p>
+<p>Play the Timeline instance. In this example, the DefaultMale humanoid uses upper-body animation from the WavingArms clip and lower-body animation from the RunForward clip. To temporarily disable the Avatar Mask, click the Avatar Mask icon.</p>
+<p><img src="images/timeline_masking_avatar_off.png" alt="The Avatar Mask icon (red) is gray when disabled. The WavingArms clip completely overrides the RunForward clip."></p>
+<p><em>The Avatar Mask icon (red) is gray when disabled. The WavingArms clip completely overrides the RunForward clip.</em></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.timeline@1.7.6/Documentation~/wf_mask.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

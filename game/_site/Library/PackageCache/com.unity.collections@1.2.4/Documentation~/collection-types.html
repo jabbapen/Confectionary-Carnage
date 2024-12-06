@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Collection types | Confectionary-Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Collection types | Confectionary-Docs ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.collections@1.2.4/Documentation~/collection-types.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="Confectionary-Docs">
+            Confectionary-Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="collection-types">Collection types</h1>
+
+<h2 id="array-like-types">Array-like types</h2>
+<p>A few key array-like types are provided by the <a href="https://docs.unity3d.com/ScriptReference/UnityEngine.CoreModule">core module</a>, including <a href="https://docs.unity3d.com/ScriptReference/Unity.Collections.NativeArray_1"><code>Unity.Collections.NativeArray&lt;T&gt;</code></a> and <a href="https://docs.unity3d.com/ScriptReference/Unity.Collections.NativeSlice_1"><code>Unity.Collections.NativeSlice&lt;T&gt;</code></a>. This package itself provides:</p>
+<table>
+<thead>
+<tr>
+<th>Data structure</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@Unity.Collections.NativeList`1</td>
+<td>A resizable list. Has thread- and disposal-safety checks.</td>
+</tr>
+<tr>
+<td>@Unity.Collections.LowLevel.Unsafe.UnsafeList`1</td>
+<td>A resizable list.</td>
+</tr>
+<tr>
+<td>@Unity.Collections.LowLevel.Unsafe.UnsafePtrList`1</td>
+<td>A resizable list of pointers.</td>
+</tr>
+<tr>
+<td>@Unity.Collections.NativeStream</td>
+<td>A set of append-only, untyped buffers. Has thread- and disposal-safety checks.</td>
+</tr>
+<tr>
+<td>@Unity.Collections.LowLevel.Unsafe.UnsafeStream</td>
+<td>A set of append-only, untyped buffers.</td>
+</tr>
+<tr>
+<td>@Unity.Collections.LowLevel.Unsafe.UnsafeAppendBuffer</td>
+<td>An append-only untyped buffer.</td>
+</tr>
+<tr>
+<td>@Unity.Collections.NativeQueue`1</td>
+<td>A resizable queue. Has thread- and disposal-safety checks.</td>
+</tr>
+<tr>
+<td>@Unity.Collections.LowLevel.Unsafe.UnsafeRingQueue`1</td>
+<td>A fixed-size circular buffer.</td>
+</tr>
+<tr>
+<td>@Unity.Collections.FixedList32Bytes`1</td>
+<td>A 32-byte list, including 2 bytes of overhead, so 30 bytes are available for storage. Max capacity depends upon T.</td>
+</tr>
+</tbody>
+</table>
+<p><code>FixedList32Bytes&lt;T&gt;</code> has variants of larger sizes: <code>FixedList64Bytes&lt;T&gt;</code>, <code>FixedList128Bytes&lt;T&gt;</code>, <code>FixedList512Bytes&lt;T&gt;</code>, <code>FixedList4096Bytes&lt;T&gt;</code>.</p>
+<p>There are no multi-dimensional array types, but you can simply pack all the data into a single-dimension. For example, for an <code>int[4][5]</code> array, use an <code>int[20]</code> array instead (because <code>4 * 5</code> is <code>20</code>).</p>
+<p>When using the Entities package, a <a href="">DynamicBuffer</a> component is often the best choice for an array- or list-like collection.</p>
+<p>See also @Unity.Collections.NativeArrayExtensions, @Unity.Collections.ListExtensions, @Unity.Collections.NativeSortExtension.</p>
+<h2 id="map-and-set-types">Map and set types</h2>
+<table>
+<thead>
+<tr>
+<th>Data structure</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@Unity.Collections.NativeHashMap`2</td>
+<td>An unordered associative array of key-value pairs. Has thread- and disposal-safety checks.</td>
+</tr>
+<tr>
+<td>@Unity.Collections.LowLevel.Unsafe.UnsafeHashMap`2</td>
+<td>An unordered associative array of key-value pairs.</td>
+</tr>
+<tr>
+<td>@Unity.Collections.NativeHashSet`1</td>
+<td>A set of unique values. Has thread- and disposal-safety checks.</td>
+</tr>
+<tr>
+<td>@Unity.Collections.LowLevel.Unsafe.UnsafeHashSet`1</td>
+<td>A set of unique values.</td>
+</tr>
+<tr>
+<td>@Unity.Collections.NativeMultiHashMap`2</td>
+<td>An unordered associative array of key-value pairs. The keys do not have to be unique, <em>i.e.</em> two pairs can have equal keys. Has thread- and disposal-safety checks.</td>
+</tr>
+<tr>
+<td>@Unity.Collections.LowLevel.Unsafe.UnsafeMultiHashMap`2</td>
+<td>An unordered associative array of key-value pairs. The keys do not have to be unique, <em>i.e.</em> two pairs can have equal keys.</td>
+</tr>
+</tbody>
+</table>
+<p>See also @Unity.Collections.HashSetExtensions, @Unity.Collections.NotBurstCompatible.Extensions, and @Unity.Collections.LowLevel.Unsafe.NotBurstCompatible.Extensions</p>
+<h2 id="bit-arrays-and-bit-fields">Bit arrays and bit fields</h2>
+<table>
+<thead>
+<tr>
+<th>Data structure</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@Unity.Collections.BitField32</td>
+<td>A fixed-size array of 32 bits.</td>
+</tr>
+<tr>
+<td>@Unity.Collections.BitField64</td>
+<td>A fixed-size array of 64 bits.</td>
+</tr>
+<tr>
+<td>@Unity.Collections.NativeBitArray</td>
+<td>An arbitrary-sized array of bits. Has thread- and disposal-safety checks.</td>
+</tr>
+<tr>
+<td>@Unity.Collections.LowLevel.Unsafe.UnsafeBitArray</td>
+<td>An arbitrary-sized array of bits.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="string-types">String types</h2>
+<table>
+<thead>
+<tr>
+<th>Data structure</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@Unity.Collections.NativeText</td>
+<td>A UTF-8 encoded string. Mutable and resizable. Has thread- and disposal-safety checks.</td>
+</tr>
+<tr>
+<td>@Unity.Collections.FixedString32Bytes</td>
+<td>A 32-byte UTF-8 encoded string, including 3 bytes of overhead, so 29 bytes available for storage.</td>
+</tr>
+</tbody>
+</table>
+<p><code>FixedString32Bytes</code> has variants of larger sizes: <code>FixedString64Bytes</code>, <code>FixedString128Bytes</code>, <code>FixedString512Bytes</code>, <code>FixedString4096Bytes</code>.</p>
+<p>See also @Unity.Collections.FixedStringMethods</p>
+<h2 id="other-types">Other types</h2>
+<table>
+<thead>
+<tr>
+<th>Data structure</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@Unity.Collections.NativeReference`1</td>
+<td>A reference to a single value. Functionally equivalent to an array of length 1. Has thread- and disposal-safety checks.</td>
+</tr>
+<tr>
+<td>@Unity.Collections.LowLevel.Unsafe.UnsafeAtomicCounter32</td>
+<td>A 32-bit atomic counter.</td>
+</tr>
+<tr>
+<td>@Unity.Collections.LowLevel.Unsafe.UnsafeAtomicCounter64</td>
+<td>A 64-bit atomic counter.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="job-safety-checks">Job safety checks</h2>
+<p>The purpose of the job safety checks is to detect job conflicts. Two jobs conflict if:</p>
+<ol>
+<li>Both jobs access the same data.</li>
+<li>One job or both jobs have write access to the data.</li>
+</ol>
+<p>In other words, there's no conflict if both jobs just have read only access to the data.</p>
+<p>For example, you generally wouldn't want one job to read an array while meanwhile another job is writing the same array, so the safety checks consider that possibility to be a conflict. To resolve such conflicts, you must make one job a dependency of the other to ensure their execution does not overlap. Whichever of the two jobs you want to run first should be the dependency of the other.</p>
+<p>When the safety checks are enabled, each <code>Native-</code> collection has an <code>AtomicSafetyHandle</code> for performing thread-safety checks. Scheduling a job locks the <code>AtomicSafetyHandle</code>'s of all <code>Native-</code> collections in the job. Completing a job releases the <code>AtomicSafetyHandle</code>'s of all <code>Native-</code> collections in the job.</p>
+<p>While a <code>Native-</code> collection's <code>AtomicSafetyHandle</code> is locked:</p>
+<ol>
+<li>Jobs which use the collection can only be scheduled if they depend upon all the already scheduled job(s) which also use it.</li>
+<li>Accessing the collection from the main thread will throw an exception.</li>
+</ol>
+<h3 id="read-only-access-in-jobs">Read only access in jobs</h3>
+<p>As a special case, there's no conflict between two jobs if they both strictly just read the same data, <em>.e.g.</em> there's no conflict if one job reads from an array while meanwhile another also job reads from the same array.</p>
+<p>The @Unity.Collections.ReadOnlyAttribute marks a <code>Native-</code> collection in a job struct as being read only:</p>
+<pre><code class="lang-cs" name="read_only">public struct MyJob : IJob
+{
+    // This array can only be read in the job.
+    [ReadOnly] public NativeArray&lt;int&gt; nums;
+
+    public void Execute()
+    {
+        // If safety checks are enabled, an exception is thrown here
+        // because the array is read only.
+        nums[0] = 100;
+    }
+}
+</code></pre>
+<p>Marking collections as read only has two benefits:</p>
+<ol>
+<li>The main thread can still read a collection if all scheduled jobs that use the collection have just read only access.</li>
+<li>The safety checks will not object if you schedule multiple jobs with read only access to the same collection, even without any dependencies between them. Therefore these jobs can run concurrently with each other.</li>
+</ol>
+<h2 id="enumerators">Enumerators</h2>
+<p>Most of the collections have a <code>GetEnumerator</code> method, which returns an implementation of <code>IEnumerator&lt;T&gt;</code>. The enumerator's <code>MoveNext</code> method advances its <code>Current</code> property to the next element.</p>
+<pre><code class="lang-cs" name="enumerator">NativeList&lt;int&gt; nums = new NativeList&lt;int&gt;(10, Allocator.Temp);
+
+// Calculate the sum of all elements in the list.
+int sum = 0;
+NativeArray&lt;int&gt;.Enumerator enumerator = nums.GetEnumerator();
+
+// The first MoveNext call advances the enumerator to the first element.
+// MoveNext returns false when the enumerator has advanced past the last element.
+while (enumerator.MoveNext())
+{
+    sum += enumerator.Current;
+}
+
+// The enumerator is no longer valid to use after the array is disposed.
+nums.Dispose();
+</code></pre><h2 id="parallel-readers-and-writers">Parallel readers and writers</h2>
+<p>Several of the collection types have nested types for reading and writing from parallel jobs. For example, to write safely to a <code>NativeList&lt;T&gt;</code> from a parallel job, you need a <code>NativeList&lt;T&gt;.ParallelWriter</code>:</p>
+<pre><code class="lang-cs" name="parallel_writer">
+NativeList&lt;int&gt; nums = new NativeList&lt;int&gt;(1000, Allocator.TempJob);
+
+// The parallel writer shares the original list's AtomicSafetyHandle.
+var job = new MyParallelJob {NumsWriter = nums.AsParallelWriter()};
+
+</code></pre><pre><code class="lang-cs" name="parallel_writer_job">
+public struct MyParallelJob : IJobParallelFor
+{
+    public NativeList&lt;int&gt;.ParallelWriter NumsWriter;
+
+    public void Execute(int i)
+    {
+        // A NativeList&lt;T&gt;.ParallelWriter can append values
+        // but not grow the capacity of the list.
+        NumsWriter.AddNoResize(i);
+    }
+}
+
+</code></pre>
+<p>Note that these parallel readers and writers do not usually support the full functionality of the collection. For example, a <code>NativeList</code> cannot grow its capacity in a parallel job (because there is no way to safely allow this without incurring significantly more synchronization overhead).</p>
+<h3 id="deterministic-reading-and-writing">Deterministic reading and writing</h3>
+<p>Although a <code>ParallelWriter</code> ensures the safety of concurrent writes, the <em>order</em> of the concurrent writes is inherently indeterminstic because it depends upon the happenstance of thread scheduling (which is controlled by the operating system and other factors outside of your program's control).</p>
+<p>Likewise, although a <code>ParallelReader</code> ensures the safety of concurrent reads, the <em>order</em> of the concurrent reads is inherently indeterminstic, so it can't be known which threads will read which values.</p>
+<p>One solution is to use either @Unity.Collections.NativeStream or @Unity.Collections.LowLevel.Unsafe.UnsafeStream, which splits reads and writes into a separate buffer for each thread and thereby avoids indeterminism.</p>
+<p>Alternatively, you can effectively get a deterministic order of parallel reads if you deterministically divide the reads into separate ranges and process each range in its own thread.</p>
+<p>You can also get a deterministic order if you deterministically sort the data after it has been written to the list.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.collections@1.2.4/Documentation~/collection-types.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

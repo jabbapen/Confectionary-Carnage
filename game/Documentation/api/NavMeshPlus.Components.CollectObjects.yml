@@ -1,0 +1,131 @@
+### YamlMime:ManagedReference
+items:
+- uid: NavMeshPlus.Components.CollectObjects
+  commentId: T:NavMeshPlus.Components.CollectObjects
+  id: CollectObjects
+  parent: NavMeshPlus.Components
+  children:
+  - NavMeshPlus.Components.CollectObjects.All
+  - NavMeshPlus.Components.CollectObjects.Children
+  - NavMeshPlus.Components.CollectObjects.Volume
+  langs:
+  - csharp
+  - vb
+  name: CollectObjects
+  nameWithType: CollectObjects
+  fullName: NavMeshPlus.Components.CollectObjects
+  type: Enum
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshSurface.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: CollectObjects
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshSurface.cs
+    startLine: 11
+  namespace: NavMeshPlus.Components
+  syntax:
+    content: public enum CollectObjects
+    content.vb: Public Enum CollectObjects
+- uid: NavMeshPlus.Components.CollectObjects.All
+  commentId: F:NavMeshPlus.Components.CollectObjects.All
+  id: All
+  parent: NavMeshPlus.Components.CollectObjects
+  langs:
+  - csharp
+  - vb
+  name: All
+  nameWithType: CollectObjects.All
+  fullName: NavMeshPlus.Components.CollectObjects.All
+  type: Field
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshSurface.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: All
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshSurface.cs
+    startLine: 13
+  namespace: NavMeshPlus.Components
+  syntax:
+    content: All = 0
+    return:
+      type: NavMeshPlus.Components.CollectObjects
+- uid: NavMeshPlus.Components.CollectObjects.Volume
+  commentId: F:NavMeshPlus.Components.CollectObjects.Volume
+  id: Volume
+  parent: NavMeshPlus.Components.CollectObjects
+  langs:
+  - csharp
+  - vb
+  name: Volume
+  nameWithType: CollectObjects.Volume
+  fullName: NavMeshPlus.Components.CollectObjects.Volume
+  type: Field
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshSurface.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Volume
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshSurface.cs
+    startLine: 14
+  namespace: NavMeshPlus.Components
+  syntax:
+    content: Volume = 1
+    return:
+      type: NavMeshPlus.Components.CollectObjects
+- uid: NavMeshPlus.Components.CollectObjects.Children
+  commentId: F:NavMeshPlus.Components.CollectObjects.Children
+  id: Children
+  parent: NavMeshPlus.Components.CollectObjects
+  langs:
+  - csharp
+  - vb
+  name: Children
+  nameWithType: CollectObjects.Children
+  fullName: NavMeshPlus.Components.CollectObjects.Children
+  type: Field
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshSurface.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Children
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshSurface.cs
+    startLine: 15
+  namespace: NavMeshPlus.Components
+  syntax:
+    content: Children = 2
+    return:
+      type: NavMeshPlus.Components.CollectObjects
+references:
+- uid: NavMeshPlus.Components
+  commentId: N:NavMeshPlus.Components
+  href: NavMeshPlus.html
+  name: NavMeshPlus.Components
+  nameWithType: NavMeshPlus.Components
+  fullName: NavMeshPlus.Components
+  spec.csharp:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Components
+    name: Components
+    href: NavMeshPlus.Components.html
+  spec.vb:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Components
+    name: Components
+    href: NavMeshPlus.Components.html
+- uid: NavMeshPlus.Components.CollectObjects
+  commentId: T:NavMeshPlus.Components.CollectObjects
+  parent: NavMeshPlus.Components
+  href: NavMeshPlus.Components.CollectObjects.html
+  name: CollectObjects
+  nameWithType: CollectObjects
+  fullName: NavMeshPlus.Components.CollectObjects

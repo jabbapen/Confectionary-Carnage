@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Annotation marker sample | Confectionary-Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Annotation marker sample | Confectionary-Docs ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.timeline@1.7.6/Documentation~/smpl_custom_annotation.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="Confectionary-Docs">
+            Confectionary-Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="annotation-marker-sample">Annotation marker sample</h1>
+
+<p>The Annotation sample provides a marker that can be used as a bookmark for your timeline.</p>
+<p><img src="images/smpl_annotation.png" alt="Annotation"></p>
+<p>Here are the options available on an annotation:
+Field | Description
+--- | ---
+Title | The annotation's title. This will be displayed as a tooltip, when hovering the mouse on the annotation.
+Color | The annotation's color in the Timeline window.
+Show line overlay | Use this option to show a vertical line that spans the full height of the Timeline window.</p>
+<h2 id="custom-marker-workflow-example">Custom marker workflow example</h2>
+<p>This example will demonstrate how to:</p>
+<ul>
+<li>create a custom marker;</li>
+<li>customize a marker with <code>MarkerEditor</code>;</li>
+<li>use a custom USS style to draw a marker;</li>
+<li>add additional commands with <code>Actions</code>;</li>
+</ul>
+<h3 id="1-create-an-annotation-marker">1. Create an annotation marker</h3>
+<p>A marker is an item that can be added to a Timeline Asset and is used to represent a point in time.
+Markers also have a specialization, just like clips (Activation clip, Audio clip, Animation clip, etc).</p>
+<p>In order to add a new type of marker, all we need to do is to create a class that inherits the <code>Marker</code> class:</p>
+<pre><code class="lang-c#">public class AnnotationMarker : UnityEngine.Timeline.Marker {}
+</code></pre>
+<p>This custom marker can now be added to any track or on the timeline marker area:</p>
+<p><img src="images/smpl_annotation_newMarker.png" alt="New marker added to a timeline"></p>
+<p>We can add a title, description and color to the annotation:</p>
+<pre><code class="lang-c#">public class AnnotationMarker : Marker
+{
+    public string title;
+    public Color color;
+    public string description;
+    public bool showLineOverlay;
+}
+</code></pre>
+<p>The annotation marker itself is now complete. But the customization work is not done yet. Timeline offers many customization abilities.</p>
+<h2 id="2-customize-the-markers-appearance">2. Customize the marker's appearance</h2>
+<p>A marker's appearance can be customized using a USS style or with <code>MarkerEditor</code>. Both paths have their advantages and drawbacks.</p>
+<h3 id="custom-uss-style">Custom USS style</h3>
+<p>A marker can use a USS style to specify its appearance. For more information on how to create custom USS styles, see <a href="uss_styles.html">how to define custom USS styles</a>.</p>
+<p>The <a href="xref:UnityEngine.Timeline.CustomStyleAttribute">CustomStyle</a> attribute can be used to specify a style for a given marker:</p>
+<pre><code class="lang-c#">[CustomStyle(&quot;AnnotationStyle&quot;)]
+public class AnnotationMarker : Marker
+{
+    //...
+}
+</code></pre>
+<p><code>AnnotationStyle</code> is defined in a USS stylesheet and will be used when a marker is displayed on screen:</p>
+<p><img src="images/smpl_annotation_customStyle.png" alt="Custom style"></p>
+<p>USS styles are useful if the desired appearance is simple (i.e. when only using a texture icon). For more complex stuff (i.e. dynamically changing a marker's color), a <code>MarkerEditor</code> will be needed.</p>
+<h3 id="custom-editor">Custom editor</h3>
+<p><code>MarkerEditor</code> can be used to augment the capabilities of a marker in the editor. It works like a custom <a href="https://docs.unity3d.com/ScriptReference/CustomEditor.html">Inspector</a>; the <a href="xref:UnityEditor.Timeline.CustomTimelineEditorAttribute">CustomTimelineEditor attribute</a> is used to tell Timeline that a <a href="xref:UnityEditor.Timeline.MarkerEditor">MarkerEditor</a> class should be associated to a given marker.</p>
+<pre><code class="lang-c#">[CustomTimelineEditor(typeof(AnnotationMarker))]
+public class AnnotationMarkerEditor : MarkerEditor
+{
+   //...
+}
+</code></pre>
+<h4 id="marker-information">Marker information</h4>
+<p><code>MarkerEditor</code> lets us provide information about the marker by overriding the <a href="xref:UnityEditor.Timeline.MarkerEditor#UnityEditor_Timeline_MarkerEditor_GetMarkerOptions_UnityEngine_Timeline_IMarker_">GetMarkerOptions</a> method.</p>
+<pre><code class="lang-c#">public override MarkerDrawOptions GetMarkerOptions(IMarker marker)
+{
+   var annotation = marker as AnnotationMarker;
+   if (annotation != null)
+   {
+      return new MarkerDrawOptions { tooltip = annotation.title };
+   }
+   return base.GetMarkerOptions(marker);
+}
+</code></pre>
+<p>Here the tooltip of an <code>Annotation</code> has been set to use the annotation's <code>title</code> variable.</p>
+<p><img src="images/smpl_annotation_markerTooltip.png" alt="Marker tooltip"></p>
+<p><a href="xref:UnityEditor.Timeline.MarkerDrawOptions">MarkerDrawOptions</a> can also set the error text on a marker, which can be useful if a variable has been incorrectly set and needs attention.</p>
+<h4 id="overlay">Overlay</h4>
+<p>An overlay can be drawn on top of a marker by overriding the <a href="xref:UnityEditor.Timeline.MarkerEditor#UnityEditor_Timeline_MarkerEditor_DrawOverlay_UnityEngine_Timeline_IMarker_UnityEditor_Timeline_MarkerUIStates_UnityEditor_Timeline_MarkerOverlayRegion_">DrawOverlay</a> method:</p>
+<pre><code class="lang-c#">public override void DrawOverlay(IMarker marker, MarkerUIStates uiState, MarkerOverlayRegion region)
+{
+    var annotation = marker as AnnotationMarker;
+    if (annotation != null)
+    {
+        //Draw overlay code...
+    }
+}
+</code></pre>
+<p>An overlay is drawn on top of the marker; the <a href="uss_styles.html">USS style</a> is drawn first and <code>DrawOverlay</code> is called afterwards. For an <code>Annotation</code>, we can use <code>DrawOverlay</code> to change the color of the marker and to draw a line that spans the full Timeline window's height. To do this, we can use the information given in <code>region</code>. Along with the visible time range, <a href="xref:UnityEditor.Timeline.MarkerOverlayRegion">MarkerOverlayRegion</a> provides two rectangles that can be used to know where to draw:</p>
+<ul>
+<li><code>markerRegion</code></li>
+</ul>
+<p><code>markerRegion</code> is the rectangle that encompasses the marker. This is useful to draw something directly on the marker itself. For <code>Annotation</code>, this rectangle is used to draw the color overlay.</p>
+<p><img src="images/smpl_annotation_markerOverlayRegion.png" alt="marker region"></p>
+<ul>
+<li><code>timelineRegion</code></li>
+</ul>
+<p><code>timelineRegion</code> is the rectangle that encompasses the clips and markers region of the timeline window. This is useful to draw something out of the marker's region, like the <code>Annotation</code>'s line overlay.</p>
+<p><img src="images/smpl_annotation_timelineOverlayRegion.png" alt="timeline region"></p>
+<pre><code class="lang-c#">const float k_LineOverlayWidth = 6.0f;
+float markerRegionCenter = markerRegion.xMin + (markerRegion.width - k_LineOverlayWidth) / 2.0f;
+Rect lineRect = new Rect(markerRegionCenter,
+    timelineRegion.y,
+    k_LineOverlayWidth,
+    timelineRegion.height);
+</code></pre>
+<h2 id="3-create-custom-actions">3. Create custom Actions</h2>
+<h3 id="timeline-action">Timeline Action</h3>
+<p>Actions can be used to add new menu entries in Timeline's context menus. For an Annotation, we want to add a menu item available in all context menus to create an <code>Annotation</code> with the clipboard's contents. To do this, a <a href="xref:UnityEditor.Timeline.Actions.TimelineAction">TimelineAction</a> is needed, along with the <a href="xref:UnityEditor.Timeline.Actions.MenuEntryAttribute">MenuEntry attribute</a>.</p>
+<pre><code class="lang-c#">[MenuEntry(&quot;Create Annotation from clipboard contents&quot;)]
+public class CreateAnnotationFromClipboardContents : TimelineAction
+{
+    //...
+}
+</code></pre>
+<p><code>MenuEntry</code> lets Timeline know that this action can be added in context menus. Classes inheriting from <code>TimelineAction</code> need to override two methods: <code>Execute</code> and <code>Validate</code>.</p>
+<h4 id="validate">Validate</h4>
+<p><code>Validate</code> is used to specify that the action's prerequisites are fulfilled. In the case of <code>CreateAnnotationFromClipboardContents</code>, the action is only valid if there actually is contents in the clipboard. <code>ActionValidity</code> is used to describe the validity state of an action:</p>
+<pre><code class="lang-c#">public override ActionValidity Validate(ActionContext context)
+{
+    if (!markers.All(marker =&gt; marker is AnnotationMarker))
+        return ActionValidity.NotApplicable;
+
+    string buffer = EditorGUIUtility.systemCopyBuffer;
+    return buffer.Length == 0 ?  ActionValidity.Invalid : ActionValidity.Valid;
+}
+</code></pre>
+<ul>
+<li><code>ActionValidity.Valid</code> : The action can be executed.</li>
+<li><code>ActionValidity.Invalid</code> : The action cannot be executed given the current context and will appear grayed out in context menus.</li>
+<li><code>ActionValidity.NotApplicable</code> : The action does not apply to the current context and will not show up in menus.</li>
+</ul>
+<h4 id="execute">Execute</h4>
+<p><code>Execute</code> should run the code necessary to execute the action's purpose.</p>
+<pre><code class="lang-c#"> public override bool Execute(ActionContext context)
+{
+    string buffer = EditorGUIUtility.systemCopyBuffer;
+    TrackAsset track = context.tracks.FirstOrDefault();
+
+    if (buffer.Length != 0)
+    {
+        // Create the new annotation and add it to the track
+        //...
+        return true;
+    }
+
+    return false;
+}
+</code></pre>
+<p>The return value should specify if the execution succeeded or not.</p>
+<h3 id="marker-action">Marker Action</h3>
+<p>It is also possible to write custom actions that apply only to markers, instead of all Timeline items. This is the purpose of the <code>MarkerEditor</code> class. It works just like <code>TimelineAction</code>, except that action applies to a list of markers.</p>
+<p>A shortcut can also be assigned to an action. A static method with the <code>TimelineShortcut</code> attribute is needed. <code>Invoker</code> can be used to easily execute a given action:</p>
+<pre><code class="lang-c#">[TimelineShortcut(&quot;Replace annotation description with clipboard&quot;, KeyCode.G)]
+public static void InvokeAction()
+{
+    Invoker.InvokeWithSelectedMarkers&lt;ReplaceAnnotationDescriptionAction&gt;();
+}
+</code></pre>
+<h2 id="notes">Notes</h2>
+<h2 id="runtime-considerations">Runtime considerations</h2>
+<p><code>AnnotationMarker</code> is available at runtime; it can be queried using, for example, <code>TrackAsset.GetMarkers()</code>. However, <code>AnnotationMarkerEditor</code> and custom actions are not available at runtime, since it depends on classes that are not part of the runtime assembly.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.timeline@1.7.6/Documentation~/smpl_custom_annotation.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

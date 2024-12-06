@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>2D Pixel Perfect | Confectionary-Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="2D Pixel Perfect | Confectionary-Docs ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.2d.pixel-perfect@5.0.3/Documentation~/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="Confectionary-Docs">
+            Confectionary-Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="2d-pixel-perfect">2D Pixel Perfect</h1>
+
+<p>The <strong>2D Pixel Perfect</strong> package contains the <strong>Pixel Perfect Camera</strong> component, which ensures your pixel art remains crisp and clear at different resolutions, and stable in motion.</p>
+<p>It is a single component that makes all the calculations Unity needs to scale the viewport with resolution changes, so that you don’t need to do it manually. You can use the component settings to adjust the definition of the rendered pixel art within the camera viewport, and you can use the <strong>Run in Edit Mode</strong> feature to preview any changes immediately in the Game view.</p>
+<p><img src="images/2D_Pix_image_0.png" alt="Pixel Perfect Camera gizmo"></p>
+<p>Attach the <strong>Pixel Perfect Camera</strong> component to the main Camera GameObject in the Scene, it is represented by two green bounding boxes centered on the <strong>Camera</strong> gizmo in the Scene view. The solid green bounding box shows the visible area in Game view, while the dotted bounding box shows the <strong>Reference Resolution.</strong></p>
+<p>The <strong>Reference Resolution</strong> is the original resolution your Assets are designed for, its effect on the component's functions is detailed further in the documentation.</p>
+<p>Before using the component, first ensure your Sprites are prepared correctly for best results with the the following steps.</p>
+<h2 id="preparing-your-sprites">Preparing Your Sprites</h2>
+<ol>
+<li><p>After importing your textures into the project as Sprites, set all Sprites to the same <strong>Pixels Per Unit</strong> value.</p>
+<p><img src="images/2D_Pix_image_1.png" alt="Setting PPU value"></p>
+</li>
+<li><p>In the Sprites' Inspector window, set their <strong>Filter Mode</strong> to ‘Point’.</p>
+<p><img src="images/2D_Pix_image_2.png" alt="Set 'Point' mode"></p>
+</li>
+<li><p>Set their <strong>Compression</strong> to 'None'.</p>
+<p><img src="images/2D_Pix_image_3.png" alt="Set 'None' compression"></p>
+</li>
+<li><p>Follow the steps below to correctly set the pivot for a Sprite</p>
+<ol>
+<li><p>Open the <strong>Sprite Editor</strong> for the selected Sprite.</p>
+</li>
+<li><p>If __Sprite Mode __is set to ‘Multiple’ and there are multiple <strong>Sprite</strong> elements,  then you need to set a pivot point for each individual Sprite element.</p>
+</li>
+<li><p>Under the Sprite settings, set <strong>Pivot</strong> to ‘Custom’, then set <strong>Pivot Unit Mode</strong> to ‘Pixels’. This allows you to set the pivot point's coordinates in pixels, or drag the pivot point around freely in the <strong>Sprite Editor</strong> and have it automatically snap to pixel corners.</p>
+</li>
+<li><p>Repeat for each <strong>Sprite</strong> element as necessary.</p>
+</li>
+</ol>
+<p><img src="images/2D_Pix_image_4.png" alt="Setting the Sprite’s Pivot"></p>
+</li>
+</ol>
+<h2 id="snap-settings">Snap Settings</h2>
+<p>To ensure the pixelated movement of Sprites are consistent with each other, follow the below steps to set the proper snap settings for your project.</p>
+<p><img src="images/2D_Pix_image_5.png" alt="Snap Setting window"></p>
+<ol>
+<li><p>To open the <strong>Snap settings</strong>, go to <strong>Edit</strong> &gt; <strong>Snap Settings.</strong></p>
+</li>
+<li><p>Set the <strong>Move X/Y/Z</strong> properties to 1 divided by the Pixel Perfect Camera’s <strong>Asset Pixels Per Unit (PPU)</strong> value. For example, if the Asset <strong>PPU</strong> is 100, you should set the <strong>Move X/Y/Z</strong> properties to 0.01 (1 / 100 = 0.01).</p>
+</li>
+<li><p>Unity does not apply Snap settings retroactively. If there are any pre-existing GameObjects in the Scene, select each of them and select <strong>Snap All Axes</strong> to apply the Snap settings.</p>
+</li>
+</ol>
+<h2 id="properties">Properties</h2>
+<p><img src="images/2D_Pix_image_6.png" alt="Property table"><br>
+The component's Inspector window</p>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Function</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Asset Pixels Per Unit</strong></td>
+<td>This is the amount of pixels that make up one unit of the Scene. Match this value to the <strong>Pixels Per Unit</strong> values of all Sprites in the Scene.</td>
+</tr>
+<tr>
+<td><strong>Reference Resolution</strong></td>
+<td>This is the original resolution your Assets are designed for.</td>
+</tr>
+<tr>
+<td><strong>Upscale Render Texture</strong></td>
+<td>Enable this property to create a temporary rendered texture of the Scene close-to or at the Reference Resolution, which is then upscaled.</td>
+</tr>
+<tr>
+<td><strong>Pixel Snapping (only available when ‘Upscale Render Texture’ is disabled)</strong></td>
+<td>Enable this feature to snap <strong>Sprite Renderers</strong> to a grid in world space at render-time. The grid size is based on the Assets’ <strong>Pixels Per Unit</strong> value.</td>
+</tr>
+<tr>
+<td><strong>Crop Frame</strong></td>
+<td>Crops the viewport with black bars to match the Reference Resolution along the checked axis. Check X to add horizontal black bars, and Y to add vertical black bars. For more information and a visual example, refer to the Property Details below.</td>
+</tr>
+<tr>
+<td><strong>Stretch Fill (available when both X and Y are checked)</strong></td>
+<td>Enable to expand the viewport to fit the screen resolution while maintaining the viewport's aspect ratio.</td>
+</tr>
+<tr>
+<td><strong>Run In Edit Mode</strong></td>
+<td>Enable this checkbox to preview Camera setting changes in Edit Mode. This causes constant changes to the Scene while active.</td>
+</tr>
+<tr>
+<td><strong>Current Pixel Ratio (available when ‘Run In Edit Mode’ is enabled)</strong></td>
+<td>Shows the size ratio of the rendered Sprites compared to their original size.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="additional-property-details">Additional Property Details</h2>
+<h3 id="reference-resolution">Reference Resolution</h3>
+<p>This is the original resolution your Assets are designed for. Scaling up Scenes and Assets from this resolution preserves your pixel art cleanly at higher resolutions.</p>
+<h3 id="upscale-render-texture">Upscale Render Texture</h3>
+<p>By default, the Scene is rendered at the pixel perfect resolution closest to the full screen resolution.</p>
+<p>Enable this option to have the Scene rendered to a temporary texture set as close as possible to the <strong>Reference Resolution</strong>, while maintaining the full screen aspect ratio. This temporary texture is then upscaled to fit the entire screen.</p>
+<p><img src="images/2D_Pix_image_7.png" alt="Box examples"></p>
+<p>The result is unaliased and unrotated pixels, which may be a desirable visual style for certain game projects.</p>
+<h3 id="pixel-snapping">Pixel Snapping</h3>
+<p>Enable this feature to snap Sprite Renderers to a grid in world space at render-time. The grid size is based on the <strong>Assets Pixels Per Unit</strong> value.</p>
+<p><strong>Pixel Snapping</strong> prevents subpixel movement and make Sprites appear to move in pixel-by-pixel increments. This does not affect any GameObjects' Transform positions.</p>
+<h3 id="crop-frame">Crop Frame</h3>
+<p>Crops the viewport along the checked axis with black bars to match the <strong>Reference Resolution</strong>. Black bars are added to make the Game view fit the full screen resolution.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><img src="images/2D_Pix_image_8.png" alt="Uncropped cat"></th>
+<th style="text-align: center;"><img src="images/2D_Pix_image_9.png" alt="Cropped cat"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Uncropped</td>
+<td style="text-align: center;">Cropped</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cinemachine-extension">Cinemachine Extension</h2>
+<p>As both the <strong>Pixel Perfect Camera</strong> and <a href="https://docs.unity3d.com/Packages/com.unity.cinemachine@latest">Cinemachine</a> modify a Camera’s orthographic size, using these two systems together in a single Scene would cause them to fight for control over the Camera and likely produce unwanted results. To solve this incompatibility, add the <a href="https://docs.unity3d.com/Packages/com.unity.cinemachine@2.4/manual/CinemachinePixelPerfect.html">Cinemachine Pixel Perfect</a> extension to your <a href="https://docs.unity3d.com/Packages/com.unity.cinemachine@2.4/manual/CinemachineSetUpVCam.html">virtual cameras</a>. You can find more information about the extension’s features in the <a href="https://docs.unity3d.com/Packages/com.unity.cinemachine@2.4/manual/CinemachinePixelPerfect.html">Cinemachine documentation</a>.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.2d.pixel-perfect@5.0.3/Documentation~/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

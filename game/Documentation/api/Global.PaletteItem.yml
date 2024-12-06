@@ -1,0 +1,55 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.PaletteItem
+  commentId: T:Global.PaletteItem
+  id: PaletteItem
+  parent: Global
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: PaletteItem
+  nameWithType: PaletteItem
+  fullName: PaletteItem
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/PaletteItem.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: PaletteItem
+    path: ../Assets/Scripts/PaletteItem.cs
+    startLine: 9
+  namespace: Global
+  summary: >-
+    Manages the tile painting feature when in the LevelEditor.
+
+    Uses `Update` to "paint" the level scene per frame the mouse is down, and
+
+    communicates with @Global.LevelEditor to update the level state accordingly.
+  example: []
+  syntax:
+    content: 'public class PaletteItem : MonoBehaviour'
+    content.vb: Public Class PaletteItem Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

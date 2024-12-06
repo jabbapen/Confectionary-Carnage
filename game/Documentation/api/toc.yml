@@ -1,0 +1,112 @@
+### YamlMime:TableOfContent
+items:
+- uid: Global
+  name: ''
+  type: Namespace
+  items:
+  - uid: Global.AudioManager
+    name: AudioManager
+    type: Class
+  - uid: Global.Bullet
+    name: Bullet
+    type: Class
+  - uid: Global.CameraController
+    name: CameraController
+    type: Class
+  - uid: Global.CursorObj
+    name: CursorObj
+    type: Class
+  - uid: Global.Deparent
+    name: Deparent
+    type: Class
+  - uid: Global.EndzoneTrigger
+    name: EndzoneTrigger
+    type: Class
+  - uid: Global.EnemyManager
+    name: EnemyManager
+    type: Class
+  - uid: Global.EnemySpawnpoint
+    name: EnemySpawnpoint
+    type: Class
+  - uid: Global.ExplodeWeapon
+    name: ExplodeWeapon
+    type: Class
+  - uid: Global.GameManager
+    name: GameManager
+    type: Class
+  - uid: Global.HealthManager
+    name: HealthManager
+    type: Class
+  - uid: Global.HelpTile
+    name: HelpTile
+    type: Class
+  - uid: Global.IWeapon
+    name: IWeapon
+    type: Class
+  - uid: Global.Item
+    name: Item
+    type: Class
+  - uid: Global.LeaderboardDisplay
+    name: LeaderboardDisplay
+    type: Class
+  - uid: Global.LevelEditor
+    name: LevelEditor
+    type: Class
+  - uid: Global.LevelModel
+    name: LevelModel
+    type: Class
+  - uid: Global.LevelRequester
+    name: LevelRequester
+    type: Class
+  - uid: Global.LevelResponse
+    name: LevelResponse
+    type: Class
+  - uid: Global.LevelSerializer
+    name: LevelSerializer
+    type: Class
+  - uid: Global.MeleeWeapon
+    name: MeleeWeapon
+    type: Class
+  - uid: Global.Menu
+    name: Menu
+    type: Class
+  - uid: Global.ObjectIndex
+    name: ObjectIndex
+    type: Class
+  - uid: Global.PaletteItem
+    name: PaletteItem
+    type: Class
+  - uid: Global.PlayerController
+    name: PlayerController
+    type: Class
+  - uid: Global.Projectile
+    name: Projectile
+    type: Class
+  - uid: Global.RangedWeapon
+    name: RangedWeapon
+    type: Class
+  - uid: Global.SceneAudio
+    name: SceneAudio
+    type: Class
+  - uid: Global.ScoreModel
+    name: ScoreModel
+    type: Class
+  - uid: Global.ScoreResponse
+    name: ScoreResponse
+    type: Class
+  - uid: Global.SerializationTest
+    name: SerializationTest
+    type: Class
+  - uid: Global.Startzone
+    name: Startzone
+    type: Class
+  - uid: Global.Tile
+    name: Tile
+    type: Class
+  - uid: Global.Transition
+    name: Transition
+    type: Class
+  - uid: Global.WaterTile
+    name: WaterTile
+    type: Class
+memberLayout: SamePage

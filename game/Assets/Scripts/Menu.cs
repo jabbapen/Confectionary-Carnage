@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro; 
 
+/// <summary>
+/// Controls Scene loading and opening options within the main menu.
+/// </summary>
 public class Menu : MonoBehaviour
 {
     public TMP_InputField usernameInput;

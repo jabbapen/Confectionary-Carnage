@@ -1,0 +1,88 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.EnemySpawnpoint
+  commentId: T:Global.EnemySpawnpoint
+  id: EnemySpawnpoint
+  parent: Global
+  children:
+  - Global.EnemySpawnpoint.GetEnemy
+  langs:
+  - csharp
+  - vb
+  name: EnemySpawnpoint
+  nameWithType: EnemySpawnpoint
+  fullName: EnemySpawnpoint
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/EnemySpawnpoint.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: EnemySpawnpoint
+    path: ../Assets/Scripts/EnemySpawnpoint.cs
+    startLine: 7
+  namespace: Global
+  summary: Container to hold an @Global.EnemyManager GameObject
+  example: []
+  syntax:
+    content: 'public class EnemySpawnpoint : MonoBehaviour'
+    content.vb: Public Class EnemySpawnpoint Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: Global.EnemySpawnpoint.GetEnemy
+  commentId: M:Global.EnemySpawnpoint.GetEnemy
+  id: GetEnemy
+  parent: Global.EnemySpawnpoint
+  langs:
+  - csharp
+  - vb
+  name: GetEnemy()
+  nameWithType: EnemySpawnpoint.GetEnemy()
+  fullName: EnemySpawnpoint.GetEnemy()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/EnemySpawnpoint.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: GetEnemy
+    path: ../Assets/Scripts/EnemySpawnpoint.cs
+    startLine: 11
+  namespace: Global
+  syntax:
+    content: public GameObject GetEnemy()
+    return:
+      type: Global.GameObject
+    content.vb: Public Function GetEnemy() As GameObject
+  overload: Global.EnemySpawnpoint.GetEnemy*
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.EnemySpawnpoint.GetEnemy*
+  commentId: Overload:Global.EnemySpawnpoint.GetEnemy
+  href: Global.EnemySpawnpoint.html#EnemySpawnpoint_GetEnemy
+  name: GetEnemy
+  nameWithType: EnemySpawnpoint.GetEnemy
+  fullName: EnemySpawnpoint.GetEnemy
+- uid: Global.GameObject
+  isExternal: true
+  name: GameObject
+  nameWithType: GameObject
+  fullName: GameObject

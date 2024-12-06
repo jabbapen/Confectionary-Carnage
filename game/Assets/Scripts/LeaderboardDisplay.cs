@@ -12,6 +12,10 @@ public class ScoreResponse
     public List<ScoreModel> data;
 }
 
+/// <summary>
+/// Queries the backend to get and display the leaderboard data.
+/// Uses Unity's `Start` to do this on scene load.
+/// </summary>
 public class LeaderboardDisplay : MonoBehaviour
 {
     [SerializeField]

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Defining custom USS styles | Confectionary-Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Defining custom USS styles | Confectionary-Docs ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.timeline@1.7.6/Documentation~/uss_styles.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="Confectionary-Docs">
+            Confectionary-Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="defining-custom-uss-styles">Defining custom USS styles</h1>
+
+<p>The first step to define a USS style is to create a new stylesheet. Stylesheets can be used to extend the Editor’s visual appearance.
+This can be done by adding a file named <code>common.uss</code> in an Editor folder in a <code>StyleSheets/Extensions</code> folder hierarchy.
+For example, the following locations are valid:</p>
+<pre><code class="lang-txt">Assets/Editor/Stylesheets/Extensions/common.uss
+Assets/Editor/MyFolder/Stylesheets/Extensions/common.uss
+Assets/Editor/MyFolder1/MyFolder2/Stylesheets/Extensions/common.uss
+</code></pre>
+<p>USS files (for Unity Style Sheet) use a <a href="https://docs.unity3d.com/Manual/UIE-USS.html">CSS-like syntax to describe new styles</a>. Here is an example:</p>
+<pre><code class="lang-css">myStyle
+{
+    width:18px;
+    height:18px;
+    background-image: resource(&quot;Assets/Editor/icon.png&quot;);
+}
+</code></pre>
+<p>In this style, we specified that we wish to use a custom icon along with size properties. USS styles also support <a href="https://docs.unity3d.com/Manual/UIE-USS-Selectors.html">pseudo-states</a>, which works like <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">pseudo-classes in CSS</a>. Timeline markers support the following pseudo-states:</p>
+<ul>
+<li>Collapsed: <code>.myStyle</code></li>
+<li>Normal: <code>.myStyle:checked</code></li>
+<li>Selected: <code>.myStyle:hover:focus:checked</code></li>
+</ul>
+<p>USS stylesheets also support Unity's light and dark themes. Styles in files named <code>dark.uss</code> and <code>light.uss</code> will be used as an override of the style in <code>common.uss</code>. For example:</p>
+<ul>
+<li><code>common.uss</code></li>
+</ul>
+<pre><code class="lang-css">myStyle
+{
+   width:18px;
+   height:18px;
+   color: rgb(125, 125, 125);
+}
+</code></pre>
+<ul>
+<li><code>dark.uss</code></li>
+</ul>
+<pre><code class="lang-css">myStyle
+{
+   color: rgb(0, 0, 0);
+   background-image: resource(&quot;icon_dark.png&quot;);
+}
+</code></pre>
+<ul>
+<li><code>light.uss</code></li>
+</ul>
+<pre><code class="lang-css">myStyle
+{
+   color: rgb(255, 255, 255);
+   background-image: resource(&quot;icon_light.png&quot;);
+}
+</code></pre>
+<p>In the dark theme, <code>myStyle</code> will be resolved to:</p>
+<pre><code class="lang-css">myStyle
+{
+   width:18px;
+   height:18px;
+   color: rgb(0, 0, 0);
+   background-image: resource(&quot;icon_dark.png&quot;);
+}
+</code></pre>
+<p>and in the light theme:</p>
+<pre><code class="lang-css">myStyle
+{
+   width:18px;
+   height:18px;
+   color: rgb(255, 255, 255);
+   background-image: resource(&quot;icon_light.png&quot;);
+}
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/jabbapen/Confectionary-Carnage/blob/main/game/Library/PackageCache/com.unity.timeline@1.7.6/Documentation~/uss_styles.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.Startzone
+  commentId: T:Global.Startzone
+  id: Startzone
+  parent: Global
+  children:
+  - Global.Startzone.Instance
+  langs:
+  - csharp
+  - vb
+  name: Startzone
+  nameWithType: Startzone
+  fullName: Startzone
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/Startzone.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Startzone
+    path: ../Assets/Scripts/Startzone.cs
+    startLine: 4
+  namespace: Global
+  syntax:
+    content: 'public class Startzone : MonoBehaviour'
+    content.vb: Public Class Startzone Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: Global.Startzone.Instance
+  commentId: F:Global.Startzone.Instance
+  id: Instance
+  parent: Global.Startzone
+  langs:
+  - csharp
+  - vb
+  name: Instance
+  nameWithType: Startzone.Instance
+  fullName: Startzone.Instance
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/Startzone.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Instance
+    path: ../Assets/Scripts/Startzone.cs
+    startLine: 6
+  namespace: Global
+  syntax:
+    content: protected static Startzone Instance
+    return:
+      type: Global.Startzone
+    content.vb: Protected Shared Instance As Startzone
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.Startzone
+  commentId: T:Global.Startzone
+  href: Startzone.html
+  name: Startzone
+  nameWithType: Startzone
+  fullName: Startzone

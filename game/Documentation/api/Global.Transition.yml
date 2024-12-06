@@ -1,0 +1,144 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.Transition
+  commentId: T:Global.Transition
+  id: Transition
+  parent: Global
+  children:
+  - Global.Transition.HideScreen
+  - Global.Transition.Instance
+  - Global.Transition.ShowScreen
+  langs:
+  - csharp
+  - vb
+  name: Transition
+  nameWithType: Transition
+  fullName: Transition
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/Transition.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Transition
+    path: ../Assets/Scripts/Transition.cs
+    startLine: 7
+  namespace: Global
+  summary: Animates menus.
+  example: []
+  syntax:
+    content: 'public class Transition : MonoBehaviour'
+    content.vb: Public Class Transition Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: Global.Transition.Instance
+  commentId: F:Global.Transition.Instance
+  id: Instance
+  parent: Global.Transition
+  langs:
+  - csharp
+  - vb
+  name: Instance
+  nameWithType: Transition.Instance
+  fullName: Transition.Instance
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/Transition.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Instance
+    path: ../Assets/Scripts/Transition.cs
+    startLine: 9
+  namespace: Global
+  syntax:
+    content: public static Transition Instance
+    return:
+      type: Global.Transition
+    content.vb: Public Shared Instance As Transition
+- uid: Global.Transition.ShowScreen
+  commentId: M:Global.Transition.ShowScreen
+  id: ShowScreen
+  parent: Global.Transition
+  langs:
+  - csharp
+  - vb
+  name: ShowScreen()
+  nameWithType: Transition.ShowScreen()
+  fullName: Transition.ShowScreen()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/Transition.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: ShowScreen
+    path: ../Assets/Scripts/Transition.cs
+    startLine: 55
+  namespace: Global
+  syntax:
+    content: public void ShowScreen()
+    content.vb: Public Sub ShowScreen()
+  overload: Global.Transition.ShowScreen*
+- uid: Global.Transition.HideScreen
+  commentId: M:Global.Transition.HideScreen
+  id: HideScreen
+  parent: Global.Transition
+  langs:
+  - csharp
+  - vb
+  name: HideScreen()
+  nameWithType: Transition.HideScreen()
+  fullName: Transition.HideScreen()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/Scripts/Transition.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: HideScreen
+    path: ../Assets/Scripts/Transition.cs
+    startLine: 62
+  namespace: Global
+  syntax:
+    content: public void HideScreen()
+    content.vb: Public Sub HideScreen()
+  overload: Global.Transition.HideScreen*
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.Transition
+  commentId: T:Global.Transition
+  href: Transition.html
+  name: Transition
+  nameWithType: Transition
+  fullName: Transition
+- uid: Global.Transition.ShowScreen*
+  commentId: Overload:Global.Transition.ShowScreen
+  href: Global.Transition.html#Transition_ShowScreen
+  name: ShowScreen
+  nameWithType: Transition.ShowScreen
+  fullName: Transition.ShowScreen
+- uid: Global.Transition.HideScreen*
+  commentId: Overload:Global.Transition.HideScreen
+  href: Global.Transition.html#Transition_HideScreen
+  name: HideScreen
+  nameWithType: Transition.HideScreen
+  fullName: Transition.HideScreen

@@ -1,0 +1,560 @@
+### YamlMime:ManagedReference
+items:
+- uid: NavMeshPlus.Extensions.RotateAgentSmoothly
+  commentId: T:NavMeshPlus.Extensions.RotateAgentSmoothly
+  id: RotateAgentSmoothly
+  parent: NavMeshPlus.Extensions
+  children:
+  - NavMeshPlus.Extensions.RotateAgentSmoothly.#ctor(NavMeshAgent,NavMeshPlus.Extensions.AgentOverride2d,System.Single)
+  - NavMeshPlus.Extensions.RotateAgentSmoothly.RotateToWaypoints(Transform)
+  - NavMeshPlus.Extensions.RotateAgentSmoothly.UpdateAgent
+  - NavMeshPlus.Extensions.RotateAgentSmoothly._RotateCoroutine
+  - NavMeshPlus.Extensions.RotateAgentSmoothly.rotateSpeed
+  langs:
+  - csharp
+  - vb
+  name: RotateAgentSmoothly
+  nameWithType: RotateAgentSmoothly
+  fullName: NavMeshPlus.Extensions.RotateAgentSmoothly
+  type: Class
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/RotateAgentSmoothly.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: RotateAgentSmoothly
+    path: ../Assets/NavMeshComponents/Scripts/RotateAgentSmoothly.cs
+    startLine: 9
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: 'public class RotateAgentSmoothly : IAgentOverride'
+    content.vb: Public Class RotateAgentSmoothly Implements IAgentOverride
+  inheritance:
+  - System.Object
+  implements:
+  - NavMeshPlus.Extensions.IAgentOverride
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NavMeshPlus.Extensions.RotateAgentSmoothly.#ctor(NavMeshAgent,NavMeshPlus.Extensions.AgentOverride2d,System.Single)
+  commentId: M:NavMeshPlus.Extensions.RotateAgentSmoothly.#ctor(NavMeshAgent,NavMeshPlus.Extensions.AgentOverride2d,System.Single)
+  id: '#ctor(NavMeshAgent,NavMeshPlus.Extensions.AgentOverride2d,System.Single)'
+  parent: NavMeshPlus.Extensions.RotateAgentSmoothly
+  langs:
+  - csharp
+  - vb
+  name: RotateAgentSmoothly(NavMeshAgent, AgentOverride2d, float)
+  nameWithType: RotateAgentSmoothly.RotateAgentSmoothly(NavMeshAgent, AgentOverride2d, float)
+  fullName: NavMeshPlus.Extensions.RotateAgentSmoothly.RotateAgentSmoothly(NavMeshAgent, NavMeshPlus.Extensions.AgentOverride2d, float)
+  type: Constructor
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/RotateAgentSmoothly.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: .ctor
+    path: ../Assets/NavMeshComponents/Scripts/RotateAgentSmoothly.cs
+    startLine: 11
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: public RotateAgentSmoothly(NavMeshAgent agent, AgentOverride2d owner, float rotateSpeed)
+    parameters:
+    - id: agent
+      type: Global.NavMeshAgent
+    - id: owner
+      type: NavMeshPlus.Extensions.AgentOverride2d
+    - id: rotateSpeed
+      type: System.Single
+    content.vb: Public Sub New(agent As NavMeshAgent, owner As AgentOverride2d, rotateSpeed As Single)
+  overload: NavMeshPlus.Extensions.RotateAgentSmoothly.#ctor*
+  nameWithType.vb: RotateAgentSmoothly.New(NavMeshAgent, AgentOverride2d, Single)
+  fullName.vb: NavMeshPlus.Extensions.RotateAgentSmoothly.New(NavMeshAgent, NavMeshPlus.Extensions.AgentOverride2d, Single)
+  name.vb: New(NavMeshAgent, AgentOverride2d, Single)
+- uid: NavMeshPlus.Extensions.RotateAgentSmoothly.rotateSpeed
+  commentId: F:NavMeshPlus.Extensions.RotateAgentSmoothly.rotateSpeed
+  id: rotateSpeed
+  parent: NavMeshPlus.Extensions.RotateAgentSmoothly
+  langs:
+  - csharp
+  - vb
+  name: rotateSpeed
+  nameWithType: RotateAgentSmoothly.rotateSpeed
+  fullName: NavMeshPlus.Extensions.RotateAgentSmoothly.rotateSpeed
+  type: Field
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/RotateAgentSmoothly.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: rotateSpeed
+    path: ../Assets/NavMeshComponents/Scripts/RotateAgentSmoothly.cs
+    startLine: 23
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: public float rotateSpeed
+    return:
+      type: System.Single
+    content.vb: Public rotateSpeed As Single
+- uid: NavMeshPlus.Extensions.RotateAgentSmoothly.UpdateAgent
+  commentId: M:NavMeshPlus.Extensions.RotateAgentSmoothly.UpdateAgent
+  id: UpdateAgent
+  parent: NavMeshPlus.Extensions.RotateAgentSmoothly
+  langs:
+  - csharp
+  - vb
+  name: UpdateAgent()
+  nameWithType: RotateAgentSmoothly.UpdateAgent()
+  fullName: NavMeshPlus.Extensions.RotateAgentSmoothly.UpdateAgent()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/RotateAgentSmoothly.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: UpdateAgent
+    path: ../Assets/NavMeshComponents/Scripts/RotateAgentSmoothly.cs
+    startLine: 25
+  namespace: NavMeshPlus.Extensions
+  example: []
+  syntax:
+    content: public void UpdateAgent()
+    content.vb: Public Sub UpdateAgent()
+  overload: NavMeshPlus.Extensions.RotateAgentSmoothly.UpdateAgent*
+  implements:
+  - NavMeshPlus.Extensions.IAgentOverride.UpdateAgent
+- uid: NavMeshPlus.Extensions.RotateAgentSmoothly._RotateCoroutine
+  commentId: M:NavMeshPlus.Extensions.RotateAgentSmoothly._RotateCoroutine
+  id: _RotateCoroutine
+  parent: NavMeshPlus.Extensions.RotateAgentSmoothly
+  langs:
+  - csharp
+  - vb
+  name: _RotateCoroutine()
+  nameWithType: RotateAgentSmoothly._RotateCoroutine()
+  fullName: NavMeshPlus.Extensions.RotateAgentSmoothly._RotateCoroutine()
+  type: Method
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/RotateAgentSmoothly.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: _RotateCoroutine
+    path: ../Assets/NavMeshComponents/Scripts/RotateAgentSmoothly.cs
+    startLine: 36
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: protected IEnumerator _RotateCoroutine()
+    return:
+      type: System.Collections.IEnumerator
+    content.vb: Protected Function _RotateCoroutine() As IEnumerator
+  overload: NavMeshPlus.Extensions.RotateAgentSmoothly._RotateCoroutine*
+- uid: NavMeshPlus.Extensions.RotateAgentSmoothly.RotateToWaypoints(Transform)
+  commentId: M:NavMeshPlus.Extensions.RotateAgentSmoothly.RotateToWaypoints(Transform)
+  id: RotateToWaypoints(Transform)
+  parent: NavMeshPlus.Extensions.RotateAgentSmoothly
+  langs:
+  - csharp
+  - vb
+  name: RotateToWaypoints(Transform)
+  nameWithType: RotateAgentSmoothly.RotateToWaypoints(Transform)
+  fullName: NavMeshPlus.Extensions.RotateAgentSmoothly.RotateToWaypoints(Transform)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/RotateAgentSmoothly.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: RotateToWaypoints
+    path: ../Assets/NavMeshComponents/Scripts/RotateAgentSmoothly.cs
+    startLine: 40
+  namespace: NavMeshPlus.Extensions
+  syntax:
+    content: protected IEnumerator RotateToWaypoints(Transform transform)
+    parameters:
+    - id: transform
+      type: Global.Transform
+    return:
+      type: System.Collections.IEnumerator
+    content.vb: Protected Function RotateToWaypoints(transform As Transform) As IEnumerator
+  overload: NavMeshPlus.Extensions.RotateAgentSmoothly.RotateToWaypoints*
+references:
+- uid: NavMeshPlus.Extensions
+  commentId: N:NavMeshPlus.Extensions
+  href: NavMeshPlus.html
+  name: NavMeshPlus.Extensions
+  nameWithType: NavMeshPlus.Extensions
+  fullName: NavMeshPlus.Extensions
+  spec.csharp:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Extensions
+    name: Extensions
+    href: NavMeshPlus.Extensions.html
+  spec.vb:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Extensions
+    name: Extensions
+    href: NavMeshPlus.Extensions.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NavMeshPlus.Extensions.IAgentOverride
+  commentId: T:NavMeshPlus.Extensions.IAgentOverride
+  parent: NavMeshPlus.Extensions
+  href: NavMeshPlus.Extensions.IAgentOverride.html
+  name: IAgentOverride
+  nameWithType: IAgentOverride
+  fullName: NavMeshPlus.Extensions.IAgentOverride
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NavMeshPlus.Extensions.RotateAgentSmoothly.#ctor*
+  commentId: Overload:NavMeshPlus.Extensions.RotateAgentSmoothly.#ctor
+  href: NavMeshPlus.Extensions.RotateAgentSmoothly.html#NavMeshPlus_Extensions_RotateAgentSmoothly__ctor_NavMeshAgent_NavMeshPlus_Extensions_AgentOverride2d_System_Single_
+  name: RotateAgentSmoothly
+  nameWithType: RotateAgentSmoothly.RotateAgentSmoothly
+  fullName: NavMeshPlus.Extensions.RotateAgentSmoothly.RotateAgentSmoothly
+  nameWithType.vb: RotateAgentSmoothly.New
+  fullName.vb: NavMeshPlus.Extensions.RotateAgentSmoothly.New
+  name.vb: New
+- uid: Global.NavMeshAgent
+  isExternal: true
+  name: NavMeshAgent
+  nameWithType: NavMeshAgent
+  fullName: NavMeshAgent
+- uid: NavMeshPlus.Extensions.AgentOverride2d
+  commentId: T:NavMeshPlus.Extensions.AgentOverride2d
+  parent: NavMeshPlus.Extensions
+  href: NavMeshPlus.Extensions.AgentOverride2d.html
+  name: AgentOverride2d
+  nameWithType: AgentOverride2d
+  fullName: NavMeshPlus.Extensions.AgentOverride2d
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: NavMeshPlus.Extensions.RotateAgentSmoothly.UpdateAgent*
+  commentId: Overload:NavMeshPlus.Extensions.RotateAgentSmoothly.UpdateAgent
+  href: NavMeshPlus.Extensions.RotateAgentSmoothly.html#NavMeshPlus_Extensions_RotateAgentSmoothly_UpdateAgent
+  name: UpdateAgent
+  nameWithType: RotateAgentSmoothly.UpdateAgent
+  fullName: NavMeshPlus.Extensions.RotateAgentSmoothly.UpdateAgent
+- uid: NavMeshPlus.Extensions.IAgentOverride.UpdateAgent
+  commentId: M:NavMeshPlus.Extensions.IAgentOverride.UpdateAgent
+  parent: NavMeshPlus.Extensions.IAgentOverride
+  href: NavMeshPlus.Extensions.IAgentOverride.html#NavMeshPlus_Extensions_IAgentOverride_UpdateAgent
+  name: UpdateAgent()
+  nameWithType: IAgentOverride.UpdateAgent()
+  fullName: NavMeshPlus.Extensions.IAgentOverride.UpdateAgent()
+  spec.csharp:
+  - uid: NavMeshPlus.Extensions.IAgentOverride.UpdateAgent
+    name: UpdateAgent
+    href: NavMeshPlus.Extensions.IAgentOverride.html#NavMeshPlus_Extensions_IAgentOverride_UpdateAgent
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NavMeshPlus.Extensions.IAgentOverride.UpdateAgent
+    name: UpdateAgent
+    href: NavMeshPlus.Extensions.IAgentOverride.html#NavMeshPlus_Extensions_IAgentOverride_UpdateAgent
+  - name: (
+  - name: )
+- uid: NavMeshPlus.Extensions.RotateAgentSmoothly._RotateCoroutine*
+  commentId: Overload:NavMeshPlus.Extensions.RotateAgentSmoothly._RotateCoroutine
+  href: NavMeshPlus.Extensions.RotateAgentSmoothly.html#NavMeshPlus_Extensions_RotateAgentSmoothly__RotateCoroutine
+  name: _RotateCoroutine
+  nameWithType: RotateAgentSmoothly._RotateCoroutine
+  fullName: NavMeshPlus.Extensions.RotateAgentSmoothly._RotateCoroutine
+- uid: System.Collections.IEnumerator
+  commentId: T:System.Collections.IEnumerator
+  parent: System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerator
+  name: IEnumerator
+  nameWithType: IEnumerator
+  fullName: System.Collections.IEnumerator
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+- uid: NavMeshPlus.Extensions.RotateAgentSmoothly.RotateToWaypoints*
+  commentId: Overload:NavMeshPlus.Extensions.RotateAgentSmoothly.RotateToWaypoints
+  href: NavMeshPlus.Extensions.RotateAgentSmoothly.html#NavMeshPlus_Extensions_RotateAgentSmoothly_RotateToWaypoints_Transform_
+  name: RotateToWaypoints
+  nameWithType: RotateAgentSmoothly.RotateToWaypoints
+  fullName: NavMeshPlus.Extensions.RotateAgentSmoothly.RotateToWaypoints
+- uid: Global.Transform
+  isExternal: true
+  name: Transform
+  nameWithType: Transform
+  fullName: Transform

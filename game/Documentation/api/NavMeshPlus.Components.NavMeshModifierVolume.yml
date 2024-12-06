@@ -1,0 +1,369 @@
+### YamlMime:ManagedReference
+items:
+- uid: NavMeshPlus.Components.NavMeshModifierVolume
+  commentId: T:NavMeshPlus.Components.NavMeshModifierVolume
+  id: NavMeshModifierVolume
+  parent: NavMeshPlus.Components
+  children:
+  - NavMeshPlus.Components.NavMeshModifierVolume.AffectsAgentType(System.Int32)
+  - NavMeshPlus.Components.NavMeshModifierVolume.activeModifiers
+  - NavMeshPlus.Components.NavMeshModifierVolume.area
+  - NavMeshPlus.Components.NavMeshModifierVolume.center
+  - NavMeshPlus.Components.NavMeshModifierVolume.size
+  langs:
+  - csharp
+  - vb
+  name: NavMeshModifierVolume
+  nameWithType: NavMeshModifierVolume
+  fullName: NavMeshPlus.Components.NavMeshModifierVolume
+  type: Class
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshModifierVolume.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: NavMeshModifierVolume
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshModifierVolume.cs
+    startLine: 6
+  namespace: NavMeshPlus.Components
+  syntax:
+    content: 'public class NavMeshModifierVolume : MonoBehaviour'
+    content.vb: Public Class NavMeshModifierVolume Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: NavMeshPlus.Components.NavMeshModifierVolume.size
+  commentId: P:NavMeshPlus.Components.NavMeshModifierVolume.size
+  id: size
+  parent: NavMeshPlus.Components.NavMeshModifierVolume
+  langs:
+  - csharp
+  - vb
+  name: size
+  nameWithType: NavMeshModifierVolume.size
+  fullName: NavMeshPlus.Components.NavMeshModifierVolume.size
+  type: Property
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshModifierVolume.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: size
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshModifierVolume.cs
+    startLine: 13
+  namespace: NavMeshPlus.Components
+  syntax:
+    content: public Vector3 size { get; set; }
+    parameters: []
+    return:
+      type: Global.Vector3
+    content.vb: Public Property size As Vector3
+  overload: NavMeshPlus.Components.NavMeshModifierVolume.size*
+- uid: NavMeshPlus.Components.NavMeshModifierVolume.center
+  commentId: P:NavMeshPlus.Components.NavMeshModifierVolume.center
+  id: center
+  parent: NavMeshPlus.Components.NavMeshModifierVolume
+  langs:
+  - csharp
+  - vb
+  name: center
+  nameWithType: NavMeshModifierVolume.center
+  fullName: NavMeshPlus.Components.NavMeshModifierVolume.center
+  type: Property
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshModifierVolume.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: center
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshModifierVolume.cs
+    startLine: 17
+  namespace: NavMeshPlus.Components
+  syntax:
+    content: public Vector3 center { get; set; }
+    parameters: []
+    return:
+      type: Global.Vector3
+    content.vb: Public Property center As Vector3
+  overload: NavMeshPlus.Components.NavMeshModifierVolume.center*
+- uid: NavMeshPlus.Components.NavMeshModifierVolume.area
+  commentId: P:NavMeshPlus.Components.NavMeshModifierVolume.area
+  id: area
+  parent: NavMeshPlus.Components.NavMeshModifierVolume
+  langs:
+  - csharp
+  - vb
+  name: area
+  nameWithType: NavMeshModifierVolume.area
+  fullName: NavMeshPlus.Components.NavMeshModifierVolume.area
+  type: Property
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshModifierVolume.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: area
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshModifierVolume.cs
+    startLine: 21
+  namespace: NavMeshPlus.Components
+  syntax:
+    content: public int area { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property area As Integer
+  overload: NavMeshPlus.Components.NavMeshModifierVolume.area*
+- uid: NavMeshPlus.Components.NavMeshModifierVolume.activeModifiers
+  commentId: P:NavMeshPlus.Components.NavMeshModifierVolume.activeModifiers
+  id: activeModifiers
+  parent: NavMeshPlus.Components.NavMeshModifierVolume
+  langs:
+  - csharp
+  - vb
+  name: activeModifiers
+  nameWithType: NavMeshModifierVolume.activeModifiers
+  fullName: NavMeshPlus.Components.NavMeshModifierVolume.activeModifiers
+  type: Property
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshModifierVolume.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: activeModifiers
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshModifierVolume.cs
+    startLine: 30
+  namespace: NavMeshPlus.Components
+  syntax:
+    content: public static List<NavMeshModifierVolume> activeModifiers { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{NavMeshPlus.Components.NavMeshModifierVolume}
+    content.vb: Public Shared ReadOnly Property activeModifiers As List(Of NavMeshModifierVolume)
+  overload: NavMeshPlus.Components.NavMeshModifierVolume.activeModifiers*
+- uid: NavMeshPlus.Components.NavMeshModifierVolume.AffectsAgentType(System.Int32)
+  commentId: M:NavMeshPlus.Components.NavMeshModifierVolume.AffectsAgentType(System.Int32)
+  id: AffectsAgentType(System.Int32)
+  parent: NavMeshPlus.Components.NavMeshModifierVolume
+  langs:
+  - csharp
+  - vb
+  name: AffectsAgentType(int)
+  nameWithType: NavMeshModifierVolume.AffectsAgentType(int)
+  fullName: NavMeshPlus.Components.NavMeshModifierVolume.AffectsAgentType(int)
+  type: Method
+  source:
+    remote:
+      path: game/Assets/NavMeshComponents/Scripts/NavMeshModifierVolume.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: AffectsAgentType
+    path: ../Assets/NavMeshComponents/Scripts/NavMeshModifierVolume.cs
+    startLine: 46
+  namespace: NavMeshPlus.Components
+  syntax:
+    content: public bool AffectsAgentType(int agentTypeID)
+    parameters:
+    - id: agentTypeID
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Public Function AffectsAgentType(agentTypeID As Integer) As Boolean
+  overload: NavMeshPlus.Components.NavMeshModifierVolume.AffectsAgentType*
+  nameWithType.vb: NavMeshModifierVolume.AffectsAgentType(Integer)
+  fullName.vb: NavMeshPlus.Components.NavMeshModifierVolume.AffectsAgentType(Integer)
+  name.vb: AffectsAgentType(Integer)
+references:
+- uid: NavMeshPlus.Components
+  commentId: N:NavMeshPlus.Components
+  href: NavMeshPlus.html
+  name: NavMeshPlus.Components
+  nameWithType: NavMeshPlus.Components
+  fullName: NavMeshPlus.Components
+  spec.csharp:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Components
+    name: Components
+    href: NavMeshPlus.Components.html
+  spec.vb:
+  - uid: NavMeshPlus
+    name: NavMeshPlus
+    href: NavMeshPlus.html
+  - name: .
+  - uid: NavMeshPlus.Components
+    name: Components
+    href: NavMeshPlus.Components.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NavMeshPlus.Components.NavMeshModifierVolume.size*
+  commentId: Overload:NavMeshPlus.Components.NavMeshModifierVolume.size
+  href: NavMeshPlus.Components.NavMeshModifierVolume.html#NavMeshPlus_Components_NavMeshModifierVolume_size
+  name: size
+  nameWithType: NavMeshModifierVolume.size
+  fullName: NavMeshPlus.Components.NavMeshModifierVolume.size
+- uid: Global.Vector3
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: Vector3
+- uid: NavMeshPlus.Components.NavMeshModifierVolume.center*
+  commentId: Overload:NavMeshPlus.Components.NavMeshModifierVolume.center
+  href: NavMeshPlus.Components.NavMeshModifierVolume.html#NavMeshPlus_Components_NavMeshModifierVolume_center
+  name: center
+  nameWithType: NavMeshModifierVolume.center
+  fullName: NavMeshPlus.Components.NavMeshModifierVolume.center
+- uid: NavMeshPlus.Components.NavMeshModifierVolume.area*
+  commentId: Overload:NavMeshPlus.Components.NavMeshModifierVolume.area
+  href: NavMeshPlus.Components.NavMeshModifierVolume.html#NavMeshPlus_Components_NavMeshModifierVolume_area
+  name: area
+  nameWithType: NavMeshModifierVolume.area
+  fullName: NavMeshPlus.Components.NavMeshModifierVolume.area
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: NavMeshPlus.Components.NavMeshModifierVolume.activeModifiers*
+  commentId: Overload:NavMeshPlus.Components.NavMeshModifierVolume.activeModifiers
+  href: NavMeshPlus.Components.NavMeshModifierVolume.html#NavMeshPlus_Components_NavMeshModifierVolume_activeModifiers
+  name: activeModifiers
+  nameWithType: NavMeshModifierVolume.activeModifiers
+  fullName: NavMeshPlus.Components.NavMeshModifierVolume.activeModifiers
+- uid: System.Collections.Generic.List{NavMeshPlus.Components.NavMeshModifierVolume}
+  commentId: T:System.Collections.Generic.List{NavMeshPlus.Components.NavMeshModifierVolume}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<NavMeshModifierVolume>
+  nameWithType: List<NavMeshModifierVolume>
+  fullName: System.Collections.Generic.List<NavMeshPlus.Components.NavMeshModifierVolume>
+  nameWithType.vb: List(Of NavMeshModifierVolume)
+  fullName.vb: System.Collections.Generic.List(Of NavMeshPlus.Components.NavMeshModifierVolume)
+  name.vb: List(Of NavMeshModifierVolume)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: NavMeshPlus.Components.NavMeshModifierVolume
+    name: NavMeshModifierVolume
+    href: NavMeshPlus.Components.NavMeshModifierVolume.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NavMeshPlus.Components.NavMeshModifierVolume
+    name: NavMeshModifierVolume
+    href: NavMeshPlus.Components.NavMeshModifierVolume.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NavMeshPlus.Components.NavMeshModifierVolume.AffectsAgentType*
+  commentId: Overload:NavMeshPlus.Components.NavMeshModifierVolume.AffectsAgentType
+  href: NavMeshPlus.Components.NavMeshModifierVolume.html#NavMeshPlus_Components_NavMeshModifierVolume_AffectsAgentType_System_Int32_
+  name: AffectsAgentType
+  nameWithType: NavMeshModifierVolume.AffectsAgentType
+  fullName: NavMeshPlus.Components.NavMeshModifierVolume.AffectsAgentType
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

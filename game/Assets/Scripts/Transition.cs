@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Animates menus.
+/// </summary>
 public class Transition : MonoBehaviour
 {
     public static Transition Instance = null;

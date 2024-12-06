@@ -1,0 +1,115 @@
+### YamlMime:ManagedReference
+items:
+- uid: Global.Tile
+  commentId: T:Global.Tile
+  id: Tile
+  parent: Global
+  children:
+  - Global.Tile.obj
+  - Global.Tile.trfm
+  langs:
+  - csharp
+  - vb
+  name: Tile
+  nameWithType: Tile
+  fullName: Tile
+  type: Class
+  source:
+    remote:
+      path: game/Assets/Scripts/Tile.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: Tile
+    path: ../Assets/Scripts/Tile.cs
+    startLine: 8
+  namespace: Global
+  summary: >-
+    A struct so objects interacting with Tile can easily get its `GameObject` and `Transform`, eg. when serializing.
+
+    GameObjects can't hold onto values otherwise, so sometimes Data classes are necessary in Unity.
+  example: []
+  syntax:
+    content: 'public class Tile : MonoBehaviour'
+    content.vb: Public Class Tile Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: Global.Tile.obj
+  commentId: F:Global.Tile.obj
+  id: obj
+  parent: Global.Tile
+  langs:
+  - csharp
+  - vb
+  name: obj
+  nameWithType: Tile.obj
+  fullName: Tile.obj
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/Tile.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: obj
+    path: ../Assets/Scripts/Tile.cs
+    startLine: 10
+  namespace: Global
+  syntax:
+    content: public GameObject obj
+    return:
+      type: Global.GameObject
+    content.vb: Public obj As GameObject
+- uid: Global.Tile.trfm
+  commentId: F:Global.Tile.trfm
+  id: trfm
+  parent: Global.Tile
+  langs:
+  - csharp
+  - vb
+  name: trfm
+  nameWithType: Tile.trfm
+  fullName: Tile.trfm
+  type: Field
+  source:
+    remote:
+      path: game/Assets/Scripts/Tile.cs
+      branch: main
+      repo: https://github.com/jabbapen/Confectionary-Carnage.git
+    id: trfm
+    path: ../Assets/Scripts/Tile.cs
+    startLine: 11
+  namespace: Global
+  syntax:
+    content: public Transform trfm
+    return:
+      type: Global.Transform
+    content.vb: Public trfm As Transform
+references:
+- uid: Global
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Global.GameObject
+  isExternal: true
+  name: GameObject
+  nameWithType: GameObject
+  fullName: GameObject
+- uid: Global.Transform
+  isExternal: true
+  name: Transform
+  nameWithType: Transform
+  fullName: Transform
