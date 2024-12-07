@@ -1,6 +1,6 @@
 # Confectionary Carnage:
 
-Confectionary Carnage is a game we designed to help students relieve stress through light-hearted entertainment. In this 2D top-down shooter, players navigate through endlessly new and engaging levels, dodging and shooting in a world filled with candy-themed enemies and environments. The game allows players to create and submit their own levels, as well as play through levels crafted by others, adding endless variety and replayability. With a focus on fun and stress relief, players can compete for high scores, engage in creative level design, and enjoy a light-hearted escape from their day-to-days.
+Confectionary Carnage is a game we designed to help students relieve stress through light-hearted entertainment. In this 2D top-down shooter, players navigate through endlessly new and engaging levels, dodging and shooting in a world filled with candy-themed enemies and environments. Our game allows players to create and submit their own levels, as well as play through levels crafted by others, adding endless variety and replayability. Players can compete for high scores, engage in creative level design, and enjoy a light-hearted escape from their day-to-days in this carefree, fun experience.
 
 [Play it here!](http://confectionary-carnage.com/)
 
